@@ -1,0 +1,122 @@
+
+
+  .mat-raised-button{
+  color: white;
+  background-color: #0F6CB6;
+  min-width: fit-content;
+  }
+
+  .mat-toolbar{
+  background: white !important;
+  color: #92929D;
+  font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
+  }
+
+
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 30%;
+  }
+
+
+
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .custom-input{
+    height: 2.4rem;
+    font-size: 0.8rem;
+    border: 1px solid #ced4da29;
+  }
+
+  .custom-input-select{
+  height: 2.5rem;
+  font-size: 0.8rem;
+  margin-top: 3px;
+  }
+
+  .custom-select-box{
+    padding-left: 4px;
+    padding-right: 4px;
+
+  }
+
+  .mat-form-field{
+    width: 84px;
+  }
+
+  ::ng-deep .mat-form-field-infix {
+    padding: 0.5em 0;
+    border-top: 0.44375em solid transparent !important;
+  }
+
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  ::ng-deep .mat-paginator {
+    .mat-paginator-range-label {
+        display: none;
+    }
+    .mat-paginator-page-size {
+      display: none;
+    }
+  }
+
+  ::ng-deep .mat-mini-fab:not([class*=mat-elevation-z]){
+  box-shadow: none;
+  }
+
+  ::ng-deep .mat-mini-fab {
+  transform: none !important;
+  transition: none !important;
+  }
+
+  ::ng-deep mat-button{
+  padding: 2px;
+  align-content: center;
+  }
+
+
+//   .mat-card {
+//     border-bottom: 1px solid;
+//     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+//     display: block;
+//     position: relative;
+//     padding: 16px;
+//     border-radius: 8px;
+//     border-bottom-color: red;
+//     border-bottom-width: 8px;
+// }
+
+
+mat-card {
+      text-align: center;
+      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+      position: relative;
+      padding: 16px;
+      border-radius: 8px;
+
+}
+
+.bottom-border-1  {
+    border-bottom: 8px solid #FFE600;
+  }
+
+  .bottom-border-2  {
+    border-bottom: 8px solid #2ECC71;
+  }
+
+
+  .bottom-border-3  {
+    border-bottom: 8px solid #D82026;
+  }
+
+
+  .bottom-border-4  {
+    border-bottom: 8px solid #50B5FF;
+  }

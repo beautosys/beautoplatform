@@ -1,0 +1,61 @@
+.more-j {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .dot-j {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      border: 2px solid #193091;
+      margin: auto;
+    }
+  
+    .dot-j-fill {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      border: 2px solid #193091;
+      margin: auto;
+      background-color: #193091;
+    }
+  
+    .line-hr {
+      height: 1px;
+      width: 25px;
+      background: #193091;
+      margin-left: 0px;
+      margin-top: 12px;
+      // margin: auto;
+    }
+  
+    button {
+      text-align: center;
+      border: none;
+      font-size: 9px;
+      padding: 5px 10px;
+      color: #193091;
+      background: transparent;
+      border: 1px solid;
+      border-radius: 50px;
+    }
+  
+    .first {
+      position: relative;
+      top: 18px;
+      left: -6px;
+      display: flex;
+      flex-flow: row;
+    }
+  
+  }
+  
+  .border-r {
+    border-right: 1px solid rgba(0, 0, 0, .125);
+  }
+  
+  .img {
+    margin-top: 6rem;
+    width: 2rem;
+    width: 2.4rem;
+  }
+  

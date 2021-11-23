@@ -1,0 +1,65 @@
+<div class="outCoursoelNext">
+    <div class="outCoursoel">
+      <div>
+        <div class="leadershipFLex">
+          <div class="tab-slider--nav">
+            <ul class="tab-slider--tabs">
+              <li class="tab-slider--trigger" [class.active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1'">
+                <div class="profileImgFlex">
+                <div class="img">  
+                  <img src="assets/img/leaders/1.png" alt="" class="img-responsive"></div>
+                <div class="profileDetails">  <h1 class="underLine">Pramod Palla </h1>
+                  <h5 class="desgantion">CEO & CoFounder</h5></div>
+                </div>
+              </li>
+              <li class="tab-slider--trigger" [class.active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">
+                <div class="profileImgFlex">
+                  <div class="img">  
+                    <img src="assets/img/leaders/1.jpg" alt="" class="img-responsive"></div>
+                  <div class="profileDetails">  <h1 class="underLine">PramodPalla </h1>
+                    <h5 class="desgantion">CEO & CoFounder</h5></div>
+                  </div>
+              </li>
+            
+           
+            
+            </ul>
+          </div>
+        
+          <div class="tab-slider--container " [ngSwitch]="viewMode" >
+            <div id="tab1" class="tab-slider--body" *ngSwitchCase="'tab1'">
+              <div class="firstleaderInfo" >
+                <div class="imgBorder blueBorder">
+                  <div class="">
+                    <!-- <img src="assets/img/leaders/dots.svg" alt=""> -->
+
+
+                  <img src="assets/img/leaders/1.jpg" alt="">
+                </div>
+                </div>   
+                <div class="info">
+                  <h1>Lorem Ipsum</h1>
+                  <h5>CEO & CoFounder</h5>
+                <button class="btn btn-primary">Read more</button>
+                </div>
+               </div>
+            </div>
+            <div id="tab2" class="tab-slider--body" *ngSwitchCase="'tab2'">
+              <div class="firstleaderInfo bgImg" >
+                <div class="imgBorder blueBorder">
+                <div class="bgImg">
+                  <img src="assets/img/leaders/1.png" alt=""></div>   
+                <div class="info">
+                  <h1>Lorem Ipsum</h1>
+                  <h5>CEO & CoFounder</h5>
+                <button class="btn btn-primary">Read more</button>
+                </div>
+              </div>
+               </div>
+            </div>
+         
+          </div>
+        </div> 
+      </div>
+     </div>
+  </div>

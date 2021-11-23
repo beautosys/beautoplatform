@@ -1,0 +1,138 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import './fonts.scss';
+@import './assets/css/style.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif !important; }
+
+.title-top-space {
+    margin-top: 6em;
+}
+
+@import './assets/css/responsive.scss';
+
+
+// custome scroll
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  .owl-carousel .owl-item {
+    height: 369px;
+}
+
+.custom {
+
+  margin-top: 17px;
+
+.mat-menu-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: initial;
+  height: auto;
+  padding: 10px 12px;
+  text-align: left;
+  text-decoration: none;
+  max-width: 100%;
+  position: relative;
+  width: 180px;
+}
+
+}
+
+
+.mat-menu-before::after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: auto;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #95acd7;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -4px;
+  right: 3px;
+
+}
+.f-19
+{
+  font-size: 19px;
+}
+.sub-r{
+  color: #cbcbcb;
+  font-size: 12px;
+
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #4452bb #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #4452bb;
+    border-radius: 10px;
+    border: 3px solid #ededed;
+  }
+  .c-css {
+
+    .mat-dialog-content {
+      display: block;
+      margin: 0 -11px;
+      padding: 0 23px;
+      max-height: 78vh;
+      overflow: unset;
+      -webkit-overflow-scrolling: touch;
+  }
+  }
+
+  .addempdialog {
+ 
+    .mat-dialog-container {
+        padding: 0px;
+        overflow: hidden;
+       
+    }
+
+    .mat-dialog-content {
+      display: block;
+      max-height: initial;
+      overflow: unset !important;
+      -webkit-overflow-scrolling: touch;
+  }
+  }
+
+
+  
+  .no-data {
+    text-align: center;
+    padding: 2rem;
+  }

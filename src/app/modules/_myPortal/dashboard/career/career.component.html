@@ -1,0 +1,56 @@
+
+
+  <section class="banner-h-full d-flex align-items-start  py-4">
+    <div class="container-fluid custom_width">
+      <div class="home">
+
+        <mat-toolbar>
+            <span>Your Job List</span>
+            <span class="example-spacer"></span>
+            <input type="text" placeholder="Search.." name="search" class="sear" (keyup)="filterTable($event)">
+            <button mat-button  aria-label="new job" (click)="openJobDialog(null)">
+                <span>Add New Job</span>
+            </button>
+          </mat-toolbar>
+          <div class="table-responsive-c table-responsive" *ngIf="data.length!=0">
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows  matSort >
+            <ng-container [matColumnDef]="column"  *ngFor="let column of displayedColumns">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{'hide-arrow':column == 'action'}">
+                  {{column=='jobID'?'Job ID':
+                  column=='department'?'Department':
+                  column=='openPosition'?'Position':
+                  column=='location'?'Location':column=='qualification'?'Qualification':column=='keySkillSets'?'Key Skill Sets':
+                  column=='experienceLevel'?'Experience':column=='noOfResources'?'No Of Resources':
+                  column=='salaryRange'?'Salary Range':
+                  column=='jobDescription'?'Job Description':column=='details'?'Details':column=='info'?'Info':''}} </th>
+                <td  mat-cell *matCellDef="let element">
+                  <span *ngIf="element[column]!=''">{{element[column]}}</span>
+                  <span *ngIf="element[column]==''">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger [matMenuTriggerData]="element"><mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="openJobDialog(element)">Update</button>
+                      <button mat-menu-item (click)="openDeleteDialog(element)">Delete</button>
+                    </mat-menu>
+                  </span>
+                </td>
+
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+        <mat-paginator  pageSize=10
+                 showFirstLastButtons
+                 aria-label="career" class="mb-5"></mat-paginator>
+      </div>
+      <div *ngIf="data.length==0" class="no-data">
+        Oops! Data Not Found...
+      </div>
+      </div>
+    </div>
+  </section>
+
+
+

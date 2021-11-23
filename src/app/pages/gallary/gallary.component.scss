@@ -1,0 +1,138 @@
+#container {
+    // padding:2em;
+
+    #list {
+        padding:1em;
+        display:inline-block;
+        background:lightgrey;
+        margin-bottom:10px;
+        margin-right:10px;
+    }
+
+    button {
+        border:none;
+        margin-bottom:20px;
+        padding:10px;
+        background: blueviolet;
+        color: #fff;
+    }
+
+    .col {
+        width:24%;
+        display:inline-block;
+        // padding:40px 0;
+        color:gray;
+    }
+}
+
+
+  
+.padding-main{
+    width: calc(100% - 60px);
+    // height: calc(100% - 60px);
+    margin-bottom: 33px;
+    // background: red;
+    font-size: 22px;
+    position: absolute;
+    text-align: center;
+  }
+
+.effect.effect-one:hover .tab-text::after, .effect.effect-one:hover .tab-text::before {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.effect.effect-one .tab-text::after, .effect.effect-one .tab-text::before, .effect.effect-one img, .effect.effect-one p {
+    -webkit-transition: opacity .35s, -webkit-transform .35s;
+    transition: opacity .35s, transform .35s;
+}
+.effect.effect-one .tab-text::before {
+    top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-top: 2px solid rgba(255, 255, 255, .3);
+    border-bottom: 2px solid rgba(255, 255, 255, .3);
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.effect.effect-one .tab-text::after, .effect.effect-one .tab-text::before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+}
+
+.effect.effect-one:hover .tab-text::after, .effect.effect-one:hover h2, .effect.effect-one:hover img, .effect.effect-one:hover p {
+    -webkit-transition-delay: .15s;
+    transition-delay: .15s;
+}
+.effect.effect-one:hover .tab-text::after, .effect.effect-one:hover .tab-text::before {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.effect.effect-one .tab-text::after, .effect.effect-one .tab-text::before, .effect.effect-one img, .effect.effect-one p {
+    -webkit-transition: opacity .35s, -webkit-transform .35s;
+    transition: opacity .35s, transform .35s;
+}
+.effect.effect-one .tab-text::after {
+    top: 30px;
+    right: 50px;
+    bottom: 30px;
+    left: 50px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+}
+.effect.effect-one .tab-text::after, .effect.effect-one .tab-text::before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+}
+.effect.effect-one:hover img {
+    opacity: .7;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1.1, 1.1);
+}
+
+.tab .effect .tab-text {
+    padding: 2em;
+    /* color: #fff; */
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.effect.effect-one .tab-text::after, .effect.effect-one .tab-text::before, .effect.effect-one img, .effect.effect-one p {
+    -webkit-transition: opacity .35s, -webkit-transform .35s;
+    transition: opacity .35s, transform .35s;
+}
+.effect.effect-one .tab-text::before {
+    top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-top: 2px solid rgba(255, 255, 255, .3);
+    border-bottom: 2px solid rgba(255, 255, 255, .3);
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.effect.effect-one .tab-text::after, .effect.effect-one .tab-text::before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+}

@@ -1,0 +1,105 @@
+// ::ng-deep .mat-horizontal-stepper-header-container {
+//     display: none!important;
+//  }
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.custom-input{
+    height: 2.5rem;
+    font-size: 0.8rem;
+    color: #afb5bb;
+    background-color: #ced4da29;
+    border: 1px solid #ced4da29;
+}
+
+.form-font-size {
+    font-size: 0.8rem;
+}
+
+.custom-select-box{
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 12px;
+    border: none;
+  }
+
+  .mat-radio-button  {  
+    margin-left: 26px;  
+  }  
+
+  .gender-margin{
+      margin-top: 26px;
+      margin-bottom: 26px;
+  }
+
+
+::ng-deep .mat-step-label{
+    min-width: 0px !important;
+}
+
+::ng-deep .mat-stepper-horizontal-line {
+    border-top-width: 12px !important;
+    border-top-style: solid;
+    flex: auto;
+    height: 0px;
+    margin: 0 -24px !important;
+    min-width: 32px;
+}
+
+::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
+    margin-right: 0px !important;
+    flex: none;
+}
+
+::ng-deep .mat-radio-outer-circle {
+    height: 15px !important;
+    width: 15px !important;
+    top: 3px !important;
+    left: 3px !important;
+    border-width: 1px !important;
+}
+::ng-deep .mat-radio-inner-circle{
+    height: 15px !important;
+    width: 15px !important;
+    top: 3px !important;
+    left: 3px !important;
+}
+
+::ng-deep .mat-radio-label {
+    margin-bottom: 0px!important;
+}
+
+::ng-deep .solid-btn {
+    font-weight: 400;
+    color: #fff;
+    background-color: #4567AB;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+  
+  }
+
+::ng-deep .mat-horizontal-stepper-header-container {
+    margin-left: 12rem!important;
+ 
+    margin-right: 12rem!important;
+ 
+}
+
+::ng-deep .mat-card{
+    border-radius: 30px!important;
+}
+

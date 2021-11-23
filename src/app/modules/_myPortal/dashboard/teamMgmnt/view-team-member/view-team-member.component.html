@@ -1,0 +1,136 @@
+<section class="banner-h-full d-flex align-items-start py-4">
+  <div class="container-fluid custom_width">
+    <div class="home">
+
+
+
+      <mat-toolbar>
+        <span>Team member list</span>
+        <span class="example-spacer"></span>
+
+        <button mat-button aria-label="new job" (click)="goToAddTeamMember()">
+          <span>Add New Job</span>
+        </button>
+
+      </mat-toolbar>
+
+
+      <div class="table-responsive-c table-responsive career-table">
+        <div>
+          <table mat-table matSort [dataSource]="dataSource">
+            <ng-container matColumnDef="name">
+              <th class="header amount-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span class="name"> Name</span>
+              </th>
+              <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="designation">
+              <th class="header status-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span class="name">Designation </span>
+              </th>
+              <td mat-cell *matCellDef="let row">{{ row?.designation?.designationName }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="department">
+              <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span class="name">Department</span>
+              </th>
+              <td mat-cell *matCellDef="let row">
+                {{ row?.department?.departmentName }}
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="document">
+              <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span class="name">Document</span>
+              </th>
+              <td mat-cell *matCellDef="let row">
+                {{ row?.document?.fileUrl}}
+                ...
+              </td>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="facebookUrl">
+                <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <span class="name">Facebook Url </span>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                  {{ row.facebookUrl }}
+                </td>
+              </ng-container> -->
+            <!-- <ng-container matColumnDef="tweeterUrl">
+                <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <span class="name">Tweeter url</span>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                  {{ row.tweeterUrl }}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="intsagramUrl">
+                <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <span class="name">Instagram url</span>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                  {{ row.intsagramUrl }}
+                </td>
+              </ng-container> -->
+            <!-- <ng-container matColumnDef="youtubeUrl">
+                <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <span class="name">Youtube url</span>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                  {{ row.youtubeUrl }}
+                </td>
+              </ng-container> -->
+            <ng-container matColumnDef="linkdinUrl">
+              <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span class="name">Linkdin url</span>
+              </th>
+              <td mat-cell *matCellDef="let row">
+                {{ row.linkdinUrl }}
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="info">
+              <th class="header date-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span class="name">Info</span>
+              </th>
+              <td mat-cell *matCellDef="let row">
+                {{ row.info }}
+              </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="state">
+              <th class="header state-column " mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span class="name">Action</span>
+              </th>
+
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button [matMenuTriggerFor]="menu" class="threeDots" id="threeDotsID">
+                  <img src=" assets/img/arrowIcon/moreicon.svg " alt="" srcset="">
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+                  <button mat-menu-item class="editcurrency" (click)="goToDeleteTeammenever(row)">
+                    Delete
+                  </button>
+                  <button mat-menu-item class="editcurrency" (click)="goToEditTeammenever(row)">
+                    Edit
+                  </button>
+                </mat-menu>
+
+              </td>
+
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+          </table>
+
+        </div>
+      </div>
+      <!-- <div *ngIf="dataSource.length==0" class="no-data">
+          Oops! Data Not Found...
+        </div> -->
+    </div>
+  </div>
+</section>

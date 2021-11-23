@@ -1,0 +1,13 @@
+@mixin font-family-20px {
+    font: normal normal 20px/44px "Roboto";
+  }
+
+@mixin font-family-15px {
+    font-family:"Roboto";
+    font-size: 15px;
+}
+
+@mixin font-family-50px {
+    font: normal normal bold 50px/100px "Roboto";
+}
+

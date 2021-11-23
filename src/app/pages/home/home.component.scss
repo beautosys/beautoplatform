@@ -1,0 +1,52 @@
+.viewmore
+{
+    position: relative;
+    right: 15.9em;
+}
+.f-3
+{
+    font-size: 3.5rem;
+    line-height: 1.3;
+}
+.sub-f
+{
+    font-size: 3.2em;
+    margin-top: 5px;
+}
+.ex-p
+{
+    position: absolute;
+    right: 5rem;
+    top: 12rem;
+}
+.morefill{
+    
+    background: #1145A5 0% 0% no-repeat padding-box;
+border: 1px solid #1145A5;
+color: #fff;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+       .f-3 {
+      font-size: 2.5rem;
+      line-height: 1.3;
+  }
+  .sub-f {
+    font-size: 2.2em;
+    margin-top: 5px;
+}
+
+}
+
+@media only screen and (max-width: 479px) {
+
+    .f-3 {
+      font-size: 2.5rem;
+      line-height: 1.3;
+  }
+  .sub-f {
+    font-size: 2.2em;
+    margin-top: 5px;
+}
+}

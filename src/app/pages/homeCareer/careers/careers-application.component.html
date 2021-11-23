@@ -1,0 +1,83 @@
+<div mat-dialog-content class="m-2">
+  <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group pt-1">
+        <input type="text" class="form-control custom-input" id="firstName"
+        placeholder="First Name" formControlName="firstName" required>
+        <div *ngIf="applicationFormControl.firstName.invalid && submitted">
+          <div *ngIf="applicationFormControl.firstName?.errors">
+            <small class="form-text text-danger text-right">Enter your first name</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control custom-input" id="lastName"
+        placeholder="Last Name" formControlName="lastName" required>
+        <div *ngIf="applicationFormControl.lastName.invalid && submitted">
+          <div *ngIf="applicationFormControl.lastName?.errors">
+            <small class="form-text text-danger text-right">Enter your last name</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control custom-input" id="dob" placeholder="Date of Birth"
+                      formControlName="dob" [max]="todayDate" onfocus="(this.type='date')" onblur="(this.type='text')"
+                      required>
+        <!-- <input type="date" class="form-control custom-input" id="dob"
+        placeholder="Date of Birth" formControlName="dob" [max]="todayDate"  required> -->
+        <div *ngIf="applicationFormControl.dob.invalid && submitted">
+          <div *ngIf="applicationFormControl.dob?.errors">
+            <small class="form-text text-danger text-right">Enter your date of birth</small>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+        <input type="email" class="form-control custom-input" id="emailId"
+        placeholder="Email" formControlName="emailId" required>
+        <div *ngIf="applicationFormControl.emailId.invalid && submitted">
+          <div *ngIf="applicationFormControl.emailId?.errors?.required">
+            <small class="form-text text-danger text-right">Enter your email</small>
+          </div>
+          <div *ngIf="applicationFormControl.emailId?.touched && (applicationFormControl.emailId?.errors?.email || applicationFormControl.emailId?.errors?.pattern )">
+            <small class="form-text text-danger text-right">Enter valid email</small>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="number" class="form-control custom-input" id="moblieNumber"
+        placeholder="Moblie Number" formControlName="moblieNumber" required>
+        <div *ngIf="applicationFormControl.moblieNumber.invalid && submitted">
+          <div *ngIf="applicationFormControl.moblieNumber?.errors?.required">
+            <small class="form-text text-danger text-right">Enter your moblie number</small>
+          </div>
+          <div *ngIf="applicationFormControl.moblieNumber.touched && applicationFormControl.moblieNumber?.errors?.pattern">
+            <small class="form-text text-danger text-right">Enter valid moblie number</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="file" class="form-control custom-input" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" id="file" (change)="onFileChange($event)"
+        placeholder="Choose File" formControlName="file" required >
+        <div *ngIf="applicationFormControl.file.invalid && submitted">
+          <div *ngIf="applicationFormControl.file?.errors">
+            <small class="form-text text-danger text-right">upload file</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-4 center">
+        <button type="submit " class="btn solid-btn">Submit</button>
+      </div>
+
+  </form>
+  </div>

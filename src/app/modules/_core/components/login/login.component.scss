@@ -1,0 +1,88 @@
+::placeholder {
+    color: #afb5bb;
+    opacity: 1; /* Firefox */
+  
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #afb5bb;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #afb5bb;
+  }
+  
+.custom-input{
+    height: 2.5rem;
+    font-size: 0.8rem;
+    color: #000000de;
+    background-color: #ced4da29;
+    border: 1px solid #ced4da29;
+}
+
+.form-font-size {
+    font-size: 0.8rem;
+}
+
+.solid-btn {
+    font-weight: 600;
+    color: #fff;
+    background-color: #3e5ca2;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+   
+}
+
+.outline-btn{
+    font-weight: 600;
+    border: 1.5px solid #3e5ca2;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+    padding-top: 0.5rem;
+}
+
+hr {
+    width: 3rem;
+    margin-top: 0.5rem;
+    /* margin-bottom: 1rem; */
+    border: 0;
+    border-top: 2px solid;
+}
+
+.socail-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 1rem;
+   svg {
+    width: 21px;
+    margin-right: 0px;
+   }
+}
+.fb:hover svg path{
+    fill: #2d72f1;
+}
+.tw:hover svg path {
+    fill: #1DA1F2;
+}
+.instagram:hover svg path {
+    fill: #ff3167;
+}
+.youtube:hover svg path {
+    fill: #FF0000;
+}
+.soc{
+  margin-left: 0.5rem;
+}
+
+::ng-deep .red-snackbar {
+    color: white;
+    background: red;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  }

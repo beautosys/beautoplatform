@@ -1,0 +1,27 @@
+::ng-deep .solid-btn {
+    font-weight: 400;
+    color: #fff;
+    background-color: #4567AB;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+  
+  }
+
+  ::ng-deep .outline-btn{
+    font-weight: 400;
+    border: 1.5px solid #3e5ca2;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+}
+
+::ng-deep .blue-snackbar {
+    color: white;
+    background: #1145A5;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  }

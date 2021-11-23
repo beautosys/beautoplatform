@@ -1,0 +1,57 @@
+<section class="container-fluid custom_width">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="heading">
+        <div>Growing to serve </div>
+        <div>Our <span class="leaderLabel"> clients </span></div>
+      </div>
+      <div class="clientlogo row">
+
+        <div class="col-md-4" *ngFor="let cl of clientList">
+          <div class="client-info">
+            <img [src]="cl.file" class="img-fluid" [alt]="cl.client">
+          </div>
+        </div>
+        <!-- <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="client-info">
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="img-r">
+        <img src="assets/img/skills&tools/FE.svg" alt="">
+      </div>
+
+    </div>
+  </div>
+</section>

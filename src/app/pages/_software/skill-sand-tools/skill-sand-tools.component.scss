@@ -1,0 +1,248 @@
+.more-j {
+    display: flex;
+    flex-wrap: wrap;
+
+    .dot-j {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      border: 2px solid #193091;
+      margin: auto;
+    }
+
+    .dot-j-fill {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      border: 2px solid #193091;
+      margin: auto;
+      background-color: #193091;
+    }
+
+    .line-hr {
+      height: 1px;
+      width: 25px;
+      background: #193091;
+      margin-left: 0px;
+      margin-top: 12px;
+      // margin: auto;
+    }
+
+    button {
+      text-align: center;
+      border: none;
+      font-size: 9px;
+      padding: 5px 10px;
+      color: #193091;
+      background: transparent;
+      border: 1px solid;
+      border-radius: 50px;
+    }
+
+    .first {
+      position: relative;
+      top: 18px;
+      left: -6px;
+      display: flex;
+      flex-flow: row;
+    }
+
+  }
+
+  .border-r {
+    border-right: 1px solid rgba(0, 0, 0, .125);
+  }
+
+  // .img {
+  //   margin-top: 6rem;
+  //   width: 2rem;
+  //   width: 2.4rem;
+  // }
+  .home{
+    .title{
+       color: #0F6CB6;
+      font-size: 37px;
+      font-family: 'Roboto-Bold';
+    }
+    .info{
+      font: normal normal normal 20px/30px "Roboto";
+      letter-spacing: 0.75px;
+      color: #9C9C9C;
+      opacity: 1;
+      margin-top: 55px;
+    }
+    strong {
+      display: inline-block;
+      margin: -3px;
+      border-bottom: 7px solid #0093ED;
+      transform: translateY(3px);
+
+    }
+
+    .blueline {
+      background-color: #0093ED;
+
+    }
+    .underline {
+      border-bottom: 3px solid #DEDFE14F;
+      border-radius: 3px;
+
+    }
+  }
+
+  .blueline {
+    width: 11%;
+    margin: 0;
+    background: #000fff;
+    height: 3px;
+    padding: 0;
+    display: block;
+    position: relative;
+    top: 12px;
+    border-radius: 4px;
+  }
+
+  .main-content {
+    /* Subtract 80px from 100vh */
+    padding-top: 5rem;
+    height: calc(100vh - 24vh);
+
+  }
+
+.img{
+    width: calc(34vw);
+}
+
+.spacing{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+@media only screen and (max-width:768px){
+    .img{
+        width: inherit;
+        height: inherit;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    }
+
+
+
+.bg1 {
+  background-image: Url('assets/img/skills&tools/bg1.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -12em 1px;
+    height: 61vh;
+    background-repeat: no-repeat;
+    background-position: -24em -81px;
+    background-size: 78vh;
+    padding: 5em 0px;
+
+}
+
+.bg2 {
+  background-image: Url('assets/img/skills&tools/bg1.svg');
+  height: 61vh;
+  background-repeat: no-repeat;
+  background-position: 85vw -9px;
+  background-size: 58vh;
+
+
+}
+
+.sec-sction{
+  background: #fefefe;
+  padding: 5em 0px;
+  padding-bottom: 15px;
+}
+
+.t-l {
+  text-align: left;
+}
+.l-space {
+
+  margin-left: 15em;
+
+}
+.textdata {
+  color: #9C9C9C;
+  line-height: 2;
+  font-family: "Roboto";
+  margin-top: 30px;
+}
+.right-img {
+  text-align: center;
+  img {
+    width: 100%;
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+
+  .bg1 {
+
+      height: auto;
+  }
+
+  .bg2 {
+    height: auto;
+
+  }
+  .l-space {
+    margin-left: 0;
+}
+.right-img{
+
+ img {
+  width: 100%;
+
+}
+}
+.sec-sction {
+  background: #fefefe;
+  padding: 0 0px;
+
+}
+.skill-order-1{
+order: 1;
+}
+.skill-order-2{
+  order: 2;
+  }
+
+
+  .bg1{
+    background-image: Url('assets/img/skills&tools/bg1.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: -12em 1px;
+      height: auto;
+      background-repeat: no-repeat;
+      background-position: 8em 152px;
+      background-size: 125vh;
+      padding: 0em 14px;
+
+
+
+
+  }
+
+
+  .bg2 {
+    background-image: Url('assets/img/skills&tools/bg1.svg');
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: 85vw -9px;
+    background-size: 58vh;
+
+
+  }
+  .mm-10
+  {
+    margin-bottom: 3em;
+  }
+
+}

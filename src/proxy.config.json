@@ -1,0 +1,8 @@
+{
+  "BeautoWebsiteLogin/candidate/submitJobApplication": {
+    "target": "http://65.1.139.72:8080/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

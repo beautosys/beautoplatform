@@ -1,0 +1,47 @@
+<section class="banner-h-full d-flex align-items-start py-4">
+  <div class="container-fluid custom_width">
+    <div class="home">
+      <mat-toolbar>
+        <span>Candidates Application List</span>
+        <span class="example-spacer"></span>
+<span><input type="text" placeholder="Search.." name="search" class="sear" (keyup)="filterTable($event)"></span>
+      </mat-toolbar>
+      <div class="table-responsive-c table-responsive">
+
+
+
+        <table mat-table [dataSource]="dataSource " multiTemplateDataRows matSort   *ngIf="dataSource.length!=0">
+          <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns ">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header >
+              {{column=='candidate_id'?'Candidate ID':column=='firstName'?'First Name':column=='lastName'?'Last Name':column=='dob'?'DOB':column=='department'?'Department':column=='openPosition'?'Position Nos':column=='emailID'?'Email ID':column=='moblieNumber'?'Moblie Number':column=='jobID'?'Job ID':'Document'}}
+            </th>
+            <td mat-cell *matCellDef="let element ">
+              <span *ngIf="column!='document'">{{element[column]}}</span>
+              <span *ngIf="column=='document'">{{element[column].docName}}</span>
+              <!-- <span *ngIf="element[column]==''">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger [matMenuTriggerData]="element"><mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="openViewDialog(element)">View</button>
+                      <button mat-menu-item (click)="deleteJob(element)">Delete</button>
+                    </mat-menu>
+                  </span>  -->
+            </td>
+
+
+          </ng-container>
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator  pageSize=10 *ngIf="dataSource.length!=0"
+                 showFirstLastButtons
+                 aria-label="jobs" class="mb-5"></mat-paginator>
+      </div>
+      <div *ngIf="dataSource.length==0" class="no-data">
+        Oops! Data Not Found...
+      </div>
+    </div>
+  </div>
+</section>

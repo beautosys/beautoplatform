@@ -1,0 +1,14 @@
+<div class="mangeDeletBox">
+	<h2>Remove member?</h2>
+	<mat-dialog-content>
+		<p>
+			{{message}} <span>{{data.event.name}}</span>
+		</p>
+	</mat-dialog-content>
+<div class="actionBtn">
+	<mat-dialog-actions class="btn">
+		<button mat-raised-button  class="cancel" mat-dialog-close tabindex="-1">{{cancelButtonText}}</button>
+		<button mat-raised-button  class="submit"  (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
+		</mat-dialog-actions>
+	</div>
+	</div>

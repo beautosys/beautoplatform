@@ -1,0 +1,117 @@
+
+<div > 
+  <div >
+    <h1 class="addTitle">Add new team memeber</h1>
+  </div>
+  <hr>
+  <form [formGroup]="addTeamMember"  class="form-horizontal" >
+       <div class="row">
+     <div class="col-md-6">
+        <div class="form-group">
+
+        
+      
+            <input class="form-control custom-input" id="focusedInput" type="text" value="Employee Id" 
+            formControlName="empidID" placeholder="Employee Id">
+    
+        
+        </div>
+        <div class="form-group">
+    
+            <input class="form-control custom-input" id="focusedInput" type="text" value="Name" formControlName="name"
+            placeholder="Name">
+      
+        </div>
+        
+        <div class="formgroup">
+     
+         
+            <mat-select panelClass="mat-select-custom-color" id="country" formControlName="designation" 
+            placeholder="Select designation" disableOptionCentering >
+
+            <mat-option>
+                HR
+        </mat-option>
+          </mat-select>
+      
+        
+        </div>
+        <div class="form-group">
+       
+
+            <select  class="fform-control custom-input custom-select-box" formControlName="department">
+              <option value="HR Department">HR</option>
+            </select>
+       
+        </div>
+       
+         
+          <div class="form-group">
+       
+              <input class="form-control custom-input" id="focusedInput" type="text" value="facebookUrl" 
+              formControlName="facebookUrl" placeholder="Facebook url">
+           
+            </div>
+            <div class="form-group">
+            
+                <input class="form-control custom-input" id="focusedInput" type="text" value="tweeterUrl" 
+                formControlName="tweeterUrl" placeholder="Tweeter url">
+             
+              </div>
+        <div class="form-group">
+        
+            <input class="form-control custom-input" id="focusedInput" type="text" value="intagramUrl" 
+            formControlName="intagramUrl" placeholder="Instagram url">
+        
+        </div>
+      
+      
+        
+         
+            
+     </div>
+     <div class="col-md-6">
+      <div class="form-group">
+      
+          <input class="form-control custom-input" id="focusedInput" type="text" value="department" formControlName="youtubeUrl"
+          placeholder="Youtube url">
+      
+        </div>
+        <div class="form-group">
+      
+            <input class="form-control custom-input" id="focusedInput" type="text" value="department" formControlName="linkdinUrl"
+            placeholder=" Linkdin url">
+         
+          </div>
+      <div class="form-group">
+    
+          <input class="form-control custom-input" id="focusedInput" type="text" value="department" formControlName="info" 
+          placeholder="Info">
+  
+        </div>
+        <div class="form-group">
+          <div class=" fileOutline">
+          <div>
+            <div class="file-upload-button">
+             <p> UPLOAD IMAGE
+              <input type="file" name="files" accept="image/*" (change)="onFileChanged($event)"></p>
+            </div>
+          </div>
+          <div>
+            <span class="file-info">{{ profileImgUrl.name }}</span>
+
+          </div>
+          </div>
+        
+        </div>
+      
+     </div>
+    </div>
+
+    <div class="center">
+
+      <button type="submit" class="btn solid-btn-t" (click)="onAddTeamMember()">Submit</button>
+    </div>
+
+    </form>
+  </div>

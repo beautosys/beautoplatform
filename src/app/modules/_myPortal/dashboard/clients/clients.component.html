@@ -1,0 +1,54 @@
+<section class="banner-h-full d-flex align-items-start  py-4">
+  <div class="container-fluid custom_width">
+    <div class="home">
+
+      <mat-toolbar>
+        <span>Your Clients List</span>
+        <span class="example-spacer"></span>
+
+        <button mat-button aria-label="new client" (click)="openClientDialog(null)">
+          <span>Add New Client</span>
+        </button>
+
+      </mat-toolbar>
+      <div class="table-responsive-c table-responsive" *ngIf="data.length!=0">
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
+          <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column=='id'?'ID':column=='clientName'?'Client
+              Name':column=='director_1'?'Director-1':column=='director_2'?'Director-2':column=='contactPerson'?'Contact
+              Person':column=='contactPersonEmailId'?'Contact Person Email':column=='contactPersonRole'?'Contact Person
+              Role':column=='secondaryContactPerson'?'Secondary Contact
+              Person':column=='secondaryContactPersonEmailid'?'Secondary Contact Person
+              Email':column=='secondaryContactPersonRole'?'Secondary Contact Person
+              Role':column=='address'?'Address':column=='country'?'Country':column=='phoneNo'?'Contact
+              No':column=='description'?'Description':column=='clientStatus'?'Client
+              Status':column=='displaystatus'?'Display Status':column=='document'?'Logo': ''}} </th>
+            <td mat-cell *matCellDef="let element">
+              <span *ngIf="column!='document' ">{{element[column]}}</span>
+              <span *ngIf="column=='document' "><img [src]="element[column].fileUrl" width="50" height="50"></span>
+
+              <span *ngIf="column!='displaystatus' && element[column]==''">
+                <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger [matMenuTriggerData]="element">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="openClientDialog(element)">Update</button>
+                  <button mat-menu-item (click)="openDeleteDialog(element)">Delete</button>
+                </mat-menu>
+              </span>
+            </td>
+
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+        <mat-paginator pageSize=10 showFirstLastButtons aria-label="career" class="mb-5"></mat-paginator>
+      </div>
+      <div *ngIf="data.length==0" class="no-data">
+        Oops! Data Not Found...
+      </div>
+    </div>
+  </div>
+</section>

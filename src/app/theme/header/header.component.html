@@ -1,0 +1,311 @@
+
+<div class="desk-tab">
+<nav class="topHeader">
+  <ul>
+    <li> <a href="/" class="d-flex align-items-center">
+        <img src="assets/img/b-logo.svg" class="logo">
+      </a>
+    </li>
+    <!-- <li > <a class="icont" *ngIf="user.roles[0]=='Admin' || user.roles[0]=='User' || user.roles[0]=='Visitor' || user.roles.length!=0"><img src="assets/img/menu.svg" class="ml-5  toggle "></a> -->
+      <li > <a class="icont"><img src="assets/img/menu.svg" class="ml-5  toggle "></a>
+
+      <div class="mmenu ">
+        <div class="c-cont">
+          <div class="row">
+            <div class="col-md-4" *ngIf="user.roles[0]=='Admin'" (click)="onAdmin()">
+              <ul>
+                <li class="w-100 b-10" >
+                  <div class="d-flex">
+                    <div class="sideicon"> </div>
+                    <div>
+                      <div class="menutitle"> Website Admin</div>
+                      <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul>
+                <li class="w-100 b-10">
+                  <div class="d-flex">
+                    <div class="sideicon"> </div>
+                    <div>
+                      <div class="menutitle"> One Platform</div>
+                      <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul>
+                <li class="w-100 b-10">
+                  <div class="d-flex">
+                    <div class="sideicon"> </div>
+                    <div>
+                      <div class="menutitle">E-Commerce</div>
+                      <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4 b-10">
+              <ul>
+                <li class="w-100">
+                  <div class="d-flex">
+                    <div class="sideicon"> </div>
+                    <div>
+                      <div class="menutitle"> Submit Ideas</div>
+                      <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4 b-10">
+              <ul>
+                <li class="w-100">
+                  <div class="d-flex">
+                    <div class="sideicon"> </div>
+                    <div>
+                      <div class="menutitle"> Products for Subscription</div>
+                      <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="col-12 ml-2">
+        <div class="header-title m-0 ">{{title}}</div>
+        <div class="cr-top">
+          <span class="breadcrumb-s pointer" (click)="onHome(start)">{{start}}</span>
+          <app-ng-dynamic-breadcrumb class="b1" [bgColor]="'#fff'" [fontSize]="'13px'" [fontColor]="'#898D90'"
+            [lastLinkColor]="'#0275d8'"></app-ng-dynamic-breadcrumb>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div>
+        <div class="w-100 position-relative"><input type="text" placeholder="Search.." name="search" class="sear"><i
+            class="fa fa-search cl1"></i></div>
+
+      </div>
+    </li>
+    <li>
+
+      <!-- <div *ngIf="user.token=='unknown'">
+        <button mat-menu-item (click)="onUserClick('login')">
+          <mat-icon style="color: darkgreen;">login </mat-icon>
+          <span>Sign In</span>
+        </button>
+      </div> -->
+
+      <span  *ngIf="user.token=='unknown'" class="ml-3" (click)="onUserClick('login')"><i aria-hidden="true" class="fa fa-user-circle-o col12"
+        style="font-size: 27px; margin-top: 5px;"></i></span>
+
+
+      <span *ngIf="user.token!='unknown'" class="ml-3" [matMenuTriggerFor]="menu"><i aria-hidden="true" class="fa fa-user-circle-o col12"
+          style="font-size: 27px; margin-top: 5px;"></i></span>
+
+    </li>
+
+
+  </ul>
+
+</nav>
+
+<mat-menu #menu="matMenu" class="custom">
+  <div *ngIf="user.roles[0]!='Visitor' && user.roles.length!=0" class="red">
+
+    <div mat-menu-item>
+      <div class="f-19">{{user.name}}</div>
+      <div class="sub-r">{{user.roles[0]}}</div>
+    </div>
+    <button mat-menu-item >My Account</button>
+   <button mat-menu-item>Settings</button>
+
+    <hr class="mt-1 mb-1">
+    <button mat-menu-item (click)="onUserClick('logout')">
+      <mat-icon style="color: red;">logout </mat-icon>
+      <span>Logout</span>
+    </button>
+  </div>
+  <div *ngIf="user.roles[0]=='Visitor' || user.roles.length==0">
+    <button mat-menu-item (click)="onUserClick('login')">
+      <mat-icon style="color: darkgreen;">login </mat-icon>
+      <span>Sign In</span>
+    </button>
+  </div>
+
+</mat-menu>
+
+</div>
+
+
+
+<!---end desk-->
+
+<!--moblie on -->
+
+<div class="m-sh">
+  <nav class="topHeader">
+    <ul>
+      <li> <a href="/" class="d-flex align-items-center">
+          <img src="assets/img/b-logo.svg" class="logo">
+        </a>
+      </li>
+      <li>
+        <div class="col-12 ml-2">
+          <div class="header-title m-0 ">{{title}}</div>
+          <div class="cr-top">
+            <span class="breadcrumb-s pointer" (click)="onHome(start)">{{start}}</span>
+            <app-ng-dynamic-breadcrumb class="b1" [bgColor]="'#fff'" [fontSize]="'13px'" [fontColor]="'#898D90'"
+              [lastLinkColor]="'#0275d8'"></app-ng-dynamic-breadcrumb>
+          </div>
+        </div>
+      </li>
+      <!-- <li class="arr"> <a class="icont" *ngIf="user.token!=undefined || user.roles.length!=0"><img src="assets/img/menu.svg" class=" toggle "></a> -->
+        <!-- <li > <a class="icont"><img src="assets/img/menu.svg" class="ml-5  toggle "></a> -->
+          <li class="arr"> <a class="icont" ><img src="assets/img/menu.svg" class=" toggle "></a>
+
+        <div class="mmenu ">
+          <div class="c-cont">
+            <div class="row">
+              <div class="col-md-4" *ngIf="user.roles[0]=='Admin'" (click)="onAdmin()">
+                <ul>
+                  <li class="w-100 b-10" >
+                    <div class="d-flex">
+                      <div class="sideicon"> </div>
+                      <div>
+                        <div class="menutitle"> Website Admin</div>
+                        <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                          industry.</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li class="w-100 b-10">
+                    <div class="d-flex">
+                      <div class="sideicon"> </div>
+                      <div>
+                        <div class="menutitle"> One Platform</div>
+                        <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                          industry.</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li class="w-100 b-10">
+                    <div class="d-flex">
+                      <div class="sideicon"> </div>
+                      <div>
+                        <div class="menutitle">E-Commerce</div>
+                        <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                          industry.</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4 b-10">
+                <ul>
+                  <li class="w-100">
+                    <div class="d-flex">
+                      <div class="sideicon"> </div>
+                      <div>
+                        <div class="menutitle"> Submit Ideas</div>
+                        <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                          industry.</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4 b-10">
+                <ul>
+                  <li class="w-100">
+                    <div class="d-flex">
+                      <div class="sideicon"> </div>
+                      <div>
+                        <div class="menutitle"> Products for Subscription</div>
+                        <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                          industry.</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+    </ul>
+
+  </nav>
+
+
+  <div class="search-user">
+
+      <div>
+        <div class="w-100 position-relative"><input type="text" placeholder="Search.." name="search" class="sear"><i
+            class="fa fa-search cl1"></i></div>
+
+      </div>
+
+    <div>
+
+
+      <span  *ngIf="user.token=='unknown'" class="ml-3" (click)="onUserClick('login')"><i aria-hidden="true" class="fa fa-user-circle-o col12"
+        style="font-size: 27px; margin-top: 5px;"></i></span>
+
+
+      <span *ngIf="user.token!='unknown'" class="ml-3" [matMenuTriggerFor]="menu"><i aria-hidden="true" class="fa fa-user-circle-o col12"
+          style="font-size: 27px; margin-top: 5px;"></i></span>
+
+      </div>
+  </div>
+
+  <mat-menu #menu="matMenu"  class="custom">
+    <div *ngIf="user.token!='unknown'" class="red">
+      <div mat-menu-item>
+        <div class="f-19">{{user.name}}</div>
+        <div class="sub-r">{{user.roles[0]}}</div>
+      </div>
+      <button mat-menu-item >My Account</button>
+     <button mat-menu-item>Settings</button>
+
+      <hr class="mt-1 mb-1">
+      <button mat-menu-item (click)="onUserClick('logout')">
+        <mat-icon style="color: red;">logout </mat-icon>
+        <span>Logout</span>
+      </button>
+    </div>
+
+  </mat-menu>
+
+  </div>
+
+
+

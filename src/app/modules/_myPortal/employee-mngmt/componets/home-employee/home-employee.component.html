@@ -1,0 +1,212 @@
+<section class="banner-h-full d-flex align-items-start  py-4">
+  <div class="container-fluid custom_width">
+    <div class="home">
+      <mat-card>
+        <mat-horizontal-stepper>
+
+          <mat-step>
+            <hr>
+            <form [formGroup]="basicInfoForm" (ngSubmit)="onBasicInfoFormSubmit()">
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="empId" placeholder="Employee ID"
+                      formControlName="empId" required>
+                    <div *ngIf="basicInfoFormControl.empId.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.empId?.errors?.required">
+                        <small class="form-text text-danger text-right">Employee ID required</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="name" placeholder="Name"
+                      formControlName="name" required>
+                    <div *ngIf="basicInfoFormControl.name.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.name?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter employee name</small>
+                      </div>
+                      <div *ngIf="basicInfoFormControl.name?.errors?.pattern">
+                        <small class="form-text text-danger text-right">Enter valid employee name</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="dob" placeholder="Date of Birth"
+                      formControlName="dob" [max]="todayDate" onfocus="(this.type='date')" onblur="(this.type='text')"
+                      required>
+                    <div *ngIf="basicInfoFormControl.dob.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.dob?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter date of birth</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group gender-margin">
+                    <mat-radio-group aria-label="Select an option">
+                      Gender
+                      <mat-radio-button value="mate">Male</mat-radio-button>
+                      <mat-radio-button value="female">Female 2</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="reportingManager"
+                      placeholder="Reporting Manager" formControlName="reportingManager">
+                    <!-- <div *ngIf="basicInfoFormControl.reportingManager.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.reportingManager?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter reporting manager</small>
+                      </div>
+                    </div>  -->
+                  </div>
+                  <div class="form-group dropwon custom-input custom-select-box ">
+                    <mat-select panelClass="mat-select-custom-color" id="status" formControlName="status" required
+                      placeholder="Select status" disableOptionCentering (selectionChange)="onChangeStatus($event)">
+
+                      <mat-option [value]="item" *ngFor="let item of status; let i = index " id="status-options">
+                        {{item}}
+                      </mat-option>
+                    </mat-select>
+                    <div *ngIf="basicInfoFormControl.status.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.status?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter status</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="dateOfJoining"
+                      placeholder="Date of Joining" formControlName="dob" [max]="todayDate" onfocus="(this.type='date')"
+                      onblur="(this.type='text')" required>
+                    <div *ngIf="basicInfoFormControl.dateOfJoining.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.dateOfJoining?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter date of joining</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="probationPeriod"
+                      placeholder="Probation Period" formControlName="probationPeriod" required>
+                    <div *ngIf="basicInfoFormControl.probationPeriod.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.probationPeriod?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter probation period</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="confirmationDate"
+                      placeholder="Confirmation Date" formControlName="confirmationDate" [max]="todayDate"
+                      onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                    <div *ngIf="basicInfoFormControl.confirmationDate.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.confirmationDate?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter confirmation date</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="emailId" placeholder="Email Id"
+                      formControlName="emailId" required>
+                    <div *ngIf="basicInfoFormControl.emailId.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.emailId?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter email Id</small>
+                      </div>
+                      <div *ngIf="basicInfoFormControl.emailId?.errors?.pattern">
+                        <small class="form-text text-danger text-right">Enter valid email Id</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="mobileNo" placeholder="Mobile Number"
+                      formControlName="mobileNo" required>
+                    <div *ngIf="basicInfoFormControl.mobileNo.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.mobileNo?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter mobile number</small>
+                      </div>
+                      <div *ngIf="basicInfoFormControl.mobileNo?.errors?.pattern">
+                        <small class="form-text text-danger text-right">Enter valid mobile number</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="alternateMobileNo"
+                      placeholder="Alternate Mobile Number" formControlName="alternateMobileNo" required>
+                    <div *ngIf="basicInfoFormControl.alternateMobileNo.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.alternateMobileNo?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter alternate mobile number</small>
+                      </div>
+                      <div *ngIf="basicInfoFormControl.mobileNo?.errors?.pattern">
+                        <small class="form-text text-danger text-right">Enter valid alternate mobile number</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="emergencyContactName"
+                      placeholder="Emergency Contact Name" formControlName="emergencyContactName" required>
+                    <div *ngIf="basicInfoFormControl.emergencyContactName.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.emergencyContactName?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter emergency contact name</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="emergencyContactNo"
+                      placeholder="Emergency Contact Number" formControlName="emergencyContactNo" required>
+                    <div *ngIf="basicInfoFormControl.emergencyContactNo.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.emergencyContactNo?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter emergency contact number</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="fatherOrSpouseName"
+                      placeholder="Father/Spouse Name" formControlName="fatherOrSpouseName" required>
+                    <div *ngIf="basicInfoFormControl.fatherOrSpouseName.invalid && submitted">
+                      <div *ngIf="basicInfoFormControl.fatherOrSpouseName?.errors?.required">
+                        <small class="form-text text-danger text-right">Enter father/spouse name</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" float-right">
+                    <button type="submit " class="btn solid-btn" matStepperNext>Next</button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </mat-step>
+
+          <mat-step>
+            <hr>
+            Step 2 Form
+            <div class=" float-right">
+              <button type="submit " class="btn solid-btn" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step>
+            <hr>
+            Step 3 Form
+            <div class=" float-right">
+              <button type="submit " class="btn solid-btn" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step>
+            <hr>
+            Step 4 Form
+            <div class=" float-right">
+              <button type="submit " class="btn solid-btn" matStepperNext>Submit</button>
+            </div>
+          </mat-step>
+
+        </mat-horizontal-stepper>
+      </mat-card>
+
+
+
+    </div>
+  </div>
+</section>

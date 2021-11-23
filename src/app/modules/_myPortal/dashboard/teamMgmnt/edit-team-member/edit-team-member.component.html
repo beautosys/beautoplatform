@@ -1,0 +1,88 @@
+
+<div class="container"> 
+    <form [formGroup]="editTeamMember"  class="form-horizontal" >
+         <div class="row">
+       <div class="col-md-6">
+          <div class="form-group">
+            
+            <div class="col-sm-10">
+              <input class="form-control customInputDesign" id="focusedInput" type="text" formControlName="empidID">
+            </div>
+          
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input class="form-control customInputDesign" id="focusedInput" type="text" formControlName="name">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-10">
+              <select  class="form-control customInputDesign" formControlName="designation">
+                <option value="HR">HR</option>
+              </select>
+            </div>
+          
+          </div>
+          <div class="form-group">
+         
+            <div class="col-sm-10">
+              <select  class="form-control customInputDesign" formControlName="department">
+                <option value="HR Department">HR</option>
+              </select>
+            </div>
+          </div>
+         
+           
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input class="form-control customInputDesign" id="focusedInput" type="text"  formControlName="facebookUrl">
+              </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <input class="form-control customInputDesign" id="focusedInput" type="text"  formControlName="tweeterUrl">
+                </div>
+                </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input class="form-control customInputDesign" id="focusedInput" type="text"  formControlName="intagramUrl">
+            </div>
+          </div>
+        
+        
+          
+           
+              
+       </div>
+       <div class="col-md-6">
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input class="form-control customInputDesign" id="focusedInput" type="text"  formControlName="youtubeUrl">
+          </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input class="form-control customInputDesign" id="focusedInput" type="text" formControlName="linkdinUrl">
+            </div>
+            </div>
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input class="form-control customInputDesign" id="focusedInput" type="text"  formControlName="info">
+          </div>
+          </div>
+        
+       </div>
+      </div>
+      <div class="row" style="display: flex;justify-content: center;">
+        <div class="form-group">
+          <div class="col flex-centered">
+  
+            <button type="submit" class="btn btnprimery" (click)="oneditTeamMember()">Update team memeber</button>
+          </div>
+          </div>
+  
+      </div>
+      </form>
+    </div>
+  

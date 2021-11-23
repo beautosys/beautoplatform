@@ -1,0 +1,61 @@
+.customInputDesign{
+    background: #E6E6E6 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 0.4;
+    height: 50px;
+    }
+    
+    .fileOutline{
+    height: 200px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px dashed #707070;
+    border-radius: 40px;
+    opacity: 1;
+    
+    }
+    
+     button{
+        top: 770px;
+    left: 780px;
+    width: 210px;
+    height: 58px;
+    background: #26579E 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    opacity: 1;
+    color: #FFFFFF;
+    }
+    
+    
+    .file-upload-button {
+        overflow: hidden;
+    margin: 11vh;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    font: normal normal medium 30px/14px Roboto;
+    letter-spacing: 3px;
+    color: #415490;
+    opacity: 1;
+    
+      &::after {
+        content: '⇪';
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    
+      input[type="file"] {
+            font-size: 100px;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+    
+    .file-info {
+      color: #999;
+      font-family: Lato;
+      margin-left: 0.5rem;
+    }

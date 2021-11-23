@@ -1,0 +1,23 @@
+button {
+    background: #26579E;
+    color: white;
+ 
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .scroll-to-top {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      opacity: 0;
+      transition: all .2s ease-in-out;
+  }
+  
+  .show-scroll {
+      opacity: 1;
+  }

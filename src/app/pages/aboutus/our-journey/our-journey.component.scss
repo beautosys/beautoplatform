@@ -1,0 +1,159 @@
+.year{
+  font: 400 15px/24px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  /* margin: 0 0 0px; */
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #2f5acb;
+  font-size: 28px;
+}
+
+.journey-img {
+  width: calc(55vw - ((100vw - 100%)/8));
+}
+
+.count{
+  color: #4688e9;
+  margin-bottom: 3px;
+  font-weight: 500;
+  margin-top: 7px;
+}
+.OurJourneyinfo{
+  color: #969ba1;
+  font-size: 12px;
+}
+.more-j {
+  display: flex;
+  flex-wrap: wrap;
+
+  .dot-j {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    border: 2px solid #193091;
+    margin: auto;
+  }
+
+  .dot-j-fill {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    border: 2px solid #193091;
+    margin: auto;
+    background-color: #3e77e6;
+  }
+
+  .line-hr {
+    height: 1px;
+    width: 25px;
+    background: #3e77e6;
+    margin-left: 0px;
+    margin-top: 12px;
+    // margin: auto;
+  }
+
+  button {
+    text-align: center;
+    border: none;
+    font-size: 10px;
+    padding: 2px 0px;
+    color: #3e77e6;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 48px;
+    width: 55px;
+  }
+
+  .first {
+    position: relative;
+    top: 18px;
+    left: -6px;
+    display: flex;
+    flex-flow: row;
+  }
+
+}
+
+.border-r {
+  border-right: 1px solid rgba(0, 0, 0, .125);
+}
+
+.img {
+  margin-top: 6rem;
+  width: 2rem;
+  width: 2.4rem;
+}
+
+
+.history-tl-container {
+  font-family: "Roboto", sans-serif;
+  width: 50%;
+  margin: auto;
+  display: block;
+  position: relative;
+}
+.history-tl-container ul.tl {
+  margin: 20px 0;
+  padding: 0;
+  display: inline-block;
+}
+.history-tl-container ul.tl li {
+  list-style: none;
+  margin: auto;
+  margin-left: 200px;
+  min-height: 50px;
+  /*background: rgba(255,255,0,0.1);*/
+  border-left: 1px dashed #86d6ff;
+  padding: 0 0 50px 30px;
+  position: relative;
+}
+.history-tl-container ul.tl li:last-child {
+  border-left: 0;
+}
+.history-tl-container ul.tl li::before {
+  position: absolute;
+  left: -18px;
+  top: -5px;
+  content: " ";
+  border: 8px solid rgba(255, 255, 255, 0.74);
+  border-radius: 500%;
+  background: #258cc7;
+  height: 20px;
+  width: 20px;
+  transition: all 500ms ease-in-out;
+}
+.history-tl-container ul.tl li:hover::before {
+  border-color: #258cc7;
+  transition: all 1000ms ease-in-out;
+}
+ul.tl li .item-title {
+}
+ul.tl li .item-detail {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+}
+ul.tl li .timestamp {
+  color: #8d8d8d;
+  position: absolute;
+  width: 100px;
+  left: -50%;
+  text-align: right;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 600px){
+  .creats {
+      margin-top: 1rem;
+  }
+
+  .journey-img {
+    width: 100%;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+}

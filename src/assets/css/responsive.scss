@@ -1,0 +1,77 @@
+
+/************************************************************/
+// Responsive Code
+/************************************************************/
+
+@media screen and (max-width: 768px) {
+  .banner-h-full {
+    min-height: calc(80vh - 40px);
+  }
+    .mobile-width
+     {
+        max-width: 90vw!important;
+        width: 100% !important;
+     }
+  }
+@media screen and (min-width: 768px) {
+  .custom_width {
+      width: 93%;
+      margin-right: 0;
+      margin-top: 5em;
+  }
+  .custom_width_account {
+    width: 95%;
+    // margin-right: 0;
+  }
+
+  }
+  @media screen and (min-width: 992px) {
+      //For Large Laptops
+          .container {
+              width: 962px;
+          }
+        .py-6 {
+          padding-top: 5rem !important;
+          padding-bottom: 5rem !important;
+        }
+      }
+
+      @media screen and (min-width: 1280px) {
+      //For Big TV's (HD Screens)
+          .container {
+              width: 1250px;
+          }
+      }
+
+
+      @media screen and (min-width: 1920px) {
+      //For Projectors or Higher Resolution Screens (Full HD)
+          .container {
+              width: 1890px;
+          }
+      }
+      @media screen and (min-width: 3840px) {
+      //For 4K Displays (Ultra HD)
+          .container {
+              width: 3810px;
+          }
+      }
+
+      @media screen and (max-width:424px){
+
+        .f-3 {
+          font-size: 2.5rem;
+          line-height: 1.3;
+      }
+          .creats {
+            font-size: 3rem;
+          }
+
+          .title-in {
+            font-size: clamp(1.62rem, 2vw, 3rem);
+          }
+
+
+      }
+
+

@@ -1,0 +1,176 @@
+table {
+  width: 100%;
+
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-color: #0000001f;
+  border-left-color: #f8f8f8;
+  border-right-color: #f8f8f8;
+  border-top-color: #f8f8f8;
+  background: #fff;
+  color: #26579E
+}
+
+
+
+
+
+::ng-deep .blue-snackbar {
+  color: white;
+  background: #1145A5;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.sear{
+  width: 100%;
+  border: 1px solid #26579E;
+  border-radius: 20px;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: small;
+}
+
+table.mat-table {
+  // border-spacing: 0;
+
+border: 0px solid #ECECEC61;
+// border-bottom-left-radius: 25px;
+// border-bottom-right-radius: 25px;
+
+}
+
+.mat-column-name {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 200px !important;
+  width: 200px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.mat-column-email {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 350px !important;
+  width: 350px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-contact_no {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 120px !important;
+  width: 120px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-message {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 450px !important;
+  width: 450px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+::ng-deep  .contact-table {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  padding: 10px;
+
+
+.mat-column-action {
+  flex: 0 0 1% !important;
+  width: 1% !important;
+  }
+
+  .mat-cell,.mat-header-cell{
+
+    padding: 5px 6px;
+    border-top: none;
+  }
+
+  // .mat-cell:nth-child(1), .mat-header-cell:nth-child(1) {
+  //   width: 2.5%;
+  // }
+  // .mat-cell:nth-child(2), .mat-header-cell:nth-child(2) {
+  //   width: 15%;
+  // }
+  // .mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {
+  //   width: 25%;
+  // }
+  // .mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {
+  //   width: 20%;
+  // }
+  // .mat-cell:nth-child(5), .mat-header-cell:nth-child(5) {
+  //   width: 35%;
+  // }
+  // .mat-cell:nth-child(6), .mat-header-cell:nth-child(6) {
+  //   width: 2.5%;
+  // }
+
+
+}
+.table-responsive-c {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}

@@ -1,0 +1,88 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.custom-input{
+    height: 3rem;
+    width: 3rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-size: 1rem;
+    color: #afb5bb;
+    background-color: #ced4da29;
+    border: 1px solid #ced4da29;
+}
+
+.form-font-size {
+    font-size: 0.8rem;
+    
+}
+
+.solid-btn {
+    font-weight: 600;
+    color: #fff;
+    background-color: #3e5ca2;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+   
+}
+
+.outline-btn{
+    font-weight: 600;
+    border: 1.5px solid #3e5ca2;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+    padding-top: 0.5rem;
+}
+
+.text-mute{
+
+    color: lightgray;
+}
+
+.resend-on{
+    color:#2c75ff !important;
+    pointer-events:auto;
+    
+}
+
+.resend-off{
+    color:grey !important;
+    pointer-events:none; 
+    
+}
+
+a:not([href]):not([tabindex]) {
+   
+    text-decoration: none;
+}
+
+
+.custom-input-otp{
+    height: 2.5rem;
+    font-size: 0.8rem;
+    color: #afb5bb;
+    background-color: #ced4da29;
+    border: 1px solid #ced4da29;
+}
+
+
+
+

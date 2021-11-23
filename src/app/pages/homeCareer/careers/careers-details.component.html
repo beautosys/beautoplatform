@@ -1,0 +1,52 @@
+
+<div mat-dialog-content>
+  <div class="bgc"> 
+  <div class="row">
+      <div class="col-md-6">
+        <div class="mab-5">
+           <div class="dialog-head-font">{{data.designation}}</div>
+           <div class="dialog-subhead-font">{{data.details}}</div>
+        </div>
+        <div class="mab-5">
+            <div class="dialog-head-font">Work Experience</div>
+            <div class="dialog-subhead-font">{{data.experienceLevel}}</div>
+        </div>
+        <div class="mab-5">
+            <div class="dialog-head-font">Key Skill Sets</div>
+            <div class="dialog-subhead-font">{{data.keySkillSets}}</div>
+        </div>
+        <div class="mab-5">
+            <div class="dialog-head-font">Job Description</div>
+           <div class="dialog-subhead-font">{{data.jobDescription}}</div> 
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mab-5">
+            <div class="dialog-head-font">Qualification</div>
+            <div class="dialog-subhead-font">{{data.qualification}}</div>
+        </div>
+        <div class="mab-5">
+            <div class="dialog-head-font">Department</div>
+            <div class="dialog-subhead-font">{{data.department}}</div> 
+       </div>
+       <div class="mab-5">
+        <div class="dialog-head-font">No. of Resources</div>
+        <div class="dialog-subhead-font">{{data.noOfResources}}</div>
+       </div>
+       <div class="mab-5">
+        <div class="dialog-head-font">Salary Range</div>
+        <div class="dialog-subhead-font">{{data.salaryRange}}</div>
+       </div>
+      </div>
+  </div>
+</div>
+<div mat-dialog-actions class="float-right mr-3">
+    <button type="button" class="btn solid-btn" [mat-dialog-close]="data">Apply Now</button>
+  </div>
+
+</div>
+<!-- <mat-dialog-actions >
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button  cdkFocusInitial>Install</button>
+</mat-dialog-actions> -->
+

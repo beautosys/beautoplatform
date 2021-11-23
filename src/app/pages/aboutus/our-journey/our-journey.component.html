@@ -1,0 +1,179 @@
+<section class="banner-h-full d-flex align-items-start align-items-md-center py-4">
+  <div class="container-fluid custom_width">
+    <div class="home">
+      <div class="row">
+        <div
+          class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 order-sm-2 order-md-2 order-lg-2 order-xl-2 order-xxl-2">
+
+          <img src="assets/img/journey.svg" class="rightimg journey-img " >
+        </div>
+        <div
+          class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5  order-sm-1 order-md-1 order-lg-1 order-xl-1 order-xxl-1  mb-5">
+          <div class="row ">
+            <div class="creats d-block d-lg-inline-block w-100">
+              Beauto
+            </div>
+            <div class="d-flex flex-column justify-content-start sub-title-home">
+              <div class="title-in">Journey
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-9 border-r">
+              <h4 class="text-right year">2021 </h4>
+              <h5 class="text-right count">First panel </h5>
+            </div>
+            <div class="col-3 pl-0">
+              <div class="more-j d-inline-flex justify-content-start">
+                <div class="first">
+                  <div [ngClass]="{'dot-j-fill':firstToggle,'dot-j':!firstToggle}"></div>
+                  <div class="line-hr"></div><button (click)="onMore(1)"> More
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <ng-template [ngIf]='firstToggle'>
+
+              <div class="col-9 text-right OurJourneyinfo border-r">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life <br> accusamus terry richardson ad squid. <br> 3 wolf
+                moon officia aute, non cupidatat  skateboard dolor brunch.
+
+              </div>
+            </ng-template>
+          </div>
+
+          <div class="row ">
+            <div class="col-9 pt-4 border-r">
+              <h4 class="text-right year">2020 </h4>
+              <h5 class="text-right count">Second panel </h5>
+            </div>
+            <div class="col-3 pt-4 pl-0">
+              <div class="more-j d-inline-flex justify-content-start">
+                <div class="first">
+                  <div [ngClass]="{'dot-j-fill':secondToggle,'dot-j':!secondToggle}"></div>
+                  <div class="line-hr"></div><button (click)="onMore(2)"> More
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <ng-template [ngIf]='secondToggle'>
+
+              <div class="col-9 text-right border-r OurJourneyinfo">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch.
+
+              </div>
+            </ng-template>
+          </div>
+
+          <div class="row ">
+            <div class="col-9 pt-4 border-r">
+              <h4 class="text-right year">2019 </h4>
+              <h5 class="text-right count">Third panel </h5>
+            </div>
+            <div class="col-3  pt-4 pl-0">
+              <div class="more-j d-inline-flex justify-content-start">
+                <div class="first">
+                  <div [ngClass]="{'dot-j-fill':thirdToggle,'dot-j':!thirdToggle}"></div>
+                  <div class="line-hr"></div><button (click)="onMore(3)"> More
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <ng-template [ngIf]='thirdToggle'>
+
+              <div class="col-9 text-right border-r OurJourneyinfo">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch.
+
+              </div>
+            </ng-template>
+          </div>
+
+          <div class="row ">
+            <div class="col-9 pt-4 border-r">
+              <h4 class="text-right year">2018 </h4>
+              <h5 class="text-right count">Fourth panel </h5>
+            </div>
+            <div class="col-3 pt-4 pl-0">
+              <div class="more-j d-inline-flex justify-content-start">
+                <div class="first">
+                  <div [ngClass]="{'dot-j-fill':fourthToggle,'dot-j':!fourthToggle}"></div>
+                  <div class="line-hr"></div><button (click)="onMore(4)"> More
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <ng-template [ngIf]='fourthToggle'>
+
+              <div class="col-9 text-right border-r OurJourneyinfo">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch.
+
+              </div>
+            </ng-template>
+          </div>
+
+          <div class="row ">
+            <div class="col-9 pt-4 border-r">
+              <h4 class="text-right year">2017 </h4>
+              <h5 class="text-right count">Fifth panel </h5>
+            </div>
+            <div class="col-3 pt-4 pl-0">
+              <div class="more-j d-inline-flex justify-content-start">
+                <div class="first">
+                  <div [ngClass]="{'dot-j-fill':fifthToggle,'dot-j':!fifthToggle}"></div>
+                  <div class="line-hr"></div><button (click)="onMore(5)"> More
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <ng-template [ngIf]='fifthToggle'>
+
+              <div class="col-9 text-right border-r OurJourneyinfo">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch.
+
+              </div>
+            </ng-template>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <div class="history-tl-container">
+  <ul class="tl">
+    <li class="tl-item" ng-repeat="item in retailer_history">
+      <div class="timestamp">
+        3rd March 2015<br> 7:00 PM
+      </div>
+      <div class="item-title">Start from Shire</div>
+      <div class="item-detail">Don't forget the ring</div>
+    </li>
+    <li class="tl-item" ng-repeat="item in retailer_history">
+      <div class="timestamp">
+        19th March 2015<br> 3:00 PM
+      </div>
+      <div class="item-title">Kill some Orcs</div>
+      <div class="item-detail">Don't enter the caves!!</div>
+    </li>
+    <li class="tl-item" ng-repeat="item in retailer_history">
+      <div class="timestamp">
+        1st June 2015<br> 7:00 PM
+      </div>
+      <div class="item-title">Throw that goddamn ring in the lava</div>
+      <div class="item-detail">Also, throw that Gollum too</div>
+    </li>
+
+  </ul>
+
+</div> -->

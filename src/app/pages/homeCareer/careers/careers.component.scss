@@ -1,0 +1,228 @@
+img {
+  width: inherit;
+  vertical-align: middle;
+  border-style: none;
+}
+.custom-header .mat-expansion-panel-header-title,
+.custom-header .mat-expansion-panel-header-description {
+flex-basis: 0;
+}
+
+.careers-headers .mat-expansion-panel-header-description {
+  justify-content: space-between;
+
+  // align-items: center;
+}
+
+.mat-expansion-panel-header {
+  height: 80px;
+}
+.heading{
+  text-align: left;
+  font: normal normal bold 50px/100px Roboto;
+  letter-spacing: 0px;
+  color: #26283A;
+  margin: 0px;
+  color: #26283A;
+  margin: 0px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  margin-top: 0px;
+
+ .leaderLabel{
+  color: #26579E;
+ }
+}
+
+.filter{
+  font-family: 'Roboto';
+font-weight: 500;
+font-size: 14px;
+letter-spacing: 0.02em;
+text-align: left;
+color: #0f6cb6;
+
+}
+
+.bgc{
+  // background-image: url('assets/img/career/Intersect.svg');
+  background-repeat: no-repeat;
+  background-position-y: 36vh;
+  background-position-x: -26px;
+}
+
+.imgr{
+  width: 90%;
+  margin: auto;
+}
+
+.d-filter {
+  display: flex;
+  margin-bottom: 22px;
+  }
+
+  .f-iteam{
+    width: 20%;
+  }
+
+  .tage {
+    background: #E6EEFF80 0% 0% no-repeat padding-box;
+    border: 1px solid #0F6CB666;
+    padding: 5px 15px;
+    margin-left: 10px;
+    border-radius: 30px;
+    color: #0F6CB6;
+  }
+
+.mat-icon {
+  margin-top: 0.6rem;
+}
+
+.material-icons {
+  font-size: 30px;
+  color: blue;
+}
+
+::ng-deep mat-expansion-panel-header .mat-expansion-indicator::after {
+
+  content: "+";
+  border: 0;
+  transform: none;
+}
+
+::ng-deep .mat-expansion-panel-header.mat-expanded .mat-expansion-indicator::after {
+  content: "-";
+}
+
+.mat-accordion .mat-expansion-panel {
+  border-radius: 18px;
+  margin-bottom: 2rem;
+}
+
+// .solid-btn {
+//   font-weight: 600;
+//   color: #fff;
+//   background-color: #3e5ca2;
+//   font-size: 0.8rem;
+//   line-height: 1.5;
+//   width: 9rem;
+//   height: 2.5rem;
+//   border-radius: 8.25rem;
+
+// }
+
+.outline-btn{
+  font-weight: 600;
+  border: 1.5px solid #3e5ca2;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 8.25rem;
+  padding: 0px;
+}
+
+.job-details-header{
+  font-size: 40px;
+  line-height: normal;
+  font-weight: 500;
+}
+
+.outline-btn{
+  background: #E6EEFF80 ;
+  font-weight: 400;
+  color: #0F6CB6;
+    border: 1px solid #0F6CB666;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+    width: -webkit-fill-available;
+}
+
+.solid-btn {
+  font-weight: 400;
+  color: #fff;
+  background-color: #4567AB;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  border-radius: 8.25rem;
+
+}
+
+.img{
+  width: 36px;
+  height:36px;;
+}
+
+.head-font{
+  color:  #86888B;
+  font-size: 15px;
+}
+
+.sub-head-font{
+  color:  #86888B;
+  font-size: 10px;
+}
+
+
+// .custom-modalbox {
+//   mat-dialog-container {
+//     .dialog-head-font{
+//       color:  #86888B;
+//       font-size: 20px !important;
+//     }
+
+//     .dialog-subhead-font{
+//       color:  #86888B;
+//       font-size: 13px;
+//     }
+//   }
+// }
+
+// ::ng-deep .mat-dialog-content p {
+//   color:  #86888B;
+//   font-size: 20px;
+//   margin: 0 0 12px;
+// }
+
+::ng-deep .mat-dialog-container {
+  border-radius: 25px !important;
+}
+
+.first-div-font-color{
+  color:#26579E
+}
+
+.filter-font{
+  color:#26579E;
+  font-size: large;
+}
+.d-fl{
+  display: flex;
+}
+.r-m {
+  margin-left: 15px;
+}
+
+.joblist{
+  display: grid;
+  grid-template-columns: 35% 30% 20% 24%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px 8px;
+    margin-bottom: 11px;
+    border-radius: 8px;
+  background-color: #fff;
+}
+.scoll-joblist {
+  height: 42vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+::ng-deep .danger-snackbar {
+  color: white;
+  background: red;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}

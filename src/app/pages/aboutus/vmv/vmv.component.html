@@ -1,0 +1,36 @@
+
+  <section class="banner-h-full d-flex align-items-start align-items-md-center py-4">
+    <div class="container-fluid custom_width">
+      <div class="home">
+        <div class="mvv-main-Box " >
+       
+            <div class="div-4"  *ngFor="let data of data"   >
+
+         
+           
+              <div class="bottombg" >
+
+                <div class="img bgimgc">
+                  <img  src="assets/img/mvv/{{data.img}}" alt="{{data.img}}" >
+                </div>
+                
+                 <div class="mvvInfo">
+                  <p>{{data.info}}</p>
+                </div>
+                <div>
+                  <div class="mvvTitle">
+                    <div class="icon"><img src="assets/img/mvv/{{data.icon}}" alt=""></div>
+                    <div class="title"> {{data.title}}</div>
+                  </div>
+               
+              </div>  
+            </div> 
+            
+            </div>
+        </div>
+
+      
+
+      </div>
+    </div>
+  </section>

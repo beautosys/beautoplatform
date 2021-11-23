@@ -1,0 +1,46 @@
+<section class="banner-h-full d-flex align-items-start py-4">
+  <div class="container-fluid custom_width">
+    <div class="home">
+      <mat-toolbar>
+        <span>Your Messages</span>
+        <span class="example-spacer"></span>
+
+        <span><input type="text" placeholder="Search.." name="search" class="sear" (keyup)="filterTable($event)"></span>
+
+
+      </mat-toolbar>
+      <div class="table-responsive-c table-responsive">
+      <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort  *ngIf="dataSource.length!=0">
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{column=='id'?'ID':column=='name'?'Name':column=='email'?'Email':column=='contact_no'?'Contact No':column=='message'?'Message':''}} </th>
+          <td mat-cell *matCellDef="let element">
+            <span *ngIf="element[column]!=''">{{element[column]}}</span>
+            <span *ngIf="element[column]==''">
+              <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger [matMenuTriggerData]="element">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openViewDialog(element)">View</button>
+                <button mat-menu-item (click)="openDeleteDialog(element)">Delete</button>
+              </mat-menu>
+            </span>
+          </td>
+
+
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator pageSize=10 *ngIf="dataSource.length!=0" showFirstLastButtons aria-label="contact-us" class="mb-5">
+      </mat-paginator>
+      <div *ngIf="dataSource.length==0" class="no-data">
+        Oops! Data Not Found...
+      </div>
+    </div>
+    </div>
+    </div>
+</section>

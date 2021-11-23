@@ -1,0 +1,178 @@
+<div mat-dialog-title class="dialog-header">{{data.teamMemberInfo!=null?'Update Team Member':'Add Team Member'}}</div>
+<hr>
+<div mat-dialog-content class="m-2">
+    <form [formGroup]="addUpdateTeamMemberForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="empidID" placeholder="Employee ID"
+                        formControlName="empidID" maxlength="25" required>
+                    <div *ngIf="addUpdateTeamMemberFormControl.empidID.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.empidID?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter empid ID</small>
+                        </div>
+                        <div *ngIf="addUpdateTeamMemberFormControl.empidID?.errors?.pattern">
+                            <small class="form-text text-danger text-right">Enter valid empid ID</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group dropwon custom-input custom-select-box ">
+                    <mat-select panelClass="mat-select-custom-color" id="designation" formControlName="designation"
+                        required placeholder="Select Designation" disableOptionCentering
+                        (selectionChange)="onChangePosition($event)">
+
+                        <mat-option [value]="item.designationName" *ngFor="let item of desg; let i = index " id="a">
+                            {{item.designationName}}
+                        </mat-option>
+                    </mat-select>
+                    <div *ngIf="addUpdateTeamMemberFormControl.designation.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.designation?.errors?.required">
+                            <small class="form-text text-danger text-right">Select designation name</small>
+                        </div>
+                    </div>
+                </div>
+
+ 
+                <div class="form-group">
+                    <input type="url" class="form-control custom-input" id="linkdinUrl" placeholder="Linkedin Url"
+                        formControlName="linkdinUrl" maxlength="80" required>
+                    <div *ngIf="addUpdateTeamMemberFormControl.linkdinUrl.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.linkdinUrl?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter linkedin url</small>
+                        </div>
+                        <div *ngIf="addUpdateTeamMemberFormControl.linkdinUrl?.errors?.pattern">
+                            <small class="form-text text-danger text-right">Enter valid linkedin url</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="facebookUrl" placeholder="Facebook Url"
+                        formControlName="facebookUrl" maxlength="80" required>
+                    <div *ngIf="addUpdateTeamMemberFormControl.facebookUrl.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.facebookUrl?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter facebook url</small>
+                        </div>
+                        <div *ngIf="addUpdateTeamMemberFormControl.facebookUrl?.errors?.pattern">
+                            <small class="form-text text-danger text-right">Enter valid facebook url</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="url" class="form-control custom-input" id="intsagramUrl" placeholder="Instagram Url"
+                        formControlName="intsagramUrl" maxlength="80" required>
+                    <div *ngIf="addUpdateTeamMemberFormControl.intsagramUrl.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.intsagramUrl?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter instagram url</small>
+                        </div>
+                        <div *ngIf="addUpdateTeamMemberFormControl.intsagramUrl?.errors?.pattern">
+                            <small class="form-text text-danger text-right">Enter valid instagram url</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="tweeterUrl" placeholder="Twitter Url"
+                        formControlName="tweeterUrl" maxlength="80" required>
+                    <div *ngIf="addUpdateTeamMemberFormControl.tweeterUrl.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.tweeterUrl?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter twitter url</small>
+                        </div>
+                        <div *ngIf="addUpdateTeamMemberFormControl.tweeterUrl?.errors?.pattern">
+                            <small class="form-text text-danger text-right">Enter valid twitter url</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="youtubeUrl" placeholder="Youtube Url"
+                        formControlName="youtubeUrl" maxlength="80" required>
+                    <div *ngIf="addUpdateTeamMemberFormControl.youtubeUrl.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.youtubeUrl?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter youtube url</small>
+                        </div>
+                        <div *ngIf="addUpdateTeamMemberFormControl.youtubeUrl?.errors?.pattern">
+                            <small class="form-text text-danger text-right">Enter valid youtube url</small>
+                        </div>
+                    </div>
+
+                </div>
+
+ 
+            </div>
+
+
+            <div class="col-md-6 col-sm-12">
+
+                <div class="form-group">
+                    <input type="text" class="form-control custom-input" id="name" placeholder="Employee Name"
+                        formControlName="name" maxlength="50" required>
+                    <div *ngIf="addUpdateTeamMemberFormControl.name.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.name?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter employee name</small>
+                        </div>
+                        <div *ngIf="addUpdateTeamMemberFormControl.name?.errors?.pattern">
+                            <small class="form-text text-danger text-right">Enter valid employee name</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <div class="form-group dropwon custom-input custom-select-box ">
+                    <mat-select panelClass="mat-select-custom-color" id="department" formControlName="department"
+                        required placeholder="Select Department" disableOptionCentering
+                        (selectionChange)="onChangeDepartment($event)">
+
+                        <mat-option [value]="item.departmentName" *ngFor="let item of dept; let i = index ">
+                            {{item.departmentName}}
+                        </mat-option>
+                    </mat-select>
+                    <div *ngIf="addUpdateTeamMemberFormControl.department.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.department?.errors?.required">
+                            <small class="form-text text-danger text-right">Select department name</small>
+                        </div>
+                    </div>
+                </div>
+ 
+ 
+                <div class="form-group">
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"
+                        #autosize="cdkTextareaAutosize" class="form-control custom-input" id="info" placeholder="Info"
+                        formControlName="info" required></textarea> 
+                    <div *ngIf="addUpdateTeamMemberFormControl.info.invalid && submitted">
+                        <div *ngIf="addUpdateTeamMemberFormControl.info?.errors?.required">
+                            <small class="form-text text-danger text-right">Enter info</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <img *ngIf="imageSrc!=''" id="teamMember" [src]="imageSrc" alt="Member image" width="75" height="100"/>
+                    <input type="file" accept="image/*" class="form-control custom-input" id="document" (change)="onFileChange($event)"
+                    placeholder="Choose File" formControlName="document" required >
+                    <div *ngIf="addUpdateTeamMemberFormControl.document.invalid && submitted">
+                      <div *ngIf="addUpdateTeamMemberFormControl.document?.errors?.required">
+                        <small class="form-text text-danger text-right">Upload file</small>
+                      </div>
+                    </div>
+            
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="mt-4 float-right">
+            <button type="submit " class="btn solid-btn">Submit</button>
+        </div>
+
+    </form>
+</div>

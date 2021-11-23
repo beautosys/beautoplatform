@@ -1,0 +1,220 @@
+<div mat-dialog-title class="dialog-header">{{data!=null?'Update Client':'Add Client'}}</div>
+<hr>
+<div mat-dialog-content class="m-2">
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+ 
+        <div class="form-group">
+            <input type="text" class="form-control custom-input" id="name"
+            placeholder="Client Name" formControlName="name" maxlength="50" required>
+            <div *ngIf="clientFormControl.name.invalid && submitted">
+              <div *ngIf="clientFormControl.name?.errors?.required">
+                <small class="form-text text-danger text-right">Enter client name</small>
+              </div>
+              <div *ngIf="clientFormControl.name?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid client name</small>
+              </div>
+            </div>
+    
+        </div>
+        <div class="form-group">
+          <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"
+            #autosize="cdkTextareaAutosize" class="form-control custom-input" id="address"
+            placeholder="Address" formControlName="address" required></textarea>
+          <div *ngIf="clientFormControl.address.invalid && submitted">
+            <div *ngIf="clientFormControl.address?.errors?.required ">
+              <small class="form-text text-danger text-right">Enter address</small>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <mat-select panelClass="mat-select-custom-color" class="dropwon custom-input custom-select-box " id="country" formControlName="country" required
+            placeholder="Select Country" disableOptionCentering (selectionChange)="onChangeCountry($event)">
+
+            <mat-option [value]="item.name" *ngFor="let item of countries; let i = index " id="a">
+       {{item.name}}
+        </mat-option>
+          </mat-select>
+          <div *ngIf="clientFormControl.country.invalid && submitted">
+            <div *ngIf="clientFormControl.country?.errors?.required">
+              <small class="form-text text-danger text-right">Select your country</small>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="form-group">
+          <input type="tel" class="form-control custom-input" id="phoneNo" placeholder="Contact No"
+            formControlName="phoneNo" maxlength="10" required>
+          <div *ngIf="clientFormControl.phoneNo.invalid && submitted">
+            <div *ngIf="clientFormControl.phoneNo?.errors?.required">
+              <small class="form-text text-danger text-right">Enter contact number</small>
+            </div>
+            <div *ngIf="clientFormControl.phoneNo?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid contact number</small>
+            </div>
+          </div>
+
+        </div>
+ 
+
+        <div class="form-group">
+          <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"
+            #autosize="cdkTextareaAutosize" class="form-control custom-input" id="desc"
+            placeholder="Description" formControlName="desc" maxlength="200" required></textarea>
+          <div *ngIf="clientFormControl.desc.invalid && submitted">
+            <div *ngIf="clientFormControl.desc?.errors?.required">
+              <small class="form-text text-danger text-right">Enter description</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <img *ngIf="imageSrc!=''" id="clientImage" [src]="imageSrc" alt="Client image" width="75" height="100"/>
+          <input type="file" class="form-control custom-input" id="file" (change)="onFileChange($event)"
+          placeholder="Choose File" formControlName="file" required >
+          <div *ngIf="clientFormControl.file.invalid && submitted">
+            <div *ngIf="clientFormControl.file?.errors?.required">
+              <small class="form-text text-danger text-right">Upload Logo</small>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="director_1" placeholder="First Director Name"
+            formControlName="director_1" maxlength="50" required>
+          <div *ngIf="clientFormControl.director_1.invalid && submitted">
+            <div *ngIf="clientFormControl.director_1?.errors?.required">
+              <small class="form-text text-danger text-right">Enter first director name</small>
+            </div>
+            <div *ngIf="clientFormControl.director_1?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid first director name</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="director_2" placeholder="Second Director Name"
+            formControlName="director_2" maxlength="50" required>
+          <div *ngIf="clientFormControl.director_2.invalid && submitted">
+            <div *ngIf="clientFormControl.director_2?.errors?.required">
+              <small class="form-text text-danger text-right">Enter second director name</small>
+            </div>
+            <div *ngIf="clientFormControl.director_2?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid second director name</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="contactPerson" placeholder="Contact Person"
+            formControlName="contactPerson" maxlength="50" required>
+          <div *ngIf="clientFormControl.contactPerson.invalid && submitted">
+            <div *ngIf="clientFormControl.contactPerson?.errors?.required">
+              <small class="form-text text-danger text-right">Enter contact person</small>
+            </div>
+            <div *ngIf="clientFormControl.contactPerson?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid contact person</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="contactPersonRole" placeholder="Contact Person Role"
+            formControlName="contactPersonRole" maxlength="50" required>
+          <div *ngIf="clientFormControl.contactPersonRole.invalid && submitted">
+            <div *ngIf="clientFormControl.contactPersonRole?.errors?.required">
+              <small class="form-text text-danger text-right">Enter contact person role</small>
+            </div>
+            <div *ngIf="clientFormControl.contactPersonRole?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid contact person role</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="contactPersonEmailId" placeholder="Contact Person Email "
+            formControlName="contactPersonEmailId" maxlength="100" required>
+          <div *ngIf="clientFormControl.contactPersonEmailId.invalid && submitted">
+            <div *ngIf="clientFormControl.contactPersonEmailId?.errors?.required">
+              <small class="form-text text-danger text-right">Enter contact person email </small>
+            </div>
+            <div *ngIf="clientFormControl.contactPersonEmailId?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid contact person email </small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="secondaryContactPerson" placeholder="Secondary Contact Person"
+            formControlName="secondaryContactPerson" maxlength="50" required>
+          <div *ngIf="clientFormControl.secondaryContactPerson.invalid && submitted">
+            <div *ngIf="clientFormControl.secondaryContactPerson?.errors?.required">
+              <small class="form-text text-danger text-right">Enter secondary contact person</small>
+            </div>
+            <div *ngIf="clientFormControl.secondaryContactPerson?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid secondary contact person</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="secondaryContactPersonRole" placeholder="Secondary Contact Person Role"
+            formControlName="secondaryContactPersonRole" maxlength="50" required>
+          <div *ngIf="clientFormControl.secondaryContactPersonRole.invalid && submitted">
+            <div *ngIf="clientFormControl.secondaryContactPersonRole?.errors?.required">
+              <small class="form-text text-danger text-right">Enter secondary contact person role</small>
+            </div>
+            <div *ngIf="clientFormControl.secondaryContactPersonRole?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid secondary contact person role</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control custom-input" id="secondaryContactPersonEmailid" placeholder="Secondary Contact Person Email"
+            formControlName="secondaryContactPersonEmailid" maxlength="100" required>
+          <div *ngIf="clientFormControl.secondaryContactPersonEmailid.invalid && submitted">
+            <div *ngIf="clientFormControl.secondaryContactPersonEmailid?.errors?.required">
+              <small class="form-text text-danger text-right">Enter secondary contact person email</small>
+            </div>
+            <div *ngIf="clientFormControl.secondaryContactPersonEmailid?.errors?.pattern">
+              <small class="form-text text-danger text-right">Enter valid secondary contact person email</small>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="data!=null">
+          <div class="col-md-6">
+            <div class="form-group dropwon custom-input custom-select-box ">
+              <mat-select panelClass="mat-select-custom-color" id="clientStatus" formControlName="clientStatus" required
+                placeholder="Select Client Status" disableOptionCentering (selectionChange)="onChangeClientStatus($event)">
+    
+                <mat-option [value]="item" *ngFor="let item of status; let i = index " id="s">
+           {{item }}
+            </mat-option>
+              </mat-select>
+              <div *ngIf="clientFormControl.clientStatus.invalid && submitted">
+                <div *ngIf="clientFormControl.clientStatus?.errors?.required">
+                  <small class="form-text text-danger text-right">Select client status</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <mat-slide-toggle formControlName="displayStatus">Display Status</mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+        
+         
+
+      </div>
+    </div>
+
+
+    <div class="mt-4 float-right">
+      <button type="submit " class="btn solid-btn">Submit</button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,245 @@
+table {
+    width: 100%;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar {
+    background: #fff;
+    color: #26579E
+}
+
+table.mat-table {
+    // border-spacing: 0;
+    
+border: 1px solid #ECECEC61;
+border-bottom-left-radius: 25px;
+border-bottom-right-radius: 25px;
+
+}
+
+
+.mainDiv {
+  margin: 0px 45px;
+}
+.mat-elevation-z1 {
+  display: flex;
+  flex-direction: column;
+  max-height:500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+ box-sizing: border-box;
+  border: 1px solid #DCE0E2;
+  border-radius: 5px;
+
+}
+
+
+table {
+  width: 100%;
+  th {
+    span {
+      opacity: 0.7;
+      color: #061f37;
+      font-family: "Open Sans";
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+  }
+  td {
+    color: #5c6469;
+    font-family: "Open Sans";
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+}
+table.mat-table {
+  border-spacing: 0px !important;
+}
+.mat-cell {
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+.mat-header-cell {
+  background-color: #ffffff;
+  color: #061f37;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  // height: 52px;
+}
+.mat-header-cell:not(:first-child) {
+  padding-left: 0;
+}
+
+/* Style just the text in the header */
+.mat-header-cell span {
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+ 
+  padding: 15px 0px;
+}
+/* Round the top table corners */
+.mat-header-cell:first-child {
+  border-top-left-radius: 5px;
+}
+.mat-header-cell:last-child {
+  border-top-right-radius: 5px;
+}
+
+::ng-deep .mat-sort-header-arrow {
+  position: relative;
+  left: -1.5rem;
+  display: none !important;
+  opacity: 0;
+}
+
+.header {
+  padding: 5px;
+}
+
+.amount-column {
+  width: 15%;
+  padding-right: 3rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.status-column {
+  width: 15%;
+  padding-right: 3rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.date-column {
+  width: 20%;
+  padding-right: 3rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.state-column {
+  width: 1%;
+}
+
+
+.nodatafound {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "open sans";
+}
+
+// table style end
+.first {
+     position: relative;
+    left: 127px;
+    font-size: 13px;
+    //  color: #061f37;
+  cursor: pointer;
+ 
+}
+// }
+.last {
+  font-size: 13px;
+  // color: #061f37;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+}
+        .firstactive{
+         color: rgb(170, 176, 180);
+       }
+       .firstdisable{
+         color: #061f37;
+       }
+       .lasttactive{
+         color: rgb(170, 176, 180);
+       }
+       .lastdisable{
+         color: #061f37;
+       }
+
+
+
+.topButton{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+
+
+.mat-toolbar {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-color: #0000001f;
+  border-left-color: #f8f8f8;
+  border-right-color: #f8f8f8;
+  border-top-color: #f8f8f8;
+  background: #fff;
+  color: #26579E
+}
+
+table.mat-table {
+  // border-spacing: 0;
+
+border: 0px solid #ECECEC61;
+// border-bottom-left-radius: 25px;
+// border-bottom-right-radius: 25px;
+
+}
+
+.career-table {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  padding: 10px;
+
+  
+.mat-column-action {
+  flex: 0 0 1% !important;
+  width: 1% !important;
+  }
+  
+  .mat-cell,.mat-header-cell{
+    white-space: nowrap;
+    padding: 5px 6px;
+    border-top: none;
+  }
+  
+  .mat-cell:nth-child(1), .mat-header-cell:nth-child(1) {
+    width: 200px;
+  }
+  .mat-cell:nth-child(2), .mat-header-cell:nth-child(2) {
+    width: 140px;
+  }
+  .mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {
+    width: 200px;
+  }
+  .mat-cell:nth-child(4), .mat-header-cell:nth-child(4) {
+    width: 120px;
+  }
+  .mat-cell:nth-child(5), .mat-header-cell:nth-child(5) {
+    width: 130px;
+  }
+  .mat-cell:nth-child(6), .mat-header-cell:nth-child(6) {
+    width: 90px;
+  }
+
+  .solid-btn {
+    font-weight: 400;
+    color: #fff;
+    background-color: #4567AB;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+  
+  }
+
+
+}

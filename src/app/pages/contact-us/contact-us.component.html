@@ -1,0 +1,99 @@
+<section class="banner-h-full d-flex align-items-start align-items-md-center py-4">
+    <div class="container-fluid custom_width">
+      <div class="home">
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+            <h2><strong>Let's Talk</strong></h2>
+            <small>We are here to help you. Drop us a message</small>
+            <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()" class="mt-4">
+              <div class="form-group">
+                <input type="text" class="form-control custom-input" id="name" placeholder="Name" formControlName="name"
+                maxlength="60" required>
+                <div *ngIf="contactUsFormControl.name.invalid && submitted">
+                  <div *ngIf="contactUsFormControl.name?.errors?.required">
+                    <small class="form-text text-danger text-right">Enter your name</small>
+                  </div>
+                  <div *ngIf="contactUsFormControl.name?.errors?.pattern">
+                    <small class="form-text text-danger text-right">Enter valid name</small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control custom-input" id="email" placeholder="Email"
+                  formControlName="email" maxlength="60" required>
+                <div *ngIf="contactUsFormControl.email.invalid  && submitted">
+                  <div *ngIf="contactUsFormControl.email?.errors.required">
+                    <small class="form-text text-danger text-right">Enter your email</small>
+                  </div>
+                  <div *ngIf="contactUsFormControl.email.touched && contactUsFormControl.email?.errors.email">
+                      <small class="form-text text-danger text-right">Enter valid email</small>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control custom-input" id="phone" placeholder="Phone"
+                  formControlName="phone" required>
+                <div *ngIf="contactUsFormControl.phone.invalid  && submitted">
+                  <div *ngIf="contactUsFormControl.phone?.errors?.required">
+                    <small class="form-text text-danger text-right">Enter your phone number</small>
+                  </div>
+                  <div *ngIf="contactUsFormControl.phone?.errors?.pattern">
+                    <small class="form-text text-danger text-right">Enter valid phone number</small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control custom-input-textarea" rows="7" id="message" placeholder="Message"
+                  formControlName="message" required></textarea>
+                <div *ngIf="contactUsFormControl.message.invalid  && submitted">
+                  <div *ngIf="contactUsFormControl.message?.errors.required">
+                    <small class="form-text text-danger text-right">Enter your message</small>
+                  </div>
+                </div>
+              </div>
+  
+              <div>
+                <button type="submit " class="btn solid-btn mr-4 mb-5">Send Message</button>
+              </div>
+  
+            </form>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 offset-md-1 offset-lg-1 offset-xl-1 offset-xxl-1">
+            <h2 class="fw-bold">Contact Us</h2>
+            <div class="row mt-4">
+              <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+                <div class="d-flex flex-row bd-highlight">
+                  <!-- <div class="p-2 bd-highlight"><i class="fas fa-phone-volume fa-2x mr-1"></i></div> -->
+                  <div class="p-2 bd-highlight"><mat-icon>phone_in_talk</mat-icon></div>
+                  <div class="p-2 bd-highlight pt-2">+91 895 6959 884</div>
+  
+                </div>
+                <div class="d-flex flex-row bd-highlight mb-3">
+                  <!-- <div class="p-2 bd-highlight"><i class="fas fa-envelope fa-2x mr-1"></i></div> -->
+                  <div class="p-2 bd-highlight"><mat-icon>email</mat-icon></div>
+                  <div class="p-2 bd-highlight pt-2">sales@beautosys.com</div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                  <!-- <div class="p-2 bd-highlight"><i class="fas fa-map-marker-alt fa-2x mr-1"></i></div> -->
+                  <div class="p-2 bd-highlight"><mat-icon>place</mat-icon></div>
+                  <div class="p-2 bd-highlight">SUSHIL, S.No 29, Near Suvidha Angan,
+                    Near Abhinav College Road, Narhe, Pune,
+                    Maharashtra, India - 41104</div>
+                </div>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.8574207829483!2d73.82630111484153!3d18.444781687453148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2959f235f0be1%3A0x2b90d10439800e58!2sBeauto%20Systems!5e0!3m2!1sen!2sin!4v1624446637686!5m2!1sen!2sin"
+                style="    border: 1px solid #86888b;
+                          width: -webkit-fill-available;
+                          height: 14rem;
+                          padding: 1px;" allowfullscreen="" loading="lazy" class="ml-4 mr-4"></iframe>
+              <button type="button " class="btn solid-btn ml-4 mt-3" (click)="getDirection()">Get the Direction</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

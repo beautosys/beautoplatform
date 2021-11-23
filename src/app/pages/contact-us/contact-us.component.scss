@@ -1,0 +1,47 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.custom-input{
+    height: 2.5rem;
+    font-size: 0.8rem;
+    color: #afb5bb;
+    background-color: #ced4da29;
+    border: 1px solid #ced4da29;
+}
+
+.custom-input-textarea{
+    font-size: 0.8rem;
+    color: #afb5bb;
+    background-color: #ced4da29;
+    border: 1px solid #ced4da29;
+}
+
+.form-font-size {
+    font-size: 0.8rem;
+}
+
+.solid-btn {
+    font-weight: 600;
+    color: #fff;
+    background-color: #3e5ca2;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 8.25rem;
+   
+}
+
+::ng-deep .blue-snackbar {
+    color: white;
+    background: #1145A5;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}

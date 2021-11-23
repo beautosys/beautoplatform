@@ -1,0 +1,44 @@
+<section class="container-fluid custom_width">
+
+  <div class="mainFlexDisplay">
+    <div class="maintabFlex">
+      <div class="heading">   
+        <div>Start winning with  </div>
+        <div >Our <span class="leaderLabel"> Ledership </span></div>    
+      </div>
+     <div class="tabs">
+      <div class="Tab1 tab-slider--trigger" *ngFor = "let content of contents"  (click)="viewMode = 'tab'"
+      [ngClass]="{ active: selectedTabData === content }">
+        <a  (click)="SelectedTab(content)" >
+          <div class="profileImgFlex" >
+          <div class="img">  
+            <img src="assets/img/leaders/{{content.img}}" alt="" class="img-responsive"></div>
+          <div class="profileDetails"> 
+             <div class="tabsName">{{content.name}}</div>
+            <div class="desgantion">{{content.role}}</div>
+          </div>
+          </div>
+        </a>
+      </div>
+  </div>
+  </div>
+  <div class="bgimg rimg">
+    <div class="tabContents" >
+    <div  *ngIf="selectedTabData">
+      <div class="" >
+        <div class="info" >
+        <img src="assets/img/leaders/{{selectedTabData.img}}" alt="">
+         <div class="profiledetailswithLink">
+          <div class="leaderName">{{selectedTabData.name}}</div>
+          <div class="leaderRole">{{selectedTabData.role}}</div>
+          <button class="btn btn-default leaderLink">View more</button>
+         </div>
+        </div>
+        <!-- <button class="btn btn-primary">Read more</button> -->
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</section>
+

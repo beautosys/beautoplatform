@@ -1,0 +1,181 @@
+<div mat-dialog-title class="dialog-header">{{data.jobInfo!=null?'Update Job':'Add Job'}}</div>
+<hr>
+<div mat-dialog-content class="m-2">
+    <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+
+          <div class="form-group  " >
+            <mat-select panelClass="mat-select-custom-color" id="department" class="dropwon custom-input custom-select-box" 
+            formControlName="department" required placeholder="Select Department"
+           disableOptionCentering  (selectionChange)="onChangeDepartment($event)">
+
+         <mat-option [value]="item.departmentName" *ngFor="let item of dept; let i = index ">
+       {{item.departmentName}}
+        </mat-option>
+       </mat-select>
+       
+         </div>
+         <div *ngIf="jobFormControl.department.invalid && submitted" class="mb-3" [ngStyle]="{'margin-top':'-0.8rem'}">
+          <div *ngIf="jobFormControl.department?.errors?.required">
+            <small class="form-text text-danger text-right ">Enter department name</small>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <mat-select panelClass="mat-select-custom-color" id="openPosition" class="dropwon custom-input custom-select-box"
+            formControlName="openPosition" required placeholder="Select Position"
+           disableOptionCentering  (selectionChange)="onChangePosition($event)">
+
+         <mat-option [value]="item.designationName" *ngFor="let item of desg; let i = index " id="a">
+       {{item.designationName}}
+        </mat-option>
+       </mat-select>
+       
+         </div>
+         <div *ngIf="jobFormControl.openPosition.invalid && submitted" class="mb-3" [ngClass]="{'custom-select-box-margin':jobFormControl.openPosition.invalid && !jobFormControl.openPosition.touched}">
+          <div *ngIf="jobFormControl.openPosition?.errors?.required">
+            <small class="form-text text-danger text-right">Enter position name</small>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control custom-input" id="location"
+            placeholder="Location" formControlName="location" maxlength="50"  required>
+            <div *ngIf="jobFormControl.location.invalid && submitted">
+              <div *ngIf="jobFormControl.location?.errors?.required">
+                <small class="form-text text-danger text-right">Enter location</small>
+              </div>
+              <div *ngIf="jobFormControl.location?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid location</small>
+              </div>
+            </div>
+    
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control custom-input" id="experienceLevel"
+            placeholder="Experience Level" formControlName="experienceLevel" maxlength="50" required>
+            <div *ngIf="jobFormControl.experienceLevel.invalid && submitted">
+              <div *ngIf="jobFormControl.experienceLevel?.errors?.required">
+                <small class="form-text text-danger text-right">Enter experience level</small>
+              </div>
+              <div *ngIf="jobFormControl.experienceLevel?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid experience level</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="number" class="form-control custom-input" id="noOfResources" 
+            placeholder="No of Resources" formControlName="noOfResources" maxlength="5" required >
+            <div *ngIf="jobFormControl.noOfResources.invalid && submitted">
+              <div *ngIf="jobFormControl.noOfResources?.errors?.required">
+                <small class="form-text text-danger text-right">Enter no of resources</small>
+              </div>
+            </div>
+    
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control custom-input" id="salaryRange" 
+            placeholder="Salary Range" formControlName="salaryRange" maxlength="10" required >
+            <div *ngIf="jobFormControl.salaryRange.invalid && submitted">
+              <div *ngIf="jobFormControl.salaryRange?.errors?.required">
+                <small class="form-text text-danger text-right">Enter salary range</small>
+              </div>
+              <div *ngIf="jobFormControl.salaryRange?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid salary range</small>
+              </div>
+            </div>
+    
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control custom-input" id="qualification" 
+            placeholder="Qualification" formControlName="qualification" maxlength="50" required >
+            <div *ngIf="jobFormControl.qualification.invalid && submitted">
+              <div *ngIf="jobFormControl.qualification?.errors?.required">
+                <small class="form-text text-danger text-right">Enter qualification</small>
+              </div>
+              <div *ngIf="jobFormControl.qualification?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid qualification</small>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <textarea matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="5"
+            maxlength="200"
+            #autosize="cdkTextareaAutosize"  class="form-control custom-input" id="details" placeholder="Position Details" formControlName="details" required></textarea>
+            <div *ngIf="jobFormControl.details.invalid && submitted">
+              <div *ngIf="jobFormControl.details?.errors?.required">
+                <small class="form-text text-danger text-right">Enter details</small>
+              </div>
+              <div *ngIf="jobFormControl.details?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid details</small>
+              </div>
+            </div>
+    
+          </div>
+          <div class="form-group">
+            <textarea matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="5"
+            maxlength="200"
+            #autosize="cdkTextareaAutosize"  class="form-control custom-input" id="keySkillSets" placeholder="Key Skill Sets" formControlName="keySkillSets" required></textarea>
+            <div *ngIf="jobFormControl.keySkillSets.invalid && submitted">
+              <div *ngIf="jobFormControl.keySkillSets?.errors?.required">
+                <small class="form-text text-danger text-right">Enter key skill sets</small>
+              </div>
+              <div *ngIf="jobFormControl.keySkillSets?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid key skill sets</small>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="5"
+            maxlength="200"
+            #autosize="cdkTextareaAutosize"  class="form-control custom-input" id="jobDescription" placeholder="Job Description" formControlName="jobDescription" required></textarea>
+            <div *ngIf="jobFormControl.jobDescription.invalid && submitted">
+              <div *ngIf="jobFormControl.jobDescription?.errors?.required">
+                <small class="form-text text-danger text-right">Enter job description</small>
+              </div>
+              <div *ngIf="jobFormControl.jobDescription?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid job description</small>
+              </div>
+            </div>
+    
+          </div>
+          <div class="form-group">
+            <textarea matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="5"
+            maxlength="200"
+            #autosize="cdkTextareaAutosize"  class="form-control custom-input" id="info" placeholder="Info" formControlName="info" required></textarea>
+            <div *ngIf="jobFormControl.info.invalid && submitted">
+              <div *ngIf="jobFormControl.info?.errors?.required">
+                <small class="form-text text-danger text-right">Enter info</small>
+              </div>
+              <div *ngIf="jobFormControl.info?.errors?.pattern">
+                <small class="form-text text-danger text-right">Enter valid info</small>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+  
+  
+        <div class="mt-4 float-right">
+          <button type="submit " class="btn solid-btn">Submit</button>
+        </div>
+  
+    </form>
+    </div>
+  
