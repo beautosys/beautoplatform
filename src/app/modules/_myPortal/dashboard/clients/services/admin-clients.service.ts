@@ -17,7 +17,7 @@ export class AdminClientsService {
       map((response:AdminClients[])=>{
         for(let i in response){
           response[i].action='';
-          response[i].document.fileUrl=BASE_URL+response[i].document.fileUrl.substring(1);
+          response[i].document.fileUrl=BASE_URL+response[i].document.fileUrl.substring(2);
         }
         return response;
       })

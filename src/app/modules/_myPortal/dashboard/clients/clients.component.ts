@@ -105,7 +105,7 @@ export class ClientsComponent implements OnInit {
        });
 
        deleteJobDialogRef.afterClosed().subscribe(result => {
-        (result);
+
          if(result!=undefined || result!=null ){
          // if(result.code!='401'){
           // this.deleteJob(data)
@@ -158,7 +158,7 @@ export class AdminAddClientsComponent implements OnInit{
 
   ngOnInit():void{
     this.countries=countryCode;
-    console.log(this.data.document)
+
     if(this.data!=null){
 
       this.clientForm.setValue({

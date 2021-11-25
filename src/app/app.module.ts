@@ -21,7 +21,6 @@ import { EmployeeMngmtModule } from './modules/_myPortal/employee-mngmt/employee
 import { AuthInterceptor } from './shared/auth/interceptors/auth.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { PagesModule } from './pages/pages.module';
-import { RouterModule } from '@angular/router';
 
 
 
@@ -32,7 +31,6 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
@@ -47,6 +45,7 @@ import { RouterModule } from '@angular/router';
     CarouselModule,
     NgbModule,
     NgImageSliderModule,
+   
     MatCarouselModule.forRoot()
 
   ],

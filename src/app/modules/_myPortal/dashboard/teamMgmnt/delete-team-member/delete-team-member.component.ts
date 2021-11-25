@@ -18,7 +18,7 @@ export class DeleteTeamMemberComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    ('data',this.data)
+
   }
 
   onConfirmClick(){

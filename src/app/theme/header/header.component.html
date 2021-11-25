@@ -140,13 +140,13 @@
 
     <hr class="mt-1 mb-1">
     <button mat-menu-item (click)="onUserClick('logout')">
-      <mat-icon style="color: red;">logout </mat-icon>
+      <!-- <mat-icon style="color: red;">logout </mat-icon> -->
       <span>Logout</span>
     </button>
   </div>
   <div *ngIf="user.roles[0]=='Visitor' || user.roles.length==0">
     <button mat-menu-item (click)="onUserClick('login')">
-      <mat-icon style="color: darkgreen;">login </mat-icon>
+      <!-- <mat-icon style="color: darkgreen;">login </mat-icon> -->
       <span>Sign In</span>
     </button>
   </div>

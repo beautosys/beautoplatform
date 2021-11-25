@@ -80,7 +80,7 @@ export class ChangePasswordComponent implements OnInit {
           if(response.status=="S200"){
             this.isError=false;
             this.openDialog();
-            this.router.navigate(['/auth/login'])
+            
           }else{
             this.isError=true;
             this.errorMsg=response.message;

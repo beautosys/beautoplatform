@@ -31,7 +31,7 @@ export class ContactUsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      (response);
+
       this.headerTitleService.updatedTitle(response.title);
       this.headerTitleService.updatedStart(response.start);
       if(response.messages.length!=0)
@@ -44,7 +44,6 @@ export class ContactUsComponent implements OnInit {
 
   openDeleteDialog(data:any){
 
-    (data);
        const deleteJobDialogRef = this.dialog.open(DeleteContactUsComponent, {
          width: '40vw',
            maxWidth: '40vw',
@@ -52,7 +51,7 @@ export class ContactUsComponent implements OnInit {
        });
 
        deleteJobDialogRef.afterClosed().subscribe(result => {
-        (result);
+
          if(result!=undefined || result!=null ){
          // if(result.code!='401'){
           // this.deleteJob(data)

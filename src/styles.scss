@@ -113,26 +113,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       -webkit-overflow-scrolling: touch;
   }
   }
-
-  .addempdialog {
- 
-    .mat-dialog-container {
-        padding: 0px;
-        overflow: hidden;
-       
-    }
-
-    .mat-dialog-content {
-      display: block;
-      max-height: initial;
-      overflow: unset !important;
-      -webkit-overflow-scrolling: touch;
-  }
-  }
-
-
-  
-  .no-data {
-    text-align: center;
-    padding: 2rem;
-  }

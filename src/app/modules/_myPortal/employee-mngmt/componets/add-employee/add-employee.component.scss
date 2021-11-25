@@ -12,8 +12,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
-
 .custom-input{
     height: 2.5rem;
     font-size: 0.8rem;
@@ -114,77 +112,3 @@ input[type=number] {
    }
 
 
-.bgblue{
-    background-color: #26579E;
-}
-.imgadd{
-    width: 100%;
-}
-.addempinput{
-height: 33px;
-background: #f5f5f5;
-border-radius: 3px;
-border: none;
-padding: 10px 9px;
-width: 100%;
-font: normal normal normal 13px/70px Roboto;
-color: #ACACAC;
-
-}
-
-.addempop {
-    font: Roboto;
-color: #ACACAC;
-}
-
-.addempinput::placeholder {
-    color: #c9c7c7;
-    opacity: 0.5;
-  }
-
-.topspace{
-
-    margin-top: 20px;
-    padding: 20px;
-
-}
-
-.m-10{
-    margin-top: 10px;
-    
-}
-.m-r-10{
-    margin-right: 1em;
-}
-.al-c{
-    align-items: center;
-}
-.r-space{
-    margin-left: 15px;
-    margin-top: 9px;
-    input {
-        position: relative;
-        top: 2px;
-        margin-left: 10px;
-
-    }
-}
-
-.nextbtn
-{
-
-
-    background: #26579E;
-    border-radius: 30px;
-    padding: 7px 55px;
-    border: none;
-    color: #fff;
-    font-family: 'Roboto';
-    font-weight: 500;
-    margin-top: 15px;
-
-}
-
-.tabsapce-20{
-    margin-top: 20px;
-}

@@ -1,13 +1,83 @@
+<section class="banner-h-full d-flex align-items-start  py-4">
+    <div class="container-fluid custom_width">
+        <div class="home">
+            <mat-toolbar>
+                <span>Filter By:</span>
+                <span class="ml-3">Department :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="dept" disableOptionCentering
+                            [(ngModel)]="selectedDepartment" (selectionChange)="onChangeDept($event)">
 
+                            <mat-option [value]="item" *ngFor="let item of department; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
 
+                    </mat-form-field>
+                </div>
+                <span class="ml-3">Designation :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="designation" disableOptionCentering
+                            [(ngModel)]="selectedDesignation" (selectionChange)="onChangeDes($event)">
+
+                            <mat-option [value]="item" *ngFor="let item of designation; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="ml-3">Location :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="location" disableOptionCentering
+                            [(ngModel)]="selectedLocation" (selectionChange)="onChangeLocation($event)">
+
+                            <mat-option [value]="item" *ngFor="let item of location; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="example-spacer"></span>
+                <button mat-icon-button  aria-label="view_list" (click)="onViewClick('list')">
+                    <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">view_list</mat-icon>
+                  </button>
+                  <button mat-icon-button aria-label="grid_view" (click)="onViewClick('grid')">
+                    <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">
+                        grid_view</mat-icon>
+                  </button>
+                
+                
+                <div class="custom-input custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="month" disableOptionCentering
+                            [(ngModel)]="selectedMonth" (selectionChange)="onChangeMonth($event)">
+
+                            <mat-option [value]="item" *ngFor="let item of months; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+
+                <button mat-raised-button aria-label="new job" (click)="openAddEmployeeDialog(null)">
+                    <mat-icon class="mr-1">add</mat-icon><span>Add Employee</span>
+                </button>
+
+            </mat-toolbar>
             <div class="table-responsive-c table-responsive">
                 <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
 
                     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns; let i=index;">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column=='sr_no'?'SR
-                            NO':column=='employeeNo'?'EMPLOYEE ID':column=='name'?'EMPLOYEE
-                            NAME':column=='gender'?'GENDER':column=='bloodGroup'?'BLOOD GROUP':column=='emailId'?'EMAIL
-                            ID':column=='mobileNumber'?'MOBILE
+                            NO':column=='employeeid'?'EMPLOYEE ID':column=='name'?'EMPLOYEE
+                            NAME':column=='gender'?'GENDER':column=='blood_group'?'BLOOD GROUP':column=='personal_email'?'EMAIL
+                            ID':column=='contact_no'?'MOBILE
                             NUMBER':column=='department'?'DEPARTMENT':column=='designation'?'DESIGNATION':column=='location'?'LOCATION':'ACTION'}}
                         </th>
                         <td mat-cell *matCellDef="let element">
@@ -15,7 +85,8 @@
                             <div class="table-data "
                                 [ngClass]="{'left-border':column=='sr_no', 'left-border-1':element.experienceLevel === '1' && column=='sr_no','left-border-2':element.experienceLevel === '2' && column=='sr_no','left-border-3':element.experienceLevel === '3' && column=='sr_no','left-border-4':element.experienceLevel === '4' && column=='sr_no'}">
                                 <span *ngIf="column=='sr_no'" class="vertical-center pl-2">{{i+1}}</span>
-                                <span *ngIf="column!='sr_no'" class="vertical-center ">{{element[column]}}</span>
+                                <span *ngIf="column!='sr_no'" class="vertical-center">{{element[column]}}</span>
+                                <span *ngIf="column!='sr_no' && column=='department'" class="vertical-center">{{element[column].department}}</span>
                                 <span *ngIf="column=='action'">
                                     <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger
                                         [matMenuTriggerData]="element">
@@ -50,4 +121,6 @@
                     [pageSizeOptions]="[5, 10, 25, 100]">
                 </mat-paginator>
             </div>
-
+        </div>
+    </div>
+</section>
