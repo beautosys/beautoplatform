@@ -4,8 +4,12 @@ import { PagesComponent } from './pages/pages.component';
 import { AuthGuard } from './shared/auth/gaurds/auth.guard';
 import { RoleGuard } from './shared/auth/gaurds/role.guard';
 const routes: Routes = [
-  // { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '',   redirectTo: 'pages', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: 'pages',
+    pathMatch: 'full',
+  },
+
   {
     path: 'pages',
     // component: PagesComponent,
@@ -59,11 +63,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    // RouterModule.forRoot(routes),
-    RouterModule.forRoot(routes, { useHash: true }),
-
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

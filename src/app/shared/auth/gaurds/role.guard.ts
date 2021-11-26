@@ -13,7 +13,7 @@ export class RoleGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       let user=this.userInfoService.getUserInfo();
 
-      if( user.roles[0]!='Admin'){
+      if( user.roles[0]!='Admin' ){
         this.router.navigate(['/auth']);
         return false;
       }

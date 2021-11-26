@@ -53,6 +53,7 @@ export class RegistrationComponent implements OnInit {
     this.userRole = event.value
     if (this.userRole == 'Candidate')
       this.userRole = "candidate";
+      console.log(this.userRole);
     this.selectedRole.push(this.userRole);
   }
 

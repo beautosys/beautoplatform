@@ -52,8 +52,6 @@ export class TeamComponent implements OnInit, AfterViewInit {
   }
 
   openAddUpdateTeamMemberDialog(teamMemberInfo:any){
-
-    (teamMemberInfo);
        const addUpdateTeamMemberJobDialogRef = this.dialog.open(AddUpdateTeamMemberComponent, {
          width: '60vw',
            maxWidth: '60vw',
@@ -94,7 +92,6 @@ export class TeamComponent implements OnInit, AfterViewInit {
 
    openDeleteDialog(data:any){
 
-     (data);
         const deleteJobDialogRef = this.dialog.open(TeamMemberDeleteDialogComponent, {
           width: '40vw',
             maxWidth: '40vw',
@@ -102,7 +99,7 @@ export class TeamComponent implements OnInit, AfterViewInit {
         });
 
         deleteJobDialogRef.afterClosed().subscribe(result => {
-         (result);
+
           if(result!=undefined || result!=null ){
           // if(result.code!='401'){
            // this.deleteJob(data)

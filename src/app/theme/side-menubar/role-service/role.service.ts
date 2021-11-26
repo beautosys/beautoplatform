@@ -23,7 +23,6 @@ export class RoleService {
 
     if(userInfo!=undefined){
       if (userInfo.roles.length!=0) {
-        (userInfo.roles[0]);
         this.updateRole(userInfo.roles[0]);
       }
     }

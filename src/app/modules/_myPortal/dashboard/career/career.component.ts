@@ -135,7 +135,7 @@ export class CareerJobComponent implements OnInit {
     public careerJobDialogRef: MatDialogRef<CareerJobComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.dept = data.dept;
     this.desg = data.desg;
-    (data);
+
     this.jobForm = new FormGroup({
       department: new FormControl('', [Validators.required]),
       openPosition: new FormControl('', [Validators.required]),
@@ -185,7 +185,7 @@ export class CareerJobComponent implements OnInit {
     if (this.jobForm.valid) {
       if (this.data.jobInfo != null) {
         this.jobForm.value['jobID'] = this.data.jobInfo.jobID;
-        (this.jobForm.value);
+
         this.adminCareerService.updateJob(this.jobForm.value).subscribe(
           response => {
             this.careerJobDialogRef.close({ code: response.code, msg: response.message, });
@@ -230,7 +230,7 @@ export class DeleteDialogComponent {
   onYes() {
     this.adminCareerService.deletejob(this.data.jobID).subscribe(
       response => {
-        (response);
+
         this.deleteJobDialogRef.close({ code: response.code, msg: response.errorMessage, });
       }
     );

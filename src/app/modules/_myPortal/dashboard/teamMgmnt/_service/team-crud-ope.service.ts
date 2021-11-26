@@ -20,7 +20,7 @@ export class TeamCrudOpeService {
 
   }
  deleteTeamMember(empidId:any){
-   ;
+
 return this.http.delete(environment.deleteTeamaMember+`?empId=${empidId.empidID}`)
  }
 

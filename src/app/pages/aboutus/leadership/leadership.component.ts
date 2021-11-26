@@ -47,8 +47,8 @@ export class LeadershipComponent implements OnInit {
   })
   }
   SelectedTab(tabSelected:any){
-    this.selectedTabData = tabSelected
+    this.selectedTabData = tabSelected;
 
-(this.currentTab)
+
   }
 }

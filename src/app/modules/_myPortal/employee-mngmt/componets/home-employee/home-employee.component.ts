@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { EmployeeService } from '../../_services/employee.service';
+// import { EmployeeService } from '../../_services/employee.service';
 
 @Component({
   selector: 'app-home-employee',
@@ -10,8 +10,8 @@ import { EmployeeService } from '../../_services/employee.service';
   providers: [DatePipe]
 })
 export class HomeEmployeeComponent implements OnInit {
- employeeList = []
- submitted: boolean = false;
+  employeeList = []
+  submitted: boolean = false;
   basicInfoForm!: FormGroup;
 
   isEditable = false;
@@ -20,7 +20,8 @@ export class HomeEmployeeComponent implements OnInit {
 
   status = ['Confirmed', 'Consultant', 'Probation']
 
-  constructor(private fb: FormBuilder, private datePipe: DatePipe,private employeeService:EmployeeService) {
+  // constructor(private fb: FormBuilder, private datePipe: DatePipe, private employeeService: EmployeeService) {
+    constructor(private fb: FormBuilder, private datePipe: DatePipe) {
     this.todayDate = this.datePipe.transform(this.currentDate, 'yyyy-MM-dd');
   }
 
@@ -43,16 +44,16 @@ export class HomeEmployeeComponent implements OnInit {
       fatherOrSpouseName: new FormControl('', [Validators.required]),
 
     })
-this.getEmployee();
+    this.getEmployee();
   }
 
 
-  getEmployee(){
-    
-    this.employeeService.getEmployeeList().subscribe((getResponce:any)=>{
-      (getResponce);
-      this.employeeList = getResponce[0]
-    })
+  getEmployee() {
+
+    // this.employeeService.getEmployeeList().subscribe((getResponce: any) => {
+
+    //   this.employeeList = getResponce[0]
+    // })
 
   }
 
@@ -65,7 +66,7 @@ this.getEmployee();
   }
 
   onBasicInfoFormSubmit() {
-    this.submitted=true;
+    this.submitted = true;
   }
 
 }

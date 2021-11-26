@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     this.headerTitleService.userData.subscribe(
       data=>{
         this.user=data;
-        (data);
+
       }
     );
     this.headerTitleService.data.subscribe(

@@ -21,8 +21,6 @@ import { SolutionsComponent } from './_software/solutions/solutions.component';
 
 const routes: Routes = [
 
-  // { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '',   redirectTo: 'home', pathMatch: 'full' },
 
   {
     path: '',
@@ -62,7 +60,7 @@ const routes: Routes = [
             }
           ]
         }
-
+    
       },
       {
         path: 'leadership',
@@ -223,16 +221,13 @@ const routes: Routes = [
     ]
   },
 
-
+  
 
 
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes),
-
-  ],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class PagesRoutingModule { }

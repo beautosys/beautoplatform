@@ -8,6 +8,7 @@ import { AddEmployeeComponent } from './componets/add-employee/add-employee.comp
 import { EditEmployeeComponent } from './componets/edit-employee/edit-employee.component';
 import { WelcomeToEmployeePageComponent } from './componets/welcome-to-employee-page/welcome-to-employee-page.component';
 import { GridViewComponent } from './componets/view-employee/grid-view/grid-view.component';
+import { EmployeeResolver } from './services/employee.resolver';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
       {
         path:'employee-list-view',
         component:ListViewComponent,
-
+        resolve:{ employees:EmployeeResolver},
         data: {
           title: 'Employee',
           start:'Employee / ',
@@ -36,9 +37,9 @@ const routes: Routes = [
         }
       },
       {
-        path:'employee',
-        component:WelcomeToEmployeePageComponent,
-
+        path:'employee-grid-view',
+        component:GridViewComponent,
+resolve:{ employees:EmployeeResolver},
         data: {
           title: 'Employee',
           start:'Employee / ',
@@ -50,22 +51,6 @@ const routes: Routes = [
           ]
         }
       },
-      
-      // {
-      //   path:'employee',
-      //   component:ListViewComponent,
-
-      //   data: {
-      //     title: 'Employee',
-      //     start:'Employee / ',
-      //     breadcrumb: [
-      //       {
-      //         label: 'Employee',
-      //         url: ''
-      //       }
-      //     ]
-      //   }
-      // },
       {
         path:'addEmployee',
         component:AddEmployeeComponent,
