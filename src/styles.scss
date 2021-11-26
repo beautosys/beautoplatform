@@ -18,7 +18,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif !important; 
 
 
 
-html, body { height:
+html, body { height:100% }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .owl-carousel .owl-item {
     height: 369px;
@@ -111,4 +111,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       overflow: unset;
       -webkit-overflow-scrolling: touch;
   }
-  }
+}
