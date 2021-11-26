@@ -34,7 +34,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"1"
+      "experienceLevel": "1"
     },
     {
       "employeeNo": "001",
@@ -52,7 +52,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"2"
+      "experienceLevel": "2"
     },
     {
       "employeeNo": "001",
@@ -70,7 +70,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"3"
+      "experienceLevel": "3"
     },
     {
       "employeeNo": "001",
@@ -88,7 +88,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"4"
+      "experienceLevel": "4"
     },
     {
       "employeeNo": "001",
@@ -106,7 +106,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"2"
+      "experienceLevel": "2"
     },
     {
       "employeeNo": "001",
@@ -124,7 +124,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"4"
+      "experienceLevel": "4"
     },
     {
       "employeeNo": "001",
@@ -142,7 +142,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"3"
+      "experienceLevel": "3"
     },
     {
       "employeeNo": "001",
@@ -160,7 +160,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"1"
+      "experienceLevel": "1"
     },
     {
       "employeeNo": "001",
@@ -178,7 +178,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"2"
+      "experienceLevel": "2"
     },
     {
       "employeeNo": "001",
@@ -196,7 +196,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"3"
+      "experienceLevel": "3"
     },
     {
       "employeeNo": "001",
@@ -214,7 +214,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"4"
+      "experienceLevel": "4"
     },
     {
       "employeeNo": "001",
@@ -232,7 +232,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"2"
+      "experienceLevel": "2"
     },
     {
       "employeeNo": "001",
@@ -250,7 +250,7 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"4"
+      "experienceLevel": "4"
     },
     {
       "employeeNo": "001",
@@ -268,24 +268,24 @@ export class GridViewComponent implements OnInit {
       "linkedinUrl": "Lorem Ipsum",
       "skupeUrl": "Lorem Ipsum",
       "facebookUrl": "Lorem Ipsum",
-      "experienceLevel":"3"
+      "experienceLevel": "3"
     }
   ];
-  designation=['All','HR Finance','Jr Java Devloper','Frontend Devloper'];
-  selectedDesignation='All';
-  department=['All','HR','IT','Mech'];
-  selectedDepartment='All';
-  location=['All','Pune','Mumbai','Chennai','Bengleru'];
-  selectedLocation='All';
-  months=['January','February','March','April','May','June','July','August','September','October','November','December']
-  selectedMonth='January';
+  designation = ['All', 'HR Finance', 'Jr Java Devloper', 'Frontend Devloper'];
+  selectedDesignation = 'All';
+  department = ['All', 'HR', 'IT', 'Mech'];
+  selectedDepartment = 'All';
+  location = ['All', 'Pune', 'Mumbai', 'Chennai', 'Bengleru'];
+  selectedLocation = 'All';
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  selectedMonth = 'January';
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top'
 
-  displayedColumns: string[] = ['sr_no', 'employeeNo', 'name', 'gender', 'bloodGroup', 'emailId', 'mobileNumber','department','designation','location', 'action'];
-  dataSource : any;
+  displayedColumns: string[] = ['sr_no', 'employeeNo', 'name', 'gender', 'bloodGroup', 'emailId', 'mobileNumber', 'department', 'designation', 'location', 'action'];
+  dataSource: any;
   sortedData: any;
-  clientName:string='';
+  clientName: string = '';
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -293,11 +293,11 @@ export class GridViewComponent implements OnInit {
 
   pageLength = 100;
   pageSize = 10;
-  
-  recordLength:number=0;
- 
-  constructor(private router:Router, private headerTitleService:HeaderTitleService,private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar,public dialog: MatDialog) { }
-  pageChangeEvent(event:any) {}
+
+  recordLength: number = 0;
+
+  constructor(private router: Router, private headerTitleService: HeaderTitleService, private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar, public dialog: MatDialog) { }
+  pageChangeEvent(event: any) { }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -305,88 +305,91 @@ export class GridViewComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.activatedRoute.data.subscribe((response: any) => {
-    //   this.dataSource =new MatTableDataSource<any>(response.clients); 
-    //   this.sortedData=this.dataSource;
+    this.activatedRoute.data.subscribe((response: any) => {
+      console.log(response);
+      this.employees=[];
+      this.employees=response.employees;
+      this.recordLength = response.employees.length;
+      this.dataSource =new MatTableDataSource<any>(response.employees); 
+      this.sortedData=this.dataSource;
 
-    //   this.headerTitleService.updatedTitle(response.title);
-    //   this.headerTitleService.updatedStart(response.start);
-    // });
-    this.recordLength=this.employees.length;
-    this.dataSource =new MatTableDataSource<any>(this.employees); 
-          this.sortedData=this.dataSource;
+      this.headerTitleService.updatedTitle(response.title);
+      this.headerTitleService.updatedStart(response.start);
+    });
+    // this.recordLength = this.employees.length;
+    // this.dataSource = new MatTableDataSource<any>(this.employees);
+    // this.sortedData = this.dataSource;
 
-      this.headerTitleService.updatedTitle('Employee');
-      this.headerTitleService.updatedStart('Employee /');
+    // this.headerTitleService.updatedTitle('Employee');
+    // this.headerTitleService.updatedStart('Employee /');
   }
 
 
- 
-  openAddEmployeeDialog(data:any){
 
-      const careerJobDialogRef = this.dialog.open(AddEmployeeComponent, {});
-  
-      careerJobDialogRef.afterClosed().subscribe(result => {
-        if(result!=undefined || result!=null){
+  openAddEmployeeDialog(data: any) {
+
+    const careerJobDialogRef = this.dialog.open(AddEmployeeComponent, {});
+
+    careerJobDialogRef.afterClosed().subscribe(result => {
+      if (result != undefined || result != null) {
         // if(result.code!='401'){
-         
+
 
         // }
-        }
-      });
-  
+      }
+    });
+
   }
 
- 
-  openDeleteEmployeeDialog(data:any){
 
-    (data);
-       const deleteJobDialogRef = this.dialog.open(DeleteEmployeeComponent, {
-         width: '40vw',
-           maxWidth: '40vw',
-         data: data
-       });
-   
-       deleteJobDialogRef.afterClosed().subscribe(result => {
-        (result);
-       
-       });
-   
-   }
+  openDeleteEmployeeDialog(data: any) {
 
-   openUpdateEmployeeDialog(data:any){
-    (data);
-    const deleteJobDialogRef = this.dialog.open(EditEmployeeComponent, {
+    const deleteJobDialogRef = this.dialog.open(DeleteEmployeeComponent, {
       width: '40vw',
-        maxWidth: '40vw',
+      maxWidth: '40vw',
       data: data
     });
 
     deleteJobDialogRef.afterClosed().subscribe(result => {
-     (result);
-    
+
+
     });
-   }
 
-   onChangeMonth(e:any){
-    this.selectedMonth=e.value;
-    (this.selectedMonth)
-   }
-
-   onChangeDept(e:any){
-     this.selectedDepartment=e.value;
-   }
-
-   onChangeDes(e:any){
-    this.selectedDesignation=e.value;
   }
 
-  onChangeLocation(e:any){
-    this.selectedLocation=e.value;
+  openUpdateEmployeeDialog(data: any) {
+
+    const deleteJobDialogRef = this.dialog.open(EditEmployeeComponent, {
+      width: '40vw',
+      maxWidth: '40vw',
+      data: data
+    });
+
+    deleteJobDialogRef.afterClosed().subscribe(result => {
+
+
+    });
   }
 
-  onViewClick(type:string){
-    if(type=='list'){
+  onChangeMonth(e: any) {
+    this.selectedMonth = e.value;
+
+  }
+
+  onChangeDept(e: any) {
+    this.selectedDepartment = e.value;
+  }
+
+  onChangeDes(e: any) {
+    this.selectedDesignation = e.value;
+  }
+
+  onChangeLocation(e: any) {
+    this.selectedLocation = e.value;
+  }
+
+  onViewClick(type: string) {
+    if (type == 'list') {
       this.router.navigate(['/employeeMgnmt/employee-list-view']);
     }
   }
