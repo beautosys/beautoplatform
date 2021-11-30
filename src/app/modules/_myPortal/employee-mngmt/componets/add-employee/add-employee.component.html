@@ -1,11 +1,183 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
 <div mat-dialog-content>
-  <p>Add employee</p>
+  <!-- <p>Add employee</p>
   <mat-form-field>
     <input matInput [(ngModel)]="data.animal">
-  </mat-form-field>
+  </mat-form-field> -->
+
+  <div class="row addempop">
+    <div class="col-md-3 bgblue"><img src="assets/img/addemp.svg" class="imgadd"> </div>
+
+    <div class="col-md-9">
+
+      <mat-tab-group class="tabsapce-20">
+        <mat-tab label="Basic Information">
+
+          <section class="topspace">
+            <div class="row">
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="employee id">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Name">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="title">
+              </div>
+
+            </div>
+
+            <div class="row m-10">
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="nick name">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Date of birth">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Birthday">
+              </div>
+            </div>
+
+
+            <div class="row m-10">
+              <div class="col-md-4">
+                <div class="d-flex al-c">
+                  <div class="m-r-10">Gender</div>
+
+                  <mat-radio-group >
+                    <mat-radio-button value="1">Male</mat-radio-button>
+                    <mat-radio-button value="2">Female</mat-radio-button>
+                  </mat-radio-group>
+<!--
+                  <div class="r-space">
+                    <label>Male</label>
+                    <input type="radio" name="gender">
+                  </div>
+                  <div class="r-space">
+                    <label>Female</label>
+                    <input type="radio" name="gender">
+                  </div> -->
+
+
+                </div>
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Blood Group">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Reporting Manager">
+              </div>
+            </div>
+
+            <div class="row m-10">
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Email ID">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Contact Name">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Contact Number">
+              </div>
+              </div>
+              <div class="row m-10">
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Personal Email ID">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Emergency contact name">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Emergency contact number">
+                </div>
+            </div>
+            <div class="row m-10">
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Father's Name">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Marital Status">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="addempinput" placeholder="Marriage Date">
+              </div>
+              </div>
+
+              <div class="row m-10">
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Spouse Name">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Nationality">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Residential Status">
+                </div>
+                </div>
+                <div class="row m-10">
+                  <div class="col-md-4">
+                    <input type="text" class="addempinput" placeholder="Place of Birth">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="addempinput" placeholder="Country of origin">
+
+                  </div>
+                  <div class="col-md-4">
+
+                    <select class="addempinput">
+                      <option value=""> select  Status</option>
+                      <option value="Confirmed">Confirmed</option>
+                      <option value="Consultant">Consultant</option>
+                      <option value="Probation">Probation</option>
+
+                    </select>
+                  </div>
+                  </div>
+
+                  <div class="row m-10">
+                    <div class="col-md-4">
+                      <input type="text" class="addempinput" placeholder="Reigion">
+                    </div>
+                    <div class="col-md-4">
+                      <select class="addempinput">
+                        <option value="">International Employee</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+
+                      <select class="addempinput">
+                        <option value="">Physically challenged</option>
+                        <option value="yes"> YES</option>
+                        <option value="NO">NO</option>
+
+                      </select>
+                    </div>
+                    </div>
+
+                  <div class="col-md-12 center m-10">
+
+                    <button class="nextbtn"> Next </button>
+
+                  </div>
+
+
+          </section>
+
+        </mat-tab>
+        <mat-tab label="Second"> Content 2 </mat-tab>
+
+      </mat-tab-group>
+
+
+
+    </div>
+
+  </div>
 </div>
-<div mat-dialog-actions>
+<!-- <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
-</div>
+</div> -->

@@ -12,12 +12,24 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
+::placeholder {
+    color: #afb5bb;
+    opacity: 1; /* Firefox */
+  
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #afb5bb;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #afb5bb;
+  }
 
 .custom-input{
     height: 2.5rem;
     font-size: 0.8rem;
-    color: #afb5bb;
+    color: #000000de;
     background-color: #ced4da29;
     border: 1px solid #ced4da29;
 }

@@ -1,15 +1,14 @@
-import { DatePipe } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AdminClientsService } from '../../../dashboard/clients/services/admin-clients.service';
 
 @Component({
-  selector: 'app-add-employee',
-  templateUrl: './add-employee.component.html',
-  styleUrls: ['./add-employee.component.scss']
+  selector: 'app-add-update-employee',
+  templateUrl: './add-update-employee.component.html',
+  styleUrls: ['./add-update-employee.component.scss']
 })
-export class AddEmployeeComponent implements OnInit {
+export class AddUpdateEmployeeComponent implements OnInit {
+
   submitted: boolean = false;
   basicInfoForm!: FormGroup;
 
@@ -20,7 +19,7 @@ export class AddEmployeeComponent implements OnInit {
   status = ['Confirmed', 'Consultant', 'Probation'];
 
   constructor(
-    public dialogRef: MatDialogRef<AddEmployeeComponent>,
+    public dialogRef: MatDialogRef<AddUpdateEmployeeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {
@@ -33,6 +32,7 @@ export class AddEmployeeComponent implements OnInit {
 
     this.basicInfoForm = new FormGroup({
       empId: new FormControl('', [Validators.required]),
+      title: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
       dob: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
@@ -51,7 +51,5 @@ export class AddEmployeeComponent implements OnInit {
     })
 
   }
-
-
 
 }

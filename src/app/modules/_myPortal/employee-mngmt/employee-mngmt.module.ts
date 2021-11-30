@@ -16,6 +16,7 @@ import { GridViewComponent } from './componets/view-employee/grid-view/grid-view
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AddEmployeeComponent } from './componets/add-employee/add-employee.component';
 import { WelcomeToEmployeePageComponent } from './componets/welcome-to-employee-page/welcome-to-employee-page.component';
+import { AddUpdateEmployeeComponent } from './componets/add-update-employee/add-update-employee.component';
 
 
 
@@ -28,7 +29,8 @@ import { WelcomeToEmployeePageComponent } from './componets/welcome-to-employee-
     ListViewComponent,
     GridViewComponent,
     AddEmployeeComponent,
-    WelcomeToEmployeePageComponent
+    WelcomeToEmployeePageComponent,
+    AddUpdateEmployeeComponent
   ],
   imports: [
     CommonModule,
