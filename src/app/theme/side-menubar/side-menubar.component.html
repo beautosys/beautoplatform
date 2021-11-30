@@ -1,6 +1,6 @@
 <div class="side-menu">
 
-  <nav class="menu-vc" *ngIf="role!='Admin' && role!='HR Manager'">
+  <nav class="menu-vc" *ngIf="showCommonSideMenu">
     <ul class="mcd-menu">
       <li>
         <img src="assets/img/menuIcons/menu-about.svg" class="imd-fluid">
@@ -103,7 +103,7 @@
     </ul>
   </nav>
 
-  <nav class="menu-vc" *ngIf="role=='Admin'">
+  <nav class="menu-vc" *ngIf="!showCommonSideMenu && role=='Admin'">
     <ul class="mcd-menu">
   <li>
     <img src="assets/img/menuIcons/menu-career.svg" class="imd-fluid">
@@ -147,7 +147,7 @@
 </ul>
 </nav>
 
-<nav class="menu-vc" *ngIf="role=='HR Manager'">
+<nav class="menu-vc" *ngIf="!showCommonSideMenu && role=='HR Manager'">
   <ul class="mcd-menu">
     <li>
       <img src="assets/img/menuIcons/menu-about.svg" class="imd-fluid">

@@ -8,6 +8,7 @@ import { HeaderTitleService } from '../header/header-title.service';
 })
 export class SideMenubarComponent implements OnInit {
   role:string='';
+  showCommonSideMenu:boolean=true;
   constructor(private headerTitleService:HeaderTitleService) { }
 
   ngOnInit(): void {
@@ -16,7 +17,12 @@ export class SideMenubarComponent implements OnInit {
         this.role=response.roles[0];
       }
     );
-    // this.role='ROLE_ADMIN';
+    this.headerTitleService.menuBar.subscribe(
+      response=>{
+        console.log(response);
+        this.showCommonSideMenu=response;
+      }
+    );
   }
 
 

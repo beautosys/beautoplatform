@@ -12,7 +12,7 @@ import { User } from 'src/app/shared/auth/user-info/user';
 export class HeaderComponent implements OnInit {
   title:string='';
   start:string='';
-  isSlidMenuOpen:boolean=false
+  // isCommonMenuOpen:boolean=true;
   user!:User;
   constructor( private router:Router,private userInfoService:UserInfoService,
      private headerTitleService:HeaderTitleService ) { }
@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
     this.headerTitleService.userData.subscribe(
       data=>{
         this.user=data;
-
       }
     );
     this.headerTitleService.data.subscribe(
@@ -36,17 +35,22 @@ export class HeaderComponent implements OnInit {
         this.start=data;
       }
     );
-
+    // this.headerTitleService.menuBar.subscribe(
+    //   data=>{
+    //     this.isCommonMenuOpen=data;
+    //   }
+    // );
   }
 
-  onClose(flag:boolean){
-    this.isSlidMenuOpen=flag;
-  }
+  // onClose(flag:boolean){
+  //   this.isSlidMenuOpen=flag;
+  // }
 
   onUserClick(type:string){
     
     this.headerTitleService.updatedTitle('');
     this.headerTitleService.updatedStart('');
+    this.headerTitleService.updateMenuBar(true);
     localStorage.removeItem('userInfo');
     localStorage.removeItem('tokenValue')
     this.router.navigate(['/auth']);
@@ -60,6 +64,11 @@ export class HeaderComponent implements OnInit {
   onAdmin(){
     // this.headerTitleService.updatedTitle('Team');
     // this.headerTitleService.updatedStart('Dashboard');
+    this.headerTitleService.updateMenuBar(false);
     this.router.navigate(['/dashboard/websAdmin']);
+  }
+
+  onLogo(){
+    this.headerTitleService.updateMenuBar(true);
   }
 }
