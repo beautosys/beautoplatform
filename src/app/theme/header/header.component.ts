@@ -23,7 +23,8 @@ export class HeaderComponent implements OnInit {
     this.headerTitleService.userData.subscribe(
       data=>{
         this.user=data;
-      }
+
+    }
     );
     this.headerTitleService.data.subscribe(
       data=>{
@@ -61,11 +62,19 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  onAdmin(){
-    // this.headerTitleService.updatedTitle('Team');
-    // this.headerTitleService.updatedStart('Dashboard');
-    this.headerTitleService.updateMenuBar(false);
-    this.router.navigate(['/dashboard/websAdmin']);
+  onTopMenu(type:string){
+
+    
+    if(type=='Admin'){
+      this.headerTitleService.updateMenuBar(false);
+      this.router.navigate(['/dashboard/career']);
+    }else if(type=='HR Manager'){
+      this.headerTitleService.updateMenuBar(false);
+      this.router.navigate(['/employeeMgnmt/employee-list-view']);
+    }else{
+      this.headerTitleService.updateMenuBar(true);
+      this.router.navigate(['/dashboard/websAdmin']);
+    }
   }
 
   onLogo(){

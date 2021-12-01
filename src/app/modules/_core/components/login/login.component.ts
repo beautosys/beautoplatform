@@ -56,18 +56,25 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('userInfo', JSON.stringify(responce));
             localStorage.setItem('tokenValue', responce.accessToken);
             this.userInfoService.updateUserInfo(responce);
-            if(responce.roles[0]=='ROLE_ADMIN' || responce.roles[0]=='ROLE_HRMANAGER'){
+            if(responce.roles[0]=='ROLE_ADMIN'){
               this.headerTitleService.updateMenuBar(false);
+              this.router.navigate(['/dashboard/career']);
+            }else if(responce.roles[0]=='ROLE_HRMANAGER'){
+              this.headerTitleService.updateMenuBar(false);
+              this.router.navigate(['/employeeMgnmt/employee-list-view']);
+            }else{
+              this.headerTitleService.updateMenuBar(true);
+              this.router.navigate(['pages/home'])
             }
-            this.router.navigate(['pages/home'])
-            this.careerStateService.data.subscribe((res: any) => {
-              if (res.file != null || res.finalObject != null) {
-                this.router.navigate([res.nav]);
-              } else {
-                this.router.navigate(['pages/home'])
-              }
+            // this.careerStateService.data.subscribe((res: any) => {
+            //   console.log(res)
+            //   if (res.file != null || res.finalObject != null) {
+            //     this.router.navigate([res.nav]);
+            //   } else {
+            //     this.router.navigate(['pages/home'])
+            //   }
 
-            });
+            // });
 
           }
 
