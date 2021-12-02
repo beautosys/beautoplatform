@@ -2,7 +2,7 @@
 <div class="desk-tab">
 <nav class="topHeader">
   <ul>
-    <li> <a href="/" class="d-flex align-items-center">
+    <li> <a href="/" class="d-flex align-items-center" (click)="onLogo()">
         <img src="assets/img/b-logo.svg" class="logo">
       </a>
     </li>
@@ -12,13 +12,27 @@
       <div class="mmenu ">
         <div class="c-cont">
           <div class="row">
-            <div class="col-md-4" *ngIf="user.roles[0]=='Admin'" (click)="onAdmin()">
+            <div class="col-md-4" *ngIf="user.roles[0]=='Admin'" (click)="onTopMenu('Admin')">
               <ul>
                 <li class="w-100 b-10" >
                   <div class="d-flex">
                     <div class="sideicon"> </div>
                     <div>
                       <div class="menutitle"> Website Admin</div>
+                      <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4" *ngIf="user.roles[0]=='HR Manager'" (click)="onTopMenu('HR Manager')">
+              <ul>
+                <li class="w-100 b-10" >
+                  <div class="d-flex">
+                    <div class="sideicon"> </div>
+                    <div>
+                      <div class="menutitle"> HR Manager</div>
                       <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.</div>
                     </div>
@@ -185,13 +199,27 @@
         <div class="mmenu ">
           <div class="c-cont">
             <div class="row">
-              <div class="col-md-4" *ngIf="user.roles[0]=='Admin'" (click)="onAdmin()">
+              <div class="col-md-4" *ngIf="user.roles[0]=='Admin'" (click)="onTopMenu('Admin')">
                 <ul>
                   <li class="w-100 b-10" >
                     <div class="d-flex">
                       <div class="sideicon"> </div>
                       <div>
                         <div class="menutitle"> Website Admin</div>
+                        <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
+                          industry.</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4" *ngIf="user.roles[0]=='HR Manager'" (click)="onTopMenu('HR Manager')">
+                <ul>
+                  <li class="w-100 b-10" >
+                    <div class="d-flex">
+                      <div class="sideicon"> </div>
+                      <div>
+                        <div class="menutitle"> HR Manager</div>
                         <div class="sunmunutitle"> Lorem Ipsum is simply dummy text of the printing and typesetting
                           industry.</div>
                       </div>

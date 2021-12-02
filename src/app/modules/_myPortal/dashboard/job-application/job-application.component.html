@@ -17,7 +17,7 @@
             </th>
             <td mat-cell *matCellDef="let element ">
               <span *ngIf="column!='document'">{{element[column]}}</span>
-              <span *ngIf="column=='document'">{{element[column].docName}}</span>
+              <span *ngIf="column=='document'"><a href="http://65.1.139.72:8080/{{element[column].fileUrl}}" download>{{element[column].docName}}</a></span>
               <!-- <span *ngIf="element[column]==''">
                     <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger [matMenuTriggerData]="element"><mat-icon>more_vert</mat-icon>
                     </button>

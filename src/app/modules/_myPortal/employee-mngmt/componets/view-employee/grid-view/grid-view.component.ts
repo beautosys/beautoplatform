@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
 import { AddEmployeeComponent } from '../../add-employee/add-employee.component';
+import { AddUpdateEmployeeComponent } from '../../add-update-employee/add-update-employee.component';
 import { DeleteEmployeeComponent } from '../../delete-employee/delete-employee.component';
 import { EditEmployeeComponent } from '../../edit-employee/edit-employee.component';
 
@@ -328,7 +329,7 @@ export class GridViewComponent implements OnInit {
 
   openAddEmployeeDialog(data: any) {
 
-    const careerJobDialogRef = this.dialog.open(AddEmployeeComponent, {});
+    const careerJobDialogRef = this.dialog.open(AddUpdateEmployeeComponent, {});
 
     careerJobDialogRef.afterClosed().subscribe(result => {
       if (result != undefined || result != null) {

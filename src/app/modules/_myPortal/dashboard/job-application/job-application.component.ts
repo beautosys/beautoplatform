@@ -31,7 +31,7 @@ export class JobApplicationComponent implements OnInit, AfterViewInit {
         this.headerTitleService.updatedTitle(response.title);
       this.headerTitleService.updatedStart(response.start);
         if(response.applications.length!=0){
-
+          
           this.dataSource=new MatTableDataSource<JobApplication[]>(response.applications);
 
           // this.dataSource.shift();

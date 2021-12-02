@@ -5,9 +5,10 @@ import { User } from 'src/app/shared/auth/user-info/user';
   providedIn: 'root'
 })
 export class HeaderTitleService {
-  title:string='';
-  start:string='';
-  user:User={id:'',name:'',email:'',roles:['ROLE_VISITOR'],token:''}
+  title: string = '';
+  start: string = '';
+  user: User = { id: '', name: '', email: '', roles: ['ROLE_VISITOR'], token: '' };
+  commonMenu:boolean=true;
   private dataSource = new BehaviorSubject<string>(this.title);
   data = this.dataSource.asObservable();
 
@@ -15,20 +16,27 @@ export class HeaderTitleService {
   data1 = this.dataSource1.asObservable();
 
   private userSource = new BehaviorSubject<User>(this.user);
-  
   userData = this.userSource.asObservable();
+
+  private commonMenuSource = new BehaviorSubject<boolean>(this.commonMenu);
+  menuBar = this.commonMenuSource.asObservable();
+
   constructor() { }
-  updatedTitle(data: string){
-   
+  updatedTitle(data: string) {
+
     this.dataSource.next(data);
-    }
+  }
 
-    updatedStart(data1: string){
-      this.dataSource1.next(data1);
-      }
+  updatedStart(data1: string) {
+    this.dataSource1.next(data1);
+  }
 
-      updateUser(userData: User){
-        this.userSource.next(userData);
-        }     
+  updateUser(userData: User) {
+    this.userSource.next(userData);
+  }
+
+  updateMenuBar(menuBar: boolean) {
+    this.commonMenuSource.next(menuBar);
+  }
 }
 

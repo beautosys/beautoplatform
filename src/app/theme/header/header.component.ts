@@ -12,7 +12,7 @@ import { User } from 'src/app/shared/auth/user-info/user';
 export class HeaderComponent implements OnInit {
   title:string='';
   start:string='';
-  isSlidMenuOpen:boolean=false
+  // isCommonMenuOpen:boolean=true;
   user!:User;
   constructor( private router:Router,private userInfoService:UserInfoService,
      private headerTitleService:HeaderTitleService ) { }
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
       data=>{
         this.user=data;
 
-      }
+    }
     );
     this.headerTitleService.data.subscribe(
       data=>{
@@ -36,17 +36,22 @@ export class HeaderComponent implements OnInit {
         this.start=data;
       }
     );
-
+    // this.headerTitleService.menuBar.subscribe(
+    //   data=>{
+    //     this.isCommonMenuOpen=data;
+    //   }
+    // );
   }
 
-  onClose(flag:boolean){
-    this.isSlidMenuOpen=flag;
-  }
+  // onClose(flag:boolean){
+  //   this.isSlidMenuOpen=flag;
+  // }
 
   onUserClick(type:string){
     
     this.headerTitleService.updatedTitle('');
     this.headerTitleService.updatedStart('');
+    this.headerTitleService.updateMenuBar(true);
     localStorage.removeItem('userInfo');
     localStorage.removeItem('tokenValue')
     this.router.navigate(['/auth']);
@@ -57,9 +62,22 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  onAdmin(){
-    // this.headerTitleService.updatedTitle('Team');
-    // this.headerTitleService.updatedStart('Dashboard');
-    this.router.navigate(['/dashboard/websAdmin']);
+  onTopMenu(type:string){
+
+    
+    if(type=='Admin'){
+      this.headerTitleService.updateMenuBar(false);
+      this.router.navigate(['/dashboard/career']);
+    }else if(type=='HR Manager'){
+      this.headerTitleService.updateMenuBar(false);
+      this.router.navigate(['/employeeMgnmt/employee-list-view']);
+    }else{
+      this.headerTitleService.updateMenuBar(true);
+      this.router.navigate(['/dashboard/websAdmin']);
+    }
+  }
+
+  onLogo(){
+    this.headerTitleService.updateMenuBar(true);
   }
 }
