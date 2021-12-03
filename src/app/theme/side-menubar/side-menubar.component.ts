@@ -9,6 +9,7 @@ import { HeaderTitleService } from '../header/header-title.service';
 export class SideMenubarComponent implements OnInit {
   role:string='';
   showCommonSideMenu:boolean=true;
+  isResponsiveMenuOn:boolean=false;
   constructor(private headerTitleService:HeaderTitleService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,7 @@ export class SideMenubarComponent implements OnInit {
     );
     this.headerTitleService.menuBar.subscribe(
       response=>{
-        console.log(response);
+ 
         this.showCommonSideMenu=response;
       }
     );
@@ -28,6 +29,10 @@ export class SideMenubarComponent implements OnInit {
 
   changedTitle(getTitle:any){
 
+  }
+
+  onResponsiveMenu(){
+    this.isResponsiveMenuOn=!this.isResponsiveMenuOn;
   }
 
 }

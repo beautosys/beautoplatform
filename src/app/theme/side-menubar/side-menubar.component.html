@@ -189,4 +189,206 @@
 </div>
 
 
-<button class="tooglebtn">Menu</button>
+<button class="tooglebtn" (click)="onResponsiveMenu()">Menu</button>
+<div [ngClass]="{'responsiveSideMenuOn':isResponsiveMenuOn,'responsiveSideMenuOff':!isResponsiveMenuOn}">
+  <div *ngIf="showCommonSideMenu">
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-about.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/pages/our-journey" (click)="onResponsiveMenu()" class="" (titleChanged)="changedTitle($event)">OUR JOURNEY</a> </li>
+          <li> <a routerLink="/pages/leadership" (click)="onResponsiveMenu()" class="">LEDERSHIP</a> </li>
+          <li> <a routerLink="/pages/mission-vision-value" (click)="onResponsiveMenu()" class="">MISSION VISION VALUES</a></li>
+          <li> <a routerLink="/sister-companies" (click)="onResponsiveMenu()" class="">SISTER COMPANIES</a> </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-team.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/pages/our-team" (click)="onResponsiveMenu()" class="">OUR TEAM</a> </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-software.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/pages/development-process" (click)="onResponsiveMenu()" class="">DEVELOPMENT PROCESS</a> </li>
+          <li> <a routerLink="/pages/skills-and-tools" (click)="onResponsiveMenu()" class="">SKILLS AND TOOLS</a> </li>
+          <li> <a routerLink="/pages/solutions" (click)="onResponsiveMenu()" class="">SOLUTIONS</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-development.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">OFFERING</a> </li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class=""> DEVELOPMENT PROCESS</a> </li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">SKILLS</a></li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">INFRA</a> </li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">CLIENTS</a> </li>
+          <li> <a routerLink="/pages/gallary" (click)="onResponsiveMenu()" class="">GALLARY</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-casestudy.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/software/our-journey" (click)="onResponsiveMenu()" class="">CASE STUDIES</a> </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-career.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/pages/careers" (click)="onResponsiveMenu()" class="">CAREERS</a> </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-gallery.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/pages/gallary" (click)="onResponsiveMenu()" class="">PRODECTS</a> </li>
+          <li> <a routerLink="/pages/gallary" (click)="onResponsiveMenu()" class="">TEAM MEMBERS</a> </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-clients.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/pages/clients" (click)="onResponsiveMenu()" class="">CLIENTS</a> </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-contact-us.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/pages/contact-us" (click)="onResponsiveMenu()" class="">CONTACTS US</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!showCommonSideMenu && role=='Admin'">
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-career.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/dashboard/career" (click)="onResponsiveMenu()" class="">CAREERS</a> </li>
+          <li> <a routerLink="/dashboard/job-application" (click)="onResponsiveMenu()" class="">JOB APPLICATION</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-contact-us.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/dashboard/contact-us" (click)="onResponsiveMenu()" class="">CONTACT US</a> </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-team.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/dashboard/team" (click)="onResponsiveMenu()" class="">TEAM</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-clients.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/dashboard/clients" (click)="onResponsiveMenu()" class="">CLIENTS</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!showCommonSideMenu && role=='HR Manager'">
+    <div class="row" >
+      <div class="col">
+        <ul>
+          <li><img src="assets/img/menuIcons/menu-about.svg" >  </li>
+        </ul>
+      </div>
+      <div class="col-md-auto">
+        <ul>
+          <li> <a routerLink="/employeeMgnmt/employee-list-view" (click)="onResponsiveMenu()">Employee</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

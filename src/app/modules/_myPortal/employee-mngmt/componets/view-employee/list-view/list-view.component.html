@@ -1,6 +1,7 @@
 <section class="banner-h-full d-flex align-items-start  py-4">
     <div class="container-fluid custom_width">
         <div class="home">
+          <div class="table-responsive">
             <mat-toolbar>
                 <span>Filter By:</span>
                 <span class="ml-3">Department :</span>
@@ -50,8 +51,8 @@
                     <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">
                         grid_view</mat-icon>
                   </button>
-                
-                
+
+
                 <div class="custom-input custom-select-box mr-2">
                     <mat-form-field>
                         <mat-select panelClass="mat-select-custom-color" id="month" disableOptionCentering
@@ -70,6 +71,7 @@
                 </button>
 
             </mat-toolbar>
+          </div>
             <div class="table-responsive-c table-responsive">
                 <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
 

@@ -165,7 +165,7 @@ export class CareerApplicationComponent {
   }
 
   onSubmit(){
-    console.log(this.data);
+
     let finalObject= this.applicationForm.value;
     finalObject['jobId']=this.data.jobID;
     finalObject['department']=this.data.department;

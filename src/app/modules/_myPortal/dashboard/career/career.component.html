@@ -3,6 +3,7 @@
   <section class="banner-h-full d-flex align-items-start  py-4">
     <div class="container-fluid custom_width">
       <div class="home">
+        <div class="table-responsive">
 
         <mat-toolbar>
             <span>Your Job List</span>
@@ -12,6 +13,7 @@
                 <span>Add New Job</span>
             </button>
           </mat-toolbar>
+          </div>
           <div class="table-responsive-c table-responsive" *ngIf="data.length!=0">
         <table mat-table [dataSource]="dataSource" multiTemplateDataRows  matSort >
             <ng-container [matColumnDef]="column"  *ngFor="let column of displayedColumns">

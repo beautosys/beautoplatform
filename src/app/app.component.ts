@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { UserInfoService } from './shared/auth/user-info/user-info.service';
+import { HeaderTitleService } from './theme/header/header-title.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,12 @@ export class AppComponent  {
   showScrollHeight = 300;
   hideScrollHeight = 10;
 
-  constructor(private userInfoService:UserInfoService){
+  constructor(private userInfoService:UserInfoService, private headerTitleService:HeaderTitleService){
+ 
+    let user=userInfoService.getUserInfo();
+    if(user.roles[0]=='Admin' || user.roles[0]=='HR Manager' ){
+      this.headerTitleService.updateMenuBar(false);
+    }
     // this.userInfoService.updateUserInfo({id:'',name:'',email:'',roles:['Visitor'],token:''});
   }
 

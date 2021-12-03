@@ -1,6 +1,8 @@
 <section class="banner-h-full d-flex align-items-start py-4">
   <div class="container-fluid custom_width">
     <div class="home">
+      <div class="table-responsive">
+
       <mat-toolbar>
         <span>Your Messages</span>
         <span class="example-spacer"></span>
@@ -9,6 +11,7 @@
 
 
       </mat-toolbar>
+      </div>
       <div class="table-responsive-c table-responsive">
       <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort  *ngIf="dataSource.length!=0">
         <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
