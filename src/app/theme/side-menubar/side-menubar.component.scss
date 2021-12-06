@@ -12,6 +12,7 @@
   // background-color: var(--white);
   border-radius: 10px;
 }
+
 .side-menu {
   position: fixed;
   top: 50%;
@@ -24,24 +25,30 @@
   border-radius: 50px;
   box-shadow: 0 0 4px #eee;
 }
+
 ul {
   padding: 0px;
   margin: 0px;
   // background-color: var(--white);
   color: var(--dark);
+
   // border-right: 1px solid #e2e7ef;
   li {
     a {
       color: var(--primary-color);
       text-decoration: none;
     }
+
     :hover {
+
       path,
       g {
         fill: var(--primary-color);
       }
     }
+
     padding: 12px 22px 12px 22px;
+
     ul {
       li {
         padding: 2px 5px 0px 1px;
@@ -49,8 +56,10 @@ ul {
         border: none;
       }
     }
+
     list-style: none;
     border-right: 5px solid transparent;
+
     svg {
       width: 22px;
     }
@@ -58,14 +67,17 @@ ul {
     img {
       width: 22px;
     }
+
     &:hover,
     &.active {
       .svghover {
         fill: var(--primary-color);
       }
+
       .svgstrokehover {
         stroke: var(--primary-color);
       }
+
       border-right: 5px solid var(--primary-color);
 
       // ::after{
@@ -81,6 +93,7 @@ ul {
       // }
     }
   }
+
   &:hover {
     .svghover:hover {
       fill: var(--danger);
@@ -92,6 +105,7 @@ ul {
   width: 4vw;
   margin-top: 10px;
 }
+
 .how_works {
   margin-top: 1rem;
   position: fixed;
@@ -102,6 +116,7 @@ ul {
   right: -20px;
   z-index: 99;
 }
+
 .how_works span {
   padding: 10px;
   font-size: 10px;
@@ -137,11 +152,13 @@ ul {
   -webkit-border-radius: 2px;
   //  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .mcd-menu li {
   position: relative;
   /*float:left;*/
   cursor: pointer;
 }
+
 .mcd-menu li a {
   display: block;
   text-decoration: none;
@@ -158,9 +175,10 @@ ul {
   /* == */
 }
 
-.mcd-menu li:hover > a {
+.mcd-menu li:hover>a {
   color: #fff;
 }
+
 .mcd-menu li a.active {
   position: relative;
   color: #fff;
@@ -178,6 +196,7 @@ ul {
   margin: 0 -4px;
   /* == */
 }
+
 .mcd-menu li a.active:before {
   content: "";
   position: absolute;
@@ -229,6 +248,7 @@ ul {
   border-radius: 10px;
   /* == */
 }
+
 .mcd-menu li ul:before {
   content: "";
   position: absolute;
@@ -246,8 +266,9 @@ ul {
   border-top: 5px solid transparent;
   /* == */
 }
-.mcd-menu li:hover > ul,
-.mcd-menu li ul li:hover > ul {
+
+.mcd-menu li:hover>ul,
+.mcd-menu li ul li:hover>ul {
   display: block;
   opacity: 1;
   visibility: visible;
@@ -258,6 +279,7 @@ ul {
   top: 5px;
   /* == */
 }
+
 /*.mcd-menu li ul li {
     float: none;
   }*/
@@ -271,21 +293,25 @@ ul {
   height: auto;
   /* == */
 }
+
 .mcd-menu li ul li a:hover {
   background-color: #fff;
   color: #3e5ca2;
 }
+
 .mcd-menu li ul li a i {
   font-size: 16px;
   display: inline-block;
   margin: 0 10px 0 0;
 }
+
 .mcd-menu li ul li ul {
   left: 230px;
   top: 0;
   border: 0;
   border-left: 4px solid #e67e22;
 }
+
 .mcd-menu li ul li ul:before {
   content: "";
   position: absolute;
@@ -298,7 +324,8 @@ ul {
   border-bottom: 5px solid transparent;
   border-top: 5px solid transparent;
 }
-.mcd-menu li ul li:hover > ul {
+
+.mcd-menu li ul li:hover>ul {
   top: 0px;
   left: 200px;
 }
@@ -313,54 +340,66 @@ ul {
   .mcd-menu {
     width: 200px;
   }
+
   .mcd-menu li a {
     height: 30px;
   }
+
   .mcd-menu li a i {
     font-size: 22px;
   }
+
   .mcd-menu li a strong {
     font-size: 12px;
   }
+
   .mcd-menu li a small {
     font-size: 10px;
   }
+
   .mcd-menu li a.search input {
     width: 120px;
     font-size: 12px;
   }
+
   .mcd-menu li a.search buton {
     padding: 8px 10px 9px 10px;
   }
-  .mcd-menu li > ul {
+
+  .mcd-menu li>ul {
     min-width: 180px;
   }
-  .mcd-menu li:hover > ul {
+
+  .mcd-menu li:hover>ul {
     min-width: 180px;
     left: 200px;
   }
-  .mcd-menu li ul li > ul,
-  .mcd-menu li ul li ul li > ul {
+
+  .mcd-menu li ul li>ul,
+  .mcd-menu li ul li ul li>ul {
     min-width: 150px;
   }
-  .mcd-menu li ul li:hover > ul {
+
+  .mcd-menu li ul li:hover>ul {
     left: 180px;
     min-width: 150px;
   }
-  .mcd-menu li ul li ul li:hover > ul {
+
+  .mcd-menu li ul li ul li:hover>ul {
     left: 150px;
     min-width: 150px;
   }
+
   .mcd-menu li ul a {
     font-size: 12px;
   }
+
   .mcd-menu li ul a i {
     font-size: 14px;
   }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-}
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 .tooglebtn {
   display: none;
@@ -398,8 +437,9 @@ ul {
   ul {
     li {
       a {
-        color: rgba(0,0,0,.54);
+        color: rgba(0, 0, 0, .54);
       }
+
       img {
         color: #fff;
       }
@@ -414,19 +454,21 @@ ul {
 .mat-expansion-panel {
   padding: 0.5rem;
 }
+
 .mat-expansion-panel-header-description {
   margin-top: 0.4rem;
-  a{
+
+  a {
     width: 100%;
-    color: rgba(0,0,0,.54);
+    color: rgba(0, 0, 0, .54);
   }
 }
 
-.no-body.mat-expansion-panel-header >>> .mat-expansion-indicator {
+.no-body.mat-expansion-panel-header>>>.mat-expansion-indicator {
   display: none;
 }
 
-.mat-expansion-panel-header-title{
+.mat-expansion-panel-header-title {
   flex-grow: 0 !important;
 }
 
@@ -444,19 +486,19 @@ ul {
 
 .overlay-content {
   position: relative;
-  top: 5%;
+  top: 0;
   width: 100%;
-  margin-top: 30px;
 }
 
 .overlay .closebtn {
   position: relative;
-    font-size: 40px;
-    padding: 1.5rem;
-    justify-content: end;
-    display: flex;
-    border-bottom: 2px solid #eee;
+  font-size: 40px;
+  padding: 1.5rem;
+  justify-content: end;
+  display: flex;
+  border-bottom: 2px solid #eee;
 }
+
 .mat-expansion-panel-spacing {
   margin: 0 !important;
 }
