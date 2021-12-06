@@ -374,7 +374,7 @@ ul {
   .tooglebtn {
     display: block;
     position: fixed;
-    top: 90%;
+    bottom: 5px;
     z-index: 999;
     border: none;
     background: #2b579e;
@@ -393,12 +393,12 @@ ul {
   width: 100%;
   display: block;
   background: #415490;
-  overflow: hidden;
+  // overflow: hidden;
 
   ul {
     li {
       a {
-        color: #fff;
+        color: rgba(0,0,0,.54);
       }
       img {
         color: #fff;
@@ -409,4 +409,54 @@ ul {
 
 .responsiveSideMenuOff {
   display: none;
+}
+
+.mat-expansion-panel {
+  padding: 0.5rem;
+}
+.mat-expansion-panel-header-description {
+  margin-top: 0.4rem;
+  a{
+    width: 100%;
+    color: rgba(0,0,0,.54);
+  }
+}
+
+.no-body.mat-expansion-panel-header >>> .mat-expansion-indicator {
+  display: none;
+}
+
+.mat-expansion-panel-header-title{
+  flex-grow: 0 !important;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 5%;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.overlay .closebtn {
+  position: relative;
+    font-size: 40px;
+    padding: 1.5rem;
+    justify-content: end;
+    display: flex;
+    border-bottom: 2px solid #eee;
+}
+.mat-expansion-panel-spacing {
+  margin: 0 !important;
 }

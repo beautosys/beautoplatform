@@ -1,3 +1,6 @@
+@import './colorpallete/dark.scss';
+@import './colorpallete/light.scss';
+
 :root {
   --primary-color: #0f6cb6;
   --secondary-color: #004172;
@@ -27,6 +30,7 @@
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
+  --medium-light: #c5d3e1;
   --dark: #000000;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -226,6 +230,11 @@ app-ng-dynamic-breadcrumb .custom-bread-crumb {
     visibility: hidden;
     transform: translate3d(0, 100%, 0);
   }
+}
+
+
+.cursor {
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {

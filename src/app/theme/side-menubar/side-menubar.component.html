@@ -105,59 +105,59 @@
 
   <nav class="menu-vc" *ngIf="!showCommonSideMenu && role=='Admin'">
     <ul class="mcd-menu">
-  <li>
-    <img src="assets/img/menuIcons/menu-career.svg" class="imd-fluid">
+      <li>
+        <img src="assets/img/menuIcons/menu-career.svg" class="imd-fluid">
 
-    <ul>
+        <ul>
 
-      <li> <a routerLink="/dashboard/career" class="">CAREERS</a> </li>
-      <li> <a routerLink="/dashboard/job-application" class="">JOB APPLICATION</a></li>
+          <li> <a routerLink="/dashboard/career" class="">CAREERS</a> </li>
+          <li> <a routerLink="/dashboard/job-application" class="">JOB APPLICATION</a></li>
+
+        </ul>
+      </li>
+      <li>
+        <img src="assets/img/menuIcons/menu-contact-us.svg" class="imd-fluid">
+
+        <ul>
+
+
+          <li> <a routerLink="/dashboard/contact-us" class="">CONTACT US</a> </li>
+
+        </ul>
+      </li>
+
+      <li>
+        <img src="assets/img/menuIcons/menu-team.svg" class="imd-fluid">
+
+        <ul>
+
+          <li> <a routerLink="/dashboard/team" class="">TEAM</a></li>
+
+        </ul>
+      </li>
+
+      <li>
+        <img src="assets/img/menuIcons/menu-clients.svg" class="imd-fluid">
+
+        <ul>
+
+          <li> <a routerLink="/dashboard/clients" class="">CLIENTS</a> </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="menu-vc" *ngIf="!showCommonSideMenu && role=='HR Manager'">
+    <ul class="mcd-menu">
+      <li>
+        <img src="assets/img/menuIcons/menu-about.svg" class="imd-fluid">
+        <ul>
+          <li> <a routerLink="/employeeMgnmt/employee-list-view">Employee</a> </li>
+        </ul>
+      </li>
 
     </ul>
-  </li>
-  <li>
-    <img src="assets/img/menuIcons/menu-contact-us.svg" class="imd-fluid">
-
-    <ul>
-
-
-      <li> <a routerLink="/dashboard/contact-us" class="">CONTACT US</a> </li>
-
-    </ul>
-  </li>
-
-  <li>
-    <img src="assets/img/menuIcons/menu-team.svg" class="imd-fluid">
-
-    <ul>
-
-      <li> <a routerLink="/dashboard/team" class="">TEAM</a></li>
-
-    </ul>
-  </li>
-
-  <li>
-    <img src="assets/img/menuIcons/menu-clients.svg" class="imd-fluid">
-
-    <ul>
-
-      <li> <a routerLink="/dashboard/clients" class="">CLIENTS</a> </li>
-    </ul>
-  </li>
-</ul>
-</nav>
-
-<nav class="menu-vc" *ngIf="!showCommonSideMenu && role=='HR Manager'">
-  <ul class="mcd-menu">
-    <li>
-      <img src="assets/img/menuIcons/menu-about.svg" class="imd-fluid">
-      <ul>
-        <li> <a routerLink="/employeeMgnmt/employee-list-view">Employee</a> </li>
-      </ul>
-    </li>
-
-  </ul>
-</nav>
+  </nav>
 
 
 
@@ -188,11 +188,154 @@
   </a>
 </div>
 
-
+<!-- <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" (click)="onResponsiveMenu()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+</div> -->
 <button class="tooglebtn" (click)="onResponsiveMenu()">Menu</button>
-<div [ngClass]="{'responsiveSideMenuOn':isResponsiveMenuOn,'responsiveSideMenuOff':!isResponsiveMenuOn}">
-  <div *ngIf="showCommonSideMenu">
-    <div class="row" >
+<div id="myNav" [ngClass]="{'responsiveSideMenuOn':isResponsiveMenuOn,'responsiveSideMenuOff':!isResponsiveMenuOn}" class="overlay ">
+  <a href="javascript:void(0)" class="closebtn" (click)="onResponsiveMenu()">&times;</a>
+  <div *ngIf="showCommonSideMenu" class="overlay-content">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-about.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            ABOUT US
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ul>
+          <li> <a routerLink="/pages/our-journey" (click)="onResponsiveMenu()" class=""
+              (titleChanged)="changedTitle($event)">OUR JOURNEY</a> </li>
+          <li> <a routerLink="/pages/leadership" (click)="onResponsiveMenu()" class="">LEDERSHIP</a> </li>
+          <li> <a routerLink="/pages/mission-vision-value" (click)="onResponsiveMenu()" class="">MISSION VISION
+              VALUES</a></li>
+          <li> <a routerLink="/sister-companies" (click)="onResponsiveMenu()" class="">SISTER COMPANIES</a> </li>
+        </ul>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-team.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/pages/our-team" (click)="onResponsiveMenu()" class="">OUR TEAM</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-software.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            SOFTWARE
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ul>
+          <li> <a routerLink="/pages/development-process" (click)="onResponsiveMenu()" class="">DEVELOPMENT PROCESS</a>
+          </li>
+          <li> <a routerLink="/pages/skills-and-tools" (click)="onResponsiveMenu()" class="">SKILLS AND TOOLS</a> </li>
+          <li> <a routerLink="/pages/solutions" (click)="onResponsiveMenu()" class="">SOLUTIONS</a></li>
+        </ul>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-development.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            DEVELOPMENT
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ul>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">OFFERING</a> </li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class=""> DEVELOPMENT PROCESS</a>
+          </li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">SKILLS</a></li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">INFRA</a> </li>
+          <li> <a routerLink="/mechatronics/offering" (click)="onResponsiveMenu()" class="">CLIENTS</a> </li>
+          <li> <a routerLink="/pages/gallary" (click)="onResponsiveMenu()" class="">GALLARY</a></li>
+        </ul>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-casestudy.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/software/our-journey" (click)="onResponsiveMenu()" class="">CASE STUDIES</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+
+
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-career.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/pages/careers" (click)="onResponsiveMenu()" class="">CAREERS</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-gallery.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            GALLERY
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ul>
+          <li> <a routerLink="/pages/gallary" (click)="onResponsiveMenu()" class="">PRODECTS</a> </li>
+          <li> <a routerLink="/pages/gallary" (click)="onResponsiveMenu()" class="">TEAM MEMBERS</a> </li>
+        </ul>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-clients.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/pages/clients" (click)="onResponsiveMenu()" class="">CLIENTS</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-contact-us.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/pages/contact-us" (click)="onResponsiveMenu()" class="">CONTACTS US</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+    <!-- <div class="row" >
       <div class="col">
         <ul>
           <li><img src="assets/img/menuIcons/menu-about.svg" >  </li>
@@ -318,11 +461,63 @@
           <li> <a routerLink="/pages/contact-us" (click)="onResponsiveMenu()" class="">CONTACTS US</a> </li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </div>
 
-  <div *ngIf="!showCommonSideMenu && role=='Admin'">
-    <div class="row" >
+  <div *ngIf="!showCommonSideMenu && role=='Admin'" class="overlay-content">
+    <mat-accordion style="background-color: chartreuse;">
+
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-career.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            CAREERS
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ul>
+          <li> <a routerLink="/dashboard/career" (click)="onResponsiveMenu()" class="">CAREERS</a> </li>
+          <li> <a routerLink="/dashboard/job-application" (click)="onResponsiveMenu()" class="">JOB APPLICATION</a></li>
+        </ul>
+      </mat-expansion-panel>
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-contact-us.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/dashboard/contact-us" (click)="onResponsiveMenu()" class="">CONTACT US</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-team.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/dashboard/team" (click)="onResponsiveMenu()" class="">TEAM</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-clients.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/dashboard/clients" (click)="onResponsiveMenu()" class="">CLIENTS</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!-- <div class="row" >
       <div class="col">
         <ul>
           <li><img src="assets/img/menuIcons/menu-career.svg" >  </li>
@@ -373,11 +568,24 @@
           <li> <a routerLink="/dashboard/clients" (click)="onResponsiveMenu()" class="">CLIENTS</a> </li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </div>
 
-  <div *ngIf="!showCommonSideMenu && role=='HR Manager'">
-    <div class="row" >
+  <div *ngIf="!showCommonSideMenu && role=='HR Manager'" class="overlay-content">
+    <mat-accordion>
+      <mat-expansion-panel  [hideToggle]="true" class="no-body">
+        <mat-expansion-panel-header class="no-body">
+          <mat-panel-title>
+            <img src="assets/img/menuIcons/menu-about.svg">
+          </mat-panel-title>
+          <mat-panel-description>
+            <a routerLink="/employeeMgnmt/employee-list-view" (click)="onResponsiveMenu()">Employee</a>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!-- <div class="row" >
       <div class="col">
         <ul>
           <li><img src="assets/img/menuIcons/menu-about.svg" >  </li>
@@ -388,7 +596,7 @@
           <li> <a routerLink="/employeeMgnmt/employee-list-view" (click)="onResponsiveMenu()">Employee</a> </li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </div>
 
 </div>

@@ -1,23 +1,49 @@
-button {
-    background: #26579E;
-    color: white;
- 
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.color-pallete .colors {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50px;
+  position: fixed;
+  right: 0;
+  padding: 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  &.color1 {
+    top: 40%;
+    background-color: var(--primary-color);
   }
-  
+  &.color2 {
+    top: 45%;
+    background-color: var(--dark);
+  }
+  &.color3 {
+    top: 50%;
+    background-color: var(--light);
+  }
+
+  }
+
+
   .scroll-to-top {
       position: fixed;
       bottom: 15px;
       right: 15px;
       opacity: 0;
+      background: #26579E;
+      color: white;
+
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       transition: all .2s ease-in-out;
   }
-  
+
   .show-scroll {
       opacity: 1;
   }

@@ -21,6 +21,7 @@ import { EmployeeMngmtModule } from './modules/_myPortal/employee-mngmt/employee
 import { AuthInterceptor } from './shared/auth/interceptors/auth.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { PagesModule } from './pages/pages.module';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 
@@ -46,7 +47,8 @@ import { PagesModule } from './pages/pages.module';
     NgbModule,
     NgImageSliderModule,
    
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    OverlayModule
 
   ],
   providers: [AuthService,

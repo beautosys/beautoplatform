@@ -10,6 +10,7 @@ export class SideMenubarComponent implements OnInit {
   role:string='';
   showCommonSideMenu:boolean=true;
   isResponsiveMenuOn:boolean=false;
+  panelOpenState:boolean=true;
   constructor(private headerTitleService:HeaderTitleService) { }
 
   ngOnInit(): void {
@@ -30,9 +31,12 @@ export class SideMenubarComponent implements OnInit {
   changedTitle(getTitle:any){
 
   }
-
+  element!: HTMLElement;
   onResponsiveMenu(){
     this.isResponsiveMenuOn=!this.isResponsiveMenuOn;
+    
+    this.element = document.getElementById('myNav') as HTMLElement;
+    this.element.style.width = "100%";
   }
 
 }
