@@ -1,4 +1,8 @@
 body .dark-theme {
   background: var(--dark);
   display: flex;
+  .bg-f {
+    background-color: var(--gray-dark);
+  }
+
 }

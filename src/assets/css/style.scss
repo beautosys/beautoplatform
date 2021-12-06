@@ -70,6 +70,12 @@ img.logo {
   margin: 0 0 12px;
 }
 
+body .cdk-overlay-container.default-theme,
+body .cdk-overlay-container.dark-theme,
+body .cdk-overlay-container.light-theme {
+  background: transparent;
+}
+
 app-ng-dynamic-breadcrumb .custom-bread-crumb {
   padding: 0 !important;
   padding-right: calc(var(--bs-gutter-x) * .5) !important;
