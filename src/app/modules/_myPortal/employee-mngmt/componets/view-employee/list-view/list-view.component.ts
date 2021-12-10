@@ -30,7 +30,7 @@ export class ListViewComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top'
 
-  displayedColumns: string[] = ['sr_no', 'employeeid', 'name', 'gender', 'blood_group', 'personal_email', 'contact_no', 'department', 'designation', 'location', 'action'];
+  displayedColumns: string[] = ['sr_no', 'employeeId', 'name', 'gender', 'bloodGroup', 'orgnazationEmail', 'mobileNo', 'department', 'designation', 'location', 'action'];
   dataSource: any;
   sortedData: any;
   clientName: string = '';
