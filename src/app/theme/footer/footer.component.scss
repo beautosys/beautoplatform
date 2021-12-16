@@ -31,7 +31,7 @@
 }
 .bg-f
 {
-    background-color: #342E38;
+    background-color: var(--light);
     padding: 5em 0em;
     margin-top: 5em;
     padding-bottom: 15px;
@@ -40,7 +40,7 @@
 .about{
     text-align: left;
 font: normal normal bold 15px/24px Roboto;
-color:#fff;
+color:#000;
 letter-spacing: 1px;
 span {
     color: #2D72F1;

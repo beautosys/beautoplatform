@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
+import { EmployeeService } from '../../../services/employee.service';
 import { AddEmployeeComponent } from '../../add-employee/add-employee.component';
 import { AddUpdateEmployeeComponent } from '../../add-update-employee/add-update-employee.component';
 import { DeleteEmployeeComponent } from '../../delete-employee/delete-employee.component';
@@ -17,261 +18,7 @@ import { EditEmployeeComponent } from '../../edit-employee/edit-employee.compone
   styleUrls: ['./grid-view.component.scss']
 })
 export class GridViewComponent implements OnInit {
-
-  employees = [
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "1"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "2"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "3"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "4"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "2"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "4"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "3"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "1"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "2"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "3"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "4"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "2"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "4"
-    },
-    {
-      "employeeNo": "001",
-      "name": "xyz",
-      "gender": "Male",
-      "bloodGroup": "A+",
-      "emailId": "xyz@gmail.com",
-      "mobileNumber": "1212121212",
-      "department": "Lorem Ipsum",
-      "designation": "Lorem Ipsum",
-      "location": "Lorem Ipsum",
-      "joiningDate": "20/10/2020",
-      "totalExperience": "Lorem Ipsum",
-      "residentialAddress": "Lorem Ipsum",
-      "linkedinUrl": "Lorem Ipsum",
-      "skupeUrl": "Lorem Ipsum",
-      "facebookUrl": "Lorem Ipsum",
-      "experienceLevel": "3"
-    }
-  ];
+  employees:any;
   designation = ['All', 'HR Finance', 'Jr Java Devloper', 'Frontend Devloper'];
   selectedDesignation = 'All';
   department = ['All', 'HR', 'IT', 'Mech'];
@@ -296,33 +43,122 @@ export class GridViewComponent implements OnInit {
   pageSize = 10;
 
   recordLength: number = 0;
+  last:number=0;
+  firstIndex:number=0;
+  lastIndex:number=11;
+  isPrevOn:boolean=false;
 
-  constructor(private router: Router, private headerTitleService: HeaderTitleService, private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar, public dialog: MatDialog) { }
+  constructor(private employeeService:EmployeeService, private router: Router, private headerTitleService: HeaderTitleService, private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar, public dialog: MatDialog) { }
   pageChangeEvent(event: any) { }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+
   }
 
   ngOnInit(): void {
 
+    // this.employeeService.updatedPageNumber(0);
+
     this.activatedRoute.data.subscribe((response: any) => {
-      console.log(response);
+      
       this.employees=[];
-      this.employees=response.employees;
-      this.recordLength = response.employees.length;
-      this.dataSource =new MatTableDataSource<any>(response.employees); 
+      // this.employees=response.employees.getEmployeeList;
+      // this.recordLength = response.employees.getEmployeeList.length;
+      let a:any=[];
+      // for(let i=0;i<4;i++){
+        for(let j=0;j<response.employees.getEmployeeList.length;j++){
+          a.push(response.employees.getEmployeeList[j]);
+        }
+      // }
+          //  this.employees=a;
+      this.recordLength = a.length;
+      // this.dataSource =new MatTableDataSource<any>(response.employees.getEmployeeList); 
+      this.dataSource =new MatTableDataSource<any>(a); 
+
       this.sortedData=this.dataSource;
 
       this.headerTitleService.updatedTitle(response.title);
       this.headerTitleService.updatedStart(response.start);
-    });
-    // this.recordLength = this.employees.length;
-    // this.dataSource = new MatTableDataSource<any>(this.employees);
-    // this.sortedData = this.dataSource;
 
-    // this.headerTitleService.updatedTitle('Employee');
-    // this.headerTitleService.updatedStart('Employee /');
+      this.employeeService.currentPageNumber.subscribe(
+        data=>{
+          let currentIndex:number=data;
+          let totalPages:number= Math.floor(this.recordLength/12);
+          // totalPages-=1;
+
+          if(currentIndex==this.last){
+            this.last+=1;
+            // if(this.isPrevOn){
+            //   if(this.lastIndex!=11){
+            //     this.firstIndex+=12;
+            //     // this.lastIndex-=12;
+            //     this.isPrevOn=false;
+            //                 }
+            // }else{
+            //   if(this.lastIndex==0){
+            //     this.firstIndex==0;
+            //     this.lastIndex+=11;
+            //   }else{
+            //     this.firstIndex+=12;
+            //     if(totalPages!=currentIndex)
+            //     this.lastIndex+=12
+            //   }
+              
+            // }
+
+            if(this.isPrevOn ){
+              if(this.firstIndex==0 && this.lastIndex==11){
+                this.firstIndex+=12;
+                this.lastIndex+=12;
+
+              }
+              this.isPrevOn=false;
+            }
+            
+            this.employees=[];
+            if(totalPages==currentIndex){
+              
+              for(let i=this.firstIndex;i<=a.length-1;i++){
+                this.employees.push(a[i]);
+              }
+            
+            }else{
+
+              for(let i=this.firstIndex;i<=this.lastIndex;i++){
+                this.employees.push(a[i]);
+              }
+              this.firstIndex+=12;
+              this.lastIndex+=12;
+            }
+
+          }else{
+            this.last-=1;
+
+            this.lastIndex=this.firstIndex-1;
+            this.firstIndex-=12;
+            this.employees=[];
+            for(let i=this.firstIndex;i<=this.lastIndex;i++){
+              this.employees.push(a[i]);
+            }
+            this.isPrevOn=true;
+
+          }
+          console.log('== After ==');
+          console.log('currentIndex - '+ currentIndex);
+          console.log('last - '+this.last);
+          console.log('firstIndex - '+this.firstIndex);
+          console.log('lastIndex - '+this.lastIndex);
+          console.log('-----------');
+
+      
+        }
+      );
+    });
+
+
+   
+
   }
 
 

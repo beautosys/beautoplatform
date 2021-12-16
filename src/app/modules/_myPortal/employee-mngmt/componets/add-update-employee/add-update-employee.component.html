@@ -1,8 +1,4 @@
 <div mat-dialog-content>
-    <!-- <p>Add employee</p>
-    <mat-form-field>
-      <input matInput [(ngModel)]="data.animal">
-    </mat-form-field> -->
   
     <div class="row addempop">
       <div class="col-md-3 bgblue"><img src="assets/img/addemp.svg" class="imgadd"> </div>
@@ -167,7 +163,101 @@
             </section>
   
           </mat-tab>
-          <mat-tab label="Second"> Content 2 </mat-tab>
+          <mat-tab label="Employee Details"> 
+            <section class="topspace">
+              <label for="Employee Position">Employee Position</label>
+              <div class="row">
+                
+                <div class="col-md-4">
+                  <select class="addempinput">
+                    <option value=""> Department</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Consultant">Consultant</option>
+                    <option value="Probation">Probation</option>
+                  
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <select class="addempinput">
+                    <option value=""> Designation</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Consultant">Consultant</option>
+                    <option value="Probation">Probation</option>
+                  
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Location">
+                </div>
+      
+              </div>
+      
+              <label for="Employee Bank Details" class="m-10">Employee Bank Details</label>
+              <div class="row">
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Bank Account Number">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="IFSC Code">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Bank Name">
+                </div>
+              </div>
+                <div class="row m-10">
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Account holder name">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Branch">
+                </div>
+              </div>
+      
+      
+              
+              <label for="Joining Details" class="m-10">Joining Details</label>
+              <div class="row">
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Joining Date">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Confirmation Date">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Probation Period">
+                </div>
+                </div>
+                <div class="row m-10">
+                  <div class="col-md-4">
+                    <input type="text" class="addempinput" placeholder="Notice Period">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="addempinput" placeholder="Previous Company Experience">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="addempinput" placeholder="Previous Experience">
+                  </div>
+              </div>
+              <div class="row m-10">
+                
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Previous Salary Details">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="addempinput" placeholder="Total Experience">
+                </div>
+              </div>
+
+  
+                    <div class="col-md-12 center m-10">
+  
+                      <button class="nextbtn"> Submit </button>
+  
+                    </div>
+      
+      
+            </section>
+          </mat-tab>
    
         </mat-tab-group>
   

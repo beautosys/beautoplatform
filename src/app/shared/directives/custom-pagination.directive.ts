@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 
 import { MatPaginator } from "@angular/material/paginator";
+import { EmployeeService } from 'src/app/modules/_myPortal/employee-mngmt/services/employee.service';
 
 
 @Directive({
@@ -35,7 +36,8 @@ export class CustomPaginationDirective  {
   constructor(
     @Host() @Self() @Optional() private readonly matPag: MatPaginator,
     private vr: ViewContainerRef,
-    private ren: Renderer2
+    private ren: Renderer2,
+    private employeeService:EmployeeService
   ) {
     //Sub to rerender buttons when next page and last page is used
     this.matPag.page.subscribe((v)=>{
@@ -126,22 +128,20 @@ export class CustomPaginationDirective  {
           nextPageNode
         );
       } else {
-        if (i > this._rangeEnd && !dots) {
-          this.ren.insertBefore(
-            actionContainer,
-            this.createButton(this._pageGapTxt, this.matPag.pageIndex),
-            nextPageNode
-          );
-          dots = true;
-        }
+        // if (i > this._rangeEnd && !dots) {
+        //   this.ren.insertBefore(
+        //     actionContainer,
+        //     this.createButton(this._pageGapTxt, this.matPag.pageIndex),
+        //     nextPageNode
+        //   );
+        //   dots = true;
+        // }
       }
     }
   }
 
   private createButton(i: any, pageIndex: number): any {
     const linkBtn = this.ren.createElement("mat-button");
-    // this.ren.addClass(linkBtn, "mat-mini-fab");
-    // this.ren.setStyle(linkBtn, "margin", "1%");
     this.ren.setStyle(linkBtn, "width", "30px");
     this.ren.setStyle(linkBtn, "height", "30px");
     this.ren.setStyle(linkBtn, "padding", "6px");
@@ -151,21 +151,21 @@ export class CustomPaginationDirective  {
     const text = this.ren.createText(pagingTxt + "");
 
     this.ren.addClass(linkBtn, "mat-custom-page");
-    switch (i) {
-      case pageIndex:
-        this.ren.setAttribute(linkBtn, "disabled", "disabled");
-        break;
-      case this._pageGapTxt:
-        this.ren.listen(linkBtn, "click", () => {
-          this.switchPage(this._currentPage + this._showTotalPages);
-        });
-        break;
-      default:
-        this.ren.listen(linkBtn, "click", () => {
-          this.switchPage(i);
-        });
-        break;
-    }
+    // switch (i) {
+    //   case pageIndex:
+    //     this.ren.setAttribute(linkBtn, "disabled", "disabled");
+    //     break;
+    //   case this._pageGapTxt:
+    //     this.ren.listen(linkBtn, "click", () => {
+    //       this.switchPage(this._currentPage + this._showTotalPages);
+    //     });
+    //     break;
+    //   default:
+    //     this.ren.listen(linkBtn, "click", () => {
+    //       this.switchPage(i);
+    //     });
+    //     break;
+    // }
 
     this.ren.appendChild(linkBtn, text);
     //Add button to private array for state
@@ -183,6 +183,7 @@ export class CustomPaginationDirective  {
   private switchPage(i: number): void {
     this._currentPage = i;
     this.matPag.pageIndex = i;
+    this.employeeService.updatedPageNumber(i);
     this.initPageRange();
   }
 

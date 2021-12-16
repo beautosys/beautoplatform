@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['pages/home'])
             }
             // this.careerStateService.data.subscribe((res: any) => {
-            //   console.log(res)
+ 
             //   if (res.file != null || res.finalObject != null) {
             //     this.router.navigate([res.nav]);
             //   } else {
