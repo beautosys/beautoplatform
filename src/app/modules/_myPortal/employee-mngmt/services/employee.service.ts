@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpHeaderService } from 'src/app/modules/_core/components/_services/http-header.service';
 import { environment } from 'src/environments/environment';
@@ -10,8 +10,15 @@ import { Employee } from '../model/employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-
+  pageNumber:number=0;
+  private pageSource = new BehaviorSubject<number>(this.pageNumber);
+  currentPageNumber = this.pageSource.asObservable();
   constructor(private http: HttpClient,private header:HttpHeaderService) { }
+
+  updatedPageNumber(currentPageNumber: number) {
+
+    this.pageSource.next(currentPageNumber);
+  }
 
   getEmployeeList():Observable<Employee[]>{
     return this.http.get<Employee[]>(environment.getEmployee).pipe(
@@ -20,6 +27,7 @@ export class EmployeeService {
         for(let i in response){
           let totalExperience=0;
           response[i].action='';
+          response[i].name=response[i].title+' '+response[i].fName+' '+response[i].mName+' '+response[i].lName;
           response[i].department=response[i].department.departmentName;
           response[i].designation=response[i].designation.designationName;
           response[i].location=response[i].branch==null?'':response[i].branch.branchName;
