@@ -22,6 +22,8 @@ import { AuthInterceptor } from './shared/auth/interceptors/auth.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { PagesModule } from './pages/pages.module';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { ExamPortalComponent } from './modules/_examPortal/exam-portal.component';
+import { ExamPortalModule } from './modules/_examPortal/exam-portal.module';
 
 
 
@@ -29,6 +31,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
   declarations: [
     AppComponent,
     PagesComponent,
+    ExamPortalComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     AppRoutingModule,
     DashboardModule,
     EmployeeMngmtModule,
+    ExamPortalModule,
     PagesModule,
     SharedModule,
     ThemeModule,
