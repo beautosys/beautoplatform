@@ -21,6 +21,9 @@ import { EmployeeMngmtModule } from './modules/_myPortal/employee-mngmt/employee
 import { AuthInterceptor } from './shared/auth/interceptors/auth.interceptor';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { PagesModule } from './pages/pages.module';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { ExamPortalComponent } from './modules/_examPortal/exam-portal.component';
+import { ExamPortalModule } from './modules/_examPortal/exam-portal.module';
 
 
 
@@ -28,6 +31,7 @@ import { PagesModule } from './pages/pages.module';
   declarations: [
     AppComponent,
     PagesComponent,
+    ExamPortalComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     DashboardModule,
     EmployeeMngmtModule,
+    ExamPortalModule,
     PagesModule,
     SharedModule,
     ThemeModule,
@@ -46,7 +51,8 @@ import { PagesModule } from './pages/pages.module';
     NgbModule,
     NgImageSliderModule,
    
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    OverlayModule
 
   ],
   providers: [AuthService,

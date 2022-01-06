@@ -1,7 +1,6 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ValuesMissionVissionComponent } from '../modules/_landing/about-us/components/values-mission-vission/values-mission-vission.component';
 import { LeadershipComponent } from './aboutus/leadership/leadership.component';
 import { OurJourneyComponent } from './aboutus/our-journey/our-journey.component';
 import { VmvComponent } from './aboutus/vmv/vmv.component';

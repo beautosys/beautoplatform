@@ -195,7 +195,6 @@ export class TeamComponent implements OnInit, AfterViewInit {
      if (this.addUpdateTeamMemberForm.valid) {
        if(this.data.teamMemberInfo!=null){
 
-         console.log(this.addUpdateTeamMemberForm.value);
          let data = {
           empidID: this.addUpdateTeamMemberForm.value.empidID,
           name:this.addUpdateTeamMemberForm.value.name,

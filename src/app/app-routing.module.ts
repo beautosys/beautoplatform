@@ -44,11 +44,11 @@ const routes: Routes = [
 
   },
   {
-    path: 'employeeMgnmt',
+    path: 'examPortal',
   
     loadChildren: () =>
-      import('./modules/_myPortal/employee-mngmt/employee-mngmt.module').then(
-        (m) => m.EmployeeMngmtModule
+      import('./modules/_examPortal/exam-portal.module').then(
+        (m) => m.ExamPortalModule
       ),
      
   },

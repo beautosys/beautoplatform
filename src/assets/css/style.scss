@@ -1,3 +1,6 @@
+@import './colorpallete/dark.scss';
+@import './colorpallete/light.scss';
+
 :root {
   --primary-color: #0f6cb6;
   --secondary-color: #004172;
@@ -27,6 +30,7 @@
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
+  --medium-light: #c5d3e1;
   --dark: #000000;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -64,6 +68,12 @@ img.logo {
 .mat-typography h5 {
   font: 700 calc(16px * 0.83)/30px Roboto, "Helvetica Neue", sans-serif;
   margin: 0 0 12px;
+}
+
+body .cdk-overlay-container.default-theme,
+body .cdk-overlay-container.dark-theme,
+body .cdk-overlay-container.light-theme {
+  background: transparent;
 }
 
 app-ng-dynamic-breadcrumb .custom-bread-crumb {
@@ -226,6 +236,11 @@ app-ng-dynamic-breadcrumb .custom-bread-crumb {
     visibility: hidden;
     transform: translate3d(0, 100%, 0);
   }
+}
+
+
+.cursor {
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {

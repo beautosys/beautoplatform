@@ -18,260 +18,7 @@ import { EditEmployeeComponent } from '../../edit-employee/edit-employee.compone
   styleUrls: ['./list-view.component.scss']
 })
 export class ListViewComponent implements OnInit {
-  // employees = [
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "1"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "2"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "3"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "4"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "2"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "4"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "3"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "1"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "2"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "3"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "4"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "2"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "4"
-  //   },
-  //   {
-  //     "employeeNo": "001",
-  //     "name": "xyz",
-  //     "gender": "Male",
-  //     "bloodGroup": "A+",
-  //     "emailId": "xyz@gmail.com",
-  //     "mobileNumber": "1212121212",
-  //     "department": "Lorem Ipsum",
-  //     "designation": "Lorem Ipsum",
-  //     "location": "Lorem Ipsum",
-  //     "joiningDate": "20/10/2020",
-  //     "totalExperience": "Lorem Ipsum",
-  //     "residentialAddress": "Lorem Ipsum",
-  //     "linkedinUrl": "Lorem Ipsum",
-  //     "skupeUrl": "Lorem Ipsum",
-  //     "facebookUrl": "Lorem Ipsum",
-  //     "experienceLevel": "3"
-  //   }
-  // ];
+
   designation = ['All', 'HR Finance', 'Jr Java Devloper', 'Frontend Devloper'];
   selectedDesignation = 'All';
   department = ['All', 'HR', 'IT', 'Mech'];
@@ -283,7 +30,7 @@ export class ListViewComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top'
 
-  displayedColumns: string[] = ['sr_no', 'employeeid', 'name', 'gender', 'blood_group', 'personal_email', 'contact_no', 'department', 'designation', 'location', 'action'];
+  displayedColumns: string[] = ['sr_no', 'employeeId', 'name', 'gender', 'bloodGroup', 'orgnazationEmail', 'mobileNo', 'department', 'designation', 'location', 'action'];
   dataSource: any;
   sortedData: any;
   clientName: string = '';
@@ -307,19 +54,15 @@ export class ListViewComponent implements OnInit {
   ngOnInit(): void {
 
     this.activatedRoute.data.subscribe((response: any) => {
-      this.recordLength = response.employees.length;
-      this.dataSource =new MatTableDataSource<any>(response.employees); 
+
+      this.recordLength = response.employees.getEmployeeList.length;
+      this.dataSource =new MatTableDataSource<any>(response.employees.getEmployeeList); 
       this.sortedData=this.dataSource;
 
       this.headerTitleService.updatedTitle(response.title);
       this.headerTitleService.updatedStart(response.start);
     });
-    // this.recordLength = this.employees.length;
-    // this.dataSource = new MatTableDataSource<any>(this.employees);
-    // this.sortedData = this.dataSource;
 
-    // this.headerTitleService.updatedTitle('Employee');
-    // this.headerTitleService.updatedStart('Employee /');
   }
 
 
