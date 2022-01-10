@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CareerStateService } from 'src/app/pages/homeCareer/_service/career-state.service';
 import { UserInfoService } from 'src/app/shared/auth/user-info/user-info.service';
 import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
+import { SnackBarService } from 'src/app/_snackBar/snack-bar.service';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -13,13 +14,13 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'top'
+ 
   submitted: boolean = false;
   loginForm!: FormGroup;
   constructor(private route: ActivatedRoute, private userInfoService: UserInfoService,
     private careerStateService: CareerStateService, private authServices: AuthService,
-    private router: Router, private headerTitleService: HeaderTitleService, private _snackBar: MatSnackBar) {
+    private router: Router, private headerTitleService: HeaderTitleService, 
+    private snackBarServices:SnackBarService) {
 
   }
 
@@ -75,6 +76,7 @@ export class LoginComponent implements OnInit {
             //   }
 
             // });
+            this.snackBarServices.openSnackBarFrSuccess('Login successful....')
 
           }
 
@@ -85,14 +87,7 @@ export class LoginComponent implements OnInit {
 
         },
         (error: any) => {
-          if (error.status == 401) {
-            this._snackBar.open('Wrong user name or password', '', {
-              horizontalPosition: this.horizontalPosition,
-              verticalPosition: this.verticalPosition,
-              duration: 2000,
-              panelClass: ['red-snackbar']
-            });
-          }
+          this.snackBarServices.openSnackBarWarning('Wrong user name or password')
         }
       )
     }
