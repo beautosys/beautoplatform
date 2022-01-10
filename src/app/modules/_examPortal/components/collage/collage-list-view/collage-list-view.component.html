@@ -1,1 +1,121 @@
-<p>collage-list-view works!</p>
+<section class="banner-h-full d-flex align-items-start  py-4 bg">
+    <div class="container-fluid custom_width">
+        <div class="home">
+            <mat-toolbar>
+                <span>Filter By:</span>
+                <span class="ml-3">Department :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="dept" disableOptionCentering
+                            [(ngModel)]="selectedDepartment" >
+
+                            <mat-option [value]="item" *ngFor="let item of department; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="ml-3">Country :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="designation" disableOptionCentering
+                            [(ngModel)]="selectedDesignation" >
+
+                            <mat-option [value]="item" *ngFor="let item of designation; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="ml-3">State :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="location" disableOptionCentering
+                            [(ngModel)]="selectedLocation" >
+
+                            <mat-option [value]="item" *ngFor="let item of location; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="example-spacer"></span>
+                <button mat-icon-button  aria-label="view_list" (click)="ViewListOfCollage('collageList')">
+                    <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">view_list</mat-icon>
+                  </button>
+                  <button mat-icon-button aria-label="grid_view" (click)="GrigListOfCollage('collageGrid')">
+                    <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">
+                        grid_view</mat-icon>
+                  </button>
+                
+                
+                <div class="custom-input custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="month" disableOptionCentering
+                            [(ngModel)]="selectedMonth" >
+
+                            <mat-option [value]="item" *ngFor="let item of months; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+
+                <button mat-raised-button aria-label="new job" (click)="openAddCollageDialog(null)">
+                    <mat-icon class="mr-1">add</mat-icon><span>Add collages</span>
+                </button>
+
+            </mat-toolbar>
+            <div class="table-responsive-c table-responsive">
+                <table mat-table [dataSource]="dataSource" class="table-data ">
+
+                    <ng-container matColumnDef="sr_no">
+                      <th mat-header-cell *matHeaderCellDef> id </th>
+                      <td mat-cell *matCellDef="let element"> {{element.sr_no}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="COLLEGEDETAILS">
+                      <th mat-header-cell *matHeaderCellDef> name </th>
+                      <!-- <td mat-cell *matCellDef="let element"> {{element.name}} </td> -->
+                    </ng-container>
+                
+                    <ng-container matColumnDef="COUNTRY">
+                      <th mat-header-cell *matHeaderCellDef> username </th>
+                      <!-- <td mat-cell *matCellDef="let element"> {{element.username}} </td> -->
+                    </ng-container>
+                
+                    <ng-container matColumnDef="DEPARTMENT">
+                      <th mat-header-cell *matHeaderCellDef> email </th>
+                      <!-- <td mat-cell *matCellDef="let element"> {{element.email}} </td> -->
+                    </ng-container>
+                
+                    <ng-container matColumnDef="CONTACTPERSONNAME">
+                      <th mat-header-cell *matHeaderCellDef> phone </th>
+                      <!-- <td mat-cell *matCellDef="let element"> {{element.phone}} </td> -->
+                    </ng-container>
+                
+                    <ng-container matColumnDef="CONTACTPERSONEMAIL">
+                      <th mat-header-cell *matHeaderCellDef> website </th>
+                      <!-- <td mat-cell *matCellDef="let element"> {{element.website}} </td> -->
+                    </ng-container>
+                
+                    <ng-container matColumnDef="action">
+                      <th mat-header-cell *matHeaderCellDef> status </th>
+                      <!-- <td mat-cell *matCellDef="let element"> {{element.status}} </td> -->
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                
+                  </table>
+                <mat-paginator appCustomPagination [showTotalPages]="3" [length]="recordLength" [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</section>

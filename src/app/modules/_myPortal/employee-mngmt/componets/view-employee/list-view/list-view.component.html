@@ -42,6 +42,28 @@
 
                     </mat-form-field>
                 </div>
+                <div>
+                    <form  [formGroup]="dashboardForm" >
+                        <!-- Select dashboardValues -->
+                        
+                        </form>
+
+                        <mat-form-field  class="dashboard-select">
+                            <mat-placeholder class="dashboard-select-placeholder">Please select an option</mat-placeholder>
+                              <mat-select   (selectionChange)="selectionChange($event)" disableOptionCentering
+                               multiple >
+                              
+                                <mat-divider></mat-divider>
+                                <div *ngFor="let dashboardPosition of displayedColumns" 
+                                >
+                                  <mat-option class="dashboard-select-option"  [value]="dashboardPosition">
+                                    {{ dashboardPosition }}
+                                  </mat-option>
+                                </div>
+                              </mat-select>
+                            </mat-form-field>     
+                        
+                </div>
                 <span class="example-spacer"></span>
                 <button mat-icon-button  aria-label="view_list" (click)="onViewClick('list')">
                     <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">view_list</mat-icon>
@@ -70,7 +92,8 @@
                 </button>
 
             </mat-toolbar>
-            <div class="table-responsive-c table-responsive">
+           
+            <div class="table-responsive-c table-responsive" *ngIf="selectedValues">
                 <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
 
                     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns; let i=index;">

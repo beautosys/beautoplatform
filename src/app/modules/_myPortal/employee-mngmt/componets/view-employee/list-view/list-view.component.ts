@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
@@ -43,8 +43,14 @@ export class ListViewComponent implements OnInit {
   pageSize = 10;
 
   recordLength: number = 0;
-
-  constructor(private router: Router, private headerTitleService: HeaderTitleService, private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar, public dialog: MatDialog) { }
+  dashboardForm!: FormGroup;
+  selectedValues: any [] =[];
+  allSelected = false;
+  
+  constructor(private router: Router,
+     private headerTitleService: HeaderTitleService,
+      private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar, public dialog: MatDialog,
+      private formBuilder: FormBuilder) { }
   pageChangeEvent(event: any) { }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -53,20 +59,50 @@ export class ListViewComponent implements OnInit {
 
   ngOnInit(): void {
 
+   
+
     this.activatedRoute.data.subscribe((response: any) => {
 
       this.recordLength = response.employees.getEmployeeList.length;
       this.dataSource =new MatTableDataSource<any>(response.employees.getEmployeeList); 
       this.sortedData=this.dataSource;
 
+
       this.headerTitleService.updatedTitle(response.title);
       this.headerTitleService.updatedStart(response.start);
     });
+  
+  }
+
+  selectionChange(event:any){
+// event.stopPropagation();
+
+console.log('value',event.value)
+
+if(event.value.length > 0){
+  this.displayedColumns = this.displayedColumns.filter((e)=>{
+    return e == event.value;
+  })
+}else{
+  debugger
+  this.displayedColumns = []
+  this.displayedColumns = ['sr_no', 'employeeId', 'name', 'gender', 'bloodGroup', 'orgnazationEmail', 'mobileNo', 'department', 'designation', 'location', 'action'];
+
+}
 
   }
 
+  // toggleAllSelection(item:string,valueSelected:any) {
+  //   console.log(item)
+  //   // this.displayedColumns=[];
+  //   debugger
+  //   this.displayedColumns = this.displayedColumns.filter((e)=>{
+  //     return e == item;
+  //   })
+  
 
-
+  
+  // }
   openAddEmployeeDialog(data: any) {
 
     const careerJobDialogRef = this.dialog.open(AddUpdateEmployeeComponent, {});

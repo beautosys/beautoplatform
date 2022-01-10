@@ -9,13 +9,15 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ThemeModule } from 'src/app/theme/theme.module';
 import { CoreModule } from '../_core/core.module';
+import { CollageGridViewComponent } from './components/collage/collage-grid-view/collage-grid-view.component';
 
 
 
 @NgModule({
   declarations: [
     CollageListViewComponent,
-    AddcollagesComponent
+    AddcollagesComponent,
+    CollageGridViewComponent
   ],
   imports: [
     CommonModule,

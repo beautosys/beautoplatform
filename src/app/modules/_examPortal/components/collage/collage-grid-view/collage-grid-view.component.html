@@ -1,0 +1,101 @@
+<section class="banner-h-full d-flex align-items-start  py-4 bg">
+    <div class="container-fluid custom_width">
+        <div class="home">
+          <div class="table-responsive">
+            <mat-toolbar>
+                <span>Filter By:</span>
+                <span class="ml-3">Department :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="dept" disableOptionCentering
+                            [(ngModel)]="selectedDepartment" (selectionChange)="onChangeDept($event)">
+
+                            <mat-option [value]="item" *ngFor="let item of department; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="ml-3">Designation :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="designation" disableOptionCentering
+                            [(ngModel)]="selectedDesignation" (selectionChange)="onChangeDes($event)">
+
+                            <mat-option [value]="item" *ngFor="let item of designation; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="ml-3">Location :</span>
+                <div class="custom-input-select custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="location" disableOptionCentering
+                            [(ngModel)]="selectedLocation" (selectionChange)="onChangeLocation($event)">
+
+                            <mat-option [value]="item" *ngFor="let item of location; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+                <span class="example-spacer"></span>
+                <button mat-icon-button  aria-label="view_list" (click)="onViewClick('list')">
+                    <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">view_list</mat-icon>
+                  </button>
+                  <button mat-icon-button aria-label="grid_view" (click)="onViewClick('grid')">
+                    <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">
+                        grid_view</mat-icon>
+                  </button>
+                <div class="custom-input custom-select-box mr-2">
+                    <mat-form-field>
+                        <mat-select panelClass="mat-select-custom-color" id="month" disableOptionCentering
+                            [(ngModel)]="selectedMonth" (selectionChange)="onChangeMonth($event)">
+
+                            <mat-option [value]="item" *ngFor="let item of months; let i = index ">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                </div>
+
+                <button mat-raised-button aria-label="new job" (click)="openAddEmployeeDialog(null)">
+                    <mat-icon class="mr-1">add</mat-icon><span>Add collages</span>
+                </button>
+
+            </mat-toolbar>
+          
+        </div>
+            <div class="row row-cols-5">
+                <div class="col mb-4" *ngFor="let element of employees">
+                <mat-card class="bottomShadow">
+                    <mat-card-content>
+                        <div class="text-right">
+                            <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger
+                                            [matMenuTriggerData]="element">
+                                            <mat-icon>more_horiz</mat-icon>
+                                        </button>
+                                        <mat-menu #menu="matMenu">
+                                            <button mat-menu-item (click)="openDeleteEmployeeDialog(element)">Delete</button>
+                                            <button mat-menu-item (click)="openUpdateEmployeeDialog(element)">Update</button>
+                                        </mat-menu>
+
+                        </div>
+                        <img src="assets/img/Mask Group 1.svg" class="img-margin">
+                        <div class="mt-3 mb-1 font-weight-bold text-ellipsis">{{element.name}}</div>
+                        <div>{{element.designation}}</div>
+                    </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+            <mat-paginator appCustomPagination  [length]="recordLength" [pageSize]="12"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+        </div>
+    </div>
+</section>

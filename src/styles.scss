@@ -24,6 +24,61 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 369px;
 }
 
+.successMessage{
+  border: 2px solid #007341;
+  border-radius: 5px;
+  background-color: #008f50!important;
+  word-break: break-word;
+  color: #ffffff;
+   font-family: "Open Sans";
+  box-shadow: 2px 2px 11px 0 rgba(0,0,0,0.15);
+  }
+
+  .successMessage button {
+    background-color: #008f50;
+    color: white;
+    position: relative;
+    left: 6px;
+   font-family: "Open Sans"!important;;
+
+}
+
+.warningMessage{
+  border: 2px solid #C20A0E;
+  border-radius: 5px;
+  background-color: #E70E12 !important;
+  box-shadow: 2px 2px 11px 0 rgba(0,0,0,0.15);
+  word-break: break-word;
+  color: #ffffff;
+   font-family: "Open Sans"!important;;
+ 
+  }
+  .warningMessage button {
+    background-color: #E70E12;
+    color: white;
+    position: relative;
+    
+    left: 6px;
+   font-family: "Open Sans"!important;;
+
+}
+.warning-snackbar{
+   box-sizing: border-box;
+  border: 2px solid #CC880A;
+  border-radius: 5px;
+  background-color: #E59C16;
+  box-shadow: 2px 2px 11px 0 rgba(0,0,0,0.15);
+   font-family: "Open Sans"!important;;
+
+}
+.warning-snackbar button{
+   background-color: #E59C16;
+    color: white;
+    position: relative;
+    top: -14px;
+    left: 6px;
+    font-family: "open sans"!important;;
+}
 .custom {
 
   margin-top: 17px;
