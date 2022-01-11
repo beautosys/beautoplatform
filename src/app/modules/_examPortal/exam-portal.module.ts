@@ -9,13 +9,15 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ThemeModule } from 'src/app/theme/theme.module';
 import { CoreModule } from '../_core/core.module';
+import { QuestionnaireComponent } from './components/collage/questionnaire/questionnaire.component';
 
 
 
 @NgModule({
   declarations: [
     CollageListViewComponent,
-    AddcollagesComponent
+    AddcollagesComponent,
+    QuestionnaireComponent
   ],
   imports: [
     CommonModule,

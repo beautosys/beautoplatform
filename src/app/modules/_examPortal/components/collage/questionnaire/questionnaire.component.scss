@@ -1,0 +1,155 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    // border-style: solid;
+    // border-width: 1px;
+    // border-bottom-color: #0000001f;
+    // border-left-color: #f8f8f8;
+    // border-right-color: #f8f8f8;
+    // border-top-color: #f8f8f8;
+    background: #41548F;
+    color: #FFFFFF;
+    justify-content: center;
+  }
+
+  .mat-toolbar-row {
+    justify-content: center;
+  }
+
+  .mat-toolbar-single-row {
+    height: 50px;
+}
+
+.table-responsive-c {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+
+  .alignRight {
+    text-align: right;
+  }
+
+  .vl {
+    border-left: 2px solid #EEEEEE;
+    height: 500px;
+  }
+
+  .rBorder{
+    border-right: 2px solid #EEEEEE;
+  }
+
+  .options-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .option-radio-button {
+    margin: 5px;
+  }
+
+  .solid-btn {
+    // font-weight: 600;
+    color: #fff;
+    background-color: #3e5ca2;
+    // font-size: 0.8rem;
+    // line-height: 1.5;
+    width: 9rem;
+    height: 2rem;
+    border-radius: 0.6rem;
+    border: none;
+   
+}
+
+.outline-btn{
+  color: #41548F;
+    border: 1.5px solid #41548F;
+    width: 9rem;
+    background-color: white;
+    height: 2rem;
+    border-radius: 0.6rem;
+}
+
+.squareAttended {
+  background: #00ED3F;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.squareCurrent {
+  background: #AAAEBB;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.squareSkipped {
+  background: #FFD512;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.squareNotAttended {
+  background: #EEEEEE;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.squareAttended p,.squareSkipped p, .squareNotAttended p, .squareCurrent p{
+  margin: 0;
+  font-size: small;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.squareIndicatorAttended {
+  background: #00ED3F;
+  width: 30px;
+  height: 15px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.squareIndicatorSkipped {
+  background: #FFD512;
+  width: 30px;
+  height: 15px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.squareIndicatorNotAttended {
+  background: #EEEEEE;
+  width: 30px;
+  height: 15px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.inline{
+  display: inline-block;
+}
+
+.text-align-center{
+  text-align: center;
+}
