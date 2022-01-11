@@ -3,23 +3,25 @@ import { ExamPortalComponent } from './exam-portal.component';
 import { CollageListViewComponent } from './components/collage/collage-list-view/collage-list-view.component';
 import { Routes, RouterModule } from '@angular/router';
 import { QuestionnaireComponent } from './components/collage/questionnaire/questionnaire.component';
+import { EmployeeResolver } from '../_myPortal/employee-mngmt/services/employee.resolver';
+import { CollageGridViewComponent } from './components/collage/collage-grid-view/collage-grid-view.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ExamPortalComponent,
     children:[
-  
+
       {
         path:'collageList',
         component:CollageListViewComponent,
-       
+        resolve:{ employees:EmployeeResolver},
         data: {
-          title: 'Employee',
-          start:'Employee / ',
+          title: 'College Details',
+          start:'examPortal / ',
           breadcrumb: [
             {
-              label: 'User Profile List View',
+              label: 'College list',
               url: ''
             }
           ]
@@ -28,7 +30,7 @@ const routes: Routes = [
       {
         path:'questionnaire',
         component:QuestionnaireComponent,
-       
+
         data: {
           title: 'Questionnaire',
           start:'Collage / ',
@@ -40,8 +42,15 @@ const routes: Routes = [
           ]
         }
       },
- 
 
+{
+  path:'collageGrid',
+  component:CollageGridViewComponent,
+  resolve:{employees:EmployeeResolver},
+  data:{
+    title:'Collage data in grid'
+  }
+}
 
     ]
   },

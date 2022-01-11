@@ -10,6 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ThemeModule } from 'src/app/theme/theme.module';
 import { CoreModule } from '../_core/core.module';
 import { QuestionnaireComponent } from './components/collage/questionnaire/questionnaire.component';
+import { CollageGridViewComponent } from './components/collage/collage-grid-view/collage-grid-view.component';
 
 
 
@@ -17,7 +18,8 @@ import { QuestionnaireComponent } from './components/collage/questionnaire/quest
   declarations: [
     CollageListViewComponent,
     AddcollagesComponent,
-    QuestionnaireComponent
+    QuestionnaireComponent,
+    CollageGridViewComponent
   ],
   imports: [
     CommonModule,
