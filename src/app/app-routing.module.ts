@@ -52,6 +52,15 @@ const routes: Routes = [
       ),
      
   },
+  {
+    path: 'collageInfo',
+  
+    loadChildren: () =>
+      import('./modules/collageinfo/collageinfo.module').then(
+        (m) => m.CollageinfoModule
+      ),
+     
+  },
   //  {
   //   path: 'beautoSystem',
 
