@@ -11,6 +11,9 @@ export class QuestionaireService {
    }
 
   updateQuestion(index:number, isAttended:boolean, isSkipped:boolean, ans:string){
-    
+    javascript[index].isAttended=isAttended;
+    javascript[index].isSkipped=isSkipped;
+    javascript[index].ans=ans;
+    return javascript
   }
 }

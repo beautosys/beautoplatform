@@ -10,28 +10,28 @@
                 <div class="row">
                     <div class="col-md-9 rBorder">
                         <div class="row mt-3">
-                            <div class="col-md-6"> <span>Note: You can skip question.</span> </div>
-                            <div class="col-md-6 alignRight">50m : 42s Left</div>
+                            <div class="col-md-6"> <div class="inlineBlock"><mat-icon>event_note</mat-icon></div>   <div class="fontSize inlineBlock">Note: You can skip question.</div> </div>
+                            <div class="col-md-6 alignRight">{{min}}m : {{sec}}s Left</div>
 
                         </div>
                         <div class="row mt-5 mb-5" >
-                            <div class="col-md-1 text-align-center" >{{currentIndex+1}}</div>
+                            <div class="col-md-1 text-align-center " ><div class="circle"><p class="innerNumber">{{currentIndex+1}}</p></div></div>
                             <div class="col-md-11" >
-                                <div>
+                                <div class="fontColor mt-1">
                                     {{questionnarire[currentIndex].q}}
                                 </div>
-                                <div>
-                                    <mat-radio-group aria-labelledby="example-radio-group-label" class="options-radio-group">
-                                        <!-- [(ngModel)]="favoriteSeason"> -->
-                                        <mat-radio-button class="option-radio-button" *ngFor="let op of questionnarire[currentIndex].o" [value]="op">
+                                <div >
+                                    <mat-radio-group aria-labelledby="example-radio-group-label" class="options-radio-group" [(ngModel)]="selected">
+                                        
+                                        <mat-radio-button class="option-radio-button fontColor mt-3 mb-3" (change)="onAnswer($event)" *ngFor="let op of questionnarire[currentIndex].o" [value]="op">
                                             {{op}}
                                         </mat-radio-button>
                                     </mat-radio-group>
                                 </div>
                                 <div class="mt-4">
                                     <button type="button" class="outline-btn mr-4" (click)="onSkip(currentIndex)">Skip Question</button>
-                                    <button type="button" class="outline-btn mr-4" (click)="onPrevious()">Previous</button>
-                                    <button type="button" class="solid-btn" (click)="onNext()">Next</button>
+                                    <button type="button" class="outline-btn mr-4" (click)="onPrevious()" [disabled]="!isPrevEnabled">Previous</button>
+                                    <button type="button" class="solid-btn" (click)="onNext()" [disabled]="!isNextEnabled">Next</button>
                                   </div>
                             </div>
                             
@@ -46,8 +46,13 @@
                             </div>
                             <div class=" mt-3 mb-3">
 
-                                <div class="  mr-3 mb-3" [ngClass]="{'squareCurrent':i==currentIndex,'squareNotAttended':i!=currentIndex, 'squareSkipped':questionnarire[i].isSkipped==true}" *ngFor="let q of questionnarire; let i=index;">
+                                <div class="  mr-3 mb-3" *ngFor="let q of questionnarire; let i=index;" [ngClass]="{
+                                    'squareCurrent':i==currentIndex && q.isSkipped==false && q.isAttended==false,
+                                    'squareNotAttended':i!=currentIndex && q.isSkipped==false && q.isAttended==false, 
+                                    'squareSkipped':q.isSkipped==true && q.isAttended==false,
+                                    'squareAttended':q.isSkipped==false && q.isAttended==true  }" >
                                     <p>{{i+1}}</p>
+                                    
                                 </div>
                             </div>
                             <div class="row mb-2">

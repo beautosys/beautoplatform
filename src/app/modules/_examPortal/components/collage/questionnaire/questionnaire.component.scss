@@ -66,7 +66,7 @@
 
 .outline-btn{
   color: #41548F;
-    border: 1.5px solid #41548F;
+    border: 1.8px solid #41548F;
     width: 9rem;
     background-color: white;
     height: 2rem;
@@ -153,3 +153,31 @@
 .text-align-center{
   text-align: center;
 }
+
+.circle {
+  border-radius: 50%;
+  border: 1px solid #41548F;
+  width: 28px;
+  height: 28px; 
+}
+
+.innerNumber{
+  margin-top: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #41548F;
+  }
+
+  .fontColor{
+    color: #1E1C1C;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .fontSize{
+    font-size: smaller;
+  }
+
+  .inlineBlock{
+    display: inline-block;
+  }

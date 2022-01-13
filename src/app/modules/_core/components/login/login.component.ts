@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
     this.userInfoService.updateUserInfo({ id: '', name: '', email: '', roles: [], token: '' });
     // this.userInfoService.updateUserInfo({id:'',username:'',email:'',roles:[],token:''});
     this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+      // username: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+      username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
     });
   }
@@ -63,7 +64,11 @@ export class LoginComponent implements OnInit {
             }else if(responce.roles[0]=='ROLE_HRMANAGER'){
               this.headerTitleService.updateMenuBar(false);
               this.router.navigate(['/employeeMgnmt/employee-list-view']);
-            }else{
+            }else if(responce.roles[0]=='ROLE_HRADMIN'){
+            this.headerTitleService.updateMenuBar(false);
+            this.router.navigate(['/employeeMgnmt/employee-list-view']);
+          }
+            else{
               this.headerTitleService.updateMenuBar(true);
               this.router.navigate(['pages/home'])
             }
