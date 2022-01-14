@@ -72,11 +72,13 @@
           
         </div>
             <div class="row row-cols-5">
-                <div class="col mb-4" *ngFor="let element of employees">
-                    <a   (click)="goToDetails(element)">
+                <div class="col mb-4" *ngFor="let element of arrayCoolageData">
+                   
+                    <a>
                 <mat-card class="bottomShadow">
                     <mat-card-content>
                         <div class="text-right">
+                         
                             <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger
                                             [matMenuTriggerData]="element">
                                             <mat-icon>more_horiz</mat-icon>
@@ -88,8 +90,8 @@
 
                         </div>
                         <img src="assets/img/Mask Group 1.svg" class="img-margin">
-                        <div class="mt-3 mb-1 font-weight-bold text-ellipsis">{{element.employeeId}} {{element.name}}</div>
-                        <div>{{element.designation}}</div>
+                        <div class="mt-3 mb-1 font-weight-bold text-ellipsis">{{element}}</div>
+                       
                     </mat-card-content>
                 </mat-card>
             </a>

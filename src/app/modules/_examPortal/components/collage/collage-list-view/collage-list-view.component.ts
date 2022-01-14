@@ -36,7 +36,7 @@ export class CollageListViewComponent implements OnInit {
   // displayedColumns: string[] = ['sr_no', 'COLLEGEDETAILS', 'COUNTRY', 'DEPARTMENT', 'CONTACTPERSONNAME', 'CONTACTPERSONEMAIL', 
   //  'CONTACTNUMBER',  'action'];
 
-  CollageData = [];
+  CollageData:any[] = [];
   dataSource = new MatTableDataSource(this.CollageData);
   dataSubject = new BehaviorSubject<Element[]>([]);
 
@@ -104,6 +104,7 @@ const dailog = this.dialog.open(DeleteCollageDetailsComponent,{
   openViewCollageeDialog(name:any){
 debugger
 const dailog = this.dialog.open(CollageDetailsComponent,{
+  panelClass:"c-css",
   data:name
 })
   }
@@ -123,9 +124,10 @@ if(type='collageList'){
 }
   }
 
-GrigListOfCollage(type:any){
+  GrigListOfCollage(type:any){
 if(type = 'collageGrid'){
   this.router.navigate(['/examPortal/collageGrid'])
 }
+
 }
 }

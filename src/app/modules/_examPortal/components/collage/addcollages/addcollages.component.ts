@@ -1,3 +1,4 @@
+import { CollageService } from './../_services/collage.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -21,7 +22,7 @@ export class AddcollagesComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AddEmployeeComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private collageservices:CollageService) { }
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -30,27 +31,71 @@ export class AddcollagesComponent implements OnInit {
  
   ngOnInit() {
       this.basicInfoForm = new FormGroup({
-      empId: new FormControl('', [Validators.required]),
-      name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
-      dob: new FormControl('', [Validators.required]),
-      gender: new FormControl('', [Validators.required]),
-      reportingManager: new FormControl(''),
-      status: new FormControl(''),
-      dateOfJoining: new FormControl(''),
-      probationPeriod: new FormControl('', [Validators.required]),
-      confirmationDate: new FormControl('', [Validators.required]),
-      emailId: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      mobileNo: new FormControl('', [Validators.required, Validators.pattern("^[0-9]{10}$")]),
-      alternateMobileNo: new FormControl('', [Validators.required, Validators.pattern("^[0-9]{10}$")]),
-      emergencyContactName: new FormControl('', [Validators.required]),
-      emergencyContactNo: new FormControl('', [Validators.required]),
-      fatherOrSpouseName: new FormControl('', [Validators.required]),
+        collegeName: new FormControl(''),
+        location: new FormControl(''),
+        contactPerName1: new FormControl(''),
+        contactPerName2: new FormControl(''),
+        contactPerName3: new FormControl(''),
+        contactPerName4: new FormControl(''),
+        contactPerName5: new FormControl(''),
+        contactPerEmail1: new FormControl(''),
+        contactPerEmail2: new FormControl(''),
+        contactPerEmail3: new FormControl(''),
+        contactPerEmail4: new FormControl(''),
+        contactPerEmail5: new FormControl(''),
+        contactPer1ContactNo: new FormControl(''),
+        contactPer2ContactNo: new FormControl(''),
+        contactPer3ContactNo: new FormControl(''),
+        contactPer4ContactNo: new FormControl(''),
+        contactPer5ContactNo: new FormControl(''),
+        grade: new FormControl(''),
+        yearOfEsta: new FormControl(''),
+        university: new FormControl(''),
+        accredation: new FormControl(''),
+        country: new FormControl(''),
+        state: new FormControl(''),
+        CollegeUniAffilation: new FormControl(''),
+        collgeBio: new FormControl(''),
+
 
     })
 
   }
 
 
+  submitCollageForm(){
+    var data = {
+      "collegeName":"HIMALYAAAAkkkk",
+      "location":"ashta",
+      "contactPerName1":"lakhirNITAe",
+      "contactPerName2":"lakhire",
+      "contactPerName3":"sadewrw",
+      "contactPerName4":"",
+      "contactPerName5":"",
+      "contactPerEmail1":"DD1@GMAIL.COM",
+      "contactPerEmail2":"DD1@GMAIL.COM",
+      "contactPerEmail3":"DD1@GMAIL.COM",
+      "contactPerEmail4":"DD1@GMAIL.COM",
+      "contactPerEmail5":"DD1@GMAIL.COMS",
+      "contactPer1ContactNo":"9492111224",
+      "contactPer2ContactNo":"4826550",
+      "contactPer3ContactNo":"",
+      "contactPer4ContactNo":"",
+      "contactPer5ContactNo":"",
+      "grade":"A+",
+      "yearOfEsta":"1993",
+      "university":"Shivaji University",
+      "accredation":"ACC",
+      "country":"India",
+      "state":"Maharashtra",
+      "CollegeUniAffilation":"xyz",
+      "collgeBio":""
+ }
+this.collageservices.addCollageDetails(data).subscribe((responce:any)=>{
+
+})
+
+  }
 
 
 }
