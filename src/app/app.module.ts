@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { DashboardModule } from './modules/_myPortal/dashboard/dashboard.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,6 +37,7 @@ import { ExamPortalModule } from './modules/_examPortal/exam-portal.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule,
     MaterialModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -50,7 +52,6 @@ import { ExamPortalModule } from './modules/_examPortal/exam-portal.module';
     CarouselModule,
     NgbModule,
     NgImageSliderModule,
-
     MatCarouselModule.forRoot(),
     OverlayModule
 

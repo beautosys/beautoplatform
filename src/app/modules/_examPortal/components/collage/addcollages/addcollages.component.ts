@@ -29,9 +29,7 @@ export class AddcollagesComponent implements OnInit {
 
  
   ngOnInit() {
-
-
-    this.basicInfoForm = new FormGroup({
+      this.basicInfoForm = new FormGroup({
       empId: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
       dob: new FormControl('', [Validators.required]),

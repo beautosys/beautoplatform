@@ -7,7 +7,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
-import { AddEmployeeComponent } from '../../add-employee/add-employee.component';
 import { AddUpdateEmployeeComponent } from '../../add-update-employee/add-update-employee.component';
 import { DeleteEmployeeComponent } from '../../delete-employee/delete-employee.component';
 import { EditEmployeeComponent } from '../../edit-employee/edit-employee.component';
@@ -78,7 +77,6 @@ export class ListViewComponent implements OnInit {
 // event.stopPropagation();
 
 console.log('value',event.value)
-
 if(event.value.length > 0){
   this.displayedColumns = this.displayedColumns.filter((e)=>{
     return e == event.value;
@@ -91,6 +89,10 @@ if(event.value.length > 0){
 }
 
   }
+  
+optionClick(){
+  
+}
 
   // toggleAllSelection(item:string,valueSelected:any) {
   //   console.log(item)

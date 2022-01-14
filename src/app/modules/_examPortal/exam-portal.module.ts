@@ -11,6 +11,9 @@ import { ThemeModule } from 'src/app/theme/theme.module';
 import { CoreModule } from '../_core/core.module';
 import { QuestionnaireComponent } from './components/collage/questionnaire/questionnaire.component';
 import { CollageGridViewComponent } from './components/collage/collage-grid-view/collage-grid-view.component';
+import { CollageDetailsComponent } from './components/collage/collage-details/collage-details.component';
+import { RouterModule } from '@angular/router';
+import { DeleteCollageDetailsComponent } from './components/collage/delete-collage-details/delete-collage-details.component';
 
 
 
@@ -19,18 +22,21 @@ import { CollageGridViewComponent } from './components/collage/collage-grid-view
     CollageListViewComponent,
     AddcollagesComponent,
     QuestionnaireComponent,
-    CollageGridViewComponent
+    CollageGridViewComponent,
+    CollageDetailsComponent,
+    DeleteCollageDetailsComponent
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     MaterialModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     CoreModule,
     ThemeModule,
-    HttpClientModule,
     SharedModule,
     ExamPortalRoutingModule
-  ]
+  ],
 })
 export class ExamPortalModule { }

@@ -1,3 +1,6 @@
+import { CollageDetailsComponent } from './../collage-details/collage-details.component';
+import { DeleteCollageDetailsComponent } from './../delete-collage-details/delete-collage-details.component';
+import { CollageService } from './../_services/collage.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -11,6 +14,7 @@ import { EditEmployeeComponent } from 'src/app/modules/_myPortal/employee-mngmt/
 import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
 import { SnackBarService } from 'src/app/_snackBar/snack-bar.service';
 import { AddcollagesComponent } from '../addcollages/addcollages.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-collage-list-view',
@@ -26,12 +30,16 @@ export class CollageListViewComponent implements OnInit {
   selectedLocation = 'All';
   months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   selectedMonth = 'January';
-  displayedColumns: string[] = ['sr_no', 'COLLEGEDETAILS', 'COUNTRY','DEPARTMENT', 
-  'CONTACTPERSONNAME','CONTACTPERSONEMAIL','action'];
+  displayedColumns: string[] = ['name', 'location', 'country','state', 
+  'contactPer1','contactEmail1','contactPer1ContactNo','grade','yearOfEsta','accredation','status','action'];
 
   // displayedColumns: string[] = ['sr_no', 'COLLEGEDETAILS', 'COUNTRY', 'DEPARTMENT', 'CONTACTPERSONNAME', 'CONTACTPERSONEMAIL', 
   //  'CONTACTNUMBER',  'action'];
-  dataSource: any;
+
+  CollageData = [];
+  dataSource = new MatTableDataSource(this.CollageData);
+  dataSubject = new BehaviorSubject<Element[]>([]);
+
   sortedData: any;
   clientName: string = '';
   @ViewChild(MatPaginator)
@@ -45,8 +53,9 @@ export class CollageListViewComponent implements OnInit {
   recordLength: number = 0;
 
   constructor(private router: Router, private headerTitleService: HeaderTitleService, 
-    private activatedRoute: ActivatedRoute, private _snackBarService: SnackBarService, public dialog: MatDialog) { }
-  pageChangeEvent(event: any) { }
+    private activatedRoute: ActivatedRoute, private _snackBarService: SnackBarService, public dialog: MatDialog,
+    private collageservices:CollageService) { }
+
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -54,39 +63,57 @@ export class CollageListViewComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.activatedRoute.data.subscribe((response: any) => {
 
-      this.recordLength = response.employees.getEmployeeList.length;
-      this.dataSource =new MatTableDataSource<any>(response.employees.getEmployeeList); 
-      this.sortedData=this.dataSource;
+  this.getCollageListFromServices();
+    // this.activatedRoute.data.subscribe((response: any) => {
 
-      this.headerTitleService.updatedTitle(response.title);
-      this.headerTitleService.updatedStart(response.start);
-    });
+    //   // this.dataSource = response.collagesListResolver.getCollageList();
+    //   this.dataSource =new MatTableDataSource<any>(response.collagesListResolver); 
+    //   this.sortedData=this.dataSource;
+
+    //   this.headerTitleService.updatedTitle(response.title);
+    //   this.headerTitleService.updatedStart(response.start);
+    // });
 
   }
 
 
 
+
+
+  getCollageListFromServices(){
+    this.collageservices.getCollageList().subscribe((res:any)=>{
+      this.dataSource.data = res;
+
+      console.log(this.dataSource)
+    })
+  }
   openAddCollageDialog(data: any) {
 const dailogCollege = this.dialog.open(AddcollagesComponent,{
   
 })
-  
+}
 
+
+  openDeleteCollageDialog(data: any) {
+const dailog = this.dialog.open(DeleteCollageDetailsComponent,{
+  data:data
+})
+  }
+
+  openViewCollageeDialog(name:any){
+debugger
+const dailog = this.dialog.open(CollageDetailsComponent,{
+  data:name
+})
   }
 
 
-  openDeleteEmployeeDialog(data: any) {
-
-  
-
-  }
-
-  openUpdateEmployeeDialog(data: any) {
+  openUpdateCollageeDialog(data: any) {
 
    
   }
+
 
   ViewListOfCollage(type:any){
 

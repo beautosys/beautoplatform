@@ -16,14 +16,14 @@
                         <div class="form-group">
                             <input type="text" class="form-control custom-input" id="userName" placeholder="User Name"
                                 formControlName="username" maxlength="60"  required>
-                            <div *ngIf="loginFormControls.username.invalid && submitted">
+                            <!-- <div *ngIf="loginFormControls.username.invalid && submitted">
                                 <div *ngIf="loginFormControls.username?.errors?.required">
                                     <small class="form-text text-danger text-right">Enter user name</small>
                                 </div>
                                 <!-- <div *ngIf="loginFormControls.username?.errors?.pattern">
                                     <small class="form-text text-danger text-right">Enter valid user name</small>
-                                </div> -->
-                            </div>
+                                </div>
+                            </div> -->
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control custom-input" id="password"

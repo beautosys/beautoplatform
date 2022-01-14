@@ -43,12 +43,8 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <form  [formGroup]="dashboardForm" >
-                        <!-- Select dashboardValues -->
-                        
-                        </form>
-
-                        <mat-form-field  class="dashboard-select">
+                   
+                        <!-- <mat-form-field  class="dashboard-select">
                             <mat-placeholder class="dashboard-select-placeholder">Please select an option</mat-placeholder>
                               <mat-select   (selectionChange)="selectionChange($event)" disableOptionCentering
                                multiple >
@@ -61,7 +57,22 @@
                                   </mat-option>
                                 </div>
                               </mat-select>
-                            </mat-form-field>     
+                            </mat-form-field>      -->
+
+                            <mat-form-field>
+                                <mat-label>Favorite food</mat-label>
+                                <mat-select  #select multiple>
+                                  <div class="select-all">
+                                      <mat-checkbox [(ngModel)]="allSelected"
+                                                      [ngModelOptions]="{standalone: true}"
+                                                      (change)="selectionChange(displayedColumns)">Select All</mat-checkbox>
+                                  </div>
+                                  <mat-option (click)="optionClick()" *ngFor="let displayedColumns of displayedColumns" 
+                                  [value]="displayedColumns">
+                                    {{ displayedColumns }}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
                         
                 </div>
                 <span class="example-spacer"></span>
