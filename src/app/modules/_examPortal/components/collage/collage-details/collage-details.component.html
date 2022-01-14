@@ -1,42 +1,65 @@
-<section class="banner-h-full d-flex align-items-start  py-4">
-    <div class="container-fluid custom_width flex-container bg">
-        <div class="centerBox">
-          <div class="table-responsive flex-item item-box">
-          
-          <div class="conatiner">
-              <div class="header bottom-border-1 ">
-                <div class="row">
-                  
-                    <div class="profile-center">
-                      
+<div class=main>
+    <div class=header-blue bottom-border-1>
+       <div>   
+        <img src="assets/img/Mask Group 1.svg" class="img-margin">
+       </div>
+       <div class=mt-3 mb-1 font-weight-bold text-ellipsis>Collage Name</div>
 
-                            <img src="assets/img/Mask Group 1.svg" class="img-margin">
-                            <div class="mt-3 mb-1 font-weight-bold text-ellipsis">ghhhh</div>
-                           
-                       
-                    </div>
-                  
-                </div>
-              </div>
-              <div class="body">
-                  <div class="body-flex">
-                      <div class="label">
-                          <h1> {{collageData | json}}</h1>
-
-                          {{collageDetails | json}}
-                      </div>
-                      <div class="line"></div>
-                      <div class="label-info"></div>
-                  </div>
-              </div>
-              <div class="footer">
-                  <div class="read-more">
-
-                  </div>
-              </div>
-          </div>
-          
-        </div>
-        </div>
     </div>
-</section>
+  
+</div>
+<div class=main>
+<div class=body-white>
+   <div class=content content-flex *ngFor ="let Cdetails of collageData">
+    <div class=label>
+        <div class="scrollbar">
+        <li>Collage Name: {{Cdetails.name}}</li>
+        <li>location: {{Cdetails.location}}</li>
+    
+        <li>country:  {{Cdetails.state.country.countryName}}</li>
+        <li>state:  {{Cdetails.state.stateName}}</li>
+
+        <li>contactPer1: {{Cdetails.contactPer1}}</li>
+        <li>contactPer2: {{Cdetails.contactPer2}}</li>
+       
+        <li>contactEmail1:{{Cdetails.contactEmail1}}</li>
+        <li>contactEmail2: {{Cdetails.contactEmail2}}</li>
+       
+       <li> contactPer1ContactNo: {{Cdetails.contactPer1ContactNo}}</li>
+       <li> contactPer2ContactNo: {{Cdetails.contactPer2ContactNo}}</li>
+      
+       <div>
+       <div *ngIf="isShowmore" >
+       <li> grade:{{Cdetails.grade}} </li>
+       <li> yearOfEsta:{{Cdetails.yearOfEsta}} </li>
+       <li> accredation: {{Cdetails.accredation}}</li>
+      <li>  status: {{Cdetails.status}}</li>
+      <li>  collgeBio: </li>
+       <li> department: </li>
+       <li> university:{{Cdetails.university.universityName}} </li>
+
+         <li>   contactPer1: </li>
+         <li>   contactPer2: </li>
+          <li>  contactPer3: </li>
+    
+          <li>  contactEmail1:</li>
+          <li>  contactEmail2: </li>
+
+          <li>  contactPer1ContactNo: </li>
+          <li> contactPer2ContactNo: </li>
+   
+          <li>  grade: </li>
+          <li>  yearOfEsta: </li>
+          <li>  accredation: </li>
+          <li>  status: </li>
+           <li> collgeBio: </li>
+           
+           <li> approvedStatus: </li>
+        </div>
+<a (click)="toggleContent()"><img src="../../../../../../assets/img/collageBG//showmore.svg" alt=""></a>
+        
+    </div>
+   
+   </div>
+</div>
+</div>

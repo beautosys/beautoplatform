@@ -25,5 +25,8 @@ export class CollageService {
 
 
   }
+  addCollageDetails(data:any){
+    return this.http.post(environment.addCollageRecords,data);
+  }
 
 }

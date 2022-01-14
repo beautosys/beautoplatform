@@ -9,6 +9,7 @@ import { CollageService } from '../_services/collage.service';
   styleUrls: ['./collage-details.component.scss']
 })
 export class CollageDetailsComponent implements OnInit {
+  isShowmore:boolean=false;
   collageDetails:any
  collageData:any
   constructor(private activateRouter:ActivatedRoute,
@@ -39,4 +40,8 @@ this.collageDetails = params['collageName'];
     })
   }
 
+
+  toggleContent(){
+this.isShowmore = true;
+  }
 }
