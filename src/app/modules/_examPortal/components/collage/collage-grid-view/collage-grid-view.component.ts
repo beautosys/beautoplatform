@@ -1,3 +1,4 @@
+import { CollageDetailsComponent } from './../collage-details/collage-details.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -48,7 +49,9 @@ export class CollageGridViewComponent implements OnInit {
   lastIndex:number=11;
   isPrevOn:boolean=false;
 
-  constructor(private employeeService:EmployeeService, private router: Router, private headerTitleService: HeaderTitleService, private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar, public dialog: MatDialog) { }
+  constructor(private employeeService:EmployeeService, private router: Router,
+     private headerTitleService: HeaderTitleService, private activatedRoute: ActivatedRoute, 
+     private _snackBar: MatSnackBar, public dialog: MatDialog) { }
   pageChangeEvent(event: any) { }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -161,7 +164,14 @@ export class CollageGridViewComponent implements OnInit {
 
   }
 
+  goToDetails(event:any){
 
+const dailog = this.dialog.open(CollageDetailsComponent,{
+  data:event
+})
+
+// this.router.navigate(['/examPortal/collage/details/'+ `${event}`])
+  }
 
   openAddEmployeeDialog(data: any) {
 

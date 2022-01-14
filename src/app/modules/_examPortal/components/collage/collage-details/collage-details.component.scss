@@ -1,0 +1,35 @@
+
+  .bg{
+    background-image: url('../../../../../../assets/img/collageBG/bg1.svg');
+    // background-color: #0F6CB6;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+background: #005BA9;
+box-shadow: 0px 3px 6px #00000029;
+border-radius:8px ;
+
+}
+
+  .bottom-border-1  {
+      border-bottom: 8px solid #FFE600;
+    }
+
+  .profile-center{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

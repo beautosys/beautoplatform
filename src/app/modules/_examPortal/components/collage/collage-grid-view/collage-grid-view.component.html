@@ -73,6 +73,7 @@
         </div>
             <div class="row row-cols-5">
                 <div class="col mb-4" *ngFor="let element of employees">
+                    <a   (click)="goToDetails(element)">
                 <mat-card class="bottomShadow">
                     <mat-card-content>
                         <div class="text-right">
@@ -87,10 +88,11 @@
 
                         </div>
                         <img src="assets/img/Mask Group 1.svg" class="img-margin">
-                        <div class="mt-3 mb-1 font-weight-bold text-ellipsis">{{element.name}}</div>
+                        <div class="mt-3 mb-1 font-weight-bold text-ellipsis">{{element.employeeId}} {{element.name}}</div>
                         <div>{{element.designation}}</div>
                     </mat-card-content>
                 </mat-card>
+            </a>
               </div>
             </div>
             <mat-paginator appCustomPagination  [length]="recordLength" [pageSize]="12"
