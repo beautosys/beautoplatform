@@ -7,9 +7,9 @@
                 <div class="custom-input-select custom-select-box mr-2">
                     <mat-form-field>
                         <mat-select panelClass="mat-select-custom-color" id="dept" disableOptionCentering
-                            [(ngModel)]="selectedDepartment" >
+                           >
 
-                            <mat-option [value]="item" *ngFor="let item of department; let i = index ">
+                            <mat-option [value]="item" *ngFor="let item of countryGetArray; let i = index ">
                                 {{item}}
                             </mat-option>
                         </mat-select>
@@ -21,10 +21,10 @@
                 <div class="custom-input-select custom-select-box mr-2">
                     <mat-form-field>
                         <mat-select panelClass="mat-select-custom-color" id="designation" disableOptionCentering
-                            [(ngModel)]="selectedDesignation" >
+                             (selectionChange)="onSelectionCountry(selectedcountryNgModel)" [(ngModel)]="selectedcountryNgModel">
 
-                            <mat-option [value]="item" *ngFor="let item of designation; let i = index ">
-                                {{item}}
+                            <mat-option *ngFor="let collageitem of countryGetArray" [value]="collageitem">
+                               {{collageitem.countryName}}
                             </mat-option>
                         </mat-select>
 
@@ -36,9 +36,9 @@
                         <mat-select panelClass="mat-select-custom-color" id="location" disableOptionCentering
                             [(ngModel)]="selectedLocation" >
 
-                            <mat-option [value]="item" *ngFor="let item of location; let i = index ">
+                            <!-- <mat-option [value]="item" *ngFor="let item of location; let i = index ">
                                 {{item}}
-                            </mat-option>
+                            </mat-option> -->
                         </mat-select>
 
                     </mat-form-field>

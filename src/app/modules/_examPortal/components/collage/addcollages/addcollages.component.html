@@ -3,6 +3,7 @@
       <div class="col-md-3 bgblue"><img src="assets/img/addemp.svg" class="imgadd"> </div>
       <div class="col-md-9">
                   <h3>Basic College Information</h3>
+                  <form [formGroup]="basicInfoForm" (ngSubmit)="submitCollageForm()">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" class="addempinput" placeholder="College name" formControlName="collegeName">
@@ -14,56 +15,81 @@
                   <input type="text" class="addempinput" placeholder="Contact Person Name 1" formControlName="contactPerName1">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="contactPerName3" formControlName="contactPerName2">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 2" formControlName="contactPerName2">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="employee id" formControlName="contactPerName3">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 3" formControlName="contactPerName3">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="Name" formControlName="contactPerName4">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 4" formControlName="contactPerName4">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="employee id" formControlName="contactPerName5">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 5" formControlName="contactPerName5">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="Name" formControlName="contactPerEmail1">
+                  <input type="text" class="addempinput" placeholder="grade" formControlName="grade">
                 </div>
 
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="employee id" formControlName="contactPer4ContactNo">
+                  <input type="text" class="addempinput" placeholder="Contact Person 4 contact No" formControlName="contactPer4ContactNo">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="Name" formControlName="contactPerEmail1">
+                  <input type="text" class="addempinput" placeholder="Contact Person 5 contact No" formControlName="contactPer5ContactNo">
                 </div>
-              
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Accredation" formControlName="accredation">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Country" formControlName="country">
+                </div>
               </div>
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="employee id" formControlName="contactPerEmail1">
+                  <input type="text" class="addempinput" placeholder="contact Person email 1" formControlName="contactPerEmail1">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="Name" formControlName="contactPerEmail2">
+                  <input type="text" class="addempinput" placeholder="contact Person email 2" formControlName="contactPerEmail2">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="employee id" formControlName="contactPerEmail3">
+                  <input type="text" class="addempinput" placeholder="contact Person email 3" formControlName="contactPerEmail3">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="Name" formControlName="contactPerEmail4">
+                  <input type="text" class="addempinput" placeholder="contact Person email 4" formControlName="contactPerEmail4">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="employee id" formControlName="contactPerEmail5">
+                  <input type="text" class="addempinput" placeholder="contact Person email 5" formControlName="contactPerEmail5">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="Name" formControlName="contactPer1ContactNo">
+                  <input type="text" class="addempinput" placeholder="Contact Person contact no" formControlName="contactPer1ContactNo">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="employee id" formControlName="contactPer2ContactNo">
+                  <input type="text" class="addempinput" placeholder="Contact Person 2 contact no" formControlName="contactPer2ContactNo">
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" class="addempinput" placeholder="Name" formControlName="contactPer3ContactNo">
+                  <input type="text" class="addempinput" placeholder="Contact Person 3 contact no" formControlName="contactPer3ContactNo">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="year Of Esta" formControlName="yearOfEsta">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="university" formControlName="university">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="state" formControlName="state">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="College Affilation" formControlName="CollegeUniAffilation">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="collge Bio" formControlName="collgeBio">
                 </div>
               
               </div>
+              <div class="mt-4 float-right">
+                <button type="submit " class="btn solid-btn">Submit</button>
+            </div>
+    
+        </form>
       </div>
   
     </div>

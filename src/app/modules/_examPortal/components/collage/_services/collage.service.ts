@@ -29,4 +29,10 @@ export class CollageService {
     return this.http.post(environment.addCollageRecords,data);
   }
 
+
+  getCountryList(){
+    return this.http.get(environment.getCountryList)
+
+  }
+
 }

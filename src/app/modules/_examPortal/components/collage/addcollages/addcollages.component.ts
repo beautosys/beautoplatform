@@ -65,34 +65,36 @@ export class AddcollagesComponent implements OnInit {
 
   submitCollageForm(){
     var data = {
-      "collegeName":"HIMALYAAAAkkkk",
-      "location":"ashta",
-      "contactPerName1":"lakhirNITAe",
-      "contactPerName2":"lakhire",
-      "contactPerName3":"sadewrw",
-      "contactPerName4":"",
-      "contactPerName5":"",
-      "contactPerEmail1":"DD1@GMAIL.COM",
-      "contactPerEmail2":"DD1@GMAIL.COM",
-      "contactPerEmail3":"DD1@GMAIL.COM",
-      "contactPerEmail4":"DD1@GMAIL.COM",
-      "contactPerEmail5":"DD1@GMAIL.COMS",
-      "contactPer1ContactNo":"9492111224",
-      "contactPer2ContactNo":"4826550",
-      "contactPer3ContactNo":"",
-      "contactPer4ContactNo":"",
-      "contactPer5ContactNo":"",
-      "grade":"A+",
-      "yearOfEsta":"1993",
-      "university":"Shivaji University",
-      "accredation":"ACC",
-      "country":"India",
-      "state":"Maharashtra",
-      "CollegeUniAffilation":"xyz",
-      "collgeBio":""
+      "collegeName":this.basicInfoForm.value.collegeName,
+      "location":this.basicInfoForm.value.location,
+      "contactPerName1":this.basicInfoForm.value.contactPerName1,
+      "contactPerName2":this.basicInfoForm.value.contactPerName2,
+      "contactPerName3":this.basicInfoForm.value.contactPerName3,
+      "contactPerName4":this.basicInfoForm.value.contactPerName4,
+      "contactPerName5":this.basicInfoForm.value.contactPerName5,
+      "contactPerEmail1":this.basicInfoForm.value.contactPerEmail1,
+      "contactPerEmail2":this.basicInfoForm.value.contactPerEmail2,
+      "contactPerEmail3":this.basicInfoForm.value.contactPerEmail3,
+      "contactPerEmail4":this.basicInfoForm.value.contactPerEmail4,
+      "contactPerEmail5":this.basicInfoForm.value.contactPerEmail5,
+      "contactPer1ContactNo":this.basicInfoForm.value.contactPer1ContactNo,
+      "contactPer2ContactNo":this.basicInfoForm.value.contactPer2ContactNo,
+      "contactPer3ContactNo":this.basicInfoForm.value.contactPer3ContactNo,
+      "contactPer4ContactNo":this.basicInfoForm.value.contactPer4ContactNo,
+      "contactPer5ContactNo":this.basicInfoForm.value.contactPer5ContactNo,
+      "grade":this.basicInfoForm.value.grade,
+      "yearOfEsta":this.basicInfoForm.value.yearOfEsta,
+      "university":this.basicInfoForm.value.university,
+      "accredation":this.basicInfoForm.value.accredation,
+      "country":this.basicInfoForm.value.country,
+      "state":this.basicInfoForm.value.state,
+      "CollegeUniAffilation":this.basicInfoForm.value.CollegeUniAffilation,
+      "collgeBio":this.basicInfoForm.value.collgeBio
  }
 this.collageservices.addCollageDetails(data).subscribe((responce:any)=>{
-
+if(responce){
+  this.dialogRef.close()
+}
 })
 
   }

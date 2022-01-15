@@ -39,5 +39,8 @@ export const environment = {
   deleteCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/deleteCollegeByCollegeName?collegeName=cocsit',
   getCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/getCollegeDetails?collegeName=asmv',
 
+  getCountryList:Base_Url+"BeautoWebsiteLogin/exam/getCountryList",
 
+  getuniversityList:Base_Url+"BeautoWebsiteLogin/university/getList",
+AddUniversity:Base_Url+"BeautoWebsiteLogin/university/add"
 }

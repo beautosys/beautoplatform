@@ -22,11 +22,8 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./collage-list-view.component.scss']
 })
 export class CollageListViewComponent implements OnInit {
-  designation = ['All', 'HR Finance', 'Jr Java Devloper', 'Frontend Devloper'];
-  selectedDesignation = 'All';
-  department = ['All', 'HR', 'IT', 'Mech'];
-  selectedDepartment = 'All';
-  location = ['All', 'Pune', 'Mumbai', 'Chennai', 'Bengleru'];
+ countryGetArray:any=[]
+ selectedcountryNgModel:any
   selectedLocation = 'All';
   months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   selectedMonth = 'January';
@@ -63,8 +60,8 @@ export class CollageListViewComponent implements OnInit {
 
   ngOnInit(): void {
 
-
   this.getCollageListFromServices();
+  this.getCountry();
     // this.activatedRoute.data.subscribe((response: any) => {
 
     //   // this.dataSource = response.collagesListResolver.getCollageList();
@@ -77,9 +74,17 @@ export class CollageListViewComponent implements OnInit {
 
   }
 
+  onSelectionCountry(selectedcountryNgModel:any){
+console.log('selection value',selectedcountryNgModel)
+  }
 
 
-
+  getCountry(){
+    
+this.collageservices.getCountryList().subscribe((responce:any)=>{
+  this.countryGetArray = responce;
+  })
+  }
 
   getCollageListFromServices(){
     this.collageservices.getCollageList().subscribe((res:any)=>{
@@ -89,9 +94,12 @@ export class CollageListViewComponent implements OnInit {
     })
   }
   openAddCollageDialog(data: any) {
-const dailogCollege = this.dialog.open(AddcollagesComponent,{
-  
-})
+const dailogCollege = this.dialog.open(AddcollagesComponent,{} )
+dailogCollege.afterClosed().subscribe((res) => {
+  if (res) {
+    this.getCollageListFromServices();
+  }
+});
 }
 
 
@@ -99,13 +107,19 @@ const dailogCollege = this.dialog.open(AddcollagesComponent,{
 const dailog = this.dialog.open(DeleteCollageDetailsComponent,{
   data:data
 })
+
+dailog.afterClosed().subscribe((res)=>{
+  this.getCollageListFromServices()
+})
   }
 
   openViewCollageeDialog(name:any){
-debugger
 const dailog = this.dialog.open(CollageDetailsComponent,{
   panelClass:"c-css",
   data:name
+})
+dailog.afterClosed().subscribe((res)=>{
+  this.getCollageListFromServices()
 })
   }
 
