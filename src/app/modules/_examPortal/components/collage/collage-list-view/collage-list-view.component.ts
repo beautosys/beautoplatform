@@ -29,7 +29,6 @@ export class CollageListViewComponent implements OnInit {
   selectedLocation = 'All';
   displayedColumns: string[] = [
     'name',
-    'location',
     'country',
     'state',
     'contactPer1',
