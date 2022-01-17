@@ -73,7 +73,44 @@
             </mat-toolbar>
             
             <div class="table-responsive-c table-responsive">
-                <table mat-table [dataSource]="dataSource">
+
+              <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
+
+                <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns; let i=index;">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column=='sr_no'?'SR
+                      NO':column=='name'?'COLLEGE DETAILS':column=='country'?'COUNTRY':column=='state'?'STATE':column=='department'?'DEPARTMENT':column=='contactPer1'?'CONTACT PERSON NAME':column=='contactEmail1'?'CONTACT PERSON EMAIL':column=='contactPer1ContactNo'?'CONTACT NUMBER':'ACTION'}}
+                  </th>
+                  <td mat-cell *matCellDef="let element">
+
+                      <div class="table-data ">
+                          <span *ngIf="column=='sr_no'" class="vertical-center pl-2">{{i+1}}</span>
+                          <!-- <span *ngIf="column!='sr_no' && column!='country' && column!='state'" class="vertical-center">{{element[column]}}</span> -->
+                          <span *ngIf="column!='sr_no' && column!='country' && column!='state' && column!='name'" class="vertical-center">{{element[column]}}</span>
+                          <span *ngIf="column!='sr_no' && column=='name'" class="vertical-center"> {{element.name}}, {{element.location}}</span>
+                          <span *ngIf="column!='sr_no' && column=='country'" class="vertical-center">{{element[column].countryName}}</span>
+                          <span *ngIf="column!='sr_no' && column=='state'" class="vertical-center">{{element[column].stateName}}</span>
+                          <span *ngIf="column=='action'">
+                              <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger
+                                  [matMenuTriggerData]="element">
+                                  <mat-icon>more_vert</mat-icon>
+                              </button>
+                              <mat-menu #menu="matMenu">
+                                  <button mat-menu-item (click)="openDeleteCollageDialog(element)">Delete {{element.name}}</button>
+                                  <button mat-menu-item (click)="openAddCollageDialog(element)">Update</button>
+                                  <button mat-menu-item (click)="openViewCollageeDialog(element)">View</button>
+                              </mat-menu>
+                          </span>
+
+                      </div>
+                  </td>
+
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+                <!-- <table mat-table [dataSource]="dataSource">
                  <div class="table-data">
                     <ng-container matColumnDef="name">
                       <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -138,7 +175,7 @@
                             <th class="header action" mat-header-cell *matHeaderCellDef>
                            <span>Action</span>
                             </th>
-                            <!-- <td class="state-cell" mat-cell *matCellDef="let row">{{getStatusColor(row.status)}}</td> -->
+                            
                             <td mat-cell *matCellDef="let element">
                               <button mat-icon-button [matMenuTriggerFor]="menu">
                                 <mat-icon>more_vert</mat-icon>
@@ -148,7 +185,7 @@
                                 <button mat-menu-item mat-menu-item (click)="openDeleteCollageDialog(element.name)">
                                   Delete {{element.name}}
                                 </button>
-                                <!-- <a [routerLink]="['./edit-rate-profiles',row.profilename]" >Edit</a>  -->
+                              
                                 <button mat-menu-item mat-menu-item (click)="openUpdateCollageeDialog(element)">
                                   Update
                                 </button>
@@ -165,7 +202,8 @@
                     <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </div>
-                  </table>
+              
+                  </table> -->
                 <mat-paginator appCustomPagination [showTotalPages]="3" [length]="recordLength" [pageSize]="10"
                     [pageSizeOptions]="[5, 10, 25, 100]">
                 </mat-paginator>

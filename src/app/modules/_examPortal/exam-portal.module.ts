@@ -14,6 +14,7 @@ import { CollageGridViewComponent } from './components/collage/collage-grid-view
 import { CollageDetailsComponent } from './components/collage/collage-details/collage-details.component';
 import { RouterModule } from '@angular/router';
 import { DeleteCollageDetailsComponent } from './components/collage/delete-collage-details/delete-collage-details.component';
+import { AddUpdateCollegeComponent } from './components/collage/add-update-college/add-update-college.component';
 
 
 
@@ -24,7 +25,8 @@ import { DeleteCollageDetailsComponent } from './components/collage/delete-colla
     QuestionnaireComponent,
     CollageGridViewComponent,
     CollageDetailsComponent,
-    DeleteCollageDetailsComponent
+    DeleteCollageDetailsComponent,
+    AddUpdateCollegeComponent
   ],
   imports: [
     CommonModule,

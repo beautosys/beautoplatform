@@ -143,15 +143,7 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
                 </table>
-                <!-- <mat-paginator pageSize=10 showFirstLastButtons=false aria-label="career" class="mb-5"></mat-paginator> -->
-                <!-- <mat-paginator
-                appCustomPagination
-                (page)="pageChangeEvent($event)"
-                [length]="pageLength"
-                [pageSize]="pageSize"
 
-              >
-              </mat-paginator> -->
                 <mat-paginator appCustomPagination [showTotalPages]="3" [length]="recordLength" [pageSize]="10"
                     [pageSizeOptions]="[5, 10, 25, 100]">
                 </mat-paginator>

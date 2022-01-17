@@ -82,7 +82,7 @@ if(event.value.length > 0){
     return e == event.value;
   })
 }else{
-  debugger
+  
   this.displayedColumns = []
   this.displayedColumns = ['sr_no', 'employeeId', 'name', 'gender', 'bloodGroup', 'orgnazationEmail', 'mobileNo', 'department', 'designation', 'location', 'action'];
 

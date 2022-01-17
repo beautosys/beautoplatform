@@ -17,13 +17,13 @@ const routes: Routes = [
       {
         path:'collageList',
         component:CollageListViewComponent,
-        resolve:{ collagesListResolver:CollageResolver},
+        resolve:{ collagesList:CollageResolver},
         data: {
           title: 'College Details',
-          start:'examPortal / ',
+          start:'College / ',
           breadcrumb: [
             {
-              label: 'College list',
+              label: 'College list List View',
               url: ''
             }
           ]
