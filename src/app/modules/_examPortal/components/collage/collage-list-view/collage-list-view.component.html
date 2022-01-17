@@ -1,29 +1,30 @@
+
+
 <section class="banner-h-full d-flex align-items-start  py-4 bg">
     <div class="container-fluid custom_width">
         <div class="home">
             <mat-toolbar>
-                <span>Filter By:</span>
-                <span class="ml-3">Department :</span>
-                <div class="custom-input-select custom-select-box mr-2">
-                    <mat-form-field>
-                        <mat-select panelClass="mat-select-custom-color" id="dept" disableOptionCentering
-                            [(ngModel)]="selectedDepartment" >
-
-                            <mat-option [value]="item" *ngFor="let item of department; let i = index ">
-                                {{item}}
-                            </mat-option>
-                        </mat-select>
-
-                    </mat-form-field>
-                </div>
-                <span class="ml-3">Country :</span>
-                <div class="custom-input-select custom-select-box mr-2">
+               <span class="ml-3">Filetr By: </span>
+               
+               <mat-form-field *ngFor="let filter of filterSelectObj">
+              
+                <mat-label>Filter {{filter.name}}</mat-label>
+                <select  matNativeControl  name="{{filter.columnProp}}" [(ngModel)]="filter.modelValue"
+                (change)="filterChange(filter,$event)">
+                  <option value="">-- Select {{filter.name}} --</option>
+                    <option [value]="item" *ngFor="let item of filter.options">{{item}}</option>
+                  </select>
+                
+            
+                </mat-form-field>
+               
+                <!-- <div class="custom-input-select custom-select-box mr-2">
                     <mat-form-field>
                         <mat-select panelClass="mat-select-custom-color" id="designation" disableOptionCentering
-                            [(ngModel)]="selectedDesignation" >
+                             (selectionChange)="onSelectionCountry(selectedcountryNgModel)" [(ngModel)]="selectedcountryNgModel">
 
-                            <mat-option [value]="item" *ngFor="let item of designation; let i = index ">
-                                {{item}}
+                            <mat-option *ngFor="let collageitem of countryGetArray" [value]="collageitem">
+                               {{collageitem.countryName}}
                             </mat-option>
                         </mat-select>
 
@@ -33,15 +34,16 @@
                 <div class="custom-input-select custom-select-box mr-2">
                     <mat-form-field>
                         <mat-select panelClass="mat-select-custom-color" id="location" disableOptionCentering
-                            [(ngModel)]="selectedLocation" >
+                            [(ngModel)]="selectStateNgModel" >
 
-                            <mat-option [value]="item" *ngFor="let item of location; let i = index ">
-                                {{item}}
+                            <mat-option [value]="item" *ngFor="let item of StateGetArray; let i = index ">
+                                {{item.stateName}}
                             </mat-option>
                         </mat-select>
 
                     </mat-form-field>
-                </div>
+                </div> -->
+
                 <span class="example-spacer"></span>
                 <button mat-icon-button  aria-label="view_list" (click)="ViewListOfCollage('collageList')">
                     <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">view_list</mat-icon>
@@ -52,65 +54,105 @@
                   </button>
                 
                 
-                <div class="custom-input custom-select-box mr-2">
-                    <mat-form-field>
-                        <mat-select panelClass="mat-select-custom-color" id="month" disableOptionCentering
-                            [(ngModel)]="selectedMonth" >
-
-                            <mat-option [value]="item" *ngFor="let item of months; let i = index ">
-                                {{item}}
-                            </mat-option>
-                        </mat-select>
-
-                    </mat-form-field>
-                </div>
-
                 <button mat-raised-button aria-label="new job" (click)="openAddCollageDialog(null)">
                     <mat-icon class="mr-1">add</mat-icon><span>Add collages</span>
                 </button>
 
             </mat-toolbar>
+            
             <div class="table-responsive-c table-responsive">
-                <table mat-table [dataSource]="dataSource" class="table-data ">
+                <table mat-table [dataSource]="dataSource">
+                 <div class="table-data">
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Name </th>
+                      <td mat-cell *matCellDef="let element" > {{element.name}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="location">
+                      <th mat-header-cell *matHeaderCellDef> Location </th>
+                      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="country">
+                        <th mat-header-cell *matHeaderCellDef> Country </th>
+                        <td mat-cell *matCellDef="let element"> {{element.country?.countryName}} </td>
+                      </ng-container>
+                
+                      <ng-container matColumnDef="state">
+                        <th mat-header-cell *matHeaderCellDef> Satet </th>
+                        <td mat-cell *matCellDef="let element"> {{element.state?.stateName}} </td>
+                      </ng-container>
+                  
+                      <ng-container matColumnDef="contactPer1">
+                        <th mat-header-cell *matHeaderCellDef> Conatact person Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contactPer1}} </td>
+                      </ng-container>
 
-                    <ng-container matColumnDef="sr_no">
-                      <th mat-header-cell *matHeaderCellDef> id </th>
-                      <td mat-cell *matCellDef="let element"> {{element.sr_no}} </td>
-                    </ng-container>
-                
-                    <ng-container matColumnDef="COLLEGEDETAILS">
-                      <th mat-header-cell *matHeaderCellDef> name </th>
-                      <!-- <td mat-cell *matCellDef="let element"> {{element.name}} </td> -->
-                    </ng-container>
-                
-                    <ng-container matColumnDef="COUNTRY">
-                      <th mat-header-cell *matHeaderCellDef> username </th>
-                      <!-- <td mat-cell *matCellDef="let element"> {{element.username}} </td> -->
-                    </ng-container>
-                
-                    <ng-container matColumnDef="DEPARTMENT">
-                      <th mat-header-cell *matHeaderCellDef> email </th>
-                      <!-- <td mat-cell *matCellDef="let element"> {{element.email}} </td> -->
-                    </ng-container>
-                
-                    <ng-container matColumnDef="CONTACTPERSONNAME">
-                      <th mat-header-cell *matHeaderCellDef> phone </th>
-                      <!-- <td mat-cell *matCellDef="let element"> {{element.phone}} </td> -->
-                    </ng-container>
-                
-                    <ng-container matColumnDef="CONTACTPERSONEMAIL">
-                      <th mat-header-cell *matHeaderCellDef> website </th>
-                      <!-- <td mat-cell *matCellDef="let element"> {{element.website}} </td> -->
-                    </ng-container>
-                
-                    <ng-container matColumnDef="action">
-                      <th mat-header-cell *matHeaderCellDef> status </th>
-                      <!-- <td mat-cell *matCellDef="let element"> {{element.status}} </td> -->
-                    </ng-container>
-                
+
+                      <ng-container matColumnDef="contactEmail1">
+                        <th mat-header-cell *matHeaderCellDef> Conatct person email </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contactEmail1}} </td>
+                      </ng-container>
+  
+                      <ng-container matColumnDef="contactPer1ContactNo">
+                          <th mat-header-cell *matHeaderCellDef> Conatct person contact </th>
+                          <td mat-cell *matCellDef="let element"> {{element.contactPer1ContactNo}} </td>
+                        </ng-container>
+  
+                        <ng-container matColumnDef="grade">
+                          <th mat-header-cell *matHeaderCellDef> Grade </th>
+                          <td mat-cell *matCellDef="let element"> {{element.grade}} </td>
+                        </ng-container>
+
+
+
+
+                        <ng-container matColumnDef="yearOfEsta">
+                            <th mat-header-cell *matHeaderCellDef> Year of establish </th>
+                            <td mat-cell *matCellDef="let element"> {{element.yearOfEsta}} </td>
+                          </ng-container>
+    
+                          <ng-container matColumnDef="accredation">
+                            <th mat-header-cell *matHeaderCellDef> Accredation </th>
+                            <td mat-cell *matCellDef="let element"> {{element.accredation}} </td>
+                          </ng-container>
+    
+                          <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef> Status </th>
+                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                          </ng-container>
+                    
+                          <ng-container matColumnDef="action">
+                            <th class="header action" mat-header-cell *matHeaderCellDef>
+                           <span>Action</span>
+                            </th>
+                            <!-- <td class="state-cell" mat-cell *matCellDef="let row">{{getStatusColor(row.status)}}</td> -->
+                            <td mat-cell *matCellDef="let element">
+                              <button mat-icon-button [matMenuTriggerFor]="menu">
+                                <mat-icon>more_vert</mat-icon>
+                              </button>
+                              <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+                             
+                                <button mat-menu-item mat-menu-item (click)="openDeleteCollageDialog(element.name)">
+                                  Delete {{element.name}}
+                                </button>
+                                <!-- <a [routerLink]="['./edit-rate-profiles',row.profilename]" >Edit</a>  -->
+                                <button mat-menu-item mat-menu-item (click)="openUpdateCollageeDialog(element)">
+                                  Update
+                                </button>
+
+                                <button mat-menu-item mat-menu-item (click)="openViewCollageeDialog(element.name)">
+                                   View
+                                  </button>
+                  
+                              </mat-menu>
+                  
+                            </td>
+                          </ng-container>
+
                     <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                
+                </div>
                   </table>
                 <mat-paginator appCustomPagination [showTotalPages]="3" [length]="recordLength" [pageSize]="10"
                     [pageSizeOptions]="[5, 10, 25, 100]">

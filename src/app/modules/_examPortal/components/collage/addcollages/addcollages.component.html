@@ -1,178 +1,129 @@
 <div mat-dialog-content>
-    <!-- <p>Add employee</p>
-    <mat-form-field>
-      <input matInput [(ngModel)]="data.animal">
-    </mat-form-field> -->
-  
     <div class="row addempop">
       <div class="col-md-3 bgblue"><img src="assets/img/addemp.svg" class="imgadd"> </div>
-  
       <div class="col-md-9">
-  
-        <mat-tab-group class="tabsapce-20">
-          <mat-tab label="Basic Information">
-            
-            <section class="topspace">
+                  <h3>Basic College Information</h3>
+                  <form [formGroup]="basicInfoForm" (ngSubmit)="submitCollageForm()">
               <div class="row">
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="employee id">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="College name" name="collegeName" formControlName="collegeName"
+                   (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Name">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Location" formControlName="location"
+                  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="title">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Contact Person Name 1" formControlName="contactPerName1"
+                  (blur)="onBlurMethod($event)">
                 </div>
-      
-              </div>
-      
-              <div class="row m-10">
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="nick name">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 2" formControlName="contactPerName2"
+                  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Date of birth">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 3" formControlName="contactPerName3"
+                  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Birthday">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 4" formControlName="contactPerName4"
+                  (blur)="onBlurMethod($event)">
                 </div>
-              </div>
-      
-      
-              <div class="row m-10">
-                <div class="col-md-4">
-                  <div class="d-flex al-c">
-                    <div class="m-r-10">Gender</div>
-  
-                    <mat-radio-group >
-                      <mat-radio-button value="1">Male</mat-radio-button>
-                      <mat-radio-button value="2">Female</mat-radio-button>
-                    </mat-radio-group>
-  <!--                   
-                    <div class="r-space">
-                      <label>Male</label>
-                      <input type="radio" name="gender">
-                    </div>
-                    <div class="r-space">
-                      <label>Female</label>
-                      <input type="radio" name="gender">
-                    </div> -->
-      
-      
-                  </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person Name 5" formControlName="contactPerName5"
+                  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Blood Group">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="grade" formControlName="grade"
+                  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Reporting Manager">
+
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Contact Person 4 contact No" 
+                  formControlName="contactPer4ContactNo"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Contact Person 5 contact No" 
+                  formControlName="contactPer5ContactNo"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Accredation" 
+                  formControlName="accredation"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Country" formControlName="country"  
+                  (blur)="onBlurMethod($event)">
                 </div>
               </div>
-      
-              <div class="row m-10">
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Email ID">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person email 1" 
+                  formControlName="contactPerEmail1"  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Contact Name">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person email 2" 
+                  formControlName="contactPerEmail2"  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Contact Number">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person email 3" 
+                  formControlName="contactPerEmail3"  (blur)="onBlurMethod($event)">
                 </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person email 4" 
+                  formControlName="contactPerEmail4"  (blur)="onBlurMethod($event)">
                 </div>
-                <div class="row m-10">
-                  <div class="col-md-4">
-                    <input type="text" class="addempinput" placeholder="Personal Email ID">
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="addempinput" placeholder="Emergency contact name">
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="addempinput" placeholder="Emergency contact number">
-                  </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="contact Person email 5" 
+                  formControlName="contactPerEmail5"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Contact Person contact no" 
+                  formControlName="contactPer1ContactNo"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Contact Person 2 contact no" 
+                  formControlName="contactPer2ContactNo"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="Contact Person 3 contact no" 
+                  formControlName="contactPer3ContactNo"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="year Of Esta" formControlName="yearOfEsta" 
+                  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="university" formControlName="university"
+                  (blur)="onBlurMethod($event)">
+                  <!-- <mat-form-field>
+                    <mat-select panelClass="mat-select-custom-color" id="location" disableOptionCentering
+                        [(ngModel)]="selectUniversityNgModel" formControlName="university">
+
+                        <mat-option [value]="item" *ngFor="let item of UniversityGetArray; let i = index ">
+                            {{item.universityName}}
+                        </mat-option>
+                    </mat-select>
+
+                </mat-form-field> -->
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="state" formControlName="state"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="College Affilation" 
+                  formControlName="CollegeUniAffilation"  (blur)="onBlurMethod($event)">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" class="addempinput" placeholder="collge Bio" formControlName="collgeBio"  
+                  (blur)="onBlurMethod($event)">
+                </div>
+              
               </div>
-              <div class="row m-10">
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Father's Name">
-                </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Marital Status">
-                </div>
-                <div class="col-md-4">
-                  <input type="text" class="addempinput" placeholder="Marriage Date">
-                </div>
-                </div>
-                
-                <div class="row m-10">
-                  <div class="col-md-4">
-                    <input type="text" class="addempinput" placeholder="Spouse Name">
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="addempinput" placeholder="Nationality">
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="addempinput" placeholder="Residential Status">
-                  </div>
-                  </div>
-                  <div class="row m-10">
-                    <div class="col-md-4">
-                      <input type="text" class="addempinput" placeholder="Place of Birth">
-                    </div>
-                    <div class="col-md-4">
-                      <input type="text" class="addempinput" placeholder="Country of origin">
-                   
-                    </div>
-                    <div class="col-md-4"> 
-                    
-                      <select class="addempinput">
-                        <option value=""> select  Status</option>
-                        <option value="Confirmed">Confirmed</option>
-                        <option value="Consultant">Consultant</option>
-                        <option value="Probation">Probation</option>
-                      
-                      </select>
-                    </div>
-                    </div>
-               
-                    <div class="row m-10">
-                      <div class="col-md-4">
-                        <input type="text" class="addempinput" placeholder="Reigion">
-                      </div>
-                      <div class="col-md-4">
-                        <select class="addempinput">
-                          <option value="">International Employee</option>
-                          <option value="YES">YES</option>
-                          <option value="NO">NO</option>
-                        
-                        </select>
-                      </div>
-                      <div class="col-md-4"> 
-                      
-                        <select class="addempinput">
-                          <option value="">Physically challenged</option>
-                          <option value="yes"> YES</option>
-                          <option value="NO">NO</option>
-                  
-                        </select>
-                      </div>
-                      </div>
-  
-                    <div class="col-md-12 center m-10">
-  
-                      <button class="nextbtn"> Next </button>
-  
-                    </div>
-      
-      
-            </section>
-  
-          </mat-tab>
-          <mat-tab label="Second"> Content 2 </mat-tab>
-   
-        </mat-tab-group>
-  
-  
-  
+              <div class="mt-4 float-right">
+                <button type="submit " class="btn solid-btn">Submit</button>
+            </div>
+    
+        </form>
       </div>
   
     </div>

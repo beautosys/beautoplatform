@@ -31,6 +31,20 @@ export const environment = {
   clientUpdate: Base_Url + 'BeautoWebsiteLogin/client/update',
   clientDelete: Base_Url + 'BeautoWebsiteLogin/client/delete',
   getTeamMmberByEmpID:Base_Url+'BeautoWebsiteLogin/users/teamMemberById',
-  getEmployee:Base_Url+'BeautoWebsiteLogin/employee/getemployeelist'
+  getEmployee:Base_Url+'BeautoWebsiteLogin/employee/getemployeelist',
+
+ 
+
+  getAllCollageListRecords:Base_Url+'BeautoWebsiteLogin/college/getCollegeList',
+  addCollageRecords:Base_Url+'BeautoWebsiteLogin/college/saveCollege',
+  deleteCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/deleteCollegeByCollegeName',
+  getCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/getCollegeDetails',
+
+getCountryList:Base_Url+"BeautoWebsiteLogin/exam/getCountryList",
+getStateList:Base_Url+"BeautoWebsiteLogin/state/getStateList",
+getuniversityList:Base_Url+"BeautoWebsiteLogin/university/getList",
+AddUniversity:Base_Url+"BeautoWebsiteLogin/university/add",
+uploadCollageLogo:Base_Url+'BeautoWebsiteLogin/college/uploadCollegeLogo',
+saveCollageTemparory:Base_Url+'BeautoWebsiteLogin/college/savetempCollege'
 
 }

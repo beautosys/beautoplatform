@@ -24,7 +24,10 @@ export class UserInfoService {
       id:userInfo.id,
       name:userInfo.username,
       email:userInfo.email,
-      roles:userInfo.roles[0]=='ROLE_ADMIN'?['Admin']:userInfo.roles[0]=='ROLE_CANDIDATE'?['User']:userInfo.roles[0]=='ROLE_HRMANAGER'?['HR Manager']:userInfo.roles[0]=='ROLE_VISITOR'?['Visitor']:[ ],
+      roles:userInfo.roles[0]=='ROLE_ADMIN'?['Admin']:userInfo.roles[0]=='ROLE_CANDIDATE'?['User']:
+      userInfo.roles[0]=='ROLE_HRMANAGER'?['HR Manager']:userInfo.roles[0]=='ROLE_VISITOR'?['Visitor']:
+      userInfo.roles[0]=='ROLE_HRADMIN'?['HR Admin']:
+      [ ],
       token: userInfo.accessToken
     }
 
