@@ -8,6 +8,15 @@
     </div>
   
 </div>
+
+<div>
+   <form #f = "ngForm">
+  
+      <input type="file" name="files" accept="image/*" (change)="onFileChanged($event)">
+   
+      <button type="submit" (click)="onLogoSubmit()" class="btn btn-primary">Submit</button>
+      </form>
+</div>
 <div class=main>
 <div class=body-white>
    <div class=content content-flex *ngFor ="let Cdetails of collageData">

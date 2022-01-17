@@ -84,13 +84,16 @@
                                             <mat-icon>more_horiz</mat-icon>
                                         </button>
                                         <mat-menu #menu="matMenu">
-                                            <button mat-menu-item (click)="openDeleteEmployeeDialog(element)">Delete</button>
+                                            <button mat-menu-item (click)="openDeleteCollageDialog(element.name)">Delete</button>
                                             <button mat-menu-item (click)="openUpdateEmployeeDialog(element)">Update</button>
+                                            <button mat-menu-item (click)="openViewCollageeDialog(element)">View</button>
+
+
                                         </mat-menu>
 
                         </div>
                         <img src="assets/img/Mask Group 1.svg" class="img-margin">
-                        <div class="mt-3 mb-1 font-weight-bold text-ellipsis">{{element}}</div>
+                        <div class="mt-3 mb-1 font-weight-bold text-ellipsis">{{element.name}}</div>
                        
                     </mat-card-content>
                 </mat-card>

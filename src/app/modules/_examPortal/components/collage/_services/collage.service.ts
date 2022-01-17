@@ -31,7 +31,34 @@ export class CollageService {
 
 
   getCountryList(){
-    return this.http.get(environment.getCountryList)
+    return this.http.get(environment.getCountryList);
+
+  }
+
+  getStateList(){
+    return this.http.get(environment.getStateList);
+
+  }
+
+  getUniversity(){
+    debugger
+    return this.http.get(environment.getuniversityList);
+
+  }
+
+  uploadCollageLogo(file:File,data:any){
+
+     let formData = new FormData();
+    formData.append("file", file);
+    formData.append("collegeLogo", data.collegeLogo);
+    formData.append("collegeId", data.collegeId);
+    formData.append("name", data.name);
+   
+    return this.http.post(environment.uploadCollageLogo, formData)
+  }
+
+  temparorySaveCollageData(data:any){
+    return this.http.post(environment.saveCollageTemparory,data);
 
   }
 

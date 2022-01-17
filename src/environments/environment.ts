@@ -4,6 +4,7 @@
 
  const Base_Url = 'http://65.1.139.72:8080/'; //old
 export const BASE_URL = 'http://65.1.139.72:8080/';
+export const local = 'http://localhost:8080/'
 export const environment = {
   production: false,
 
@@ -45,10 +46,13 @@ export const environment = {
   deleteCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/deleteCollegeByCollegeName',
   getCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/getCollegeDetails',
 
-  getCountryList:Base_Url+"BeautoWebsiteLogin/exam/getCountryList",
+getCountryList:Base_Url+"BeautoWebsiteLogin/exam/getCountryList",
+getStateList:Base_Url+"BeautoWebsiteLogin/state/getStateList",
+getuniversityList:Base_Url+"BeautoWebsiteLogin/university/getList",
+AddUniversity:Base_Url+"BeautoWebsiteLogin/university/add",
+uploadCollageLogo:Base_Url+'BeautoWebsiteLogin/college/uploadCollegeLogo',
 
-  getuniversityList:Base_Url+"BeautoWebsiteLogin/university/getList",
-AddUniversity:Base_Url+"BeautoWebsiteLogin/university/add"
+saveCollageTemparory:Base_Url+'BeautoWebsiteLogin/college/savetempCollege'
 };
 
 /*
@@ -59,3 +63,4 @@ AddUniversity:Base_Url+"BeautoWebsiteLogin/university/add"
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+

@@ -1,24 +1,24 @@
+
+
 <section class="banner-h-full d-flex align-items-start  py-4 bg">
     <div class="container-fluid custom_width">
         <div class="home">
             <mat-toolbar>
-                <span>Filter By:</span>
-                <span class="ml-3">Department :</span>
-                <div class="custom-input-select custom-select-box mr-2">
-                    <mat-form-field>
-                        <mat-select panelClass="mat-select-custom-color" id="dept" disableOptionCentering
-                           >
-
-                            <mat-option [value]="item" *ngFor="let item of countryGetArray; let i = index ">
-                                {{item}}
-                            </mat-option>
-                        </mat-select>
-
-                    </mat-form-field>
-                </div>
-                <span class="ml-3">Country :</span>
+               <span class="ml-3">Filetr By: </span>
                
-                <div class="custom-input-select custom-select-box mr-2">
+               <mat-form-field *ngFor="let filter of filterSelectObj">
+              
+                <mat-label>Filter {{filter.name}}</mat-label>
+                <select  matNativeControl  name="{{filter.columnProp}}" [(ngModel)]="filter.modelValue"
+                (change)="filterChange(filter,$event)">
+                  <option value="">-- Select {{filter.name}} --</option>
+                    <option [value]="item" *ngFor="let item of filter.options">{{item}}</option>
+                  </select>
+                
+            
+                </mat-form-field>
+               
+                <!-- <div class="custom-input-select custom-select-box mr-2">
                     <mat-form-field>
                         <mat-select panelClass="mat-select-custom-color" id="designation" disableOptionCentering
                              (selectionChange)="onSelectionCountry(selectedcountryNgModel)" [(ngModel)]="selectedcountryNgModel">
@@ -34,15 +34,16 @@
                 <div class="custom-input-select custom-select-box mr-2">
                     <mat-form-field>
                         <mat-select panelClass="mat-select-custom-color" id="location" disableOptionCentering
-                            [(ngModel)]="selectedLocation" >
+                            [(ngModel)]="selectStateNgModel" >
 
-                            <!-- <mat-option [value]="item" *ngFor="let item of location; let i = index ">
-                                {{item}}
-                            </mat-option> -->
+                            <mat-option [value]="item" *ngFor="let item of StateGetArray; let i = index ">
+                                {{item.stateName}}
+                            </mat-option>
                         </mat-select>
 
                     </mat-form-field>
-                </div>
+                </div> -->
+
                 <span class="example-spacer"></span>
                 <button mat-icon-button  aria-label="view_list" (click)="ViewListOfCollage('collageList')">
                     <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">view_list</mat-icon>
@@ -53,19 +54,6 @@
                   </button>
                 
                 
-                <div class="custom-input custom-select-box mr-2">
-                    <mat-form-field>
-                        <mat-select panelClass="mat-select-custom-color" id="month" disableOptionCentering
-                            [(ngModel)]="selectedMonth" >
-
-                            <mat-option [value]="item" *ngFor="let item of months; let i = index ">
-                                {{item}}
-                            </mat-option>
-                        </mat-select>
-
-                    </mat-form-field>
-                </div>
-
                 <button mat-raised-button aria-label="new job" (click)="openAddCollageDialog(null)">
                     <mat-icon class="mr-1">add</mat-icon><span>Add collages</span>
                 </button>
