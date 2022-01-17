@@ -1,3 +1,5 @@
+import { DeleteCollageDetailsComponent } from './../delete-collage-details/delete-collage-details.component';
+import { AddcollagesComponent } from './../addcollages/addcollages.component';
 import { CollageDetailsComponent } from './../collage-details/collage-details.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,8 +22,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./collage-grid-view.component.scss']
 })
 export class CollageGridViewComponent implements OnInit {
-  CollageData = [];
-  arrayCoolageData = []
+  arrayCoolageData:any[] = []
   designation = ['All', 'HR Finance', 'Jr Java Devloper', 'Frontend Devloper'];
   selectedDesignation = 'All';
   department = ['All', 'HR', 'IT', 'Mech'];
@@ -80,15 +81,13 @@ const dailog = this.dialog.open(CollageDetailsComponent,{
 
   getCollageListFromServices(){
     this.collageservices.getCollageList().subscribe((res:any)=>{
-      this.CollageData = res;
-
-      console.log(this.CollageData)
+      this.arrayCoolageData = res;
     })
   }
 
   openAddEmployeeDialog(data: any) {
 
-    const careerJobDialogRef = this.dialog.open(AddUpdateEmployeeComponent, {});
+    const careerJobDialogRef = this.dialog.open(AddcollagesComponent, {});
 
     careerJobDialogRef.afterClosed().subscribe(result => {
       if (result != undefined || result != null) {
@@ -100,23 +99,21 @@ const dailog = this.dialog.open(CollageDetailsComponent,{
     });
 
   }
-
-
-  openDeleteEmployeeDialog(data: any) {
-
-    const deleteJobDialogRef = this.dialog.open(DeleteEmployeeComponent, {
-      width: '40vw',
-      maxWidth: '40vw',
-      data: data
-    });
-
-    deleteJobDialogRef.afterClosed().subscribe(result => {
-
-
-    });
-
+  openDeleteCollageDialog(data: any) {
+    const dailog = this.dialog.open(DeleteCollageDetailsComponent,{
+      data:data
+    })
   }
 
+  openViewCollageeDialog(name:any){
+    const dailog = this.dialog.open(CollageDetailsComponent,{
+      panelClass:"c-css",
+      data:name
+    })
+    dailog.afterClosed().subscribe((res)=>{
+      this.getCollageListFromServices()
+    })
+      }
   openUpdateEmployeeDialog(data: any) {
 
     const deleteJobDialogRef = this.dialog.open(EditEmployeeComponent, {

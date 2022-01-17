@@ -1,8 +1,21 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,25 +24,80 @@ import { AddUpdateEmployeeComponent } from '../../add-update-employee/add-update
 import { DeleteEmployeeComponent } from '../../delete-employee/delete-employee.component';
 import { EditEmployeeComponent } from '../../edit-employee/edit-employee.component';
 
+
+
+
 @Component({
   selector: 'app-list-view',
   templateUrl: './list-view.component.html',
-  styleUrls: ['./list-view.component.scss']
+  styleUrls: ['./list-view.component.scss'],
 })
 export class ListViewComponent implements OnInit {
-
   designation = ['All', 'HR Finance', 'Jr Java Devloper', 'Frontend Devloper'];
   selectedDesignation = 'All';
   department = ['All', 'HR', 'IT', 'Mech'];
   selectedDepartment = 'All';
   location = ['All', 'Pune', 'Mumbai', 'Chennai', 'Bengleru'];
   selectedLocation = 'All';
-  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   selectedMonth = 'January';
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'top'
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  displayedColumns: string[] = ['sr_no', 'employeeId', 'name', 'gender', 'bloodGroup', 'orgnazationEmail', 'mobileNo', 'department', 'designation', 'location', 'action'];
+  displayedCounmForDropDown: string[] = [
+    'sr_no',
+    'employeeId',
+    'name',
+    'gender',
+    'bloodGroup',
+    'orgnazationEmail',
+    'mobileNo',
+    'department',
+    'designation',
+    'location',
+    'action',
+  ];
+
+  allSelected: string[] = [
+    'sr_no',
+    'employeeId',
+    'name',
+    'gender',
+    'bloodGroup',
+    'orgnazationEmail',
+    'mobileNo',
+    'department',
+    'designation',
+    'location',
+    'action',
+  ];
+
+  displayedColumns: string[] = [
+    'sr_no',
+    'employeeId',
+    'name',
+    'gender',
+    'bloodGroup',
+    'orgnazationEmail',
+    'mobileNo',
+    'department',
+    'designation',
+    'location',
+    'action',
+  ];
   dataSource: any;
   sortedData: any;
   clientName: string = '';
@@ -43,116 +111,79 @@ export class ListViewComponent implements OnInit {
 
   recordLength: number = 0;
   dashboardForm!: FormGroup;
-  selectedValues: any [] =[];
-  allSelected = false;
-  
-  constructor(private router: Router,
-     private headerTitleService: HeaderTitleService,
-      private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar, public dialog: MatDialog,
-      private formBuilder: FormBuilder) { }
-  pageChangeEvent(event: any) { }
+  selectedValues: any[] = [];
+
+  constructor(
+    private router: Router,
+    private headerTitleService: HeaderTitleService,
+    private activatedRoute: ActivatedRoute,
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog,
+    private formBuilder: FormBuilder
+  ) {}
+  pageChangeEvent(event: any) {}
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
   ngOnInit(): void {
-
-   
-
     this.activatedRoute.data.subscribe((response: any) => {
-
       this.recordLength = response.employees.getEmployeeList.length;
-      this.dataSource =new MatTableDataSource<any>(response.employees.getEmployeeList); 
-      this.sortedData=this.dataSource;
-
+      this.dataSource = new MatTableDataSource<any>(
+        response.employees.getEmployeeList
+      );
+      this.sortedData = this.dataSource;
 
       this.headerTitleService.updatedTitle(response.title);
       this.headerTitleService.updatedStart(response.start);
     });
-  
   }
 
-  selectionChange(event:any){
-// event.stopPropagation();
+  selectionChange(event: any) {
+    if (event.value.length > 0) {
+      this.displayedColumns = this.displayedCounmForDropDown.filter((element) =>
+        event.value.includes(element)
+      );
+    } else {
+      this.displayedColumns=this.displayedCounmForDropDown;
 
-console.log('value',event.value)
-if(event.value.length > 0){
-  this.displayedColumns = this.displayedColumns.filter((e)=>{
-    return e == event.value;
-  })
-}else{
-  
-  this.displayedColumns = []
-  this.displayedColumns = ['sr_no', 'employeeId', 'name', 'gender', 'bloodGroup', 'orgnazationEmail', 'mobileNo', 'department', 'designation', 'location', 'action'];
-
-}
-
+    }
   }
-  
-optionClick(){
-  
-}
 
-  // toggleAllSelection(item:string,valueSelected:any) {
-  //   console.log(item)
-  //   // this.displayedColumns=[];
-  //   debugger
-  //   this.displayedColumns = this.displayedColumns.filter((e)=>{
-  //     return e == item;
-  //   })
-  
-
-  
-  // }
   openAddEmployeeDialog(data: any) {
-
     const careerJobDialogRef = this.dialog.open(AddUpdateEmployeeComponent, {});
 
-    careerJobDialogRef.afterClosed().subscribe(result => {
+    careerJobDialogRef.afterClosed().subscribe((result) => {
       if (result != undefined || result != null) {
         // if(result.code!='401'){
-
-
         // }
       }
     });
-
   }
 
-
   openDeleteEmployeeDialog(data: any) {
-
     const deleteJobDialogRef = this.dialog.open(DeleteEmployeeComponent, {
       width: '40vw',
       maxWidth: '40vw',
-      data: data
+      data: data,
     });
 
-    deleteJobDialogRef.afterClosed().subscribe(result => {
-
-
-    });
-
+    deleteJobDialogRef.afterClosed().subscribe((result) => {});
   }
 
   openUpdateEmployeeDialog(data: any) {
-
     const deleteJobDialogRef = this.dialog.open(EditEmployeeComponent, {
       width: '40vw',
       maxWidth: '40vw',
-      data: data
+      data: data,
     });
 
-    deleteJobDialogRef.afterClosed().subscribe(result => {
-
-
-    });
+    deleteJobDialogRef.afterClosed().subscribe((result) => {});
   }
 
   onChangeMonth(e: any) {
     this.selectedMonth = e.value;
-
   }
 
   onChangeDept(e: any) {
@@ -172,6 +203,4 @@ optionClick(){
       this.router.navigate(['/employeeMgnmt/employee-grid-view']);
     }
   }
-
-
 }
