@@ -19,6 +19,17 @@
     border: none;
   }
 
+  .heading{
+    font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
+    text-align: left;
+    font-size: 23px;
+    letter-spacing: 0.14px;
+    color: #0F6CB6;
+    opacity: 1;
+    text-align: center;
+    font-weight: 500;
+  }
+
 
 ::ng-deep .mat-step-label{
     min-width: 0px !important;
@@ -99,3 +110,159 @@ color: #ACACAC;
     }
 }
 
+
+.uplaod{
+    margin: 29px;
+  }
+  .uploadTitle{
+    margin-bottom: 29px;
+  }
+  .uploadTitle  span{
+    height: 18px;
+    color: rgba(6,31,55,0.8);
+    font-family: "Open Sans";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 18px;
+  
+  }
+  
+  .uploadTitle p{
+    font: var(--unnamed-font-style-normal) normal normal 20px/85px var(--unnamed-font-family-roboto);
+    text-align: left;
+    font: normal normal normal 20px/85px Roboto;
+    letter-spacing: 0px;
+    color: #C6C6C6;
+    opacity: 1;
+  }
+  
+  .loadBody{
+      box-sizing: border-box;
+    height: 100px;
+  cursor: pointer;
+    border: 1px dashed #979797;
+    border-radius: 6px;
+  }
+  .close{
+    display: flex;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .uploadBody{
+    display: flex;
+    justify-content: center;
+  }
+  .ngx{
+    height: 32px;
+    width: 126px;
+    // border-radius: 5px;
+    // // background-color: #0998CB;
+    // box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3);
+  }
+ 
+   input[name=myfile] {
+    opacity: 0 !important;
+     position: absolute;
+     z-index: -1;
+  }
+  #upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  
+  
+  .uploadbtn{
+    height: 32px;
+    width: 126px;
+    border-radius: 5px;
+    background-color: #0998CB;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: center;
+      margin-left: 19px;
+  }
+  ::ng-deep .csvFile{
+   .form-group {
+    opacity: 0 !important;
+  }
+  }
+  
+  .uploadBtnb{
+  height: 33px;
+       margin-left: 17px;
+      width: 126px;
+      color: #FFFFFF;
+      font-family: "Open Sans";
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 28px;
+      text-align: center;
+      background-color: #0998CB;
+      border-radius: 5px;
+  }
+  
+  .browesfile{
+         color: #ffffff;
+        margin-top: -28px;
+  }
+  
+  .progress {
+    box-sizing: border-box;
+   
+    width: 233px;
+    border: 1px solid rgba(80,98,115,0.41);
+    border-radius: 2px;
+    background-color: rgba(80,98,115,0.08);
+  }
+  
+  .progress-bar {
+    align-items: center;
+     height: 6px;
+    width: 130px;
+    border-radius: 2px;
+    background-color: #0998CB;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  
+    input[type="file"] {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+  
+      & + label {
+        max-width: 80%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+      }
+  
+      &:focus + label {
+        outline: 1px dotted #000;
+        outline: -webkit-focus-ring-color auto 5px;
+      }
+  
+      &:focus + label strong,
+      & + label:hover strong {
+          color: #39bfd3;
+        }
+    }
+  
+    .dragndrop{
+        font-weight: 700;
+    }
+  
