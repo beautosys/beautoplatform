@@ -12,13 +12,14 @@ import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
 import { SnackBarService } from 'src/app/_snackBar/snack-bar.service';
 import { AddcollagesComponent } from '../addcollages/addcollages.component';
 import { BehaviorSubject } from 'rxjs';
+import { AddUpdateCollegeComponent } from '../add-update-college/add-update-college.component';
 
 @Component({
   selector: 'app-collage-list-view',
   templateUrl: './collage-list-view.component.html',
   styleUrls: ['./collage-list-view.component.scss'],
 })
-export class CollageListViewComponent implements OnInit { 
+export class CollageListViewComponent implements OnInit {
   countryGetArray: any = [];
   StateGetArray: any = [];
   filterSelectObj:any[]= [];
@@ -64,14 +65,14 @@ export class CollageListViewComponent implements OnInit {
     private collageservices: CollageService
   ) {
     this.filterSelectObj = [
-     
-    
-      { 
+
+
+      {
            name:"name",
           columnProp:'name',
           options:[]
       },
-     
+
       {
         name:"status",
           columnProp:'status',
@@ -89,8 +90,8 @@ export class CollageListViewComponent implements OnInit {
     this.getCollageListFromServices();
     this.getCountry();
     this.getStateList();
-   
-       
+
+
 console.log('filterobj',this.filterSelectObj)
     this.dataSource.filterPredicate = this.createFilter();
 
@@ -122,17 +123,17 @@ console.log('filterobj',this.filterSelectObj)
     let remoteDummyData:any= []
     this.collageservices.getCollageList().subscribe((res: any) => {
       this.dataSource.data = res;
-    
+
       this.filterSelectObj.filter((o:any)=>{
         o.options = this.getFilterObj(this.dataSource.data,o.columnProp);
-  
-      
-        
+
+
+
          })
     });
   //  this.dataSource.data = remoteDummyData
 
-  
+
   }
 
   createFilter() {

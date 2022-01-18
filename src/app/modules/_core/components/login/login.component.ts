@@ -14,12 +14,12 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
- 
+
   submitted: boolean = false;
   loginForm!: FormGroup;
   constructor(private route: ActivatedRoute, private userInfoService: UserInfoService,
     private careerStateService: CareerStateService, private authServices: AuthService,
-    private router: Router, private headerTitleService: HeaderTitleService, 
+    private router: Router, private headerTitleService: HeaderTitleService,
     private snackBarServices:SnackBarService) {
 
   }
@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
     this.userInfoService.updateUserInfo({ id: '', name: '', email: '', roles: [], token: '' });
     // this.userInfoService.updateUserInfo({id:'',username:'',email:'',roles:[],token:''});
     this.loginForm = new FormGroup({
-      username: new FormControl('',),
+      // username: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
+      username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
     });
   }
@@ -65,6 +66,7 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['/employeeMgnmt/employee-list-view']);
             }else if(responce.roles[0]=='ROLE_HRADMIN'){
             this.headerTitleService.updateMenuBar(false);
+            this.router.navigate(['/employeeMgnmt/employee-list-view']);
             this.router.navigate(['/examPortal/collageList']);
           }
             else{
@@ -72,7 +74,7 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['pages/home'])
             }
             // this.careerStateService.data.subscribe((res: any) => {
- 
+
             //   if (res.file != null || res.finalObject != null) {
             //     this.router.navigate([res.nav]);
             //   } else {

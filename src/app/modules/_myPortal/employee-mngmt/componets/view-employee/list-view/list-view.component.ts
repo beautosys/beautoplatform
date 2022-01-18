@@ -147,7 +147,7 @@ export class ListViewComponent implements OnInit {
       );
     } else {
       this.displayedColumns=this.displayedCounmForDropDown;
-    
+
     }
   }
 
