@@ -53,7 +53,7 @@ this.collageDetails = params['collageName'];
     "name":this.data.name
   }
   this.collageservices.uploadCollageLogo(this.imgFile,data).subscribe((res:any)=>{
-
+console.log('logo added',res)
   })
   }
 
