@@ -52,7 +52,6 @@ import { ExamPortalModule } from './modules/_examPortal/exam-portal.module';
     CarouselModule,
     NgbModule,
     NgImageSliderModule,
-    
     MatCarouselModule.forRoot(),
     OverlayModule
 

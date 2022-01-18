@@ -9,10 +9,12 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ThemeModule } from 'src/app/theme/theme.module';
 import { CoreModule } from '../_core/core.module';
+import { QuestionnaireComponent } from './components/collage/questionnaire/questionnaire.component';
 import { CollageGridViewComponent } from './components/collage/collage-grid-view/collage-grid-view.component';
 import { CollageDetailsComponent } from './components/collage/collage-details/collage-details.component';
 import { RouterModule } from '@angular/router';
 import { DeleteCollageDetailsComponent } from './components/collage/delete-collage-details/delete-collage-details.component';
+import { AddUpdateCollegeComponent } from './components/collage/add-update-college/add-update-college.component';
 
 
 
@@ -20,9 +22,11 @@ import { DeleteCollageDetailsComponent } from './components/collage/delete-colla
   declarations: [
     CollageListViewComponent,
     AddcollagesComponent,
+    QuestionnaireComponent,
     CollageGridViewComponent,
     CollageDetailsComponent,
-    DeleteCollageDetailsComponent
+    DeleteCollageDetailsComponent,
+    AddUpdateCollegeComponent
   ],
   imports: [
     CommonModule,

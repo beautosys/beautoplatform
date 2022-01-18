@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ExamPortalComponent } from './exam-portal.component';
 import { CollageListViewComponent } from './components/collage/collage-list-view/collage-list-view.component';
 import { Routes, RouterModule } from '@angular/router';
+import { QuestionnaireComponent } from './components/collage/questionnaire/questionnaire.component';
 import { EmployeeResolver } from '../_myPortal/employee-mngmt/services/employee.resolver';
 import { CollageGridViewComponent } from './components/collage/collage-grid-view/collage-grid-view.component';
 import { CollageDetailsComponent } from './components/collage/collage-details/collage-details.component';
@@ -12,23 +13,38 @@ const routes: Routes = [
     path: '',
     component: ExamPortalComponent,
     children:[
-  
+
       {
         path:'collageList',
         component:CollageListViewComponent,
-        resolve:{ collagesListResolver:CollageResolver},
+        resolve:{ collagesList:CollageResolver},
         data: {
           title: 'College Details',
-          start:'examPortal / ',
+          start:'College / ',
           breadcrumb: [
             {
-              label: 'College list',
+              label: 'College list List View',
               url: ''
             }
           ]
         }
       },
- 
+      {
+        path:'questionnaire',
+        component:QuestionnaireComponent,
+
+        data: {
+          title: 'Questionnaire',
+          start:'Collage / ',
+          breadcrumb: [
+            {
+              label: 'Questionnaire',
+              url: ''
+            }
+          ]
+        }
+      },
+
 {
   path:'collageGrid',
   component:CollageGridViewComponent,
