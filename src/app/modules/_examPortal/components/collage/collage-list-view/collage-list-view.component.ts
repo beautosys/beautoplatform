@@ -264,10 +264,10 @@ this.uniqDataSource = this.dataSource.data;
     });
   }
 
-  openViewCollageeDialog(name: any) {
+  openViewCollageeDialog(data: any) {
     const dailog = this.dialog.open(CollageDetailsComponent, {
       panelClass: 'c-css',
-      data: name,
+      data: data,
     });
     dailog.afterClosed().subscribe((res) => {
       this.getCollageListFromServices();

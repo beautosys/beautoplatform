@@ -20,21 +20,19 @@ export class CollageDetailsComponent implements OnInit {
   
     @Inject(MAT_DIALOG_DATA) public data: any, private collageservices:CollageService
    ) {
-     debugger
+     
 
     this.collageDetails = data;
-
-     this.activateRouter.params.subscribe((params:any)=>{
-this.collageDetails = params['collageName'];
-
-     })
-
-     
+    if(this.collageDetails.collegeRelatedDocuments.length!=0 ){
+      this.collageDetails['collegeImage']='http://65.1.139.72:8080'+this.collageDetails.collegeRelatedDocuments[0].path;
+    }else{
+      this.collageDetails['collegeImage']='assets/img/Beauto_logo.svg';
+    }
     }
 
   ngOnInit(): void {
-    this.viewCollageDetails();
-    console.log('this.data',this.data)
+    // this.viewCollageDetails();
+    // console.log('this.data',this.data)
   }
 
 
@@ -42,7 +40,7 @@ this.collageDetails = params['collageName'];
     this.imgFile = event.target.files[0];
   }
   onLogoSubmit(){
-    debugger
+    
     // let finalObject= this.applicationForm.value;
     // finalObject['jobId']=this.data.jobID;
     // finalObject['department']=this.data.department;
@@ -57,15 +55,13 @@ console.log('logo added',res)
   })
   }
 
-  viewCollageDetails(){
-    this.collageservices.viewMoreOfCollage(this.data).subscribe((responce:any)=>{
-      console.log(responce);
-      this.collageData = responce
-    })
-  }
+  // viewCollageDetails(){
+  //   this.collageservices.viewMoreOfCollage(this.data).subscribe((responce:any)=>{
+  //     console.log(responce);
+  //     this.collageData = responce
+  //   })
+  // }
 
 
-  toggleContent(){
-this.isShowmore = true;
-  }
+
 }
