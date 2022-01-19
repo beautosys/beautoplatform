@@ -17,3 +17,41 @@
     
     }
     
+
+    .addmoretitle {
+        color: #0F6CB6;
+        margin-bottom: 3em;
+        font-family: "Roboto-Bold";
+        font-size: 20px;
+    }
+    .space-m{
+        padding-top: 10px;
+    }
+
+    .btnsub{
+        background: #26579E 0% 0% no-repeat padding-box;
+        border-radius: 30px;
+        border: none;
+        padding: 9px 44px;
+        text-align: center;
+        color: #fff;
+        margin-top: 13px;
+    }
+  .uderline{
+    border-bottom: 2px solid #b5b5b5;
+    padding-bottom: 6px;
+  }
+  .imgring{
+    margin-top: 10em;
+  }
+  .bg-more {
+     background-image: url('../../../assets/img/collageBG/bg1.svg');
+     background-size: 130em;
+     background-repeat: no-repeat;
+     background-position: -9em -1em;
+  
+  }
+  .bg::after{
+    opacity: 0.4;
+    content:"";
+}
