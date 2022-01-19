@@ -9,3 +9,122 @@ table {
     background-repeat: no-repeat;
   }
   
+  table {
+    width: 100%;
+  }
+  
+  .mat-table {
+    background: #f8f9fa;
+  }
+  
+  td.mat-cell {
+    border-bottom-style: none;
+  }
+  
+  th.mat-header-cell{
+    border-bottom-style: none;
+  }
+  
+  .mat-raised-button{
+  color: white;
+  background-color: #0F6CB6;
+  }
+  
+  .mat-toolbar{
+  background: white !important;
+  color: #92929D;
+  font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
+  }
+  
+  
+  .table-data{
+    background-color: white;
+    height: 38px;
+    position: relative;
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 30%;
+  }
+  
+  
+  .left-border-1  {
+    border-left: 5px solid #FFE600; 
+  }
+  
+  .left-border-2  {
+    border-left: 5px solid #2ECC71;
+  }
+  
+  
+  .left-border-3  {
+    border-left: 5px solid #D82026;
+  }
+  
+  
+  .left-border-4  {
+    border-left: 5px solid #50B5FF;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .custom-input{
+    height: 2.4rem;
+    font-size: 0.8rem;
+    border: 1px solid #ced4da29;
+  }
+  
+  .custom-input-select{
+  height: 2.5rem;
+  font-size: 0.8rem;
+  margin-top: 3px;
+  }
+  
+  .custom-select-box{
+    padding-left: 4px;
+    padding-right: 4px;
+  
+  }
+  
+  .mat-form-field{
+    width: 84px;
+  }
+  
+  ::ng-deep .mat-form-field-infix {
+    padding: 0.5em 0;
+    border-top: 0.44375em solid transparent !important;
+  }
+  
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  ::ng-deep .mat-paginator {
+    .mat-paginator-range-label {
+        display: none;
+    }
+    .mat-paginator-page-size {
+      display: none;
+    }
+  }
+  
+  ::ng-deep .mat-mini-fab:not([class*=mat-elevation-z]){
+  box-shadow: none;
+  }
+  
+  ::ng-deep .mat-mini-fab {
+  transform: none !important;
+  transition: none !important;
+  }
+  
+  ::ng-deep mat-button{
+  padding: 2px;
+  align-content: center;
+  }
+  
+  
+  
+  

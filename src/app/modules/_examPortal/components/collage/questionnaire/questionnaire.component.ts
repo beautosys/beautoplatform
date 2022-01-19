@@ -78,7 +78,6 @@ export class QuestionnaireComponent implements OnInit {
       this.isPrevEnabled=true;
     } 
   }
-
   onAnswer(e:any){
     this.selectedAns=e.value;
     this.isOptionSelected=true;

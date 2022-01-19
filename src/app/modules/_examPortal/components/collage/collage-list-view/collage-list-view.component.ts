@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Event } from '@angular/router';
 import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
 import { SnackBarService } from 'src/app/_snackBar/snack-bar.service';
 import { AddcollagesComponent } from '../addcollages/addcollages.component';
@@ -21,13 +21,40 @@ import { AddUpdateCollegeComponent } from '../add-update-college/add-update-coll
 })
 export class CollageListViewComponent implements OnInit {
   countryGetArray: any = [];
+  selectedCountry:any;
+  uniqDataSource:any = []
   StateGetArray: any = [];
   filterSelectObj:any[]= [];
   filterValues: any ={};
-
+  months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  selectedMonth = 'January';
   selectedcountryNgModel: any;
   selectStateNgModel: any;
   selectedLocation = 'All';
+  displayedCounmForDropDown:string[]=[ 'name',
+  'country',
+  'state',
+  'contactPer1',
+  'contactEmail1',
+  'contactPer1ContactNo',
+  'grade',
+  'yearOfEsta',
+  'accredation',
+  'status',
+  'action',]
   displayedColumns: string[] = [
     'name',
     'country',
@@ -41,11 +68,11 @@ export class CollageListViewComponent implements OnInit {
     'status',
     'action',
   ];
-
+  allSelected:any
   CollageData: any[] = [];
   dataSource = new MatTableDataSource(this.CollageData);
   dataSubject = new BehaviorSubject<Element[]>([]);
-
+  apiResponse:any = [];
   sortedData: any;
   clientName: string = '';
   @ViewChild(MatPaginator)
@@ -65,19 +92,13 @@ export class CollageListViewComponent implements OnInit {
     private collageservices: CollageService
   ) {
     this.filterSelectObj = [
-
-
       {
-           name:"name",
-          columnProp:'name',
-          options:[]
-      },
+        name:"name",
+       columnProp:'name',
+       options:[]
+   },
 
-      {
-        name:"status",
-          columnProp:'status',
-          options:[]
-      }
+   
     ]
   }
 
@@ -87,6 +108,17 @@ export class CollageListViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.allSelected=[ 'name',
+    'country',
+    'state',
+    'contactPer1',
+    'contactEmail1',
+    'contactPer1ContactNo',
+    'grade',
+    'yearOfEsta',
+    'accredation',
+    'status',
+    'action',]
     this.getCollageListFromServices();
     this.getCountry();
     this.getStateList();
@@ -94,12 +126,44 @@ export class CollageListViewComponent implements OnInit {
 
 console.log('filterobj',this.filterSelectObj)
     this.dataSource.filterPredicate = this.createFilter();
+this.uniqDataSource = this.dataSource.data;
 
 
   }
 
+  onChangeDept(event:any){
+   
+
+  }
+
+  filterData($event : any){
+    this.dataSource.filter = $event.target.value;
+  }
+
+  onChange(event:any){
+    debugger
+    this.dataSource.filter = event.value.trim().toLowerCase();
+  }
+
+  selectionChange(event:any){
+
+  if(event.value.length > 0){
+  
+    this.displayedColumns = this.displayedCounmForDropDown.filter((e:any)=>
+    event.value.includes(e))
+  }
+  else{
+    this.displayedColumns = this.displayedCounmForDropDown;
+  }
+
+  }
+  onChangeMonth(e: any) {
+    this.selectedMonth = e.value;
+  }
   filterChange(filter:any, event:any) {
     //let filterValues = {}
+    debugger
+    console.log('search value contry',)
     this.filterValues[filter.columnProp] = event.target.value.trim().toLowerCase()
     this.dataSource.filter = JSON.stringify(this.filterValues)
   }
@@ -123,7 +187,7 @@ console.log('filterobj',this.filterSelectObj)
     let remoteDummyData:any= []
     this.collageservices.getCollageList().subscribe((res: any) => {
       this.dataSource.data = res;
-
+      this.apiResponse = res;
       this.filterSelectObj.filter((o:any)=>{
         o.options = this.getFilterObj(this.dataSource.data,o.columnProp);
 
