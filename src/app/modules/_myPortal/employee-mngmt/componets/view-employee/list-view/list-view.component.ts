@@ -35,7 +35,9 @@ import { EditEmployeeComponent } from '../../edit-employee/edit-employee.compone
 export class ListViewComponent implements OnInit {
   designation = ['All', 'HR Finance', 'Jr Java Devloper', 'Frontend Devloper'];
   selectedDesignation = 'All';
-  department = ['All', 'HR', 'IT', 'Mech'];
+  department = ['All', 'HR Department', 'IT', 'Mech'];
+  symbol: any=null;
+  name: any=null;
   selectedDepartment = 'All';
   location = ['All', 'Pune', 'Mumbai', 'Chennai', 'Bengleru'];
   selectedLocation = 'All';
@@ -186,8 +188,17 @@ export class ListViewComponent implements OnInit {
     this.selectedMonth = e.value;
   }
 
-  onChangeDept(e: any) {
-    this.selectedDepartment = e.value;
+  onChangeDept(selectedDepartment: any) {
+    debugger
+    this.selectedDepartment = selectedDepartment;
+  if(selectedDepartment){
+    this.displayedColumns = this.department.filter((element:any)=>{
+      selectedDepartment.includes(element)
+    })
+  }
+  else{
+    this.displayedColumns = this.displayedCounmForDropDown
+  }
   }
 
   onChangeDes(e: any) {
