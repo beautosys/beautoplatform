@@ -1,6 +1,7 @@
 <section class="banner-h-full d-flex align-items-start py-4">
   <div class="container-fluid custom_width">
     <div class="home">
+      
       <mat-toolbar>
         <span>Filter By:</span>
         <span class="ml-3">Department :</span>
@@ -11,16 +12,17 @@
               id="dept"
               disableOptionCentering
               [(ngModel)]="selectedDepartment"
-              (selectionChange)="onChangeDept($event)"
+              (selectionChange)="onChangeDept(selectedDepartment)"
             >
               <mat-option
                 [value]="item"
-                *ngFor="let item of department; let i = index"
+                *ngFor="let item of dataSource.data; let i = index"
               >
-                {{ item }}
+                {{ item.department}}
               </mat-option>
             </mat-select>
           </mat-form-field>
+      
         </div>
         <span class="ml-3">Designation :</span>
         <div class="custom-input-select custom-select-box mr-2">
@@ -34,12 +36,15 @@
             >
               <mat-option
                 [value]="item"
-                *ngFor="let item of designation; let i = index"
+                *ngFor="let item of dataSource.data; let i = index"
               >
-                {{ item }}
+                {{ item.designation?.designationName }}
+
+           
               </mat-option>
             </mat-select>
           </mat-form-field>
+
         </div>
         <span class="ml-3">Location :</span>
         <div class="custom-input-select custom-select-box mr-2">
@@ -53,20 +58,21 @@
             >
               <mat-option
                 [value]="item"
-                *ngFor="let item of location; let i = index"
+                *ngFor="let item of dataSource.data; let i = index"
               >
-                {{ item }}
+                {{ item.experienceDetails?.designation }}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div>
-
+         
+          <span class="ml-3">Custome FIlter :</span>
           <mat-form-field>
-            <mat-label>Favorite food</mat-label>
+           
 
             <mat-select
-              placeholder="displayedColumns"
+             
               multiple
               [(ngModel)]="allSelected"
               (selectionChange)="selectionChange($event)"
