@@ -4,10 +4,11 @@
 
       <div class="row">
         <div class="col-md-9">
-<div class="row">
+
 
           <div   class="filterline">
             <span class="ml-3">Filetr By: </span>
+            <div>
             <mat-form-field *ngFor="let filter of filterSelectObj">
 
               <mat-label>Filter {{filter.name}}</mat-label>
@@ -20,6 +21,8 @@
 
             </mat-form-field>
           </div>
+
+        
           <div>
             <span class="ml-3">Custome FIlter All :</span>
             <mat-form-field>
@@ -40,7 +43,27 @@
               </mat-select>
             </mat-form-field>
           </div>
-</div>
+          <div>
+            
+      <mat-form-field>
+        <mat-select
+          panelClass="mat-select-custom-color"
+          id="dept"
+          disableOptionCentering
+          [(ngModel)]="selectedCountry"
+          (selectionChange)="onChangeDept($event)"
+        >
+          <mat-option
+            [value]="item"
+            *ngFor="let item of dataSource.data; let i = index"
+          >
+            {{ item.country.countryName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+          </div>
+        </div>
+
         </div>
 
         <div class="col-md-3">
@@ -82,22 +105,6 @@
 
       </div>
 
-      <mat-form-field>
-        <mat-select
-          panelClass="mat-select-custom-color"
-          id="dept"
-          disableOptionCentering
-          [(ngModel)]="selectedCountry"
-          (selectionChange)="onChangeDept($event)"
-        >
-          <mat-option
-            [value]="item"
-            *ngFor="let item of dataSource.data; let i = index"
-          >
-            {{ item.country.countryName}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
       <div class="table-responsive-c table-responsive ">
         <table mat-table [dataSource]="dataSource">
           <div class="table-data">

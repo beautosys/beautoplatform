@@ -234,13 +234,13 @@ background-color: #f9f9f9;
 }
 .filterline {
 display: flex;
-align-items: center;
+align-items: baseline;
 span {
   margin-left: 10px;
 }
-mat-form-field {
-  margin-left: 15px;
-}
+// mat-form-field {
+//   margin-left: 15px;
+// }
 }
 }
 
