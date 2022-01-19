@@ -171,6 +171,20 @@ color: #ACACAC;
     z-index: -1;
   }
   
+  .addmorecontact{
+  
+font: normal normal bold 20px/80px Roboto;
+letter-spacing: 0px;
+color: #005BA9;
+text-transform: uppercase;
+opacity: 1;
+  }
+
+  .textCenter{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
   
   
   .uploadbtn{
@@ -266,3 +280,5 @@ color: #ACACAC;
         font-weight: 700;
     }
   
+
+    

@@ -52,7 +52,8 @@ getuniversityList:Base_Url+"BeautoWebsiteLogin/university/getList",
 AddUniversity:Base_Url+"BeautoWebsiteLogin/university/add",
 uploadCollageLogo:Base_Url+'BeautoWebsiteLogin/college/uploadCollegeLogo',
 
-saveCollageTemparory:Base_Url+'BeautoWebsiteLogin/college/savetempCollege'
+saveCollageTemparory:Base_Url+'BeautoWebsiteLogin/college/savetempCollege',
+getStateBySelctCountry:Base_Url+'BeautoWebsiteLogin/state/getStateListBycountry'
 };
 
 /*

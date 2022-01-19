@@ -1,18 +1,15 @@
-import { filter } from 'rxjs/operators';
+import { CollageService } from './../_services/collage.service';
 import { CollageDetailsComponent } from './../collage-details/collage-details.component';
 import { DeleteCollageDetailsComponent } from './../delete-collage-details/delete-collage-details.component';
-import { CollageService } from './../_services/collage.service';
+import { CountryStateService } from './../../../../../shared/CountryStateServices/country-state.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute, Event } from '@angular/router';
-import { HeaderTitleService } from 'src/app/theme/header/header-title.service';
-import { SnackBarService } from 'src/app/_snackBar/snack-bar.service';
 import { AddcollagesComponent } from '../addcollages/addcollages.component';
 import { BehaviorSubject } from 'rxjs';
-import { AddUpdateCollegeComponent } from '../add-update-college/add-update-college.component';
 
 @Component({
   selector: 'app-collage-list-view',
@@ -21,9 +18,9 @@ import { AddUpdateCollegeComponent } from '../add-update-college/add-update-coll
 })
 export class CollageListViewComponent implements OnInit {
   countryGetArray: any = [];
+  StateGetArray: any = [];
   selectedCountry:any;
   uniqDataSource:any = []
-  StateGetArray: any = [];
   filterSelectObj:any[]= [];
   filterValues: any ={};
   months = [
@@ -89,7 +86,8 @@ export class CollageListViewComponent implements OnInit {
   constructor(
     private router: Router,
     public dialog: MatDialog,
-    private collageservices: CollageService
+    private CountryStateService: CountryStateService,
+    private collageServices:CollageService
   ) {
     this.filterSelectObj = [
       {
@@ -173,19 +171,19 @@ this.uniqDataSource = this.dataSource.data;
   }
 
   getCountry() {
-    this.collageservices.getCountryList().subscribe((responce: any) => {
+    this.CountryStateService.getCountryList().subscribe((responce: any) => {
       this.countryGetArray = responce;
     });
   }
 
   getStateList() {
-    this.collageservices.getStateList().subscribe((responce: any) => {
+    this.CountryStateService.getStateList().subscribe((responce: any) => {
       this.StateGetArray = responce;
     });
   }
   getCollageListFromServices() {
     let remoteDummyData:any= []
-    this.collageservices.getCollageList().subscribe((res: any) => {
+    this.collageServices.getCollageList().subscribe((res: any) => {
       this.dataSource.data = res;
       this.apiResponse = res;
       this.filterSelectObj.filter((o:any)=>{

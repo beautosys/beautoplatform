@@ -5,6 +5,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddEmployeeComponent } from 'src/app/modules/_myPortal/employee-mngmt/componets/add-employee/add-employee.component';
+import { CountryStateService } from 'src/app/shared/CountryStateServices/country-state.service';
 
 @Component({
   selector: 'app-addcollages',
@@ -13,6 +14,14 @@ import { AddEmployeeComponent } from 'src/app/modules/_myPortal/employee-mngmt/c
 })
 export class AddcollagesComponent implements OnInit {
   selectUniversityNgModel: any;
+  selectedCountryModel: any = "";
+  filteredCountries: any=[];
+  allMovies:any=[];
+  stateInfo: any[] = [];
+  isState:boolean = false;
+  countryGetArray: any = [];
+  StateGetArray: any = [];
+  selectedCountry:any;
   UniversityGetArray: any = [];
   submitted: boolean = false;
   basicInfoForm!: FormGroup;
@@ -22,12 +31,14 @@ export class AddcollagesComponent implements OnInit {
   currentDate = new Date();
 
   status = ['Confirmed', 'Consultant', 'Probation'];
+  countryName: any;
 
   constructor(
     public dialogRef: MatDialogRef<AddEmployeeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private collageservices: CollageService,
-    private snackbarservices: SnackBarService
+    private snackbarservices: SnackBarService,
+    private CountryStateService:CountryStateService
   ) {}
 
   onNoClick(): void {
@@ -37,9 +48,12 @@ export class AddcollagesComponent implements OnInit {
 
   ngOnInit() {
     this.getUniversityList();
+    this.getCountry();
+    this.getStateListByCountryName();
     this.basicInfoForm = new FormGroup({
       collegeName: new FormControl(''),
       location: new FormControl(''),
+      collageRegistrations:new FormControl(''),
       contactPerName1: new FormControl(''),
       contactPerName2: new FormControl(''),
       contactPerName3: new FormControl(''),
@@ -62,17 +76,55 @@ export class AddcollagesComponent implements OnInit {
       country: new FormControl(''),
       state: new FormControl(''),
       CollegeUniAffilation: new FormControl(''),
-      collgeBio: new FormControl(''),
+      CollegeBiography: new FormControl(''),
     });
   }
 
   getUniversityList() {
     this.collageservices.getUniversity().subscribe((responce: any) => {
-      debugger;
+   
       this.UniversityGetArray = responce;
     });
   }
 
+  onSelectionCountry(selectedcountryNgModel: any) {
+    console.log('selection value', selectedcountryNgModel);
+  }
+
+  getCountry() {
+    this.CountryStateService.getCountryList().subscribe((responce: any) => {
+      this.allMovies = responce;
+      this.filteredCountries = responce;
+      this.countryName = this.filteredCountries.country.countryName
+    });
+  }
+
+  onSelected(event:any) {
+    this.CountryStateService.getStateBySelectCountry(event).subscribe((responce: any) => {
+      this.stateInfo = responce;
+      if(this.stateInfo.length > 0 ){
+        this.isState = true
+      }
+      else{
+        this.isState = false
+      }
+    });
+   
+  }
+  getStateListByCountryName() {
+  this.stateInfo
+  }
+  onAutoCompleteCountrySearch() {
+   
+    if (this.selectedCountryModel) {
+      this.filteredCountries = this.allMovies.filter((element:any) =>
+      element.countryName.trim().toLowerCase().includes(this.selectedCountryModel)
+      );
+    } else {
+     this.filteredCountries = this.allMovies
+    
+    }
+  }
   onBlurMethod(event:any){
 console.log('temp data',event.target.value);
 let tempData = {"data":event.target.value}
@@ -90,6 +142,7 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
     var data = {
       collegeName: this.basicInfoForm.value.collegeName,
       location: this.basicInfoForm.value.location,
+      collageRegistrations: this.basicInfoForm.value.collageRegistrations,
       contactPerName1: this.basicInfoForm.value.contactPerName1,
       contactPerName2: this.basicInfoForm.value.contactPerName2,
       contactPerName3: this.basicInfoForm.value.contactPerName3,
@@ -112,7 +165,7 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
       country: this.basicInfoForm.value.country,
       state: this.basicInfoForm.value.state,
       CollegeUniAffilation: this.basicInfoForm.value.CollegeUniAffilation,
-      collgeBio: this.basicInfoForm.value.collgeBio,
+      CollegeBiography: this.basicInfoForm.value.CollegeBiography,
     };
     this.collageservices.addCollageDetails(data).subscribe((responce: any) => {
       if (responce.code == 'S208') {

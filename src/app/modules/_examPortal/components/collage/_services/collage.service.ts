@@ -8,6 +8,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CollageService {
+  getCountryList() {
+    throw new Error('Method not implemented.');
+  }
+  getStateList() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http:HttpClient) { }
 
@@ -30,18 +36,9 @@ export class CollageService {
   }
 
 
-  getCountryList(){
-    return this.http.get(environment.getCountryList);
-
-  }
-
-  getStateList(){
-    return this.http.get(environment.getStateList);
-
-  }
 
   getUniversity(){
-    debugger
+
     return this.http.get(environment.getuniversityList);
 
   }
