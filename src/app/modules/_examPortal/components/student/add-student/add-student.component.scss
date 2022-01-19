@@ -1,0 +1,115 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.addStudentInput{
+    height: 33px;
+    background: #f5f5f5;
+    border-radius: 3px;
+    border: none;
+    padding: 10px 9px;
+    width: 100%;
+    font: normal normal normal 13px/70px Roboto;
+    color: #ACACAC;
+    
+    }
+
+.imgadd{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.center {
+    height: auto;
+    position: relative;
+    background-color: #26579E;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin-bottom: 56px;
+  }
+
+  .center img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    // left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+.textAreaInput {
+//   padding: 6px 10px;
+  color: #333;
+  background: #f5f5f5;
+  border-radius: 3px;
+  border: none;
+  padding: 10px 9px;
+  width: 100%;
+  resize: none; 
+  overflow-y: overlay;
+
+  font: normal normal normal 13px/70px Roboto;
+  line-height: 20px;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.text-color{
+    color:  #0F6CB6;
+}
+
+.img-background{
+    background-color:#26579E ;
+}
+
+.img-center {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.textAreaInput::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome and variants */
+}
+
+.solid-btn {
+    font-weight: 600;
+    color: #fff;
+    background-color: #26579E;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    width: 9rem;
+    height: 2.2rem;
+    border-radius: 8.25rem;
+   
+}
+
+::-webkit-file-upload-button {
+    color: #fff;
+    background-color: #26579E;
+    border: none;
+    // padding: 1em;
+  }
+
+  input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    color: #fff;
+    background-color: #26579E;
+    border: none;
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    cursor: pointer;
+}

@@ -7,6 +7,7 @@ import { QuestionnaireComponent } from './components/collage/questionnaire/quest
 import { EmployeeResolver } from '../_myPortal/employee-mngmt/services/employee.resolver';
 import { CollageGridViewComponent } from './components/collage/collage-grid-view/collage-grid-view.component';
 import { CollageDetailsComponent } from './components/collage/collage-details/collage-details.component';
+import { AddStudentComponent } from './components/student/add-student/add-student.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,21 @@ const routes: Routes = [
           breadcrumb: [
             {
               label: 'Questionnaire',
+              url: ''
+            }
+          ]
+        }
+      },
+      {
+        path:'add-student',
+        component:AddStudentComponent,
+
+        data: {
+          title: 'Student Form',
+          start:'Collage / ',
+          breadcrumb: [
+            {
+              label: 'Student Form',
               url: ''
             }
           ]

@@ -1,0 +1,399 @@
+<section class="banner-h-full d-flex align-items-start  py-4">
+    <div class="container-fluid custom_width">
+        <div class="home">
+            <div class="row ml-1 mr-5">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                    <div class="text-center">
+
+                        <h3 class="text-color font-weight-bold">Student Form</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-1 mr-5">
+                <div class="col-md-4  center">
+                    <img src="assets/img/addemp.svg" class="imgadd "> 
+                </div>
+                <div class="col-md-8">
+                    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="First Name"
+                                        formControlName="firstName" maxlength="20" required>
+                                        <div *ngIf="studentFormControls.firstName.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.firstName?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter first name</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Last Name"
+                                        formControlName="lastName" maxlength="20" required>
+                                        <div *ngIf="studentFormControls.lastName.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.lastName?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter last name</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Father Name"
+                                        formControlName="fatherName" maxlength="20" required>
+                                        <div *ngIf="studentFormControls.fatherName.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.fatherName?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter father name</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Mother Name"
+                                        formControlName="motherName" maxlength="20" required>
+                                        <div *ngIf="studentFormControls.motherName.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.motherName?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter mother name</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Date Of Birth"
+                                        formControlName="dateOfBirth" required>
+                                        <div *ngIf="studentFormControls.dateOfBirth.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.dateOfBirth?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter date of birth</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="PhoneNumber"
+                                        formControlName="phoneNumber" maxlength="20" required>
+                                        <div *ngIf="studentFormControls.phoneNumber.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.phoneNumber?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter phoneNumber</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Alternate Phone Number"
+                                        formControlName="alternatePhoneNumber" maxlength="20" required>
+                                        <div *ngIf="studentFormControls.alternatePhoneNumber.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.alternatePhoneNumber?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter alternate phone number</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <textarea id="address" name="address" class="textAreaInput" rows="3" placeholder="Address" formControlName="address" required></textarea>  
+                                        <div *ngIf="studentFormControls.address.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.address?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter address</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="briefDescriptionAboutStudent" name="briefDescriptionAboutStudent" class="textAreaInput" rows="3" placeholder="Brief Description About Student" formControlName="briefDescriptionAboutStudent" required></textarea> 
+                                        <div *ngIf="studentFormControls.briefDescriptionAboutStudent.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.briefDescriptionAboutStudent?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter brief description about student</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Student Language Know"
+                                        formControlName="studentLanguageKnow" maxlength="100" required>
+                                        <div *ngIf="studentFormControls.studentLanguageKnow.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.studentLanguageKnow?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter student language know</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Student Soft Skills"
+                                        formControlName="studentSoftSkills" maxlength="100" required>
+                                        <div *ngIf="studentFormControls.studentSoftSkills.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.studentSoftSkills?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter student soft skills</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Student Communication Skills"
+                                        formControlName="studentCommunicationSkills" maxlength="100" required>
+                                        <div *ngIf="studentFormControls.studentCommunicationSkills.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.studentCommunicationSkills?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter student communication skills</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Student Technical Skills"
+                                        formControlName="studentTechnicalSkills" maxlength="100" required>
+                                        <div *ngIf="studentFormControls.studentTechnicalSkills.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.studentTechnicalSkills?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter student technical skills</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Student Language Known"
+                                        formControlName="studentLanguageKnown" maxlength="100"  required>
+                                        <div *ngIf="studentFormControls.studentLanguageKnown.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.studentLanguageKnown?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter student language known</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="County"
+                                        formControlName="county" maxlength="40" required>
+                                        <div *ngIf="studentFormControls.county.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.county?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter county</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="State"
+                                        formControlName="state" maxlength="40" required>
+                                        <div *ngIf="studentFormControls.state.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.state?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter state</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Student Department"
+                                        formControlName="studentDepartment" maxlength="50" required>
+                                        <div *ngIf="studentFormControls.studentDepartment.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.studentDepartment?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter student department</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Student Semester"
+                                        formControlName="studentSemester" maxlength="10" required>
+                                        <div *ngIf="studentFormControls.studentSemester.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.studentSemester?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter student semester</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="addStudentInput ">
+                                        <label for="resume"  class="custom-file-upload">Upload Resume</label>
+                                        <input type="file" id="resume" name="resume"  placeholder="resume"
+                                        formControlName="resume" required>
+                                    </div>
+                                    
+                                    <!-- <input type="text" class="addStudentInput " placeholder="resume"
+                                        formControlName="resume" maxlength="10" required> -->
+                                        <div *ngIf="studentFormControls.resume.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.resume?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter resume</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="photo"  class="custom-file-upload">Upload Photo</label>
+                                    <input type="file" id="photo" name="photo" placeholder="photo"
+                                    formControlName="photo" required>
+                                    <!-- <input type="text" class="addStudentInput " placeholder="photo"
+                                        formControlName="photo" maxlength="10" required> -->
+                                        <div *ngIf="studentFormControls.photo.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.photo?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter photo</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="text-center">
+
+                            <button type="submit" class="btn solid-btn">Submit</button>
+                        </div>
+                    </form>
+                    <!-- <div class="text-center">
+        
+                        <h3 class="text-color font-weight-bold">Basic College Information</h3>
+                    </div>
+                    <form [formGroup]="basicInfoForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    
+                                    <input type="file"  id="collegeImage" required>
+                                         
+                                       
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Name"
+                                        formControlName="collegeName" maxlength="50" required>
+                                        <div *ngIf="studentFormControls.collegeName.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.collegeName?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter college name</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput" placeholder="College Location"
+                                        formControlName="location" maxlength="50" required>
+                                        <div *ngIf="studentFormControls.location.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.location?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter college location</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Country"
+                                    [matAutocomplete]="auto" formControlName="country"  required>
+                                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                        <mat-option *ngFor="let option of countryOptions | async" [value]="option">
+                                          {{option}}
+                                        </mat-option>
+                                      </mat-autocomplete>
+                                        <div *ngIf="studentFormControls.country.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.country?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter country</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group" >
+                                    <input type="text" class="addStudentInput " placeholder="State"
+                                        formControlName="state" maxlength="50" required>
+                                        <div *ngIf="studentFormControls.state.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.state?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter state</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Contact Person Name 1"
+                                        formControlName="contactPerName1" maxlength="80" required>
+                                        <div *ngIf="studentFormControls.contactPerName1.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.contactPerName1?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter first contact person name</small>
+                                            </div>
+                                            <div *ngIf="studentFormControls.contactPerName1?.errors?.pattern">
+                                                <small class="form-text text-danger text-right">Enter valid name</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="addStudentInput " placeholder="Contact Person Email ID 1"
+                                        formControlName="contactPerEmail1" maxlength="100" required>
+                                        <div *ngIf="studentFormControls.contactPerEmail1.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.contactPerEmail1?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter first contact person email id</small>
+                                            </div>
+                                            <div *ngIf="studentFormControls.contactPerEmail1?.errors?.email">
+                                                <small class="form-text text-danger text-right">Enter valid email id</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="Contact Person Name 2"
+                                        formControlName="contactPerName2" maxlength="80" required>
+                                        <div *ngIf="studentFormControls.contactPerName2.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.contactPerName2?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter second contact person name</small>
+                                            </div>
+                                            <div *ngIf="studentFormControls.contactPerName2?.errors?.pattern">
+                                                <small class="form-text text-danger text-right">Enter valid name</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="addStudentInput " placeholder="Contact Person Email ID 2"
+                                        formControlName="contactPerEmail2" maxlength="100" required>
+                                        <div *ngIf="studentFormControls.contactPerEmail2.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.contactPerEmail2?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter second contact person email id</small>
+                                            </div>
+                                            <div *ngIf="studentFormControls.contactPerEmail2?.errors?.email">
+                                                <small class="form-text text-danger text-right">Enter valid email id</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Department"
+                                    [matAutocomplete]="collgeDeptAuto" formControlName="collgeDept" required>
+                                    <mat-autocomplete autoActiveFirstOption #collgeDeptAuto="matAutocomplete">
+                                        <mat-option *ngFor="let option of deptOptions | async" [value]="option">
+                                          {{option}}
+                                        </mat-option>
+                                      </mat-autocomplete>
+                                        <div *ngIf="studentFormControls.country.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.country?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter country</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" class="addStudentInput " placeholder="Contact Number"
+                                        formControlName="contactPer1ContactNo" maxlength="50" required>
+                                        <div *ngIf="studentFormControls.contactPer1ContactNo.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.contactPer1ContactNo?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter contact number</small>
+                                            </div>
+                                        </div>
+                                </div>
+                               
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Grade"
+                                        formControlName="grade" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Year of Established"
+                                        formControlName="yearOfEsta" maxlength="5" >
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College University Name"
+                                        formControlName="university" maxlength="50" >
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College University Affiliation"
+                                        formControlName="CollegeUniAffilation" maxlength="50" required>
+                                        <div *ngIf="studentFormControls.CollegeUniAffilation.invalid  && submitted">
+                                            <div *ngIf="studentFormControls.CollegeUniAffilation?.errors?.required">
+                                                <small class="form-text text-danger text-right">Enter college university affilation</small>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Accredation"
+                                        formControlName="accredation" maxlength="20" >
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Registration"
+                                        formControlName="collegeRegistration" maxlength="50" >
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Strength"
+                                        formControlName="collegeStrength" maxlength="50" >
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="addStudentInput " placeholder="College Biography"
+                                        formControlName="collgeBio" maxlength="100" >
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="text-center">
+        
+                            <button type="submit" class="btn solid-btn">{{isUpdate?'Update':'Submit'}}</button>
+                        </div>
+                    </form> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

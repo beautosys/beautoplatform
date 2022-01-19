@@ -31,10 +31,10 @@ export class AuthInterceptor implements HttpInterceptor {
     (userInfo);
     if(userInfo!=undefined){
       if (userInfo.token != null) {
-        (request.url);
+      
         if(request.url.includes('submitJobApplication') || request.url.includes('getlist') || request.url.includes('getlistdepartment') || request.url.includes('addmember') || request.url.includes('registration'))
         authReq = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + userInfo.token).set("Access-Control-Allow-Origin","*")});
-        else if(request.url.includes('signup'))
+        else if(request.url.includes('signup') || request.url.includes('/university/getList'))
         authReq = request.clone({ headers: request.headers.set('Content-Type', 'application/json').set("Access-Control-Allow-Origin","*")});
         else  
         authReq = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + userInfo.token).set('Content-Type', 'application/json').set("Access-Control-Allow-Origin","*")});
@@ -43,7 +43,7 @@ export class AuthInterceptor implements HttpInterceptor {
     
     return next.handle(authReq).pipe(tap(
       (res:any):any=>{
-        (res);
+        
       },
       (err: any):any => {
         if (err instanceof HttpErrorResponse) {
