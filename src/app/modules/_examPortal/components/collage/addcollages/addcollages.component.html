@@ -6,6 +6,7 @@
     <div class="col-md-8 cu-input">
       <h3 class="heading">Basic College Information</h3>
       <form [formGroup]="basicInfoForm" (ngSubmit)="submitCollageForm()">
+
         <div class="row">
           <div class="col-md-6">
             <div class="space-m">
@@ -24,7 +25,7 @@
           </span>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 ">
             <div class="space-m">
               <input
                 type="text"
@@ -40,6 +41,26 @@
             </div>
           </div>
         </div>
+
+
+
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6 ">
+
+
+            <div class="space-m">
+              <input type="text" placeholder="contact Person Name 2" formControlName="contactPerName2"
+                (blur)="onBlurMethod($event)" />
+            </div>
+          </div>
+          <div class="col-md-6 ">
+              <input type="text" placeholder="contact Person email 2" formControlName="contactPerEmail2"
+                (blur)="onBlurMethod($event)" />
+            </div>
+          </div>
+        
 
         <div class="row">
           <div class="col-md-6">
