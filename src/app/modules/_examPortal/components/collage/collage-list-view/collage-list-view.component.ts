@@ -20,6 +20,7 @@ export class CollageListViewComponent implements OnInit {
   countryGetArray: any = [];
   StateGetArray: any = [];
   selectedCountry:any;
+  allfilteredDataByEvent:any[]=[]
   uniqDataSource:any = []
   filterSelectObj:any[]= [];
   filterValues: any ={};
@@ -137,10 +138,16 @@ this.uniqDataSource = this.dataSource.data;
   filterData($event : any){
     this.dataSource.filter = $event.target.value;
   }
+filterinnnerdata:any = []
 
-  onChange(event:any){
-    debugger
-    this.dataSource.filter = event.value.trim().toLowerCase();
+  onCountryTableFilter(event:any){
+  this.dataSource.data =   this.allfilteredDataByEvent.filter((element:any)=>{
+     
+ event.value.includes(element)
+//  this.dataSource.data = data
+ 
+  
+    })
   }
 
   selectionChange(event:any){
@@ -185,7 +192,9 @@ this.uniqDataSource = this.dataSource.data;
     let remoteDummyData:any= []
     this.collageServices.getCollageList().subscribe((res: any) => {
       this.dataSource.data = res;
-      this.apiResponse = res;
+      this.allfilteredDataByEvent = res;
+
+      console.log('allfilteredDataByEvent',this.allfilteredDataByEvent)
       this.filterSelectObj.filter((o:any)=>{
         o.options = this.getFilterObj(this.dataSource.data,o.columnProp);
 
@@ -254,6 +263,7 @@ this.uniqDataSource = this.dataSource.data;
 
   openDeleteCollageDialog(data: any) {
     const dailog = this.dialog.open(DeleteCollageDetailsComponent, {
+   
       data: data,
     });
 

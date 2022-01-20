@@ -21,8 +21,8 @@ export class CollageService {
     return this.http.get(environment.getAllCollageListRecords)
   }
 
-  deleteCollageDetails(collegeName:any):Observable<any>{ 
-    return this.http.delete(environment.deleteCollageListRecordBYID+`?collegeName=${collegeName}`);
+  deleteCollageDetails(collegeId:any,collegeName:any):Observable<any>{ 
+    return this.http.delete(environment.deleteCollageListRecordBYID+`?collegeId=${collegeId}&collegeName=${collegeName}`);
   }
 
 

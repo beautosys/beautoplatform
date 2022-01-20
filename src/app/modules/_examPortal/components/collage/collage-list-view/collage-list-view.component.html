@@ -51,7 +51,7 @@
           id="dept"
           disableOptionCentering
           [(ngModel)]="selectedCountry"
-          (selectionChange)="onChangeDept($event)"
+          (selectionChange)="onCountryTableFilter($event)"
         >
           <mat-option
             [value]="item"
@@ -118,7 +118,7 @@
 
                   <div>
                     <div>
-                      {{element.name}}
+                      {{element.collegeId}} {{element.name}}
                     </div>
                     <div> {{element.location}} </div>
                   </div>
@@ -187,7 +187,7 @@
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
 
-                  <button mat-menu-item mat-menu-item (click)="openDeleteCollageDialog(element.name)">
+                  <button mat-menu-item mat-menu-item (click)="openDeleteCollageDialog(element)">
                     Delete {{element.name}}
                   </button>
                   <!-- <a [routerLink]="['./edit-rate-profiles',row.profilename]" >Edit</a>  -->

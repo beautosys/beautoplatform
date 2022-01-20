@@ -1,3 +1,5 @@
+import { filter, map } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { Event } from '@angular/router';
 import { SnackBarService } from './../../../../../_snackBar/snack-bar.service';
 import { CollageService } from './../_services/collage.service';
@@ -23,6 +25,7 @@ export class AddcollagesComponent implements OnInit {
   StateGetArray: any = [];
   selectedCountry:any;
   UniversityGetArray: any = [];
+  uniqUniversityGetArray:any=[]
   submitted: boolean = false;
   basicInfoForm!: FormGroup;
 
@@ -30,8 +33,10 @@ export class AddcollagesComponent implements OnInit {
 
   currentDate = new Date();
 
+  imgFile:any = File;
   status = ['Confirmed', 'Consultant', 'Probation'];
   countryName: any;
+  getCollageDetailsforUpload: any;
 
   constructor(
     public dialogRef: MatDialogRef<AddEmployeeComponent>,
@@ -53,22 +58,15 @@ export class AddcollagesComponent implements OnInit {
     this.basicInfoForm = new FormGroup({
       collegeName: new FormControl(''),
       location: new FormControl(''),
-      collageRegistrations:new FormControl(''),
+      // collageRegistrations:new FormControl(''),
       contactPerName1: new FormControl(''),
       contactPerName2: new FormControl(''),
-      contactPerName3: new FormControl(''),
-      contactPerName4: new FormControl(''),
-      contactPerName5: new FormControl(''),
+    
       contactPerEmail1: new FormControl(''),
       contactPerEmail2: new FormControl(''),
-      contactPerEmail3: new FormControl(''),
-      contactPerEmail4: new FormControl(''),
-      contactPerEmail5: new FormControl(''),
+     
       contactPer1ContactNo: new FormControl(''),
-      contactPer2ContactNo: new FormControl(''),
-      contactPer3ContactNo: new FormControl(''),
-      contactPer4ContactNo: new FormControl(''),
-      contactPer5ContactNo: new FormControl(''),
+      contactPer2ContactNo:new FormControl(''),
       grade: new FormControl(''),
       yearOfEsta: new FormControl(''),
       university: new FormControl(''),
@@ -77,13 +75,22 @@ export class AddcollagesComponent implements OnInit {
       state: new FormControl(''),
       CollegeUniAffilation: new FormControl(''),
       CollegeBiography: new FormControl(''),
+      files: new FormControl('')
     });
   }
 
   getUniversityList() {
     this.collageservices.getUniversity().subscribe((responce: any) => {
-   
-      this.UniversityGetArray = responce;
+      this.UniversityGetArray = responce.foreaxh((x:any)=>{
+        if(x != ""){
+          this.uniqUniversityGetArray.push(x)
+        }
+      })
+  // this.UniversityGetArray=   this.UniversityGetArray.filter((x:any)=>{
+    
+  //   });
+  
+      
     });
   }
 
@@ -138,26 +145,36 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
   }
 });
   }
+
+  onSelectFile(event:any) {
+    debugger
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+      reader.onload = () => {
+        this.imgFile = reader.result;
+        this.basicInfoForm.patchValue({
+          file: reader.result
+        });
+      
+      }
+    
+    }
+  }
   submitCollageForm() {
     var data = {
       collegeName: this.basicInfoForm.value.collegeName,
       location: this.basicInfoForm.value.location,
-      collageRegistrations: this.basicInfoForm.value.collageRegistrations,
+      // collageRegistrations: this.basicInfoForm.value.collageRegistrations,
       contactPerName1: this.basicInfoForm.value.contactPerName1,
       contactPerName2: this.basicInfoForm.value.contactPerName2,
-      contactPerName3: this.basicInfoForm.value.contactPerName3,
-      contactPerName4: this.basicInfoForm.value.contactPerName4,
-      contactPerName5: this.basicInfoForm.value.contactPerName5,
+ 
       contactPerEmail1: this.basicInfoForm.value.contactPerEmail1,
       contactPerEmail2: this.basicInfoForm.value.contactPerEmail2,
-      contactPerEmail3: this.basicInfoForm.value.contactPerEmail3,
-      contactPerEmail4: this.basicInfoForm.value.contactPerEmail4,
-      contactPerEmail5: this.basicInfoForm.value.contactPerEmail5,
+  
       contactPer1ContactNo: this.basicInfoForm.value.contactPer1ContactNo,
-      contactPer2ContactNo: this.basicInfoForm.value.contactPer2ContactNo,
-      contactPer3ContactNo: this.basicInfoForm.value.contactPer3ContactNo,
-      contactPer4ContactNo: this.basicInfoForm.value.contactPer4ContactNo,
-      contactPer5ContactNo: this.basicInfoForm.value.contactPer5ContactNo,
+      contactPer2ContactNo:this.basicInfoForm.value.contactPer2ContactNo,
       grade: this.basicInfoForm.value.grade,
       yearOfEsta: this.basicInfoForm.value.yearOfEsta,
       university: this.basicInfoForm.value.university,
@@ -167,13 +184,37 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
       CollegeUniAffilation: this.basicInfoForm.value.CollegeUniAffilation,
       CollegeBiography: this.basicInfoForm.value.CollegeBiography,
     };
+
     this.collageservices.addCollageDetails(data).subscribe((responce: any) => {
       if (responce.code == 'S208') {
-        this.snackbarservices.openSnackBarFrSuccess(
-          'Details Saved successfullyCollege registerd successfully'
-        );
+         var getCollegeFeild = {
+          collegeLogo:'',
+          collegeId:responce.collegeId,
+          name:''
+         }
+       this.collageservices.getCollageList().subscribe((getcollegeresponce:any)=>{
+        //  this.getCollageDetailsforUpload = getcollegeresponce;
+         
+        if(getcollegeresponce){
+          var getCollegeFeild = {
+            collegeLogo:'',
+            collegeId:getcollegeresponce.collegeId,
+            name:getcollegeresponce.name
+           }
+ this.collageservices.uploadCollageLogo(this.imgFile,getCollegeFeild).subscribe((uploaded:any)=>{
+   debugger
+  this.snackbarservices.openSnackBarFrSuccess(
+    'Details and logo Saved successfully'
+  );
+      })
+        }
+
+         console.log('getCollageDetailsforUpload',this.getCollageDetailsforUpload)
+       })
+       
         this.dialogRef.close();
       }
+     
     });
   }
 }
