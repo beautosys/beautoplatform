@@ -50,10 +50,11 @@
                 </mat-autocomplete>
              
             </div>
-            <div class="col-md-12 form-group" *ngIf="isState">
-              <mat-form-field class="viewPartnerDropDownMatForm" id="select" appearance="standard">
+            <div class="col-md-12 form-group" >
+              <mat-form-field class="viewPartnerDropDownMatForm" id="select" appearance="standard" >
               <mat-select panelClass="viewPartnerDropDownMatSelect" class="" 
-              disableOptionCentering="disableOptionCentering"  formControlName="state">
+              disableOptionCentering="disableOptionCentering"  formControlName="state" 
+              [disabled]="!isState">
               <mat-option [value]="item.stateName" *ngFor="let item of stateInfo; let i = index" selected="i == 0">
                 {{ item.stateName }}</mat-option>
             </mat-select>
