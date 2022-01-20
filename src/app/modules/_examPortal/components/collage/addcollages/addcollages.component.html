@@ -30,14 +30,7 @@
             </div>
 
             <div class="col-md-12 form-group">
-              <!-- <input
-                type="text"
-                class="addempinput"
-                placeholder="Country"
-                formControlName="country"
-                (blur)="onBlurMethod($event)"
-              /> -->
-
+             
               
                 <input type="text" placeholder="Pick country name"  class="addempinput" aria-label="Number" matInput  [(ngModel)] = "selectedCountryModel"
                 formControlName="country" [matAutocomplete]="auto" (keyup)="onAutoCompleteCountrySearch()"
@@ -60,17 +53,6 @@
             </mat-select>
             </mat-form-field>
             </div>
-
-            <!-- <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="College Registartion"
-                name="collageRegistrations"
-                formControlName="collageRegistrations"
-                (blur)="onBlurMethod($event)"
-              />
-            </div> -->
             <div class="col-md-12 form-group">
               <input
                 type="text"
@@ -112,24 +94,7 @@
          
           </div>
           <div class="col-md-6">
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="Contact Person contact no"
-                formControlName="contactPer1ContactNo"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="Contact Person 2 contact no"
-                formControlName="contactPer2ContactNo"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
+         
             <div class="col-md-12 form-group">
               <input
                 type="text"
@@ -181,32 +146,58 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="contact Person email 1"
-                formControlName="contactPerEmail1"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-           
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="contact Person email 2"
-                formControlName="contactPerEmail2"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
+         
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12 mt-4 float-right text-center">
+
+            <div formArrayName="newaddMoreContacts"
+            *ngFor="let item of getControls(); let i = index">
+            <div [formGroupName]="i">
+            
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="contact Person email 1"
+                  formControlName="contactPerEmail1"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="contact Person email 2"
+                  formControlName="contactPerEmail2"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="Contact Person contact no"
+                  formControlName="contactPer1ContactNo"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="Contact Person 2 contact no"
+                  formControlName="contactPer2ContactNo"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+            </div>
+          </div>
          <div class="row textCenter">
-          <div class="addmorecontact"><h1>ADD MORE CONTACT</h1></div>
+          <div class="addmorecontact" *ngIf="ishideAddMorebutton"> <button type="button" (click)="addMoreConatctsFeilds()"
+            >Add more conatct</button></div>
           <div> <button type="submit " class="btn solid-btn">Submit</button></div>
          </div>
           </div>

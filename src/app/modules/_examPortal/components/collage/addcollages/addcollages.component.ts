@@ -4,7 +4,7 @@ import { Event } from '@angular/router';
 import { SnackBarService } from './../../../../../_snackBar/snack-bar.service';
 import { CollageService } from './../_services/collage.service';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddEmployeeComponent } from 'src/app/modules/_myPortal/employee-mngmt/componets/add-employee/add-employee.component';
 import { CountryStateService } from 'src/app/shared/CountryStateServices/country-state.service';
@@ -30,7 +30,7 @@ export class AddcollagesComponent implements OnInit {
   basicInfoForm!: FormGroup;
 
   isEditable = false;
-
+  ishideAddMorebutton:boolean= true
   currentDate = new Date();
 
   imgFile:any = File;
@@ -43,7 +43,8 @@ export class AddcollagesComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private collageservices: CollageService,
     private snackbarservices: SnackBarService,
-    private CountryStateService:CountryStateService
+    private CountryStateService:CountryStateService,
+    private fb:FormBuilder
   ) {}
 
   onNoClick(): void {
@@ -55,30 +56,64 @@ export class AddcollagesComponent implements OnInit {
     this.getUniversityList();
     this.getCountry();
     this.getStateListByCountryName();
-    this.basicInfoForm = new FormGroup({
-      collegeName: new FormControl(''),
-      location: new FormControl(''),
-      // collageRegistrations:new FormControl(''),
-      contactPerName1: new FormControl(''),
-      contactPerName2: new FormControl(''),
-    
-      contactPerEmail1: new FormControl(''),
-      contactPerEmail2: new FormControl(''),
-     
-      contactPer1ContactNo: new FormControl(''),
-      contactPer2ContactNo:new FormControl(''),
-      grade: new FormControl(''),
-      yearOfEsta: new FormControl(''),
-      university: new FormControl(''),
-      accredation: new FormControl(''),
-      country: new FormControl(''),
-      state: new FormControl(''),
-      CollegeUniAffilation: new FormControl(''),
-      CollegeBiography: new FormControl(''),
-      files: new FormControl('')
+    this.basicInfoForm = this.fb.group({
+      collegeName: ['', [Validators.required]],
+      location: ['', [Validators.required]],
+      grade:['', [Validators.required]],
+      yearOfEsta: ['', [Validators.required]],
+      university: ['', [Validators.required]],
+      accredation: ['', [Validators.required]],
+      country: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      CollegeUniAffilation:['', [Validators.required]],
+      CollegeBiography: ['', [Validators.required]],
+
+      // contactPerName1:['', [Validators.required]],
+      // contactPerName2: ['', [Validators.required]],
+      // contactPerEmail1: ['', [Validators.required]],
+      // contactPerEmail2: ['', [Validators.required]],
+      // contactPer1ContactNo: ['', [Validators.required]],
+      // contactPer2ContactNo:['', [Validators.required]],
+      // files: ['', [Validators.required]],
+      newaddMoreContacts: this.fb.array([this.createNewFeild()])
     });
   }
 
+
+  
+  createNewFeild() {
+    return this.fb.group({
+      contactPerName1: [''],
+      contactPerName2: [''],
+      contactPerEmail1: [''],
+      contactPerEmail2: [''],
+      contactPer1ContactNo: [''],
+      contactPer2ContactNo: ['']
+
+    })
+  }
+  addMoreConatctsFeilds(){
+    // (this.basicInfoForm.controls['newaddMoreContacts'] as FormArray).push(this.createNewFeild())
+
+    if (this.basicInfoForm.value.newaddMoreContacts.length === 4) {
+      this.ishideAddMorebutton = false;
+    } else {
+      this.ishideAddMorebutton = true;
+    }
+    if (this.basicInfoForm.value.newaddMoreContacts.length <= 4) {
+      
+      this.getControls().push(this.createNewFeild());
+     
+
+    }
+  }
+ 
+  getControls() {
+    return (this.basicInfoForm.get('newaddMoreContacts') as FormArray).controls;
+  }
+  closetier(event:any){
+this.getControls().splice(event)
+  }
   getUniversityList() {
     this.collageservices.getUniversity().subscribe((responce: any) => {
       this.UniversityGetArray = responce
