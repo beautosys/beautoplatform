@@ -43,13 +43,12 @@ export class CollageService {
 
   }
 
-  uploadCollageLogo(file:File,data:any){
+  uploadCollageLogo(file:File,getCollegeFeild:any){
 
      let formData = new FormData();
     formData.append("file", file);
-    formData.append("collegeLogo", data.collegeLogo);
-    formData.append("collegeId", data.collegeId);
-    formData.append("name", data.name);
+    formData.append("collegeId", getCollegeFeild.collegeId);
+    formData.append("name", getCollegeFeild.name);
    
     return this.http.post(environment.uploadCollageLogo, formData)
   }

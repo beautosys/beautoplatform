@@ -37,7 +37,7 @@ export class AddcollagesComponent implements OnInit {
   status = ['Confirmed', 'Consultant', 'Probation'];
   countryName: any;
   getCollageDetailsforUpload: any;
-
+  file: File;
   constructor(
     public dialogRef: MatDialogRef<AddEmployeeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -81,11 +81,7 @@ export class AddcollagesComponent implements OnInit {
 
   getUniversityList() {
     this.collageservices.getUniversity().subscribe((responce: any) => {
-      this.UniversityGetArray = responce.foreaxh((x:any)=>{
-        if(x != ""){
-          this.uniqUniversityGetArray.push(x)
-        }
-      })
+      this.UniversityGetArray = responce
   // this.UniversityGetArray=   this.UniversityGetArray.filter((x:any)=>{
     
   //   });
@@ -148,19 +144,21 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
 
   onSelectFile(event:any) {
     debugger
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
-      reader.onload = () => {
-        this.imgFile = reader.result;
-        this.basicInfoForm.patchValue({
-          file: reader.result
-        });
+    this.file = event.target.files[0];
+    // if (event.target.files && event.target.files[0]) {
+    //   var reader = new FileReader();
+
+    //   reader.readAsDataURL(event.target.files[0]); // read file as data url
+    //   reader.onload = () => {
+    //     this.file = reader.result;
+    //     this.basicInfoForm.patchValue({
+    //       file: reader.result
+    //     });
       
-      }
+    //   }
     
-    }
+    // }
   }
   submitCollageForm() {
     var data = {
@@ -187,21 +185,17 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
 
     this.collageservices.addCollageDetails(data).subscribe((responce: any) => {
       if (responce.code == 'S208') {
-         var getCollegeFeild = {
-          collegeLogo:'',
-          collegeId:responce.collegeId,
-          name:''
-         }
+       
        this.collageservices.getCollageList().subscribe((getcollegeresponce:any)=>{
         //  this.getCollageDetailsforUpload = getcollegeresponce;
          
         if(getcollegeresponce){
-          var getCollegeFeild = {
-            collegeLogo:'',
-            collegeId:getcollegeresponce.collegeId,
-            name:getcollegeresponce.name
-           }
- this.collageservices.uploadCollageLogo(this.imgFile,getCollegeFeild).subscribe((uploaded:any)=>{
+         
+           let getCollegeFeild= this.basicInfoForm.value;
+          
+           getCollegeFeild['collegeId']=getcollegeresponce.collegeId;
+           getCollegeFeild['name']=getcollegeresponce.name;
+ this.collageservices.uploadCollageLogo(this.file,getCollegeFeild).subscribe((uploaded:any)=>{
    debugger
   this.snackbarservices.openSnackBarFrSuccess(
     'Details and logo Saved successfully'

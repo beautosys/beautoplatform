@@ -142,7 +142,7 @@
             
               <mat-select panelClass="viewPartnerDropDownMatSelect" class="" 
               disableOptionCentering="disableOptionCentering"  formControlName="university" [(ngModel)]="selectUniversityNgModel">
-              <mat-option [value]="item.universityName" *ngFor="let item of uniqUniversityGetArray; let i = index" selected="i == 0">
+              <mat-option [value]="item.universityName" *ngFor="let item of UniversityGetArray; let i = index" selected="i == 0">
                 {{ item.universityName }}</mat-option>
             </mat-select>
             </div>
