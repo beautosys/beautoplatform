@@ -137,11 +137,17 @@ color: #ACACAC;
   }
   
   .loadBody{
-      box-sizing: border-box;
+    box-sizing: border-box;
     height: 100px;
-  cursor: pointer;
+    cursor: pointer;
     border: 1px dashed #979797;
     border-radius: 6px;
+    background: whitesmoke;
+    input{
+      height: 90px;
+      border: none;
+      padding: 0px;
+    }
   }
   .close{
     display: flex;
@@ -173,17 +179,17 @@ color: #ACACAC;
   
   .addmorecontact{
   
-font: normal normal bold 20px/80px Roboto;
-letter-spacing: 0px;
+font: normal normal bold 15px/80px Roboto;
 color: #005BA9;
 text-transform: uppercase;
-opacity: 1;
+margin-right: 10px;
+
   }
 
   .textCenter{
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
   }
   
   
@@ -281,4 +287,6 @@ opacity: 1;
     }
   
 
-    
+    .space-m{
+      padding-top: 10px;
+  }

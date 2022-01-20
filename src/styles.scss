@@ -280,6 +280,17 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
     font: normal normal normal 12px/80px Roboto;
     color: #ACACAC;
   }
+
+  mat-select {
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font: normal normal normal 12px/80px Roboto;
+    color: #ACACAC;
+  }
   textarea{
     background: #F5F5F5 0% 0% no-repeat padding-box;
     border-radius: 8px;
@@ -288,5 +299,9 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
     padding: 10px;
     font: normal normal normal 12px/20px Roboto;
     color: #ACACAC;
+  }
+
+  .mat-input-element {
+    box-sizing: border-box;
   }
 }
