@@ -15,12 +15,13 @@
                 name="collegeName"
                 formControlName="collegeName"
                 (blur)="onBlurMethod($event)"
+                (keyup)="OnKeyCollegeNameUniques()"
               />
-              <div *ngIf="basicInfoForm.controls.collegeName.invalid  && submitted">
-                <div *ngIf="basicInfoForm.controls.collegeName?.errors?.required">
-                    <small class="form-text text-danger text-right">Enter college name</small>
-                </div>
-            </div>
+            
+            <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.collegeName.touched || submitted) && basicInfoForm.controls.collegeName.errors?.required">
+              Name is required
+          </span>
             </div>
           </div>
           <div class="col-md-6">
@@ -31,6 +32,11 @@
                 formControlName="contactPer1ContactNo"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.contactPer1ContactNo.touched || submitted) && 
+              basicInfoForm.controls.contactPer1ContactNo.errors?.required">
+              Contact Number is required
+          </span>
             </div>
           </div>
         </div>
@@ -44,6 +50,11 @@
                 formControlName="location"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.location.touched || submitted) && 
+              basicInfoForm.controls.location.errors?.required">
+              College Location is required
+          </span>
             </div>
           </div>
 
@@ -55,6 +66,11 @@
                 formControlName="grade"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.grade.touched || submitted) && 
+              basicInfoForm.controls.grade.errors?.required">
+              Grade is required
+          </span>
             </div>
           </div>
         </div>
@@ -84,6 +100,11 @@
                   {{ option.countryName }}
                 </mat-option>
               </mat-autocomplete>
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.country.touched || submitted) && 
+              basicInfoForm.controls.country.errors?.required">
+              country is required
+          </span>
             </div>
           </div>
           <div class="col-md-6">
@@ -94,6 +115,11 @@
                 formControlName="yearOfEsta"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.yearOfEsta.touched || submitted) && 
+              basicInfoForm.controls.yearOfEsta.errors?.required">
+              yearOfEsta is required
+          </span>
             </div>
           </div>
         </div>
@@ -130,7 +156,11 @@
                       {{ state.stateName }}
                     </option>
               </mat-autocomplete>
-              
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.state.touched || submitted) && 
+              basicInfoForm.controls.state.errors?.required">
+              yearOfEsta is required
+          </span>
             </div>
           </div>
           <div class="col-md-6">
@@ -157,7 +187,11 @@
               {{ option.universityName }}
               </mat-option>
             </mat-autocomplete>
-              
+            <span class="text-danger"
+            *ngIf="(basicInfoForm.controls.university.touched || submitted) && 
+            basicInfoForm.controls.university.errors?.required">
+            university is required
+        </span>
             </div>
           </div>
         </div>
@@ -173,6 +207,11 @@
                 formControlName="accredation"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.accredation.touched || submitted) && 
+              basicInfoForm.controls.accredation.errors?.required">
+              accredation  is required
+          </span>
             </div>
           </div>
           <div class="col-md-6">
@@ -183,6 +222,11 @@
                 formControlName="CollegeUniAffilation"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.CollegeUniAffilation.touched || submitted) && 
+              basicInfoForm.controls.CollegeUniAffilation.errors?.required">
+              College UniAffilation is required
+          </span>
             </div>
           </div>
         </div>
@@ -200,6 +244,11 @@
                 formControlName="CollegeBiography"
                 (blur)="onBlurMethod($event)"
               ></textarea>
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.CollegeBiography.touched || submitted) && 
+              basicInfoForm.controls.CollegeBiography.errors?.required">
+              College UniAffilation is required
+          </span>
             </div>
           </div>
           <div class="col-md-6">
@@ -274,6 +323,7 @@
                     formControlName="contactPerEmail1"
                     (blur)="onBlurMethod($event)"
                   />
+
                 </div>
                 <div class="col-md-12 form-group">
                   <input
@@ -303,7 +353,7 @@
                 (click)="addMoreConatctsFeilds()"
                 >Add more conatct</button></div>
               <div>
-                <button type="submit " class="btn solid-btn">Submit</button>
+                <button type="submit " class="btn solid-btn"   [disabled]="!basicInfoForm.valid">Submit</button>
               </div>
             </div>
           </div>

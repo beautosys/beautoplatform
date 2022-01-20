@@ -71,14 +71,8 @@ export class AddcollagesComponent implements OnInit {
       state: ['', [Validators.required]],
       CollegeUniAffilation:['', [Validators.required]],
       CollegeBiography: ['', [Validators.required]],
- contactPer1ContactNo: ['', [Validators.required]],
+      contactPer1ContactNo: ['', [Validators.required]],
       contactPer2ContactNo:['', [Validators.required]],
-      // contactPerName1:['', [Validators.required]],
-      // contactPerName2: ['', [Validators.required]],
-      // contactPerEmail1: ['', [Validators.required]],
-      // contactPerEmail2: ['', [Validators.required]],
-      // contactPer1ContactNo: ['', [Validators.required]],
-      // contactPer2ContactNo:['', [Validators.required]],
       // files: ['', [Validators.required]],
       newaddMoreContacts: this.fb.array([this.createNewFeild()])
     });
@@ -115,6 +109,10 @@ export class AddcollagesComponent implements OnInit {
   getControls() {
     return (this.basicInfoForm.get('newaddMoreContacts') as FormArray).controls;
   }
+
+  OnKeyCollegeNameUniques(){
+    
+  }
   closetier(event:any){
 this.getControls().splice(event)
   }
@@ -140,8 +138,8 @@ this.getControls().splice(event)
   onSelected(event:any) {
     this.CountryStateService.getStateBySelectCountry(event).subscribe((responce: any) => {
       this.allState = responce
-      this.stateInfo = responce;
-      if(this.stateInfo.length > 0 ){
+      this.filteredState = responce;
+      if(this.filteredState.length > 0 ){
         this.isState = true
       }
       else{
@@ -149,7 +147,24 @@ this.getControls().splice(event)
       }
     });
    
+
   }
+  getStateListByCountryName() {
+    this.allState
+    }
+
+    OnAutocompleteStateCall(){
+      debugger
+      if(this.selectSateModel){
+      this.filteredState = this.allState.filter((e:any)=>{
+        e.stateName.trim().toLowerCase().includes(this.selectSateModel)
+      })
+      }
+      else {
+        this.filteredState = this.allState
+      }
+        }
+        
   onAutoCompleteUniversitySearch(){
     if (this.selecteduniversityModel) {
       this.filterdUniversity = this.allUniversity.filter((element:any) =>
@@ -159,9 +174,7 @@ this.getControls().splice(event)
      this.filterdUniversity = this.allUniversity
     }
   }
-  getStateListByCountryName() {
-  this.stateInfo
-  }
+
   onAutoCompleteCountrySearch() {
    
     if (this.selectedCountryModel) {
@@ -174,17 +187,7 @@ this.getControls().splice(event)
     }
   }
 
-  OnAutocompleteStateCall(){
-if(this.selectSateModel){
-this.filteredState = this.allState.filter((e:any)=>{
-  e.stateName.trim().toLowerCase().includes(this.selectSateModel)
-})
-}
-else {
-  this.filteredState = this.allState
-}
-  }
-  
+
   onBlurMethod(event:any){
 console.log('temp data',event.target.value);
 let tempData = {"data":event.target.value}
