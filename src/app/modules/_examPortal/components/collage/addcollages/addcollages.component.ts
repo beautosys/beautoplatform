@@ -15,16 +15,20 @@ import { CountryStateService } from 'src/app/shared/CountryStateServices/country
   styleUrls: ['./addcollages.component.scss'],
 })
 export class AddcollagesComponent implements OnInit {
-  selectUniversityNgModel: any;
+  selecteduniversityModel: any="";
   selectedCountryModel: any = "";
+  selectSateModel:any=""
   filteredCountries: any=[];
-  allMovies:any=[];
+  filteredState:any=[];
+  allountry:any=[];
+  allUniversity:any=[];
+  allState:any[]=[]
   stateInfo: any[] = [];
   isState:boolean = false;
   countryGetArray: any = [];
   StateGetArray: any = [];
   selectedCountry:any;
-  UniversityGetArray: any = [];
+  filterdUniversity: any = [];
   uniqUniversityGetArray:any=[]
   submitted: boolean = false;
   basicInfoForm!: FormGroup;
@@ -67,7 +71,8 @@ export class AddcollagesComponent implements OnInit {
       state: ['', [Validators.required]],
       CollegeUniAffilation:['', [Validators.required]],
       CollegeBiography: ['', [Validators.required]],
-
+ contactPer1ContactNo: ['', [Validators.required]],
+      contactPer2ContactNo:['', [Validators.required]],
       // contactPerName1:['', [Validators.required]],
       // contactPerName2: ['', [Validators.required]],
       // contactPerEmail1: ['', [Validators.required]],
@@ -87,8 +92,7 @@ export class AddcollagesComponent implements OnInit {
       contactPerName2: [''],
       contactPerEmail1: [''],
       contactPerEmail2: [''],
-      contactPer1ContactNo: [''],
-      contactPer2ContactNo: ['']
+    
 
     })
   }
@@ -116,12 +120,8 @@ this.getControls().splice(event)
   }
   getUniversityList() {
     this.collageservices.getUniversity().subscribe((responce: any) => {
-      this.UniversityGetArray = responce
-  // this.UniversityGetArray=   this.UniversityGetArray.filter((x:any)=>{
-    
-  //   });
-  
-      
+      this.allUniversity = responce;
+      this.filterdUniversity = responce;
     });
   }
 
@@ -131,14 +131,15 @@ this.getControls().splice(event)
 
   getCountry() {
     this.CountryStateService.getCountryList().subscribe((responce: any) => {
-      this.allMovies = responce;
+      this.allountry = responce;
       this.filteredCountries = responce;
-      this.countryName = this.filteredCountries.country.countryName
+      // this.countryName = this.filteredCountries.country.countryName
     });
   }
 
   onSelected(event:any) {
     this.CountryStateService.getStateBySelectCountry(event).subscribe((responce: any) => {
+      this.allState = responce
       this.stateInfo = responce;
       if(this.stateInfo.length > 0 ){
         this.isState = true
@@ -149,20 +150,41 @@ this.getControls().splice(event)
     });
    
   }
+  onAutoCompleteUniversitySearch(){
+    if (this.selecteduniversityModel) {
+      this.filterdUniversity = this.allUniversity.filter((element:any) =>
+      element.universityName.trim().toLowerCase().includes(this.selecteduniversityModel)
+      );
+    } else {
+     this.filterdUniversity = this.allUniversity
+    }
+  }
   getStateListByCountryName() {
   this.stateInfo
   }
   onAutoCompleteCountrySearch() {
    
     if (this.selectedCountryModel) {
-      this.filteredCountries = this.allMovies.filter((element:any) =>
+      this.filteredCountries = this.allountry.filter((element:any) =>
       element.countryName.trim().toLowerCase().includes(this.selectedCountryModel)
       );
     } else {
-     this.filteredCountries = this.allMovies
+     this.filteredCountries = this.allountry
     
     }
   }
+
+  OnAutocompleteStateCall(){
+if(this.selectSateModel){
+this.filteredState = this.allState.filter((e:any)=>{
+  e.stateName.trim().toLowerCase().includes(this.selectSateModel)
+})
+}
+else {
+  this.filteredState = this.allState
+}
+  }
+  
   onBlurMethod(event:any){
 console.log('temp data',event.target.value);
 let tempData = {"data":event.target.value}
@@ -199,13 +221,10 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
     var data = {
       collegeName: this.basicInfoForm.value.collegeName,
       location: this.basicInfoForm.value.location,
-      // collageRegistrations: this.basicInfoForm.value.collageRegistrations,
       contactPerName1: this.basicInfoForm.value.contactPerName1,
       contactPerName2: this.basicInfoForm.value.contactPerName2,
- 
       contactPerEmail1: this.basicInfoForm.value.contactPerEmail1,
       contactPerEmail2: this.basicInfoForm.value.contactPerEmail2,
-  
       contactPer1ContactNo: this.basicInfoForm.value.contactPer1ContactNo,
       contactPer2ContactNo:this.basicInfoForm.value.contactPer2ContactNo,
       grade: this.basicInfoForm.value.grade,

@@ -1,90 +1,90 @@
 
 
 .custom-input{
-    height: 2.5rem;
-    font-size: 0.8rem;
-    color: #afb5bb;
-    background-color: #ced4da29;
-    border: 1px solid #ced4da29;
+  height: 2.5rem;
+  font-size: 0.8rem;
+  color: #afb5bb;
+  background-color: #ced4da29;
+  border: 1px solid #ced4da29;
 }
 
 .form-font-size {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .custom-select-box{
-    padding-left: 14px;
-    padding-right: 14px;
-    padding-top: 12px;
-    border: none;
-  }
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 12px;
+  border: none;
+}
 
-  .heading{
-    font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
-    text-align: left;
-    font-size: 23px;
-    letter-spacing: 0.14px;
-    color: #0F6CB6;
-    opacity: 1;
-    text-align: center;
-    font-weight: 500;
-  }
+.heading{
+  font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
+  text-align: left;
+  font-size: 23px;
+  letter-spacing: 0.14px;
+  color: #0F6CB6;
+  opacity: 1;
+  text-align: center;
+  font-weight: 500;
+}
 
 
 ::ng-deep .mat-step-label{
-    min-width: 0px !important;
+  min-width: 0px !important;
 }
 
 ::ng-deep .mat-stepper-horizontal-line {
-    border-top-width: 12px !important;
-    border-top-style: solid;
-    flex: auto;
-    height: 0px;
-    margin: 0 -24px !important;
-    min-width: 32px;
+  border-top-width: 12px !important;
+  border-top-style: solid;
+  flex: auto;
+  height: 0px;
+  margin: 0 -24px !important;
+  min-width: 32px;
 }
 
 ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
-    margin-right: 0px !important;
-    flex: none;
+  margin-right: 0px !important;
+  flex: none;
 }
 
 ::ng-deep .mat-radio-outer-circle {
-    height: 15px !important;
-    width: 15px !important;
-    top: 3px !important;
-    left: 3px !important;
-    border-width: 1px !important;
+  height: 15px !important;
+  width: 15px !important;
+  top: 3px !important;
+  left: 3px !important;
+  border-width: 1px !important;
 }
 ::ng-deep .mat-radio-inner-circle{
-    height: 15px !important;
-    width: 15px !important;
-    top: 3px !important;
-    left: 3px !important;
+  height: 15px !important;
+  width: 15px !important;
+  top: 3px !important;
+  left: 3px !important;
 }
 
 ::ng-deep .mat-radio-label {
-    margin-bottom: 0px!important;
+  margin-bottom: 0px!important;
 }
 
 ::ng-deep .solid-btn {
-    font-weight: 400;
-    color: #fff;
-    background-color: #4567AB;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    width: 8rem;
-    height: 2.5rem;
-    border-radius: 8.25rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: #4567AB;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 8.25rem;
 
-  }
+}
 
 
 .bgblue{
-    background-color: #26579E;
+  background-color: #26579E;
 }
 .imgadd{
-    width: 100%;
+  width: 100%;
 }
 .addempinput{
 height: 33px;
@@ -100,185 +100,207 @@ color: #ACACAC;
 
 
 .r-space{
-    margin-left: 15px;
-    margin-top: 9px;
-    input {
-        position: relative;
-        top: 2px;
-        margin-left: 10px;
+  margin-left: 15px;
+  margin-top: 9px;
+  input {
+      position: relative;
+      top: 2px;
+      margin-left: 10px;
 
-    }
+  }
 }
 
 
 .uplaod{
-    margin: 29px;
-  }
-  .uploadTitle{
-    margin-bottom: 29px;
-  }
-  .uploadTitle  span{
-    height: 18px;
-    color: rgba(6,31,55,0.8);
-    font-family: "Open Sans";
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 18px;
-  
-  }
-  
-  .uploadTitle p{
-    font: var(--unnamed-font-style-normal) normal normal 20px/85px var(--unnamed-font-family-roboto);
-    text-align: left;
-    font: normal normal normal 20px/85px Roboto;
-    letter-spacing: 0px;
-    color: #C6C6C6;
-    opacity: 1;
-  }
-  
-  .loadBody{
-      box-sizing: border-box;
-    height: 100px;
+  margin: 29px;
+}
+.uploadTitle{
+  margin-bottom: 29px;
+}
+.uploadTitle  span{
+  height: 18px;
+  color: rgba(6,31,55,0.8);
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+
+}
+
+.uploadTitle p{
+  font: var(--unnamed-font-style-normal) normal normal 20px/85px var(--unnamed-font-family-roboto);
+  text-align: left;
+  font: normal normal normal 20px/85px Roboto;
+  letter-spacing: 0px;
+  color: #C6C6C6;
+  opacity: 1;
+}
+
+.loadBody{
+  box-sizing: border-box;
+  height: 100px;
   cursor: pointer;
-    border: 1px dashed #979797;
-    border-radius: 6px;
+  border: 1px dashed #979797;
+  border-radius: 6px;
+  background: whitesmoke;
+  input{
+    height: 90px;
+    border: none;
+    padding: 0px;
   }
-  .close{
-    display: flex;
-    padding: 15px;
-    cursor: pointer;
-  }
-  .uploadBody{
-    display: flex;
-    justify-content: center;
-  }
-  .ngx{
-    height: 32px;
-    width: 126px;
-    // border-radius: 5px;
-    // // background-color: #0998CB;
-    // box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3);
-  }
- 
-   input[name=myfile] {
-    opacity: 0 !important;
-     position: absolute;
-     z-index: -1;
-  }
-  #upload-photo {
-    // opacity: 0;
-    // position: absolute;
-    z-index: -1;
-  }
-  
-  .addmorecontact{
-  
-font: normal normal bold 20px/80px Roboto;
-letter-spacing: 0px;
+}
+.close{
+  display: flex;
+  padding: 15px;
+  cursor: pointer;
+}
+.uploadBody{
+  display: flex;
+  justify-content: center;
+}
+.ngx{
+  height: 32px;
+  width: 126px;
+  // border-radius: 5px;
+  // // background-color: #0998CB;
+  // box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+ input[name=myfile] {
+  opacity: 0 !important;
+   position: absolute;
+   z-index: -1;
+}
+#upload-photo {
+  // opacity: 0;
+  // position: absolute;
+  z-index: -1;
+}
+
+.addmorecontact{
+
+font: normal normal bold 15px/80px Roboto;
 color: #005BA9;
 text-transform: uppercase;
-opacity: 1;
-  }
+margin-right: 10px;
 
-  .textCenter{
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-  }
-  
-  
-  .uploadbtn{
-    height: 32px;
+}
+
+.textCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.uploadbtn{
+  height: 32px;
+  width: 126px;
+  border-radius: 5px;
+  background-color: #0998CB;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3);
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
+    margin-left: 19px;
+}
+::ng-deep .csvFile{
+ .form-group {
+  opacity: 0 !important;
+}
+}
+
+.uploadBtnb{
+height: 33px;
+     margin-left: 17px;
     width: 126px;
-    border-radius: 5px;
-    background-color: #0998CB;
-    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3);
     color: #FFFFFF;
     font-family: "Open Sans";
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 0;
-    line-height: 20px;
+    line-height: 28px;
     text-align: center;
-      margin-left: 19px;
-  }
-  ::ng-deep .csvFile{
-   .form-group {
-    opacity: 0 !important;
-  }
-  }
-  
-  .uploadBtnb{
-  height: 33px;
-       margin-left: 17px;
-      width: 126px;
-      color: #FFFFFF;
-      font-family: "Open Sans";
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 0;
-      line-height: 28px;
-      text-align: center;
-      background-color: #0998CB;
-      border-radius: 5px;
-  }
-  
-  .browesfile{
-         color: #ffffff;
-        margin-top: -28px;
-  }
-  
-  .progress {
-    box-sizing: border-box;
-   
-    width: 233px;
-    border: 1px solid rgba(80,98,115,0.41);
-    border-radius: 2px;
-    background-color: rgba(80,98,115,0.08);
-  }
-  
-  .progress-bar {
-    align-items: center;
-     height: 6px;
-    width: 130px;
-    border-radius: 2px;
     background-color: #0998CB;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-  }
-  
-    input[type="file"] {
-      // width: 0.1px;
-      // height: 0.1px;
-      // opacity: 0;
-      // overflow: hidden;
-      // position: absolute;
-      // z-index: -1;
-  
-      & + label {
-        max-width: 80%;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        cursor: pointer;
-        display: inline-block;
-        overflow: hidden;
-      }
-  
-      &:focus + label {
-        outline: 1px dotted #000;
-        outline: -webkit-focus-ring-color auto 5px;
-      }
-  
-      &:focus + label strong,
-      & + label:hover strong {
-          color: #39bfd3;
-        }
-    }
-  
-    .dragndrop{
-        font-weight: 700;
-    }
-  
+    border-radius: 5px;
+}
 
-    
+.browesfile{
+       color: #ffffff;
+      margin-top: -28px;
+}
+.addmorecontact button{
+  
+  font: normal normal bold 20px/80px Roboto;
+  letter-spacing: 0px;
+  color: #005BA9;
+  text-transform: uppercase;
+  opacity: 1;
+    }
+  
+    .textCenter{
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+    }
+
+.progress {
+  box-sizing: border-box;
+ 
+  width: 233px;
+  border: 1px solid rgba(80,98,115,0.41);
+  border-radius: 2px;
+  background-color: rgba(80,98,115,0.08);
+}
+
+.progress-bar {
+  align-items: center;
+   height: 6px;
+  width: 130px;
+  border-radius: 2px;
+  background-color: #0998CB;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+  input[type="file"] {
+    // width: 0.1px;
+    // height: 0.1px;
+    // opacity: 0;
+    // overflow: hidden;
+    // position: absolute;
+    // z-index: -1;
+
+    & + label {
+      max-width: 80%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    &:focus + label {
+      outline: 1px dotted #000;
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+
+    &:focus + label strong,
+    & + label:hover strong {
+        color: #39bfd3;
+      }
+  }
+
+  .dragndrop{
+      font-weight: 700;
+  }
+
+
+  .space-m{
+    padding-top: 10px;
+}
