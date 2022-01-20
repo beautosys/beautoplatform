@@ -255,18 +255,20 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
 
 /*inputs */
 
+
+
 .cu-input{
 
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  ::placeholder { 
     color: #ACACAC;
-    opacity: 1; /* Firefox */
+    opacity: 1; 
   }
   
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  :-ms-input-placeholder { 
     color: #ACACAC;
   }
   
-  ::-ms-input-placeholder { /* Microsoft Edge */
+  ::-ms-input-placeholder { 
     color: #ACACAC;
   }
 

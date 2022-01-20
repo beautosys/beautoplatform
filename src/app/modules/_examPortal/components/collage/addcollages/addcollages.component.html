@@ -2,170 +2,14 @@
   <div class="row addempop">
     <div class="col-md-4 bgblue">
       <img src="assets/img/addemp.svg" class="imgadd" />
-
     </div>
-    <div class="col-md-8  cu-input">
+    <div class="col-md-8 cu-input">
       <h3 class="heading">Basic College Information</h3>
       <form [formGroup]="basicInfoForm" (ngSubmit)="submitCollageForm()">
 
         <div class="row">
           <div class="col-md-6">
             <div class="space-m">
-              <input type="text" placeholder="College name" name="collegeName" formControlName="collegeName"
-                (blur)="onBlurMethod($event)" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="space-m">
-              <input type="text" placeholder="Contact Number" formControlName="contactPer1ContactNo"
-                (blur)="onBlurMethod($event)" />
-            </div>
-          </div>
-
-        </div>
-
-
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="space-m">
-              <input type="text" placeholder="College Location" formControlName="location"
-                (blur)="onBlurMethod($event)" />
-            </div>
-          </div>
-
-          <div class="col-md-6">
-
-            <div class="space-m">
-              <input type="text" placeholder="College Grade" formControlName="grade" (blur)="onBlurMethod($event)" />
-            </div>
-
-
-          </div>
-
-        </div>
-        <!--end-->
-
-
-        <div class="row">
-          <div class="col-md-6 ">
-
-            <div class="space-m">
-              <input type="text" placeholder="Country" aria-label="Number" matInput [(ngModel)]="selectedCountryModel"
-                formControlName="country" [matAutocomplete]="auto" (keyup)="onAutoCompleteCountrySearch()">
-              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelected($event.option.value)">
-                <mat-option *ngFor="let option of filteredCountries" [value]="option.countryName">
-                  {{option.countryName}}
-                </mat-option>
-              </mat-autocomplete>
-            </div>
-
-
-          </div>
-          <div class="col-md-6 ">
-            <div class="space-m">
-              <input type="text" placeholder="College Year of Established" formControlName="yearOfEsta"
-                (blur)="onBlurMethod($event)" />
-            </div>
-
-          </div>
-
-        </div>
-        <!--end-->
-
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="space-m">
-              <mat-form-field class="viewPartnerDropDownMatForm" id="select" appearance="standard">
-                <mat-select panelClass="viewPartnerDropDownMatSelect"
-                  disableOptionCentering="disableOptionCentering" formControlName="state">
-                  <mat-option [value]="item.stateName" *ngFor="let item of stateInfo; let i = index" selected="i == 0">
-                    {{ item.stateName }}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-  
-          </div>
-          <div class="col-md-6 ">
-            <div class="space-m">
-              <mat-form-field class="viewPartnerDropDownMatSelect" id="select" appearance="standard">
-              <mat-select panelClass="viewPartnerDropDownMatSelect" class=""
-                disableOptionCentering="disableOptionCentering" formControlName="university"
-                [(ngModel)]="selectUniversityNgModel">
-                <mat-option [value]="item.universityName" *ngFor="let item of UniversityGetArray; let i = index"
-                  selected="i == 0">
-                  {{ item.universityName }}</mat-option>
-              </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-
-        <!--end-->
-
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="space-m">
-              <input type="text" placeholder="College Accredation" formControlName="accredation"
-                (blur)="onBlurMethod($event)" />
-            </div>
-
-          </div>
-          <div class="col-md-6 ">
-            <div class="space-m">
-
-              <input type="text" placeholder="College Affilation" formControlName="CollegeUniAffilation"
-                (blur)="onBlurMethod($event)" />
-            </div>
-          </div>
-        </div>
-
-        <!--end-->
-
-        <div class="row">
-          <div class="col-md-6 ">
-
-            <div class="space-m">
-
-              <textarea placeholder="College Biography" rows="4" cols="30" name="CollegeBiography"
-                formControlName="CollegeBiography" (blur)="onBlurMethod($event)"></textarea>
-
-            </div>
-          </div>
-          <div class="col-md-6 ">
-            <div class="space-m">
-              <div>
-                <div class="loadBody">
-                  <!-- <div class="close">
-                      <mat-icon>close</mat-icon>
-                    </div> -->
-                  <div class="uploadBody">
-                    <form class="drop-zone">
-                      <input id="file" type="file" formControlName="files" (change)="onSelectFile($event)" />
-                      <div class="uploadTitle">
-                        <p>Upload collage logo</p>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!--end-->
-
-
-        <div class="row">
-          <div class="col-md-6 ">
-
-            <div class="space-m">
-              <input type="text" placeholder="Contact Person Name 1" formControlName="contactPerName1"
-                (blur)="onBlurMethod($event)" />
-            </div>
           </div>
           <div class="col-md-6 ">
             <div class="space-m">
@@ -189,7 +33,6 @@
             </div>
           </div>
           <div class="col-md-6 ">
-            <div class="space-m">
               <input type="text" placeholder="contact Person email 2" formControlName="contactPerEmail2"
                 (blur)="onBlurMethod($event)" />
             </div>
@@ -199,12 +42,275 @@
 
 
         <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="College Location"
+                formControlName="location"
+                (blur)="onBlurMethod($event)"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="College Grade"
+                formControlName="grade"
+                (blur)="onBlurMethod($event)"
+              />
+            </div>
+          </div>
+        </div>
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="Country"
+                aria-label="Number"
+                matInput
+                [(ngModel)]="selectedCountryModel"
+                formControlName="country"
+                [matAutocomplete]="auto1"
+                (keyup)="onAutoCompleteCountrySearch()"
+              />
+              <mat-autocomplete
+                #auto1="matAutocomplete"
+                (optionSelected)="onSelected($event.option.value)"
+              >
+                <mat-option
+                  *ngFor="let option of filteredCountries"
+                  [value]="option.countryName"
+                >
+                  {{ option.countryName }}
+                </mat-option>
+              </mat-autocomplete>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="College Year of Established"
+                formControlName="yearOfEsta"
+                (blur)="onBlurMethod($event)"
+              />
+            </div>
+          </div>
+        </div>
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <!-- <mat-form-field
+                class="viewPartnerDropDownMatForm"
+                id="select"
+                appearance="standard"
+              >
+                <mat-select
+                  panelClass="viewPartnerDropDownMatSelect"
+                  disableOptionCentering="disableOptionCentering"
+                  formControlName="state"
+                >
+                  <mat-option
+                    [value]="item.stateName"
+                    *ngFor="let item of stateInfo; let i = index"
+                    selected="i == 0"
+                  >
+                    {{ item.stateName }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field> -->
+              <input type="text" name="" id=""  [(ngModel)]="selectSateModel" 
+              (keyup)="OnAutocompleteStateCall()" 
+              [matAutocomplete]="state"  formControlName="state" placeholder="State">
+              <mat-autocomplete 
+              #state="matAutocomplete">
+                    <option value=""  *ngFor="let state of filteredState;let i = index"  selected="i == 0">
+                      {{ state.stateName }}
+                    </option>
+              </mat-autocomplete>
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+           
+              <input
+              type="text"
+              placeholder="university"
+              aria-label="Number"
+              matInput
+              [(ngModel)]="selecteduniversityModel"
+              formControlName="university"
+              name="university"
+              [matAutocomplete]="auto"
+              (keyup)="onAutoCompleteUniversitySearch()"
+            />
+            <mat-autocomplete
+              #auto="matAutocomplete"
+            >
+              <mat-option
+                *ngFor="let option of filterdUniversity"
+                [value]="option.universityName"
+              >
+              {{ option.universityName }}
+              </mat-option>
+            </mat-autocomplete>
+              
+            </div>
+          </div>
+        </div>
+
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="College Accredation"
+                formControlName="accredation"
+                (blur)="onBlurMethod($event)"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="College Affilation"
+                formControlName="CollegeUniAffilation"
+                (blur)="onBlurMethod($event)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <textarea
+                placeholder="College Biography"
+                rows="4"
+                cols="30"
+                name="CollegeBiography"
+                formControlName="CollegeBiography"
+                (blur)="onBlurMethod($event)"
+              ></textarea>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <div>
+                <div class="loadBody">
+                  <!-- <div class="close">
+                      <mat-icon>close</mat-icon>
+                    </div> -->
+                  <div class="uploadBody">
+                    <form class="drop-zone">
+                      <input
+                        id="file"
+                        type="file"
+                        formControlName="files"
+                        (change)="onSelectFile($event)"
+                      />
+                      <div class="uploadTitle">
+                        <p>Upload collage logo</p>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <div formArrayName="newaddMoreContacts"
+            *ngFor="let item of getControls(); let i = index">
+            <div [formGroupName]="i">
+            
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="contact Per Name 2"
+                  formControlName="contactPerName1"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="contact Per Name 2"
+                  formControlName="contactPerName2"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+             
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <div formArrayName="newaddMoreContacts"
+              *ngFor="let item of getControls(); let i = index">
+              <div [formGroupName]="i">
+              
+                <div class="col-md-12 form-group">
+                  <input
+                    type="text"
+                    class="addempinput"
+                    placeholder="contact Per Email 1"
+                    formControlName="contactPerEmail1"
+                    (blur)="onBlurMethod($event)"
+                  />
+                </div>
+                <div class="col-md-12 form-group">
+                  <input
+                    type="text"
+                    class="addempinput"
+                    placeholder="contact Per Email 2"
+                    formControlName="contactPerEmail2"
+                    (blur)="onBlurMethod($event)"
+                  />
+                </div>
+               
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!--end-->
+
+      
+
+        <div class="row">
           <div class="col-md-12 mt-4 float-right text-center">
             <div class="row textCenter">
-              <div class="addmorecontact">
-                ADD MORE CONTACT
+              <div class="addmorecontact" *ngIf="ishideAddMorebutton"> <button type="button" 
+                class="btn btn-default"
+                (click)="addMoreConatctsFeilds()"
+                >Add more conatct</button></div>
+              <div>
+                <button type="submit " class="btn solid-btn">Submit</button>
               </div>
-              <div> <button type="submit " class="btn solid-btn">Submit</button></div>
             </div>
           </div>
         </div>
