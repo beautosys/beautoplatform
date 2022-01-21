@@ -12,7 +12,7 @@
             </div>
             <div class="row ml-1 mr-5">
                 <div class="col-md-4  center">
-                    <img src="assets/img/addemp.svg" class="imgadd "> 
+                    <img src="assets/img/addemp.svg" class="imgadd ">
                 </div>
                 <div class="col-md-8">
                     <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
@@ -21,82 +21,113 @@
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="First Name"
                                         formControlName="firstName" maxlength="20" required>
-                                        <div *ngIf="studentFormControls.firstName.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.firstName?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter first name</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.firstName.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.firstName?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter first name</small>
                                         </div>
+                                        <div *ngIf="studentFormControls.firstName?.errors?.pattern">
+                                            <small class="form-text text-danger text-right">Enter valid first
+                                                name</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Last Name"
                                         formControlName="lastName" maxlength="20" required>
-                                        <div *ngIf="studentFormControls.lastName.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.lastName?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter last name</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.lastName.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.lastName?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter last name</small>
                                         </div>
+                                        <div *ngIf="studentFormControls.lastName?.errors?.pattern">
+                                            <small class="form-text text-danger text-right">Enter valid last
+                                                name</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Father Name"
                                         formControlName="fatherName" maxlength="20" required>
-                                        <div *ngIf="studentFormControls.fatherName.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.fatherName?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter father name</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.fatherName.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.fatherName?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter father name</small>
                                         </div>
+                                        <div *ngIf="studentFormControls.fatherName?.errors?.pattern">
+                                            <small class="form-text text-danger text-right">Enter valid father
+                                                name</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Mother Name"
                                         formControlName="motherName" maxlength="20" required>
-                                        <div *ngIf="studentFormControls.motherName.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.motherName?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter mother name</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.motherName.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.motherName?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter mother name</small>
                                         </div>
+                                        <div *ngIf="studentFormControls.motherName?.errors?.pattern">
+                                            <small class="form-text text-danger text-right">Enter valid mother
+                                                name</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="addStudentInput " placeholder="Date Of Birth"
-                                        formControlName="dateOfBirth" required>
-                                        <div *ngIf="studentFormControls.dateOfBirth.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.dateOfBirth?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter date of birth</small>
-                                            </div>
+                                    <input type="text" class=" addStudentInput" id="dob" placeholder="Date of Birth"
+                                        formControlName="dateOfBirth" [max]="todayDate" onfocus="(this.type='date')"
+                                        onblur="(this.type='text')" required>
+                                    <!-- <input type="text" class="addStudentInput " placeholder="Date Of Birth"
+                                        formControlName="dateOfBirth" required> -->
+                                    <div *ngIf="studentFormControls.dateOfBirth.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.dateOfBirth?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter date of birth</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="PhoneNumber"
                                         formControlName="phoneNumber" maxlength="20" required>
-                                        <div *ngIf="studentFormControls.phoneNumber.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.phoneNumber?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter phoneNumber</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.phoneNumber.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.phoneNumber?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter phoneNumber</small>
                                         </div>
+                                        <div *ngIf="studentFormControls.phoneNumber?.errors?.pattern">
+                                            <small class="form-text text-danger text-right">Enter valid phoneNumber</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Alternate Phone Number"
                                         formControlName="alternatePhoneNumber" maxlength="20" required>
-                                        <div *ngIf="studentFormControls.alternatePhoneNumber.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.alternatePhoneNumber?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter alternate phone number</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.alternatePhoneNumber.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.alternatePhoneNumber?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter alternate phone
+                                                number</small>
                                         </div>
+                                        <div *ngIf="studentFormControls.alternatePhoneNumber?.errors?.pattern">
+                                            <small class="form-text text-danger text-right">Enter valid alternate phone
+                                                number</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
 
-                                    <textarea id="address" name="address" class="textAreaInput" rows="3" placeholder="Address" formControlName="address" required></textarea>  
-                                        <div *ngIf="studentFormControls.address.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.address?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter address</small>
-                                            </div>
+                                    <textarea id="address" name="address" class="textAreaInput" rows="3"
+                                        placeholder="Address" formControlName="address" required></textarea>
+                                    <div *ngIf="studentFormControls.address.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.address?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter address</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <textarea id="briefDescriptionAboutStudent" name="briefDescriptionAboutStudent" class="textAreaInput" rows="3" placeholder="Brief Description About Student" formControlName="briefDescriptionAboutStudent" required></textarea> 
-                                        <div *ngIf="studentFormControls.briefDescriptionAboutStudent.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.briefDescriptionAboutStudent?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter brief description about student</small>
-                                            </div>
+                                    <textarea id="briefDescriptionAboutStudent" name="briefDescriptionAboutStudent"
+                                        class="textAreaInput" rows="3" placeholder="Brief Description About Student"
+                                        formControlName="briefDescriptionAboutStudent" required></textarea>
+                                    <div *ngIf="studentFormControls.briefDescriptionAboutStudent.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.briefDescriptionAboutStudent?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter brief description
+                                                about student</small>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -104,112 +135,146 @@
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Student Language Know"
                                         formControlName="studentLanguageKnow" maxlength="100" required>
-                                        <div *ngIf="studentFormControls.studentLanguageKnow.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.studentLanguageKnow?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter student language know</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.studentLanguageKnow.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.studentLanguageKnow?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter student language
+                                                know</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Student Soft Skills"
                                         formControlName="studentSoftSkills" maxlength="100" required>
-                                        <div *ngIf="studentFormControls.studentSoftSkills.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.studentSoftSkills?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter student soft skills</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.studentSoftSkills.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.studentSoftSkills?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter student soft
+                                                skills</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="addStudentInput " placeholder="Student Communication Skills"
-                                        formControlName="studentCommunicationSkills" maxlength="100" required>
-                                        <div *ngIf="studentFormControls.studentCommunicationSkills.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.studentCommunicationSkills?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter student communication skills</small>
-                                            </div>
+                                    <input type="text" class="addStudentInput "
+                                        placeholder="Student Communication Skills" [matAutocomplete]="communicationAuto"
+                                        formControlName="studentCommunicationSkills" required>
+                                    <mat-autocomplete autoActiveFirstOption #communicationAuto="matAutocomplete">
+                                        <mat-option *ngFor="let option of csOptions | async" [value]="option">
+                                            {{option}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                    <div *ngIf="studentFormControls.studentCommunicationSkills.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.studentCommunicationSkills?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter student communication
+                                                skills</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Student Technical Skills"
-                                        formControlName="studentTechnicalSkills" maxlength="100" required>
-                                        <div *ngIf="studentFormControls.studentTechnicalSkills.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.studentTechnicalSkills?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter student technical skills</small>
-                                            </div>
+                                        [matAutocomplete]="technicalAuto" formControlName="studentTechnicalSkills"
+                                        required>
+                                    <mat-autocomplete autoActiveFirstOption #technicalAuto="matAutocomplete">
+                                        <mat-option *ngFor="let option of tsOptions | async" [value]="option">
+                                            {{option}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                    <div *ngIf="studentFormControls.studentTechnicalSkills.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.studentTechnicalSkills?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter student technical
+                                                skills</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Student Language Known"
-                                        formControlName="studentLanguageKnown" maxlength="100"  required>
-                                        <div *ngIf="studentFormControls.studentLanguageKnown.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.studentLanguageKnown?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter student language known</small>
-                                            </div>
+                                        [matAutocomplete]="languageAuto" formControlName="studentLanguageKnown"
+                                        required>
+                                    <mat-autocomplete autoActiveFirstOption #languageAuto="matAutocomplete">
+                                        <mat-option *ngFor="let option of languageOptions | async" [value]="option">
+                                            {{option}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                    <div *ngIf="studentFormControls.studentLanguageKnown.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.studentLanguageKnown?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter student language
+                                                known</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="addStudentInput " placeholder="County"
-                                        formControlName="county" maxlength="40" required>
-                                        <div *ngIf="studentFormControls.county.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.county?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter county</small>
-                                            </div>
+                                    <input type="text" class="addStudentInput " placeholder="Country"
+                                        [matAutocomplete]="countryAuto" formControlName="country" required>
+                                    <mat-autocomplete autoActiveFirstOption #countryAuto="matAutocomplete">
+                                        <mat-option *ngFor="let option of countryOptions | async" [value]="option">
+                                            {{option}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                    <!-- <input type="text" class="addStudentInput " placeholder="country"
+                                        formControlName="country" maxlength="40" required> -->
+                                    <div *ngIf="studentFormControls.country.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.country?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter country</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="State"
                                         formControlName="state" maxlength="40" required>
-                                        <div *ngIf="studentFormControls.state.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.state?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter state</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.state.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.state?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter state</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Student Department"
                                         formControlName="studentDepartment" maxlength="50" required>
-                                        <div *ngIf="studentFormControls.studentDepartment.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.studentDepartment?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter student department</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.studentDepartment.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.studentDepartment?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter student
+                                                department</small>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="addStudentInput " placeholder="Student Semester"
                                         formControlName="studentSemester" maxlength="10" required>
-                                        <div *ngIf="studentFormControls.studentSemester.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.studentSemester?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter student semester</small>
-                                            </div>
+                                    <div *ngIf="studentFormControls.studentSemester.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.studentSemester?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter student
+                                                semester</small>
                                         </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="addStudentInput ">
-                                        <label for="resume"  class="custom-file-upload">Upload Resume</label>
-                                        <input type="file" id="resume" name="resume"  placeholder="resume"
-                                        formControlName="resume" required>
                                     </div>
-                                    
-                                    <!-- <input type="text" class="addStudentInput " placeholder="resume"
-                                        formControlName="resume" maxlength="10" required> -->
-                                        <div *ngIf="studentFormControls.resume.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.resume?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter resume</small>
-                                            </div>
-                                        </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="photo"  class="custom-file-upload">Upload Photo</label>
-                                    <input type="file" id="photo" name="photo" placeholder="photo"
-                                    formControlName="photo" required>
-                                    <!-- <input type="text" class="addStudentInput " placeholder="photo"
-                                        formControlName="photo" maxlength="10" required> -->
-                                        <div *ngIf="studentFormControls.photo.invalid  && submitted">
-                                            <div *ngIf="studentFormControls.photo?.errors?.required">
-                                                <small class="form-text text-danger text-right">Enter photo</small>
-                                            </div>
+                                    <div class="addStudentInput upload-input">
+
+                                        <label for="resume" class="custom-file-upload upload-button">Upload
+                                            Resume</label>
+                                        <input type="file" id="resume" name="resume" placeholder="resume"
+                                            formControlName="resume" required>
+
+                                    </div>
+                                    <div *ngIf="studentFormControls.resume.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.resume?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter resume</small>
                                         </div>
+                                    </div>
                                 </div>
-                                
+                                <div class="form-group">
+                                    <div class="addStudentInput upload-input">
+                                        <label for="photo" class="custom-file-upload upload-button">Upload Photo</label>
+                                        <input type="file" id="photo" name="photo" placeholder="photo"
+                                            formControlName="photo" required>
+                                    </div>
+
+
+                                    <div *ngIf="studentFormControls.photo.invalid  && submitted">
+                                        <div *ngIf="studentFormControls.photo?.errors?.required">
+                                            <small class="form-text text-danger text-right">Enter photo</small>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="text-center">

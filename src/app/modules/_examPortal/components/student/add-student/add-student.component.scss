@@ -108,8 +108,32 @@ input[type=number] {
     color: #fff;
     background-color: #26579E;
     border: none;
-    display: inline-block;
-    font-size: 0.7rem;
+  display: initial !important;
+    font-size: 0.8rem;
     padding: 2px 4px;
     cursor: pointer;
 }
+
+.upload-input{
+  height: 33px;
+// position: relative;
+}
+
+.upload-button{
+height: inherit;
+  position:relative;
+  top:-28px;
+}
+
+.mat-option {
+  line-height: 28px !important;
+  height: 28px !important;
+}
+
+::ng-deep .mat-option-text {
+  font-size: smaller !important;
+}
+
+// label{
+//   display: none;
+// }
