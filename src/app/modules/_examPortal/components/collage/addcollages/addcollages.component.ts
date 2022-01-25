@@ -221,39 +221,41 @@ this.collageservices.temparorySaveCollageData(tempData.data).subscribe((responce
     // }
   }
   submitCollageForm() {
-    var data = {
-      collegeName: this.basicInfoForm.value.collegeName,
-      location: this.basicInfoForm.value.location,
-      contactPerName1: this.basicInfoForm.value.contactPerName1,
-      contactPerName2: this.basicInfoForm.value.contactPerName2,
-      contactPerEmail1: this.basicInfoForm.value.contactPerEmail1,
-      contactPerEmail2: this.basicInfoForm.value.contactPerEmail2,
-      contactPer1ContactNo: this.basicInfoForm.value.contactPer1ContactNo,
-      contactPer2ContactNo:this.basicInfoForm.value.contactPer2ContactNo,
-      grade: this.basicInfoForm.value.grade,
-      yearOfEsta: this.basicInfoForm.value.yearOfEsta,
-      university: this.basicInfoForm.value.university,
-      accredation: this.basicInfoForm.value.accredation,
-      country: this.basicInfoForm.value.country,
-      state: this.basicInfoForm.value.state,
-      CollegeUniAffilation: this.basicInfoForm.value.CollegeUniAffilation,
-      CollegeBiography: this.basicInfoForm.value.CollegeBiography,
-    };
+    debugger
+    // var data = {
+    //   collegeName: this.basicInfoForm.value.collegeName,
+    //   location: this.basicInfoForm.value.location,
+    //   contactPersonsDetails:[
+    //     {
+    //       name:this.basicInfoForm.controls.newaddMoreContacts.value.contactPerName1,
+    //       email:this.basicInfoForm.controls.newaddMoreContacts.value.contactPerEmail1,
+    //     }
+    //   ],
+     
 
-    this.collageservices.addCollageDetails(data).subscribe((responce: any) => {
+    //   contactPer1ContactNo: this.basicInfoForm.value.contactPer1ContactNo,
+    //   contactPer2ContactNo:this.basicInfoForm.value.contactPer2ContactNo,
+    //   grade: this.basicInfoForm.value.grade,
+    //   yearOfEsta: this.basicInfoForm.value.yearOfEsta,
+    //   university: this.basicInfoForm.value.university,
+    //   accredation: this.basicInfoForm.value.accredation,
+    //   country: this.basicInfoForm.value.country,
+    //   state: this.basicInfoForm.value.state,
+    //   CollegeUniAffilation: this.basicInfoForm.value.CollegeUniAffilation,
+    //   CollegeBiography: this.basicInfoForm.value.CollegeBiography,
+    // };
+
+    this.collageservices.addCollageDetails(this.basicInfoForm.value).subscribe((responce: any) => {
       if (responce.code == 'S208') {
        
        this.collageservices.getCollageList().subscribe((getcollegeresponce:any)=>{
         //  this.getCollageDetailsforUpload = getcollegeresponce;
-         
         if(getcollegeresponce){
-         
            let getCollegeFeild= this.basicInfoForm.value;
-          
            getCollegeFeild['collegeId']=getcollegeresponce.collegeId;
            getCollegeFeild['name']=getcollegeresponce.name;
  this.collageservices.uploadCollageLogo(this.file,getCollegeFeild).subscribe((uploaded:any)=>{
-   debugger
+   
   this.snackbarservices.openSnackBarFrSuccess(
     'Details and logo Saved successfully'
   );

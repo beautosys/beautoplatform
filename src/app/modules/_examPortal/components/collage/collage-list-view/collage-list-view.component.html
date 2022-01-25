@@ -1,80 +1,90 @@
-<section class="banner-h-full d-flex align-items-start  py-4 bg">
-  <div class="container-fluid custom_width ">
+<section class="banner-h-full d-flex align-items-start py-4 bg">
+  <div class="container-fluid custom_width">
     <div class="home cc-table">
-
       <div class="row">
         <div class="col-md-9">
-
-
-          <div   class="filterline">
+          <div class="filterline">
             <span class="ml-3">Filetr By: </span>
             <div>
-            <mat-form-field *ngFor="let filter of filterSelectObj">
-
-              <mat-label>Filter {{filter.name}}</mat-label>
-              <select matNativeControl name="{{filter.columnProp}}" [(ngModel)]="filter.modelValue"
-                (change)="filterChange(filter,$event)">
-                <option value="">-- Select {{filter.name}} --</option>
-                <option [value]="item" *ngFor="let item of filter.options">{{item}}</option>
-              </select>
-
-
-            </mat-form-field>
-          </div>
-
-        
-          <div>
-            <span class="ml-3">Custome FIlter All :</span>
-            <mat-form-field>
-             
-  
-              <mat-select
-               
-                multiple
-                [(ngModel)]="allSelected"
-                (selectionChange)="selectionChange($event)"
-              >
-                <mat-option
-                  *ngFor="let displayedColumns of displayedCounmForDropDown"
-                  [value]="displayedColumns"
+              <mat-form-field>
+                <label for="">Country</label>
+                <mat-select
+                  panelClass="mat-select-custom-color"
+                  id="dept"
+                  disableOptionCentering
+                  [(ngModel)]="selectedCountry"
+                  (selectionChange)="onCountryTableFilter($event)"
                 >
-                  {{ displayedColumns }}</mat-option
+                  <mat-option
+                    [value]="item.countryId"
+                    *ngFor="let item of countryGetArray; let i = index"
+                  >
+                    {{ item.countryName }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field>
+                <label for="">State</label>
+                <mat-select
+                  panelClass="mat-select-custom-color"
+                  id="dept"
+                  disableOptionCentering
+                  [(ngModel)]="selectStateNgModel"
+                  (selectionChange)="onStateTableFilter($event)"
                 >
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div>
-            
-      <mat-form-field>
-        <mat-select
-          panelClass="mat-select-custom-color"
-          id="dept"
-          disableOptionCentering
-          [(ngModel)]="selectedCountry"
-          (selectionChange)="onCountryTableFilter($event)"
-        >
-          <mat-option
-            [value]="item"
-            *ngFor="let item of dataSource.data; let i = index"
-          >
-            {{ item.country.countryName}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-          </div>
-        </div>
+                  <mat-option
+                    [value]="item.stateId"
+                    *ngFor="let item of StateGetArray; let i = index"
+                  >
+                    {{ item.stateName }}   {{ item.stateId }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
 
+            <div>
+              <span class="ml-3">Custome FIlter All :</span>
+
+              <mat-form-field>
+                <mat-select
+                  multiple
+                  [(ngModel)]="allSelected"
+                  (selectionChange)="selectionChange($event)"
+                >
+                  <mat-option
+                    *ngFor="let displayedColumns of displayedCounmForDropDown"
+                    [value]="displayedColumns"
+                  >
+                    {{ displayedColumns }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div></div>
+          </div>
         </div>
 
         <div class="col-md-3">
           <div class="rbtn">
-
-            <button mat-icon-button aria-label="view_list" (click)="ViewListOfCollage('collageList')">
-              <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">view_list</mat-icon>
+            <button
+              mat-icon-button
+              aria-label="view_list"
+              (click)="ViewListOfCollage('collageList')"
+            >
+              <mat-icon [ngStyle]="{ color: '#0F6CB6' }" class="mr-2"
+                >view_list</mat-icon
+              >
             </button>
-            <button mat-icon-button aria-label="grid_view" (click)="GrigListOfCollage('collageGrid')">
-              <mat-icon [ngStyle]="{'color':'#0F6CB6'}" class="mr-2">
-                grid_view</mat-icon>
+            <button
+              mat-icon-button
+              aria-label="grid_view"
+              (click)="GrigListOfCollage('collageGrid')"
+            >
+              <mat-icon [ngStyle]="{ color: '#0F6CB6' }" class="mr-2">
+                grid_view</mat-icon
+              >
             </button>
 
             <div class="custom-input custom-select-box mr-2">
@@ -84,7 +94,7 @@
                   id="month"
                   disableOptionCentering
                   [(ngModel)]="selectedMonth"
-                  (selectionChange)="onChangeMonth($event)"
+                 
                 >
                   <mat-option
                     [value]="item"
@@ -95,85 +105,93 @@
                 </mat-select>
               </mat-form-field>
             </div>
-            <button mat-raised-button class="bluebtn" aria-label="new job" (click)="openAddCollageDialog(null)">
+            <button
+              mat-raised-button
+              class="bluebtn"
+              aria-label="new job"
+              (click)="openAddCollageDialog(null)"
+            >
               <mat-icon class="mr-1">add</mat-icon><span>Add collages</span>
             </button>
           </div>
-
-
         </div>
-
       </div>
 
-      <div class="table-responsive-c table-responsive ">
-        <table mat-table [dataSource]="dataSource">
+      <div class="table-responsive-c table-responsive">
+        
+        <table mat-table [dataSource]="allfilteredDataByEvent">
           <div class="table-data">
             <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <th mat-header-cell *matHeaderCellDef>Name</th>
               <td mat-cell *matCellDef="let element">
                 <div class="img_txt">
-                  <div class="img">
-
-                  </div>
+                  <div class="img"></div>
 
                   <div>
-                    <div>
-                      {{element.collegeId}} {{element.name}}
-                    </div>
-                    <div> {{element.location}} </div>
+                    <div>{{ element.collegeId }} {{ element.name }}</div>
+                    <div>{{ element.location }}</div>
                   </div>
                 </div>
               </td>
             </ng-container>
 
-
             <ng-container matColumnDef="country">
-              <th mat-header-cell *matHeaderCellDef> Country </th>
-              <td mat-cell *matCellDef="let element"> {{element.country?.countryName}} </td>
+              <th mat-header-cell *matHeaderCellDef>Country</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.country?.countryName }}
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="state">
-              <th mat-header-cell *matHeaderCellDef> Satet </th>
-              <td mat-cell *matCellDef="let element"> {{element.state?.stateName}} </td>
+              <th mat-header-cell *matHeaderCellDef>Satet</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.state?.stateName }}
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="contactPer1">
-              <th mat-header-cell *matHeaderCellDef> Conatact person Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.contactPer1}} </td>
+              <th mat-header-cell *matHeaderCellDef>Conatact person Name</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.contactPer1 }}
+              </td>
             </ng-container>
 
-
             <ng-container matColumnDef="contactEmail1">
-              <th mat-header-cell *matHeaderCellDef> Conatct person email </th>
-              <td mat-cell *matCellDef="let element"> {{element.contactEmail1}} </td>
+              <th mat-header-cell *matHeaderCellDef>Conatct person email</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.contactEmail1 }}
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="contactPer1ContactNo">
-              <th mat-header-cell *matHeaderCellDef> Conatct person contact </th>
-              <td mat-cell *matCellDef="let element"> {{element.contactPer1ContactNo}} </td>
+              <th mat-header-cell *matHeaderCellDef>Conatct person contact</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.contactPer1ContactNo }}
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="grade">
-              <th mat-header-cell *matHeaderCellDef> Grade </th>
-              <td mat-cell *matCellDef="let element"> {{element.grade}} </td>
+              <th mat-header-cell *matHeaderCellDef>Grade</th>
+              <td mat-cell *matCellDef="let element">{{ element.grade }}</td>
             </ng-container>
 
-
-
-
             <ng-container matColumnDef="yearOfEsta">
-              <th mat-header-cell *matHeaderCellDef> Year of establish </th>
-              <td mat-cell *matCellDef="let element"> {{element.yearOfEsta}} </td>
+              <th mat-header-cell *matHeaderCellDef>Year of establish</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.yearOfEsta }}
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="accredation">
-              <th mat-header-cell *matHeaderCellDef> Accredation </th>
-              <td mat-cell *matCellDef="let element"> {{element.accredation}} </td>
+              <th mat-header-cell *matHeaderCellDef>Accredation</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.accredation }}
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="status">
-              <th mat-header-cell *matHeaderCellDef> Status </th>
-              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let element">{{ element.status }}</td>
             </ng-container>
 
             <ng-container matColumnDef="action">
@@ -186,30 +204,44 @@
                   <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
-
-                  <button mat-menu-item mat-menu-item (click)="openDeleteCollageDialog(element)">
-                    Delete {{element.name}}
+                  <button
+                    mat-menu-item
+                    mat-menu-item
+                    (click)="openDeleteCollageDialog(element)"
+                  >
+                    Delete {{ element.name }}
                   </button>
                   <!-- <a [routerLink]="['./edit-rate-profiles',row.profilename]" >Edit</a>  -->
-                  <button mat-menu-item mat-menu-item (click)="openUpdateCollageeDialog(element)">
+                  <button
+                    mat-menu-item
+                    mat-menu-item
+                    (click)="openUpdateCollageeDialog(element)"
+                  >
                     Update
                   </button>
 
-                  <button mat-menu-item mat-menu-item (click)="openViewCollageeDialog(element.name)">
+                  <button
+                    mat-menu-item
+                    mat-menu-item
+                    (click)="openViewCollageeDialog(element.name)"
+                  >
                     View
                   </button>
-
                 </mat-menu>
-
               </td>
             </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
           </div>
         </table>
-        <mat-paginator appCustomPagination [showTotalPages]="3" [length]="recordLength" [pageSize]="10"
-          [pageSizeOptions]="[5, 10, 25, 100]">
+        <mat-paginator
+          appCustomPagination
+          [showTotalPages]="3"
+          [length]="recordLength"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]"
+        >
         </mat-paginator>
       </div>
     </div>

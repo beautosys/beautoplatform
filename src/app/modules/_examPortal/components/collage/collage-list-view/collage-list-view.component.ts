@@ -1,3 +1,4 @@
+import { state } from '@angular/animations';
 import { CollageService } from './../_services/collage.service';
 import { CollageDetailsComponent } from './../collage-details/collage-details.component';
 import { DeleteCollageDetailsComponent } from './../delete-collage-details/delete-collage-details.component';
@@ -10,6 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute, Event } from '@angular/router';
 import { AddcollagesComponent } from '../addcollages/addcollages.component';
 import { BehaviorSubject } from 'rxjs';
+import { indexOf, uniq }  from 'underscore';
 
 @Component({
   selector: 'app-collage-list-view',
@@ -17,10 +19,11 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./collage-list-view.component.scss'],
 })
 export class CollageListViewComponent implements OnInit {
+  
   countryGetArray: any = [];
   StateGetArray: any = [];
   selectedCountry:any;
-  allfilteredDataByEvent:any[]=[]
+  allfilteredDataByEvent:any=[]
   uniqDataSource:any = []
   filterSelectObj:any[]= [];
   filterValues: any ={};
@@ -106,7 +109,7 @@ export class CollageListViewComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.allSelected=[ 'name',
     'country',
     'state',
@@ -118,43 +121,39 @@ export class CollageListViewComponent implements OnInit {
     'accredation',
     'status',
     'action',]
-    this.getCollageListFromServices();
-    this.getCountry();
-    this.getStateList();
-
+ this.getCollageListFromServices();
 
 console.log('filterobj',this.filterSelectObj)
-    this.dataSource.filterPredicate = this.createFilter();
 this.uniqDataSource = this.dataSource.data;
-
-
-  }
-
-  onChangeDept(event:any){
-   
-
-  }
-
-  filterData($event : any){
-    this.dataSource.filter = $event.target.value;
-  }
-filterinnnerdata:any = []
+ }
 
   onCountryTableFilter(event:any){
-  this.dataSource.data =   this.allfilteredDataByEvent.filter((element:any)=>{
+    debugger
+  this.allfilteredDataByEvent = this.dataSource.data.filter((element:any)=>
      
- event.value.includes(element)
+ event.value === element.country.countryId
 //  this.dataSource.data = data
- 
+ )
+
+    console.log('allfil',this.allfilteredDataByEvent)
+  }
+
+  onStateTableFilter(event:any){
   
-    })
+    this.allfilteredDataByEvent = this.dataSource.data.filter((element:any)=>
+     
+    event.value === element.state.stateId
+   //  this.dataSource.data = data
+    )
+    console.log('allfil',this.allfilteredDataByEvent)
+
   }
 
   selectionChange(event:any){
 
   if(event.value.length > 0){
   
-    this.displayedColumns = this.displayedCounmForDropDown.filter((e:any)=>
+    this.displayedColumns = this.allSelected.filter((e:any)=>
     event.value.includes(e))
   }
   else{
@@ -162,95 +161,31 @@ filterinnnerdata:any = []
   }
 
   }
-  onChangeMonth(e: any) {
-    this.selectedMonth = e.value;
-  }
-  filterChange(filter:any, event:any) {
-    //let filterValues = {}
-    debugger
-    console.log('search value contry',)
-    this.filterValues[filter.columnProp] = event.target.value.trim().toLowerCase()
-    this.dataSource.filter = JSON.stringify(this.filterValues)
-  }
 
-  onSelectionCountry(selectedcountryNgModel: any) {
-    console.log('selection value', selectedcountryNgModel);
-  }
 
-  getCountry() {
-    this.CountryStateService.getCountryList().subscribe((responce: any) => {
-      this.countryGetArray = responce;
-    });
-  }
-
-  getStateList() {
-    this.CountryStateService.getStateList().subscribe((responce: any) => {
-      this.StateGetArray = responce;
-    });
-  }
   getCollageListFromServices() {
-    let remoteDummyData:any= []
     this.collageServices.getCollageList().subscribe((res: any) => {
       this.dataSource.data = res;
       this.allfilteredDataByEvent = res;
 
+      this.dataSource.data.forEach(el => {
+        if(!this.countryGetArray.some((item:any)=> item.countryId === el.country.countryId)){
+          this.countryGetArray.push(el.country)
+        }
+        if(!this.StateGetArray.some((item:any)=> item.stateId === el.state.stateId)){
+          this.StateGetArray.push(el.state)
+        }
+      });
+ 
+
       console.log('allfilteredDataByEvent',this.allfilteredDataByEvent)
-      this.filterSelectObj.filter((o:any)=>{
-        o.options = this.getFilterObj(this.dataSource.data,o.columnProp);
-
-
-
-         })
+    
     });
   //  this.dataSource.data = remoteDummyData
 
 
   }
 
-  createFilter() {
-    let filterFunction = function (data: any, filter: string): boolean {
-      let searchTerms = JSON.parse(filter);
-      let isFilterSet = false;
-      for (const col in searchTerms) {
-        if (searchTerms[col].toString() !== '') {
-          isFilterSet = true;
-        } else {
-          delete searchTerms[col];
-        }
-      }
-
-      console.log(searchTerms);
-
-      let nameSearch = () => {
-        let found = false;
-        if (isFilterSet) {
-          for (const col in searchTerms) {
-            searchTerms[col].trim().toLowerCase().split(' ').forEach((word:any) => {
-              if (data[col].toString().toLowerCase().indexOf(word) != -1 && isFilterSet) {
-                found = true
-              }
-            });
-          }
-          return found
-        } else {
-          return true;
-        }
-      }
-      return nameSearch()
-    }
-    return filterFunction
-  }
-
-  getFilterObj(fullOBj:any, key:any): any{
-    const chqkObj:any[]= [];
-    fullOBj.filter((obj:any)=>{
-      if(!chqkObj.includes(obj[key])){
-        chqkObj.push(obj[key])
-      }
-      return obj
-    })
-    return chqkObj
-      }
 
   openAddCollageDialog(data: any) {
     const dailogCollege = this.dialog.open(AddcollagesComponent, {});

@@ -46,21 +46,7 @@
 
         <!--end-->
 
-        <div class="row">
-          <div class="col-md-6 ">
-
-
-            <div class="space-m">
-              <input type="text" placeholder="contact Person Name 2" formControlName="contactPerName2"
-                (blur)="onBlurMethod($event)" />
-            </div>
-          </div>
-          <div class="col-md-6 ">
-              <input type="text" placeholder="contact Person email 2" formControlName="contactPerEmail2"
-                (blur)="onBlurMethod($event)" />
-            </div>
-          </div>
-        
+     
 
         <div class="row">
           <div class="col-md-6">
@@ -311,7 +297,7 @@
                 <input
                   type="text"
                   class="addempinput"
-                  placeholder="contact Per Name 2"
+                  placeholder="contact Per Name 1"
                   formControlName="contactPerName1"
                   (blur)="onBlurMethod($event)"
                 />
@@ -374,12 +360,14 @@
                 (click)="addMoreConatctsFeilds()"
                 >Add more conatct</button></div>
               <div>
-                <button type="submit " class="btn solid-btn"   [disabled]="!basicInfoForm.valid">Submit</button>
+                <button type="submit " class="btn solid-btn">Submit</button>
               </div>
             </div>
           </div>
         </div>
       </form>
+
+     
     </div>
   </div>
 </div>
