@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Confirmation {{collageData | json}}</h1>
+<h1 mat-dialog-title>Confirmation {{collageData.collegeId}} {{ collageData.name}}</h1>
 <div mat-dialog-content>Do you want delete this record?</div>
 <div mat-dialog-actions class="float-right">
     <button mat-button  class="btn solid-btn mr-2" (click)="onDeleteCollage()">Yes</button>

@@ -90,10 +90,10 @@ export class AddStudentComponent implements OnInit {
     })
    }
 
-  ngOnInit(): void {
-    this.getCountryList();
+  ngOnInit() {
+   // this.getCountryList();
     this.activatedRoute.data.subscribe(
-      (response:any)=>{
+      (response: any) => {
         this.headerTitleService.updatedTitle(response.title);
         this.headerTitleService.updatedStart(response.start);
       }
@@ -142,17 +142,17 @@ export class AddStudentComponent implements OnInit {
     return options;
   }
 
-  getCountryList(){
-    this.collageservices.getCountryList().subscribe(
-      response=>{
-        let countries:any;
-        countries=response
-        for(let i in countries){
-          this.countryList.push(countries[i].countryName)
-        }
-      }
-    );
-  }
+  // getCountryList(){
+  //   this.collageservices.getCountryList().subscribe(
+  //     response=>{
+  //       let countries:any;
+  //       countries=response
+  //       for(let i in countries){
+  //         this.countryList.push(countries[i].countryName)
+  //       }
+  //     }
+  //   );
+  // }
 
 
   onSubmit(){

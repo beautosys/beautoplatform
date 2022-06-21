@@ -1,168 +1,373 @@
 <div mat-dialog-content>
   <div class="row addempop">
-    <div class="col-md-3 bgblue">
+    <div class="col-md-4 bgblue">
       <img src="assets/img/addemp.svg" class="imgadd" />
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8 cu-input">
       <h3 class="heading">Basic College Information</h3>
       <form [formGroup]="basicInfoForm" (ngSubmit)="submitCollageForm()">
+
         <div class="row">
           <div class="col-md-6">
-            <div class="col-md-12 form-group">
+            <div class="space-m">
               <input
                 type="text"
-                class="addempinput"
                 placeholder="College name"
                 name="collegeName"
                 formControlName="collegeName"
                 (blur)="onBlurMethod($event)"
+                (keyup)="OnKeyCollegeNameUniques()"
               />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="Location"
-                formControlName="location"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="Country"
-                formControlName="country"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="state"
-                formControlName="state"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="Contact Person Name 1"
-                formControlName="contactPerName1"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="contact Person email 1"
-                formControlName="contactPerEmail1"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="contact Person Name 2"
-                formControlName="contactPerName2"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="contact Person email 2"
-                formControlName="contactPerEmail2"
-                (blur)="onBlurMethod($event)"
-              />
+            
+            <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.collegeName.touched || submitted) && basicInfoForm.controls.collegeName.errors?.required">
+              Name is required
+          </span>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="col-md-12 form-group">
+          <div class="col-md-6 ">
+            <div class="space-m">
               <input
                 type="text"
-                class="addempinput"
-                placeholder="Contact Person contact no"
+                placeholder="Contact Number"
                 formControlName="contactPer1ContactNo"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.contactPer1ContactNo.touched || submitted) && 
+              basicInfoForm.controls.contactPer1ContactNo.errors?.required">
+              Contact Number is required
+          </span>
             </div>
-            <div class="col-md-12 form-group">
+          </div>
+        </div>
+
+
+
+        <!--end-->
+
+     
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
               <input
                 type="text"
-                class="addempinput"
-                placeholder="grade"
+                placeholder="College Location"
+                formControlName="location"
+                (blur)="onBlurMethod($event)"
+              />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.location.touched || submitted) && 
+              basicInfoForm.controls.location.errors?.required">
+              College Location is required
+          </span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="College Grade"
                 formControlName="grade"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.grade.touched || submitted) && 
+              basicInfoForm.controls.grade.errors?.required">
+              Grade is required
+          </span>
             </div>
-            <div class="col-md-12 form-group">
+          </div>
+        </div>
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
               <input
                 type="text"
-                class="addempinput"
-                placeholder="university"
-                formControlName="university"
+                placeholder="Country"
+                aria-label="Number"
+                matInput
+                [(ngModel)]="selectedCountryModel"
+                formControlName="country"
+                [matAutocomplete]="auto1"
+                (keyup)="onAutoCompleteCountrySearch()"
+              />
+              <mat-autocomplete
+                #auto1="matAutocomplete"
+                (optionSelected)="onSelected($event.option.value)"
+              >
+                <mat-option
+                  *ngFor="let option of filteredCountries"
+                  [value]="option.countryName"
+                >
+                  {{ option.countryName }}
+                </mat-option>
+              </mat-autocomplete>
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.country.touched || submitted) && 
+              basicInfoForm.controls.country.errors?.required">
+              country is required
+          </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
+                placeholder="College Year of Established"
+                formControlName="yearOfEsta"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.yearOfEsta.touched || submitted) && 
+              basicInfoForm.controls.yearOfEsta.errors?.required">
+              yearOfEsta is required
+          </span>
             </div>
-            <div class="col-md-12 form-group">
+          </div>
+        </div>
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <!-- <mat-form-field
+                class="viewPartnerDropDownMatForm"
+                id="select"
+                appearance="standard"
+              >
+                <mat-select
+                  panelClass="viewPartnerDropDownMatSelect"
+                  disableOptionCentering="disableOptionCentering"
+                  formControlName="state"
+                >
+                  <mat-option
+                    [value]="item.stateName"
+                    *ngFor="let item of stateInfo; let i = index"
+                    selected="i == 0"
+                  >
+                    {{ item.stateName }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field> -->
+              <input type="text" name="" id=""  [(ngModel)]="selectSateModel" 
+              (keyup)="OnAutocompleteStateCall()" 
+              [matAutocomplete]="state"  formControlName="state" placeholder="State">
+              <mat-autocomplete 
+              #state="matAutocomplete">
+                    <option value=""  *ngFor="let state of filteredState;let i = index"  selected="i == 0">
+                      {{ state.stateName }}
+                    </option>
+              </mat-autocomplete>
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.state.touched || submitted) && 
+              basicInfoForm.controls.state.errors?.required">
+              yearOfEsta is required
+          </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+           
+              <input
+              type="text"
+              placeholder="university"
+              aria-label="Number"
+              matInput
+              [(ngModel)]="selecteduniversityModel"
+              formControlName="university"
+              name="university"
+              [matAutocomplete]="auto"
+              (keyup)="onAutoCompleteUniversitySearch()"
+            />
+            <mat-autocomplete
+              #auto="matAutocomplete"
+            >
+              <mat-option
+                *ngFor="let option of filterdUniversity"
+                [value]="option.universityName"
+              >
+              {{ option.universityName }}
+              </mat-option>
+            </mat-autocomplete>
+            <span class="text-danger"
+            *ngIf="(basicInfoForm.controls.university.touched || submitted) && 
+            basicInfoForm.controls.university.errors?.required">
+            university is required
+        </span>
+            </div>
+          </div>
+        </div>
+
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
               <input
                 type="text"
-                class="addempinput"
+                placeholder="College Accredation"
+                formControlName="accredation"
+                (blur)="onBlurMethod($event)"
+              />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.accredation.touched || submitted) && 
+              basicInfoForm.controls.accredation.errors?.required">
+              accredation  is required
+          </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <input
+                type="text"
                 placeholder="College Affilation"
                 formControlName="CollegeUniAffilation"
                 (blur)="onBlurMethod($event)"
               />
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.CollegeUniAffilation.touched || submitted) && 
+              basicInfoForm.controls.CollegeUniAffilation.errors?.required">
+              College UniAffilation is required
+          </span>
             </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="year Of Esta"
-                formControlName="yearOfEsta"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
-            <div class="col-md-12 form-group">
-              <input
-                type="text"
-                class="addempinput"
-                placeholder="Accredation"
-                formControlName="accredation"
-                (blur)="onBlurMethod($event)"
-              />
-            </div>
+          </div>
+        </div>
 
-            <div class="col-md-12">
-              <div class="loadBody">
-                <div class="close">
-                  <mat-icon>close</mat-icon>
-                </div>
-                <div class="uploadBody">
-                  <form class="drop-zone">
-                    <input id="file" type="file" formControlName="files" />
-                    <div class="uploadTitle">
-                      <p>Upload collage logo</p>
-                    </div>
-                  </form>
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <textarea
+                placeholder="College Biography"
+                rows="4"
+                cols="30"
+                name="CollegeBiography"
+                formControlName="CollegeBiography"
+                (blur)="onBlurMethod($event)"
+              ></textarea>
+              <span class="text-danger"
+              *ngIf="(basicInfoForm.controls.CollegeBiography.touched || submitted) && 
+              basicInfoForm.controls.CollegeBiography.errors?.required">
+              College UniAffilation is required
+          </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <div>
+                <div class="loadBody">
+                  <!-- <div class="close">
+                      <mat-icon>close</mat-icon>
+                    </div> -->
+                  <div class="uploadBody">
+                    <form class="drop-zone">
+                      <input
+                        id="file"
+                        type="file"
+                        formControlName="files"
+                        (change)="onSelectFile($event)"
+                      />
+                      <div class="uploadTitle">
+                        <p>Upload collage logo</p>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!--end-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="space-m">
+              <div formArrayName="newaddMoreContacts"
+            *ngFor="let item of getControls(); let i = index">
+            <div [formGroupName]="i">
+            
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="contact Per Name 1"
+                  formControlName="contactPerName1"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="addempinput"
+                  placeholder="contact Per Name 2"
+                  formControlName="contactPerName2"
+                  (blur)="onBlurMethod($event)"
+                />
+              </div>
+             
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="space-m">
+              <div formArrayName="newaddMoreContacts"
+              *ngFor="let item of getControls(); let i = index">
+              <div [formGroupName]="i">
+              
+                <div class="col-md-12 form-group">
+                  <input
+                    type="text"
+                    class="addempinput"
+                    placeholder="contact Per Email 1"
+                    formControlName="contactPerEmail1"
+                    (blur)="onBlurMethod($event)"
+                  />
+
+                </div>
+                <div class="col-md-12 form-group">
+                  <input
+                    type="text"
+                    class="addempinput"
+                    placeholder="contact Per Email 2"
+                    formControlName="contactPerEmail2"
+                    (blur)="onBlurMethod($event)"
+                  />
+                </div>
+               
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!--end-->
+
+      
+
         <div class="row">
           <div class="col-md-12 mt-4 float-right text-center">
-            <button type="submit " class="btn solid-btn">Submit</button>
+            <div class="row textCenter">
+              <div class="addmorecontact" *ngIf="ishideAddMorebutton"> <button type="button" 
+                class="btn btn-default"
+                (click)="addMoreConatctsFeilds()"
+                >Add more conatct</button></div>
+              <div>
+                <button type="submit " class="btn solid-btn">Submit</button>
+              </div>
+            </div>
           </div>
         </div>
       </form>
+
+     
     </div>
   </div>
 </div>
