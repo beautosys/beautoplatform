@@ -37,7 +37,8 @@ export const environment = {
 
   getAllCollageListRecords:Base_Url+'BeautoWebsiteLogin/college/getCollegeList',
   addCollageRecords:Base_Url+'BeautoWebsiteLogin/college/saveCollege',
-  deleteCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/deleteCollegeByCollegeName',
+  deleteCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/deleteCollegeByCollegenameAndId',
+
   getCollageListRecordBYID:Base_Url+'BeautoWebsiteLogin/college/getCollegeDetails',
 
 getCountryList:Base_Url+"BeautoWebsiteLogin/exam/getCountryList",
@@ -45,6 +46,7 @@ getStateList:Base_Url+"BeautoWebsiteLogin/state/getStateList",
 getuniversityList:Base_Url+"BeautoWebsiteLogin/university/getList",
 AddUniversity:Base_Url+"BeautoWebsiteLogin/university/add",
 uploadCollageLogo:Base_Url+'BeautoWebsiteLogin/college/uploadCollegeLogo',
-saveCollageTemparory:Base_Url+'BeautoWebsiteLogin/college/savetempCollege'
+saveCollageTemparory:Base_Url+'BeautoWebsiteLogin/college/savetempCollege',
+getStateBySelctCountry:Base_Url+'BeautoWebsiteLogin/state/getStateListBycountry'
 
 }

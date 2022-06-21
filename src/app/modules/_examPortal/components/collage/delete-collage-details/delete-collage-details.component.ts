@@ -29,13 +29,13 @@ this.collageData = data;
   }
 
   onDeleteCollage(){
-    debugger
-this.collageservices.deleteCollageDetails(this.collageData).subscribe((responce:any)=>{
+  
+this.collageservices.deleteCollageDetails(this.collageData.collegeId,this.collageData.name).subscribe((responce:any)=>{
   console.log(responce)
   if(responce.code= "S229"){
     this.dialogRef.close();
     let msg=this.collageData;
-    this.snackbarservices.openSnackBarFrSuccess( `${msg }` + + 'Deleted successfully');   
+    this.snackbarservices.openSnackBarFrSuccess( `${msg.name }` + ' ' + 'Deleted successfully');   
   }
 })
   }

@@ -8,6 +8,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CollageService {
+  getCountryList() {
+    throw new Error('Method not implemented.');
+  }
+  getStateList() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http:HttpClient) { }
 
@@ -15,8 +21,8 @@ export class CollageService {
     return this.http.get(environment.getAllCollageListRecords)
   }
 
-  deleteCollageDetails(collegeName:any):Observable<any>{ 
-    return this.http.delete(environment.deleteCollageListRecordBYID+`?collegeName=${collegeName}`);
+  deleteCollageDetails(collegeId:any,collegeName:any):Observable<any>{ 
+    return this.http.delete(environment.deleteCollageListRecordBYID+`?collegeId=${collegeId}&collegeName=${collegeName}`);
   }
 
 
@@ -30,29 +36,19 @@ export class CollageService {
   }
 
 
-  getCountryList(){
-    return this.http.get(environment.getCountryList);
-
-  }
-
-  getStateList(){
-    return this.http.get(environment.getStateList);
-
-  }
 
   getUniversity(){
-    debugger
+
     return this.http.get(environment.getuniversityList);
 
   }
 
-  uploadCollageLogo(file:File,data:any){
+  uploadCollageLogo(file:File,getCollegeFeild:any){
 
      let formData = new FormData();
     formData.append("file", file);
-    formData.append("collegeLogo", data.collegeLogo);
-    formData.append("collegeId", data.collegeId);
-    formData.append("name", data.name);
+    formData.append("collegeId", getCollegeFeild.collegeId);
+    formData.append("name", getCollegeFeild.name);
    
     return this.http.post(environment.uploadCollageLogo, formData)
   }
