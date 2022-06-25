@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LeadershipComponent } from './aboutus/leadership/leadership.component';
 import { OurJourneyComponent } from './aboutus/our-journey/our-journey.component';
+import { OurUnitsComponent } from './aboutus/our-units/our-units.component';
 import { VmvComponent } from './aboutus/vmv/vmv.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { GallaryComponent } from './gallary/gallary.component';
@@ -25,8 +26,8 @@ const routes: Routes = [
     path: '',
     // redirectTo: 'home',
     // pathMatch: 'full',
-    component:PagesComponent,
-    children:[
+    component: PagesComponent,
+    children: [
       {
         path: '',
         redirectTo: 'home',
@@ -37,7 +38,7 @@ const routes: Routes = [
         component: HomeComponent,
         data: {
           title: 'Home',
-          start:'',
+          start: '',
           breadcrumb: [
             {
               label: 'Home',
@@ -51,7 +52,7 @@ const routes: Routes = [
         component: OurJourneyComponent,
         data: {
           title: 'Our Journey',
-          start:'About / ',
+          start: 'About / ',
           breadcrumb: [
             {
               label: 'Our-Journey',
@@ -59,14 +60,14 @@ const routes: Routes = [
             }
           ]
         }
-    
+
       },
       {
         path: 'leadership',
         component: LeadershipComponent,
         data: {
           title: 'Leadership',
-          start:'About / ',
+          start: 'About / ',
           breadcrumb: [
             {
               label: 'Leadership',
@@ -80,10 +81,24 @@ const routes: Routes = [
         component: VmvComponent,
         data: {
           title: 'Mission Vision Value',
-          start:'About / ',
+          start: 'About / ',
           breadcrumb: [
             {
               label: 'Mission-Vision-Value',
+              url: ''
+            }
+          ]
+        }
+      },
+      {
+        path: 'ourunits',
+        component: OurUnitsComponent,
+        data: {
+          title: 'Our Units',
+          start: 'About / ',
+          breadcrumb: [
+            {
+              label: 'Our Units',
               url: ''
             }
           ]
@@ -94,7 +109,7 @@ const routes: Routes = [
         component: SolutionsComponent,
         data: {
           title: 'Solutions',
-          start:'Software / ',
+          start: 'Software / ',
           breadcrumb: [
             {
               label: 'Solutions',
@@ -108,7 +123,7 @@ const routes: Routes = [
         component: DevelopmentProcessComponent,
         data: {
           title: 'Development Process',
-          start:'Software / ',
+          start: 'Software / ',
           breadcrumb: [
             {
               label: 'Development-Process',
@@ -122,7 +137,7 @@ const routes: Routes = [
         component: SkillSAndToolsComponent,
         data: {
           title: 'Skills and Tools',
-          start:'Software / ',
+          start: 'Software / ',
           breadcrumb: [
             {
               label: 'Skills-and-Tools',
@@ -136,7 +151,7 @@ const routes: Routes = [
         component: GallaryComponent,
         data: {
           title: 'Gallary',
-          start:'Home / ',
+          start: 'Home / ',
           breadcrumb: [
             {
               label: 'Gallary',
@@ -150,7 +165,7 @@ const routes: Routes = [
         component: OurTeamComponent,
         data: {
           title: 'Team',
-          start:'Home / ',
+          start: 'Home / ',
           breadcrumb: [
             {
               label: 'Our-team',
@@ -164,7 +179,7 @@ const routes: Routes = [
         component: CareerLandingComponent,
         data: {
           title: 'Careers',
-          start:'Home / ',
+          start: 'Home / ',
           breadcrumb: [
             {
               label: 'Careers',
@@ -179,7 +194,7 @@ const routes: Routes = [
         resolve: { careers: CareerResolver },
         data: {
           title: 'Careers',
-          start:'Home / ',
+          start: 'Home / ',
           breadcrumb: [
             {
               label: 'Careers',
@@ -191,10 +206,10 @@ const routes: Routes = [
       {
         path: 'clients',
         component: ClientsComponent,
-        resolve:{clientList:UserClientResolverResolver},
+        resolve: { clientList: UserClientResolverResolver },
         data: {
           title: 'Clients',
-          start:'Home / ',
+          start: 'Home / ',
           breadcrumb: [
             {
               label: 'Clients',
@@ -204,11 +219,11 @@ const routes: Routes = [
         }
       },
       {
-        path:'contact-us',
-        component:ContactUsComponent,
+        path: 'contact-us',
+        component: ContactUsComponent,
         data: {
           title: 'Contact Us',
-          start:'Home / ',
+          start: 'Home / ',
           breadcrumb: [
             {
               label: 'Contact Us',
@@ -220,7 +235,7 @@ const routes: Routes = [
     ]
   },
 
-  
+
 
 
 ];

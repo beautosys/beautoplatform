@@ -3,89 +3,103 @@
     flex-wrap: wrap;
     align-items: center;
     padding-bottom: 1rem;
-   svg {
-       width: 21px;
-       margin-right: 0px;
-   }
+
+    svg {
+        width: 21px;
+        margin-right: 0px;
+    }
 }
-.fb:hover svg path{
+
+.fb:hover svg path {
     fill: #2d72f1;
 }
+
 .tw:hover svg path {
     fill: #1DA1F2;
 }
+
 .instagram:hover svg path {
     fill: #ff3167;
 }
+
 .youtube:hover svg path {
     fill: #FF0000;
 }
-.soc{
-  margin-left: 0.5rem;
+
+.soc {
+    margin-left: 0.5rem;
 }
 
-.t-f-12{
+.t-f-12 {
 
     font-size: 15px;
 
 }
-.bg-f
-{
-    background-color: var(--light);
+
+.bg-f {
+    background-color: var(--dark);
     padding: 5em 0em;
     margin-top: 5em;
     padding-bottom: 15px;
 }
 
-.about{
+.about {
     text-align: left;
-font: normal normal bold 15px/24px Roboto;
-color:#000;
-letter-spacing: 1px;
-span {
-    color: #2D72F1;
+    font: normal normal bold 15px/24px Roboto;
+    color: #fff;
+    letter-spacing: 1px;
+
+    span {
+        color: #2D72F1;
+    }
 }
-}
-.p-g{
+
+.p-g {
     color: #666666;
     margin-top: 15px;
     text-align: justify;
     line-height: 1.7;
 
-    ul{
+    ul {
         padding: 0px;
         margin: 0px;
         list-style: none;
     }
 }
-.icons-side{
+
+.icons-side {
     display: flex;
     column-gap: 10px;
 }
+
 .fotter-space {
     width: 80%;
     margin: auto;
 }
+
 .c-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 5em;
 }
+
 .b-copy {
     text-align: center;
     color: #666666;
+
     span {
         color: #2D72F1;
     }
 }
+
 hr {
     border-top: 2px solid #403a45;
     width: 60%;
 }
 
 @media (max-width: 767px) {
-  .c-row {
-    display: flex;
-    flex-flow: column;
-  }
+    .c-row {
+        display: flex;
+        flex-flow: column;
+    }
 }

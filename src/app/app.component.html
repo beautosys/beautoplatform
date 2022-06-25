@@ -2,17 +2,15 @@
 <!--Scroll to top-->
 
 <div class="color-pallete">
-  <button mat-raised-button color="primary" class="colors color1" (click)="onSetTheme('default-theme')">
+  <!-- <button mat-raised-button color="primary" class="colors color1" (click)="onSetTheme('default-theme')">
   </button>
   <button mat-raised-button color="dark" class="colors color2" (click)="onSetTheme('dark-theme')"></button>
-  <button mat-raised-button color="light" class="colors color3" (click)="onSetTheme('light-theme')"></button>
-  <button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top">
+  <button mat-raised-button color="light" class="colors color3" (click)="onSetTheme('light-theme')"></button> -->
+  <button
+    [ngClass]="{ 'show-scroll': showScroll }"
+    (click)="scrollToTop()"
+    class="scroll-to-top"
+  >
     <i class="fa fa-arrow-up"></i>
-</button>
-
-
-
-
-
-
-
+  </button>
+</div>

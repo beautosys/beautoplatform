@@ -40,28 +40,29 @@ ng-image-slider .image:hover {
 }
 
 .nav-arrow {
- margin-right: 23rem;
+  margin-right: 23rem;
   text-align: end;
 }
 
 
 
 .heading {
-    text-align: left;
-    font: normal normal bold 40px/100px Roboto;
-    letter-spacing: 0px;
-    color: #26283A;
-    margin: 0px;
-    color: #26283A;
-    margin: 0px;
-    line-height: 1.4;
-    margin-bottom: 55px;
-    margin-top: 21px;
+  text-align: left;
+  font: normal normal bold 40px/100px Roboto;
+  letter-spacing: 0px;
+  color: #26283A;
+  margin: 0px;
+  color: #26283A;
+  margin: 0px;
+  line-height: 1.4;
+  margin-bottom: 55px;
+  margin-top: 21px;
 }
 
-.sc-t{
+.sc-t {
   color: #26579E;
 }
+
 .sline {
   display: grid;
   grid-template-columns: 1fr max-content;
@@ -107,16 +108,13 @@ mat-card {
     text-align: center;
   }
 }
+
 .overimg {
   position: relative;
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
   overflow: hidden;
-  border-radius: 21px;
-  height: 352px;
+  border-radius: 20px;
   background-color: #fff;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-top: 2px solid #cbcbcb42;
 
 }
@@ -135,14 +133,14 @@ mat-card {
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
   z-index: 999;
-  
+
 }
 
 .overimg:hover .content-overlay {
   opacity: 1;
 }
 
-.userdeatils{
+.userdeatils {
   position: relative;
   z-index: 0;
   top: -4.5em;
@@ -154,30 +152,30 @@ mat-card {
   z-index: 1;
   font-family: Roboto;
 
-  .title{
-    font-size: 20px;
-  }
-  .title-sub{
+  .title {
     font-size: 20px;
   }
 
- 
+  .title-sub {
+    font-size: 20px;
+  }
+
+
 }
 
-.imgbg{
-  background: rgb(0,0,0,0.7);
+.imgbg {
+  background: rgb(0, 0, 0, 0.7);
 
-  background: linear-gradient(
-0deg, rgba(0, 0, 0, 0.4) 15%, rgba(255, 255, 255,0.1) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 15%, rgba(255, 255, 255, 0.1) 100%);
 
-    height: 350px;
-    position: absolute;
+  height: 350px;
+  position: absolute;
 
-    top: 0;
-    left: 0;
-    right: 0;
-    border: 0;
-    border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: 0;
+  border-radius: 20px;
 
 }
 
@@ -187,17 +185,18 @@ mat-card {
 
 .content-image {
   width: 300px;
-   height: 350px;
-   overflow: hidden;
-   border-radius: 5px;
-   
-}
-.Shadow-smooth
-{  
-    /* Smooth Shadow */
-    box-shadow: 0 2rem 2rem -2rem rgba(0, 0, 0, 0.1), 0 0.2rem 10rem -5rem rgba(0, 0, 0, 0.1);
+  height: 350px;
+  overflow: hidden;
+  border-radius: 5px;
 
 }
+
+.Shadow-smooth {
+  /* Smooth Shadow */
+  box-shadow: 0 2rem 2rem -2rem rgba(0, 0, 0, 0.1), 0 0.2rem 10rem -5rem rgba(0, 0, 0, 0.1);
+
+}
+
 .content-details {
   position: absolute;
   text-align: center;
@@ -252,11 +251,16 @@ mat-card {
   left: 80%;
 }
 
-@media only screen and (max-width: 479px) { 
+@media only screen and (max-width: 479px) {
 
-.sline {
-  display: grid;
-  grid-template-columns: 1fr ;
+  .sline {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
 }
 
+.overhide {
+  overflow: hidden;
+  border-radius: 20px;
 }

@@ -18,12 +18,18 @@ import { OurTeamComponent } from './team/our-team/our-team.component';
 
 
 import { NgImageSliderModule } from 'ng-image-slider';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CareerApplicationComponent, CareerDetailsDialog, CareersComponent } from './homeCareer/careers/careers.component';
 import { ClientsComponent } from './mechantronics/clients/clients.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CareerInterceptor } from './homeCareer/_service/career.interceptor';
+import { ViewmoreComponent } from './aboutus/viewmore/viewmore.component';
+import { OurUnitsComponent } from './aboutus/our-units/our-units.component';
+import { MasonryGalleryModule } from 'ngx-masonry-gallery';
+import { NgxMasonryModule } from 'ngx-masonry';
+import { TeamgallaryComponent } from './teamgallary/teamgallary.component';
+
 
 @NgModule({
   declarations: [
@@ -40,8 +46,10 @@ import { CareerInterceptor } from './homeCareer/_service/career.interceptor';
     CareersComponent,
     ClientsComponent,
     CareerDetailsDialog,
-    CareerApplicationComponent
-    
+    CareerApplicationComponent,
+    ViewmoreComponent,
+    OurUnitsComponent,
+    TeamgallaryComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +59,10 @@ import { CareerInterceptor } from './homeCareer/_service/career.interceptor';
     CarouselModule,
     NgbModule,
     NgImageSliderModule,
-    MatCarouselModule.forRoot()
+    MasonryGalleryModule,
+    NgxMasonryModule,
+    MatCarouselModule.forRoot(),
+
   ],
   entryComponents: [
     CareerDetailsDialog,
@@ -63,7 +74,7 @@ import { CareerInterceptor } from './homeCareer/_service/career.interceptor';
     //   useClass: CareerInterceptor,
     //   multi: true
     //  },
-    
-    ],
+
+  ],
 })
 export class PagesModule { }

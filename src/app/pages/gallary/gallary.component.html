@@ -1,46 +1,8 @@
-  <section class="banner-h-full d-flex align-items-start mt-5">
-    <div class="container-fluid custom_width">
-      <div class="home">
-        <!-- <div id="container" [@listAnimation]="items.length">
-          <div id="list" *ngFor="let item of uniqueItems" (click)="filterItem(item)">
-            {{ item }}
-          </div>
-        </div>
-        <div id="container" [@container]="items.length">
-          <div @enterExitLeft id="list" *ngFor="let item of items" class="card p-0">
-            <img width="200" height="300" src="assets\img\poster.jpg" alt="">
-          </div>
-        </div> -->
-        <!-- {{tiles |json}} -->
-        <!-- <mat-grid-list   >
-          <mat-grid-tile
-            
-          </mat-grid-tile>
-        </mat-grid-list>
-       -->
-
-        <mat-grid-list cols="9" rowHeight="120px">
-          <mat-grid-tile
-              *ngFor="let tile of tiles"
-              [colspan]="tile.cols"
-              [rowspan]="tile.rows"
-              [style.background]="tile.color">
-              <div  class="padding-main">{{tile.img}}</div>
-              <!-- <div class="padding-main1">{{tile.info}}</div> -->
-              <div class="effect effect-one">
-                <img src="assets/img/gallary/{{tile.text}}" class="img-fluid" >
-                <div class="tab-text">
-                  <!-- <p>{{tile.info}}</p> -->
-                
-                </div>
-              </div>
-          
-          </mat-grid-tile>
-        </mat-grid-list>
-        
-      </div>
+<section class="banner-h-full d-flex align-items-start mt-5">
+  <div class="container-fluid custom_width">
+    <div class="home">
+      <ngx-masonry-gallery [width]="400" [images]="images" [verticalGutter]="2">
+      </ngx-masonry-gallery>
     </div>
-  </section>
-
-
-  
+  </div>
+</section>

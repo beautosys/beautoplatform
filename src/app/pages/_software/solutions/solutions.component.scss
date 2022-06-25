@@ -58,19 +58,21 @@
 //   width: 2rem;
 //   width: 2.4rem;
 // }
-.home{
-  .title{
-     color: #0F6CB6;
+.home {
+  .title {
+    color: #0F6CB6;
     font-size: 37px;
     font-family: 'Roboto-Bold';
   }
-  .info{
+
+  .info {
     font: normal normal normal 20px/30px "Roboto";
     letter-spacing: 0.75px;
     color: #9C9C9C;
     opacity: 1;
     margin-top: 55px;
   }
+
   strong {
     display: inline-block;
     margin: -3px;
@@ -83,6 +85,7 @@
     background-color: #0093ED;
 
   }
+
   .underline {
     border-bottom: 3px solid #DEDFE14F;
     border-radius: 3px;
@@ -109,28 +112,28 @@
 
 }
 
-.img{
+.img {
   width: calc(34vw);
 }
 
-.spacing{
+.spacing {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
-@media only screen and (max-width:768px){
-  .img{
-      width: inherit;
-      height: inherit;
-      border-radius: 10px;
-      object-fit: cover;
+@media only screen and (max-width:768px) {
+  .img {
+    width: inherit;
+    height: inherit;
+    border-radius: 10px;
+    object-fit: cover;
   }
-  }
+}
 
 
 
 .bg1 {
-background-image: Url('assets/img/skills&tools/bg1.svg');
+  background-image: Url('assets/img/skills&tools/bg1.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: -12em 1px;
@@ -142,87 +145,96 @@ background-image: Url('assets/img/skills&tools/bg1.svg');
 }
 
 .bg2 {
-background-image: Url('assets/img/skills&tools/bg1.svg');
-height: 61vh;
-background-repeat: no-repeat;
-background-position: 85vw -9px;
-background-size: 58vh;
+  background-image: Url('assets/img/skills&tools/bg1.svg');
+  height: 61vh;
+  background-repeat: no-repeat;
+  background-position: 85vw -9px;
+  background-size: 58vh;
 
 
 }
 
-.sec-sction{
-background: #fefefe;
-padding: 5em 0px;
-padding-bottom: 15px;
+.sec-sction {
+  background: #fefefe;
+  padding: 5em 0px;
+  padding-bottom: 15px;
 }
 
 .t-l {
-text-align: left;
+  text-align: left;
 }
+
 .l-space {
 
-margin-left: 15em;
+  margin-left: 6em;
 
 }
+
 .textdata {
-color: #9C9C9C;
-line-height: 2;
-font-family: "Roboto";
-margin-top: 30px;
+  color: #9C9C9C;
+  line-height: 2;
+  font-family: "Roboto";
+  margin-top: 30px;
 }
+
 .right-img {
-text-align: center;
-img {
-  width: 100%;
-  width: 85%;
-}
+  text-align: center;
+
+  img {
+    width: 100%;
+    width: 85%;
+  }
 }
 
 @media only screen and (max-width: 479px) {
 
   .bg1 {
 
-      height: auto;
+    height: auto;
   }
 
   .bg2 {
     height: auto;
 
   }
+
   .l-space {
     margin-left: 0;
-}
-.right-img{
+  }
 
- img {
-  width: 100%;
+  .right-img {
 
-}
-}
-.sec-sction {
-  background: #fefefe;
-  padding: 0 0px;
+    img {
+      width: 100%;
 
-}
-.skill-order-1{
-order: 1;
-}
-.skill-order-2{
-  order: 2;
+    }
+  }
+
+  .sec-sction {
+    background: #fefefe;
+    padding: 0 0px;
+
+  }
+
+  .skill-order-1 {
+    order: 1;
+  }
+
+  .skill-order-2 {
+    order: 2;
   }
 
 
-  .bg1{
+  .bg1 {
     background-image: Url('assets/img/skills&tools/bg1.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: -12em 1px;
-      height: auto;
-      background-repeat: no-repeat;
-      background-position: 8em 152px;
-      background-size: 125vh;
-      padding: 0em 14px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -12em 1px;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: 8em 152px;
+    background-size: 125vh;
+    padding: 0em 14px;
 
 
 
@@ -239,8 +251,8 @@ order: 1;
 
 
   }
-  .mm-10
-  {
+
+  .mm-10 {
     margin-bottom: 3em;
   }
 

@@ -1,154 +1,181 @@
-<section class="banner-h-full d-flex align-items-start align-items-md-center py-4">
+<section
+  class="banner-h-full d-flex align-items-start align-items-md-center py-4"
+>
   <div class="container-fluid custom_width">
     <div class="home">
       <div class="row">
         <div
-          class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 order-sm-2 order-md-2 order-lg-2 order-xl-2 order-xxl-2">
-
-          <img src="assets/img/journey.svg" class="rightimg journey-img " >
+          class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 order-sm-2 order-md-2 order-lg-2 order-xl-2 order-xxl-2"
+        >
+          <img src="assets/img/journey.svg" class="rightimg journey-img" />
         </div>
         <div
-          class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5  order-sm-1 order-md-1 order-lg-1 order-xl-1 order-xxl-1  mb-5">
-          <div class="row ">
-            <div class="creats d-block d-lg-inline-block w-100">
-              Beauto
-            </div>
-            <div class="d-flex flex-column justify-content-start sub-title-home">
-              <div class="title-in">Journey
-              </div>
+          class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 order-sm-1 order-md-1 order-lg-1 order-xl-1 order-xxl-1 mb-5"
+        >
+          <div class="row">
+            <div class="creats d-block d-lg-inline-block w-100">Beauto</div>
+            <div
+              class="d-flex flex-column justify-content-start sub-title-home"
+            >
+              <div class="title-in">Journey</div>
             </div>
           </div>
-          <div class="row ">
+          <div class="row">
             <div class="col-9 border-r">
-              <h4 class="text-right year">2021 </h4>
-              <h5 class="text-right count">First panel </h5>
+              <h4 class="text-right year">2021</h4>
             </div>
             <div class="col-3 pl-0">
               <div class="more-j d-inline-flex justify-content-start">
                 <div class="first">
-                  <div [ngClass]="{'dot-j-fill':firstToggle,'dot-j':!firstToggle}"></div>
-                  <div class="line-hr"></div><button (click)="onMore(1)"> More
-                  </button>
+                  <div
+                    [ngClass]="{
+                      'dot-j-fill': firstToggle,
+                      'dot-j': !firstToggle
+                    }"
+                  ></div>
+                  <div class="line-hr"></div>
+                  <button (click)="onMore(1)">More</button>
                 </div>
               </div>
             </div>
 
-            <ng-template [ngIf]='firstToggle'>
-
+            <ng-template [ngIf]="firstToggle">
               <div class="col-9 text-right OurJourneyinfo border-r">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life <br> accusamus terry richardson ad squid. <br> 3 wolf
-                moon officia aute, non cupidatat  skateboard dolor brunch.
-
+                Grown the digital product design team, started college
+                associations for getting bright talent, increased the team from
+                50 to 100 in the software division, and made the foundations for
+                building our new office in Pune. Overall company strength
+                reached 150+. Started attracting clients globally.
               </div>
             </ng-template>
           </div>
 
-          <div class="row ">
+          <div class="row">
             <div class="col-9 pt-4 border-r">
-              <h4 class="text-right year">2020 </h4>
-              <h5 class="text-right count">Second panel </h5>
+              <h4 class="text-right year">2020</h4>
+              <h5 class="text-right count">Second panel</h5>
             </div>
             <div class="col-3 pt-4 pl-0">
               <div class="more-j d-inline-flex justify-content-start">
                 <div class="first">
-                  <div [ngClass]="{'dot-j-fill':secondToggle,'dot-j':!secondToggle}"></div>
-                  <div class="line-hr"></div><button (click)="onMore(2)"> More
-                  </button>
+                  <div
+                    [ngClass]="{
+                      'dot-j-fill': secondToggle,
+                      'dot-j': !secondToggle
+                    }"
+                  ></div>
+                  <div class="line-hr"></div>
+                  <button (click)="onMore(2)">More</button>
                 </div>
               </div>
             </div>
 
-            <ng-template [ngIf]='secondToggle'>
-
+            <ng-template [ngIf]="secondToggle">
               <div class="col-9 text-right border-r OurJourneyinfo">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch.
-
+                With the help of another cofounder, we spawned a new company,
+                "Quro Labs", which is an extension of Beauto's electrical and
+                electronics capabilities. We built products for Covid, and our
+                team worked relentlessly to get quality products out into the
+                market. Check out Ayu for more details.
               </div>
             </ng-template>
           </div>
 
-          <div class="row ">
+          <div class="row">
             <div class="col-9 pt-4 border-r">
-              <h4 class="text-right year">2019 </h4>
-              <h5 class="text-right count">Third panel </h5>
-            </div>
-            <div class="col-3  pt-4 pl-0">
-              <div class="more-j d-inline-flex justify-content-start">
-                <div class="first">
-                  <div [ngClass]="{'dot-j-fill':thirdToggle,'dot-j':!thirdToggle}"></div>
-                  <div class="line-hr"></div><button (click)="onMore(3)"> More
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <ng-template [ngIf]='thirdToggle'>
-
-              <div class="col-9 text-right border-r OurJourneyinfo">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch.
-
-              </div>
-            </ng-template>
-          </div>
-
-          <div class="row ">
-            <div class="col-9 pt-4 border-r">
-              <h4 class="text-right year">2018 </h4>
-              <h5 class="text-right count">Fourth panel </h5>
+              <h4 class="text-right year">2019</h4>
+              <h5 class="text-right count">Third panel</h5>
             </div>
             <div class="col-3 pt-4 pl-0">
               <div class="more-j d-inline-flex justify-content-start">
                 <div class="first">
-                  <div [ngClass]="{'dot-j-fill':fourthToggle,'dot-j':!fourthToggle}"></div>
-                  <div class="line-hr"></div><button (click)="onMore(4)"> More
-                  </button>
+                  <div
+                    [ngClass]="{
+                      'dot-j-fill': thirdToggle,
+                      'dot-j': !thirdToggle
+                    }"
+                  ></div>
+                  <div class="line-hr"></div>
+                  <button (click)="onMore(3)">More</button>
                 </div>
               </div>
             </div>
 
-            <ng-template [ngIf]='fourthToggle'>
-
+            <ng-template [ngIf]="thirdToggle">
               <div class="col-9 text-right border-r OurJourneyinfo">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch.
-
+                Built our first mechanical workshop and purchased several
+                machines to support our physical product design capabilities.
+                Our digital product design team started shaping up on the
+                software front, and the development team grew from 30 to 45. By
+                the end of 2019, our software development capabilities got
+                standardized.
               </div>
             </ng-template>
           </div>
 
-          <div class="row ">
+          <div class="row">
             <div class="col-9 pt-4 border-r">
-              <h4 class="text-right year">2017 </h4>
-              <h5 class="text-right count">Fifth panel </h5>
+              <h4 class="text-right year">2018</h4>
+              <h5 class="text-right count">Fourth panel</h5>
             </div>
             <div class="col-3 pt-4 pl-0">
               <div class="more-j d-inline-flex justify-content-start">
                 <div class="first">
-                  <div [ngClass]="{'dot-j-fill':fifthToggle,'dot-j':!fifthToggle}"></div>
-                  <div class="line-hr"></div><button (click)="onMore(5)"> More
-                  </button>
+                  <div
+                    [ngClass]="{
+                      'dot-j-fill': fourthToggle,
+                      'dot-j': !fourthToggle
+                    }"
+                  ></div>
+                  <div class="line-hr"></div>
+                  <button (click)="onMore(4)">More</button>
                 </div>
               </div>
             </div>
 
-            <ng-template [ngIf]='fifthToggle'>
-
+            <ng-template [ngIf]="fourthToggle">
               <div class="col-9 text-right border-r OurJourneyinfo">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch.
-
+                We established our base at Narhe, Pune and started building our
+                digital and physical products development capability. Our
+                strength rose from 5 to 30, and we started experiencing business
+                inflow globally.
               </div>
             </ng-template>
           </div>
 
+          <div class="row">
+            <div class="col-9 pt-4 border-r">
+              <h4 class="text-right year">2017</h4>
+              <h5 class="text-right count">Fifth panel</h5>
+            </div>
+            <div class="col-3 pt-4 pl-0">
+              <div class="more-j d-inline-flex justify-content-start">
+                <div class="first">
+                  <div
+                    [ngClass]="{
+                      'dot-j-fill': fifthToggle,
+                      'dot-j': !fifthToggle
+                    }"
+                  ></div>
+                  <div class="line-hr"></div>
+                  <button (click)="onMore(5)">More</button>
+                </div>
+              </div>
+            </div>
+
+            <ng-template [ngIf]="fifthToggle">
+              <div class="col-9 text-right border-r OurJourneyinfo">
+                The company is registered on 2017 September 14th. Our team
+                strength was 2 in September and grew to 5 by December. Our first
+                project was into developing software for an automated machine
+              </div>
+            </ng-template>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- <div class="history-tl-container">
   <ul class="tl">

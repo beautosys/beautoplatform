@@ -1,0 +1,66 @@
+<!-- <h2 mat-dialog-title>Install Angular</h2> -->
+<mat-dialog-content class="mat-typography">
+  <div class="r-icon-al">
+    <button class="close-icon btn-colsed" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="p20">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="t-center">
+          <img src="assets/img/leaders/{{ data.img }}" alt="" class="viewimg" />
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div>
+          <div class="viewname">{{ data.name }}</div>
+          <div class="role">
+            <span>{{ data.role }} </span>
+          </div>
+        </div>
+        <div class="info" *ngIf="data.name == 'Pramod Palla'">
+          <p>
+            Sets and transforms the strategic direction for the company and its
+            portfolio of offerings as a CEO of Beauto systems and Quro labs,
+            while nurturing a strong leadership team to drive the execution of
+            delivering value in the form of products and services. Over 15 years
+            he occupied different roles from Senior Technical manager to
+            Research Architect with a strong track record of driving digital
+            transformation for enterprises and executing business turnarounds.
+            The name ‘Beauto’ comes from his passion to bring uncompromising
+            design to the products and a vision to innovate at every stage of a
+            product making with key focus on automation. The successful fusion
+            of his vision and values helped build an organisation with 120+
+            employees within a span of 5 years. The organisation continues to
+            grow under his able leadership with new leaders emerging at each
+            unit level which corroborates one of the traits of leadership ‘Let’s
+            root for each other and watch each other grow’.
+          </p>
+        </div>
+
+        <div class="info" *ngIf="data.name == 'Saswat Kumar Sahu'">
+          Building Quro Labs as its Chief Technology Officer, he is passionate
+          about developing products from ground-up. A dynamic individual with
+          over 10 years of experience in diverse roles spanning engineering,
+          procurement, project execution and sales. Led the R&D and NPD (New
+          Product Development) team to create products in the consumer
+          electronics and industrial automation segments. Got good amount of
+          hands-on experience in every stage of the complete Product Development
+          Lifecycle. Presently building scientific instruments and industrial
+          automation products for Mining, Material Handling and Power sector.
+          Taking on board curious minds is his simple but powerful strategy to
+          attract talent and his predominant presence with the team despite the
+          hectic schedule of frequent onsite demonstrations and sales proves his
+          passion and perseverance. His unwavering determination inspires the
+          team to always go an extra mile in the need of the hour.
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<!-- <mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions> -->

@@ -337,9 +337,9 @@ ul {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .mcd-menu {
-    width: 200px;
-  }
+  // .mcd-menu {
+  //   width: 200px;
+  // }
 
   .mcd-menu li a {
     height: 30px;
@@ -372,7 +372,7 @@ ul {
 
   .mcd-menu li:hover>ul {
     min-width: 180px;
-    left: 200px;
+    // left: 200px;
   }
 
   .mcd-menu li ul li>ul,
