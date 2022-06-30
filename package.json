@@ -28,6 +28,8 @@
     "font-awesome": "^4.7.0",
     "ng-dynamic-breadcrumb": "^5.0.1",
     "ng-image-slider": "^2.8.0",
+    "ngx-masonry": "^13.0.0",
+    "ngx-masonry-gallery": "^3.0.0",
     "ngx-owl-carousel-o": "^5.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

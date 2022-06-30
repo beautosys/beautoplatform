@@ -95,7 +95,6 @@ export class GallaryComponent implements OnInit {
   ];
 
   private urls: string[] = [
-
     'assets/img/gallary/image_1.png',
     'assets/img/gallary/image_2.png',
     'assets/img/gallary/image_3.png',
@@ -106,11 +105,12 @@ export class GallaryComponent implements OnInit {
     'assets/img/gallary/image_8.png',
     'assets/img/gallary/image_9.png',
     'assets/img/gallary/image_10.png',
+    'assets/img/gallary/image_11.png',
   ];
 
   get images(): IMasonryGalleryImage[] {
     return this.urls.map(m => <IMasonryGalleryImage>{
-      imageUrl: m
+      imageUrl: m,
     });
   }
 

@@ -15,6 +15,7 @@ import { ClientsComponent } from './mechantronics/clients/clients.component';
 import { UserClientResolverResolver } from './mechantronics/clients/services/user-client-resolver.resolver';
 import { PagesComponent } from './pages.component';
 import { OurTeamComponent } from './team/our-team/our-team.component';
+import { TeamgallaryComponent } from './teamgallary/teamgallary.component';
 import { DevelopmentProcessComponent } from './_software/development-process/development-process.component';
 import { SkillSAndToolsComponent } from './_software/skill-sand-tools/skill-sand-tools.component';
 import { SolutionsComponent } from './_software/solutions/solutions.component';
@@ -160,6 +161,23 @@ const routes: Routes = [
           ]
         }
       },
+      {
+        path: 'teamgallary',
+        component: TeamgallaryComponent,
+        data: {
+          title: 'Team Gallary',
+          start: 'Home / ',
+          breadcrumb: [
+            {
+              label: 'Team Gallary',
+              url: ''
+            }
+          ]
+        }
+      },
+
+
+
       {
         path: 'our-team',
         component: OurTeamComponent,
