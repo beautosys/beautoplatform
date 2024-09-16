@@ -1,4 +1,4 @@
-<div class=main>
+<!-- <div class=main>
     <div class=header-blue bottom-border-1>
        <div>   
         <img src="assets/img/Mask Group 1.svg" class="img-margin">
@@ -71,4 +71,87 @@
    
    </div>
 </div>
-</div>
+</div> -->
+
+
+<mat-card class="card-layout">
+
+   <div class="detail-header text-center ">
+      <div class="text-end">
+         <button mat-button mat-dialog-close class="close-button">
+            <mat-icon>close</mat-icon>
+         </button>
+
+      </div>
+      <img [src]="collageDetails.collegeImage" alt="" class="img-avatar mb-2">
+      <p>{{collageDetails.name}}</p>
+   </div>
+   <div class="row pl-3 pr-3 pt-3 pb-0" [ngStyle]="{'overflow-y':isShowmore==true ? 'scroll' : 'hidden' }">
+      <div class="col-md-5 left-side-content">
+         <div>
+            <p>Location</p>
+
+            <p>Country </p>
+            <p>State </p>
+
+            <p>Contact Person-1 </p>
+            <p>Contact Person-2</p>
+
+            <p>Contact Email-1</p>
+            <p>Contact Email-2</p>
+
+            <p>Person-1 Contact No</p>
+            <p>Person-2 Contact No</p>
+         </div>
+         <div *ngIf="isShowmore">
+            <p>University</p>
+
+            <p>Year of Esta </p>
+            <p>Grade </p>
+
+            <p>Accredation </p>
+
+         </div>
+
+      </div>
+      <div class="col-md-1 mt-3 mb-3">
+         <div class="dot"></div>
+         <div [ngClass]="{
+            'vl-more':isShowmore === true,
+            'vl':isShowmore === false
+          }"></div>
+         <div class="dot"></div>
+      </div>
+      <div class="col-md-6">
+         <div>
+            <p>{{collageDetails.location}}</p>
+
+            <p>{{collageDetails.country.countryName}} </p>
+            <p>{{collageDetails.state.stateName}} </p>
+
+            <p>{{collageDetails.contactPer1}} </p>
+            <p>{{collageDetails.contactPer2}}</p>
+
+            <p>{{collageDetails.contactEmail1}}</p>
+            <p>{{collageDetails.contactEmail2}}</p>
+
+            <p> {{collageDetails.contactPer1ContactNo}}</p>
+            <p> {{collageDetails.contactPer2ContactNo}}</p>
+         </div>
+         <div *ngIf="isShowmore">
+            <p>{{collageDetails.university.universityName}}</p>
+
+            <p>{{collageDetails.yearOfEsta}} </p>
+            <p>{{collageDetails.grade}} </p>
+
+            <p>{{collageDetails.accredation}} </p>
+
+         </div>
+      </div>
+   </div>
+   <div class="text-center">
+      <img src="assets/img/collageBG/showmore.svg" alt="" (click)="isShowmore=!isShowmore">
+
+   </div>
+
+</mat-card>

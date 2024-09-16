@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute, Event } from '@angular/router';
 import { AddcollagesComponent } from '../addcollages/addcollages.component';
 import { BehaviorSubject } from 'rxjs';
-import { indexOf, uniq }  from 'underscore';
+
 
 @Component({
   selector: 'app-collage-list-view',
@@ -207,10 +207,10 @@ this.uniqDataSource = this.dataSource.data;
     });
   }
 
-  openViewCollageeDialog(name: any) {
+  openViewCollageeDialog(data: any) {
     const dailog = this.dialog.open(CollageDetailsComponent, {
       panelClass: 'c-css',
-      data: name,
+      data: data,
     });
     dailog.afterClosed().subscribe((res) => {
       this.getCollageListFromServices();

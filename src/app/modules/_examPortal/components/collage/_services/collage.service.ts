@@ -18,7 +18,7 @@ export class CollageService {
   constructor(private http:HttpClient) { }
 
   getCollageList():Observable<any>{
-    return this.http.get(environment.getAllCollageListRecords)
+    return this.http.get(environment.getAllCollageListRecords);
   }
 
   deleteCollageDetails(collegeId:any,collegeName:any):Observable<any>{ 
